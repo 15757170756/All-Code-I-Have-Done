@@ -1,0 +1,40 @@
+C Programming Book/Debug
+C Programming Book/*.vcxproj
+C Programming Book/*.filters
+
+DataStructure/Debug
+DataStructure/*.opensdf
+DataStructure/*.sdf
+DataStructure/*.sln
+DataStructure/*.suo
+DataStructure/DataStructure/Debug
+DataStructure/DataStructure/*.vcxproj
+DataStructure/DataStructure/*.filters
+
+Design Pattern/Debug
+Design Pattern/*.vcxproj
+Design Pattern/*.filters
+
+hihoCode/Debug
+hihoCode/*.vcxproj
+hihoCode/*.filters
+
+Image Processing/Debug
+Image Processing/*.vcxproj
+Image Processing/*.filters
+
+LeetCode/Debug
+LeetCode/*.vcxproj
+LeetCode/*.filters
+
+Mathematics/Debug
+Mathematics/*.vcxproj
+Mathematics/*.filters
+
+Operation System/Debug
+Operation System/*.vcxproj
+Operation System/*.filters
+
+
+
+
