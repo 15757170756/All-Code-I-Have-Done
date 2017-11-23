@@ -35,6 +35,22 @@ Operation System/Debug
 Operation System/*.vcxproj
 Operation System/*.filters
 
+剑指offer/Debug
+剑指offer/*.vcxproj
+剑指offer/*.filters
+
+
+牛客网各类笔试题目/Debug
+牛客网各类笔试题目/*.vcxproj
+牛客网各类笔试题目/*.filters
+
+
+Linux/Debug
+Linux/*.vcxproj
+Linux/*.filters
+
+
+
 
 
 

@@ -1,0 +1,212 @@
+/* Originally based on plone.org's style */
+
+body {
+    font-family: verdana, helvetica, arial, sans-serif;
+    font-size: 75%;
+}
+
+/* old-browser messages */
+div.compliance {
+    display: none;
+}
+
+/* header style */
+div.header {
+}
+
+div.header div.version {
+    color: #8c8c8c;
+    float: left;
+    font-size: 85%;
+    text-align: left;
+    text-transform: capitalize;
+    vertical-align: top;
+}
+
+div.header div.title {
+    font-size: 200%;
+    font-style: italic;
+    font-weight: bolder;
+    text-align: right;
+}
+
+div.header div.title div.caption {
+    font-size: 45%;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* tabs style */
+div.tabs {
+    background: transparent;
+    border-collapse: collapse;
+    border-bottom-color: #8c8c8c;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin: 0em;
+    padding: 1em 0em 0em 2em;
+    white-space: nowrap;
+}
+
+div.tabs a {
+    background: transparent;
+    border-color: #8c8c8c;
+    border-width: 1px; 
+    border-style: solid solid none solid;
+    color: #436976;
+    font-weight: normal;
+    height: 1.2em;
+    margin-right: 0.5em;
+    padding: 0em 2em;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+div.tabs a.current {
+    background: #dedede;
+    border: 1px solid #8c8c8c;
+    border-bottom: #dedede 1px solid;
+    color: #436976;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+div.tabs a:hover {
+    background: #dedede;
+    border-color: #8c8c8c;
+    border-bottom-color: #dedede;
+    color: #436976;
+}
+
+/* footer style */
+div.footer {
+    background: #dedede;
+    border-top: 1px solid #8c8c8c;
+    border-bottom: 1px solid #8c8c8c;
+    color: #8c8c8c;
+    clear: both;
+    float: none;
+    margin: 0em 0em 1em;
+    padding: 0.5em 0em 0.5em 0em;
+    text-align: center;
+}
+
+/* content style */
+div.content {
+    margin: 1em;
+}
+
+div.content pre {
+    background: #fcfcfc;
+    border: 1px solid #8c8c8c;
+    color: black;
+    font-family: monospace;
+    font-size: 100%;
+    margin: 1em;
+    padding: 0.5em;	
+}
+
+div.content>pre { 
+    background: #fcfcfc;
+    border: 1px solid #8c8c8c;
+    color: black;
+    font-family: monospace, courier;
+    font-size: 100%;
+    font-weight: normal;
+    margin: 1em;
+    padding: 0.5em;	
+}
+
+div.content div.box {
+    background: #fcfcfc;
+    border: 1px solid #8c8c8c;
+    color: black;
+    display: block;
+    margin: 1em;
+    padding: 0.5em;	
+    text-align: center;
+}
+
+/* doxygen styles */
+
+div.doxygendoc code {
+    font-size: 110%;
+}
+
+div.doxygendoc a.code { 
+    text-decoration: none; 
+    font-weight: normal; 
+    color: #4444ee 
+}
+
+div.doxygendoc a.codeRef { 
+    font-weight: normal; 
+    color: #4444ee 
+}
+
+div.doxygendoc a:hover { 
+    text-decoration: none; 
+    background-color: #f2f2ff 
+}
+
+div.doxygendoc dl.el { 
+    margin-left: -1cm 
+}
+
+div.doxygendoc h1 { 
+    font-size: 150%;
+}
+
+div.doxygendoc h2 { 
+    font-size: 100%;
+}
+
+div.doxygendoc div.fragment { 
+    width: 100%; 
+    border: none; 
+    background-color: #eeeeee 
+    }
+
+div.doxygendoc div.fragment pre {
+    background: #fcfcfc;
+    border: 1px solid #8c8c8c;
+    color: black;
+    font-family: monospace, courier;
+    font-size: 110%;
+    margin: .5em;
+    padding: 1em;	
+}
+
+div.doxygendoc div.fragment>pre { 
+    background: #fcfcfc;
+    border: 1px solid #8c8c8c;
+    color: black;
+    font-family: monospace, courier;
+    font-size: 110%;
+    margin: .5em;
+    padding: 1em;	
+}
+
+/* doxygen syntax highlighting */
+div.doxygendoc span.keyword       { 
+    color: #008000 
+    }
+div.doxygendoc span.keywordtype   { 
+    color: #604020 
+    }
+div.doxygendoc span.keywordflow   { 
+    color: #e08000 
+    }
+div.doxygendoc span.comment       {
+    color: #800000 
+    }
+div.doxygendoc span.preprocessor  { 
+    color: #806020 
+    }
+div.doxygendoc span.stringliteral { 
+    color: #002080 
+    }
+div.doxygendoc span.charliteral   { 
+    color: #008080 
+    }
+

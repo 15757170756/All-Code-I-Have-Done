@@ -5,22 +5,20 @@
 
 using namespace::std;
 
-vector<string> split(const string &s, char delim)
+void split(const string &s, const char delim, vector<string> &resultStr)
 {
-	vector<string> elems;
-	stringstream ss(s);
+	istringstream ss(s);
 	string item;
 	while (getline(ss, item, delim))
 		if (item.length() > 0)
-			elems.push_back(item);
-
-	return elems;
+			resultStr.push_back(item);
 }
 
 int main()
 {
 	string s = "I am lichaofeng, nice to meet you";
-	vector<string> result = split(s, ' ');
+	vector<string> result;
+	split(s, ' ', result);
 	for (int i = 0; i < result.size(); ++i)
 		cout << result[i];
 
