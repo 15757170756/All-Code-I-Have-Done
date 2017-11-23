@@ -174,6 +174,23 @@ void *memmove(void *dest, const void *src, unsigned int count)
 	return dest;
 }
 
+void* memmove(void* dst, const void* src, size_t count)
+{
+	char* pdst = (char*)dst;
+	char* psrc = (char*)src;
+
+	if (pdst < psrc)
+		for (size_t i = 0; i < count; ++i)
+			*(pdst++) = *(psrc++);
+	else {
+		pdst += count - 1;
+		psrc += count - 1;
+		for (size_t i = 0; i < count; ++i)
+			*(pdst--) = *(psrc--);
+	}
+	return dst;
+}
+
 void *memset(void *str, int c, unsigned int count)
 {
 	assert(str != NULL);

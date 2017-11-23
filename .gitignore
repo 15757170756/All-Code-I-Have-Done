@@ -34,6 +34,7 @@ Mathematics/*.filters
 Operation System/Debug
 Operation System/*.vcxproj
 Operation System/*.filters
+Operation System/ZThread-2.3.2
 
 ½£Ö¸offer/Debug
 ½£Ö¸offer/*.vcxproj
@@ -50,7 +51,9 @@ Linux/*.vcxproj
 Linux/*.filters
 
 
-
+C++ 11/Debug
+C++ 11/*.vcxproj
+C++ 11/*.filters
 
 
 
