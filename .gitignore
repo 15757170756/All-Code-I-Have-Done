@@ -9,6 +9,8 @@ DataStructure/*.sln
 DataStructure/*.suo
 DataStructure/DataStructure/Debug
 DataStructure/DataStructure/*.vcxproj
+DataStructure/DataStructure.vcxproj
+DataStructure/DataStructure.vcxproj.filters
 DataStructure/DataStructure/*.filters
 
 Design Pattern/Debug
@@ -39,11 +41,15 @@ Operation System/ZThread-2.3.2
 ｽ｣ﾖｸoffer/Debug
 ｽ｣ﾖｸoffer/*.vcxproj
 ｽ｣ﾖｸoffer/*.filters
+ｽ｣ﾖｸoffer/ｽ｣ﾖｸoffer.vcxproj
+ｽ｣ﾖｸoffer/ｽ｣ﾖｸoffer.vcxproj.filters
 
 
 ﾅ｣ｿﾍﾍ牾ﾊﾊﾔﾌ籠ｿ/Debug
 ﾅ｣ｿﾍﾍ牾ﾊﾊﾔﾌ籠ｿ/*.vcxproj
 ﾅ｣ｿﾍﾍ牾ﾊﾊﾔﾌ籠ｿ/*.filters
+ﾅ｣ｿﾍﾍ牾ﾊﾊﾔﾌ籠ｿ/ﾅ｣ｿﾍﾍ牾ﾊﾊﾔﾌ籠ｿ.vcxproj
+ﾅ｣ｿﾍﾍ牾ﾊﾊﾔﾌ籠ｿ/ﾅ｣ｿﾍﾍ牾ﾊﾊﾔﾌ籠ｿ.vcxproj.filters
 
 
 Linux/Debug
