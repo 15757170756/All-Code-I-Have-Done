@@ -49,3 +49,26 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+	int n;
+	scanf("%d", &n);
+	int sum = 0, mx = -99999999;    // 初值的选取需注意, 不能取INT_MIN
+	for (int j = 0; j < n; j++){
+		int temp;
+		scanf("%d", &temp);
+		if (sum < 0) sum = temp;
+		else sum += temp;
+		mx = max(sum, mx);
+	}
+	printf("%d\n", mx);
+}

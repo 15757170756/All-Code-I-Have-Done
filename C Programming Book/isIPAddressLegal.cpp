@@ -84,6 +84,7 @@ int main() {
 
 
 
+string patten = R"((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]))";
 
 
 
@@ -96,6 +97,11 @@ int main() {
 
 
 
+/*
+使用一般方法判断IP地址合法性。
+感觉IPV4比较简单，
+但是IPV6比较麻烦
+*/
 #include <iostream>     
 #include <string>
 #include <vector>
@@ -110,10 +116,10 @@ bool isIPV6Addresslegal(string &IPV6Address);
 int main(int argc, char *argv[])
 {
 	vector<string> ipv4s = { "13.456.34.23", "1.0.0.0", "127.0.0.100",
-		"192.168.01.1", "255.255.255.256", "0.0.0" };
+		"192.168.01.1", "255.255.255.256", "0.0.0", "192 . 167 . 1 . 3" };
 	for (int i = 0; i < ipv4s.size(); ++i) {
 		bool isIPV4 = isIPV4Addresslegal(ipv4s[i]);
-		cout << boolalpha << isIPV4 << noboolalpha << endl;
+		cout << ipv4s[i] << ": \t" << boolalpha << isIPV4 << noboolalpha << endl;
 	}
 
 	return 0;
