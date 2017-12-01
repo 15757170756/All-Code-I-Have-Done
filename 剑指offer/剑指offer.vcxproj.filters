@@ -39,10 +39,22 @@
     <ClCompile Include="面试题05-从头到尾打印链表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="面试题06-重建二叉树.cpp">
+    <ClCompile Include="面试题07-两个栈实现队列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="面试题07-两个栈实现队列.cpp">
+    <ClCompile Include="面试题07-两个队列实现栈.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题08-时间效率为On的员工年龄排序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题08-旋转数组的最小数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题06-重建二叉树-根据先序遍历和中序遍历.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题06-重建二叉树-根据后序遍历和中序遍历.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
