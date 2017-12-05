@@ -1,0 +1,26 @@
+HOWTO COMPILE THE SOURCE:
+
+  There are several options for compiling the source code.
+
+  * The preferred option is to use the configure script that is provided.
+    I can only actively maintain one method for compiling and configuring 
+    the source. 
+
+    ./configure --help will provide a list of options detailing this method.
+
+  * Any other method is up to you. There are simply too many compilers,  
+    too many versions and too many platforms to maintain separate build files
+    for. 
+
+    BUT, this doesn't mean you are out of luck. 
+  
+    I have structured the code so that it is very simple to compile the library
+    however suits your needs best. All you need to do is include the .cxx files
+    in the src/ directory (not the subdirectories) in your build rule, and add the
+    include directory to your compilers include/ path. 
+
+    Anything else you need to do is specific to your compiler and I leave the 
+    details up to you. 
+
+    Anything you want to tweak configuration-wise can be done by editing 
+    include/zthread/Config.h    

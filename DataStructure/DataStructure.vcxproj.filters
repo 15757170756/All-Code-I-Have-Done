@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\Sort">
+      <UniqueIdentifier>{6374d075-26d1-4aa8-b30b-ca1b7fe75275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Binary Tree">
+      <UniqueIdentifier>{81951b2b-7ae7-48b8-bbf5-2e6cab3e2dd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\LinkedList">
+      <UniqueIdentifier>{31a4b24d-7e60-474c-98c6-50ecc9ec7650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Stack">
+      <UniqueIdentifier>{78a2b0f3-a96c-4d7c-b1f3-69cf585fa063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Graph">
+      <UniqueIdentifier>{a97cf44f-3f9d-4f25-9c60-605f4ef14acb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DataStructure\三角形求和最大.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\bubbleSort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\heapSort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\heapSort.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\heapSortNonRecursion.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\insertSort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\mergeSort-non recursive.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\mergeSort-recursive.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\quickSort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\quickSort.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\quickSortNonRecursion.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\BSTree.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\RedBlackTree.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\selectSort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\shellSort.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\sort Algorithm Compare.c">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataStructure\BSTree.h">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\RedBlackTree.h">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

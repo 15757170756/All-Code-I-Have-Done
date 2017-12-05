@@ -1,0 +1,787 @@
+VERSION 2.3.2:
+
+  License changed to MIT
+	
+  Bug in non-vanilla AtomicCount implementations corrected. 
+	(Caused hanging	in some cases and general trouble with CountedPtr)
+
+  Added configuration option to prefer vanilla implementation where
+	possible.
+
+  Fix to Barrier (by Michael Doppler)
+
+	Fix to Thread joining implementation
+
+	Fix to BiasedReadWriteLock
+
+VERSION 2.3.1:
+
+  Bug with PoolExecutor/ConcurrentExecutor not automatically canceling
+  themselves properly.
+	
+VERSION 2.3.0:
+
+  I've been working on some updates after working with Bruce Eckle and
+  Chuck Allison; who've provided quite a bit of valuable feedback
+
+  <changes to be enumerted shortly>
+	
+
+VERSION 2.2.11:
+
+  Adjusted some of the include files that were missing #include's
+  that were left out (Barrier.h, ZThread.h, posix/FastMutex.h)
+
+  Fixed some of the Time class's math.
+
+  FairReadWriteLock should properly release waiters.
+
+  DeferredCancelationScope defers cancelation correctly now
+  as it should.
+
+  Started updating the autoconf files, detects asm/atomic.h
+  and bits/atomicity.h correctly now.
+	
+VERSION 2.2.10:
+
+  Rolled up most of the small changes that were available in CVS.
+  BlockingQueue was out of date; there was some deadlock potential
+  in the Monitor classes that was removed, the AtomicCount needed 
+  the dll export decoration, and a few other miscellaneous updates.
+	
+VERSION 2.2.9:
+
+  Updated ThreadQueue which mistakenly was not removing joined daemon
+  threads.
+
+  Updated Win32 SwitchToThread code.
+ 	 
+VERSION 2.2.8:
+
+  Added MacOS support. This has been tested with MacOS X only
+	
+  Updated BoundedQueue.h
+  Updated the vannila primatives
+
+	
+VERSION 2.2.7:
+
+  Apply user submitted patch to remove non-nothrow exception specifications. The
+  patch can be found (and reversed if desired) in the contrib/ directory
+	
+  included <assert.h> in Singleton
+
+  Enabled CVS
+
+  Updated read-write lock interface.
+    - Dropped RWLock, moved to ReadWriteLock
+    - Adjusted implementation of the two concrete subclasses.
+	
+VERSION 2.2.6:
+
+  Type in FastLock.h fixed.
+	
+VERSION 2.2.5:
+
+  Added an AtomicCount class that will use as lightwieght a locking mechanism
+  as possible. This class is used for limited reference counting and is typically
+  not under high contention.
+	
+VERSION 2.2.4:
+
+  Added mutex implementation for Win32 that will use a normal Mutex object;
+  this will perform better under high contention.
+
+  Added a smarter yield function for Win32 implementations; this will kick
+  in on NT (or better) and will operate a bit more intelligently than 
+  Sleep(0)
+
+  Fixed a typo in LockedQueue
+  
+  Made Thread::Reference public, most compilers did not complain - gcc 3.0+
+  didn't like it private. 
+
+  Renamed ZTHREAD_USE_NATIVE_LOCKS to ZTHREAD_USE_SPIN_LOCKS since that is
+  more descriptive of whats going on when that is defined.
+	
+VERSION 2.2.3:
+
+  Added a ThreadedExecutor.
+  Added a template to create Futures. Suggestions to improve the syntax welcome
+	
+  Fixed some of the compiling errors in the tests & examples I had not
+  updated since I made some changes to the library during this last week.
+
+  updated. If you have good examples, or test programs of your own please
+  send them to me. I'd like to add some decent examples for using ZThreads but
+  I don't have much free time right now.
+	
+VERSION 2.2.2:
+
+  Added Handle that removes ownership concerns for Runnable objects.
+  Thread changed to support it.
+	
+VERSION 2.2.1:
+
+  Added correct destructor to Queue.
+
+  Changes to the Thread class, this should help eliminate confusion 
+  about interruption. (See guide)
+
+  Killing removed, replace with Cancelable semantics that are based
+  on interruption. (See guide)
+	
+  Added a guide for using threads, runnables & interruption
+	
+  Finished CancelableTask
+
+  Added a guide for using Threads and Runnables to the Thread documentation
+
+  Documentation Updates:
+
+  - Thread
+  - CancelableTask
+
+  Removing Future, letting the other changes settle down for a little while,
+  while I take time to explore that a little more. 
+
+  Hopefully, the additional documentation is helpful.
+	
+VERSION 2.2.0:
+
+  *knock, knock, knock* Housekeeping! - Code cleanup, test cases and more 
+  documentation. The goal here is to make the basic parts of the library
+  independant from the rest, helping to make a more concrete code based to
+  build some new abstractions on. 
+  
+  Cleaning up the dependancies between the various sources, added
+  better detection for the implementation selection and simplified whats required
+  to build the library in general. This will make it easier to expand on the library
+  as a whole, and it will make it easier for others to use in different make utilites.
+	
+  Decoupled alot of the implementation specific code from the wrappers for the library.
+
+  Added several FastLock implementations and a VannilaRecursiveLock. People adding
+  support for (MacOS for example) should have an easy time creating a FastLock, each
+  lock uses a different strategy to serialize access, so they should server as a
+  nice template. 
+
+  Added test cases for the various primatives ZThreads uses. This helps debugging
+  and should help people creating primatives for new platforms.
+	
+  Adding support for new platforms should be _very_ easy. I will include a guide for 
+  how to do this. I've had many requests for MacOS support and for BeOS support, 
+  unfortuneatly I don't have a Mac & I don't have time to play with BeOS or Darwin.
+  I hope the guide will help some kind soul to contribute the few small classes that
+  are required to extend this library to support a few more platforms. OR if you 
+  would like to contribute an actual Mac and save yourself some work, that'll work
+  for me too - I promise I'll add support to a platform if you give me one :)
+	
+  Simplified exception classes, helps support error reporting from Futures
+  (new feature discussed below)
+	
+  Cleaned up autoconf scripts, I will probably still maintain VS6 project files
+  (eventaully VS7 when I get a computer that handle it, my 2K box is old) but I'm
+  trying to move mainly to autoconf.
+
+  * autoconf should be able to use vc to compile & link. I've had moderate success
+  (I can compile using msvc with autoconf & cygwin, but have trouble linking)
+  it would be nice to have autoconf handle that. I'm looking for help getting that 
+  fixed & for getting autoconf to build on cygwin with gcc as well. I don't have
+  enough free time to really invesitage that myself.
+	
+  Changed the semantics of the Condition to make its correct usage clearer.
+  Documentation will discuss the changes.
+
+  The library can also be configure through the zthread/Config.h file.
+
+  Remvoed the need for certain objects to be static
+	
+  -----------------------------------------------------------------------------------
+
+  New things,
+
+  * PriorityMutex, PriorityInheritanceMutex
+  * PrioritySemaphore
+  * PriorityCondition
+  * Barrier (revised)
+  * Time
+  * Futures 
+  * ThreadFactories
+  * CancelableTasks
+  * Enhanced Executor framework
+  * Enhanced ThreadLocals
+  * Waitables
+	
+  Exposed the Time class, which offers relative time values with millsecond
+  resolution. 
+	
+  Added destroyValue() to AbstractThreadLocal, called when a thread that
+  has set values on a ThreadLocal is about to exit.
+
+  Improved daemon thread handling. Daemon threads that have compelted can be removed
+  sooner. Daemon threads creating other daemon threads will not cause an error.
+
+  Added template methods to Condition that allow a wait on predicate.
+
+  Guard template greatly refined. Quite versitle, I hope to write a short article to
+  explain more fully. The syntax is the same, so code using the Guard from previous
+  versions should not be affected.
+
+  Synchronization policies deemed uncessarry and removed. It's much better to simply
+  parametize the locks, allowing the user specified lock to be the policy. Policies
+  are much more awkward than a parametized template for that purpose. This change only
+  affects 2 templates.
+
+  TypedLockables not really neccessary w/o syhcronization policies, replaced with the   
+  more useful ClassLock that can be used as a parametized type to create a class-wide
+  lock. LockableAdpater also removed.
+	
+  Scraped Observable and Timer classes. Moved the Observable class to the contrib/ 
+  directory. It was interesting, but it was not very flexible and surprizingly less
+  useful that it seemed. Introduction of the Time class should make it far more 
+  effective for people to create thier own Observable classes that will be more 
+  robust..
+	
+  Thread priorities now on by default, and there new PriorityXXX classes
+  that take advantage of priorities.
+
+  Dropped SharedInstance support in favor of the SmartPtr. The SmartPointer is 
+  really just an example of how something like that can be made with ZThreads.
+
+  Revised the Barrier class to act more like a Barrier should.
+
+  Futures introduced. Future act as a placeholder for a value that may not
+  be available yet.
+
+  NullMutex renamed NullLockable to reflect its purpose better.
+  SimpleQueue removed, a LockedQueue with a NullLockable is equivalent
+
+  Killed_Exception replaced Unexpected_Exception
+
+  Removed SmartPtr, reverted back just the IntrusivePtr and CountedPtr. Those 
+  are simple and are all the library requires. I don't want repeat the work that
+  has been done by groups, such as boost, to try and provide a set of smart pointers
+  that works across all compilers.
+
+  Executor greatly improved.
+	
+  -----------------------------------------------------------------------------------
+
+  Documentation Updates:
+
+  - Cancelable
+  - Waitable
+  - Lockable
+  - Time
+  - Queues
+  - FastMutex, Mutex, PriorityMutex, PriorityInheritanceMutex
+  - FastRecursiveMutex, RecursiveMutex
+  - Condition, PriorityCondition
+  - Semaphore, PrioritySemaphore
+  - ThreadLocal
+  - Barrier
+  - Executor
+
+  Added Design Overview
+  Added Porting Guide
+  Added Executor Pattern (pending)
+
+  Futures almost complete, still need to update the interruption hooks - I
+  made so many changes I wanted to put the new release out and get some 
+  feedback.
+	
+VERSION 2.1.6:
+
+  Maintence to the Mutex, Semaphore & Monitor classes. 
+	
+VERSION 2.1.5:
+
+  Eliminated race condition when starting daemon threads.
+
+  Removed dllexport/dllimport decorator from some policy classes to 
+  avoid unresolved symbol errors when exporting some classes from
+  dll on Win32
+
+  Adjusted order of constructors in StaticSingleton so the cleanup
+  function doesn't need to be registered with atexit.
+
+  Changed the IntrusivePtr so it works with the Synchronization policies
+  provided.
+
+  Added throw() to the destructors of example classes that required it.
+
+  void* _dispatch(void*) moved into namespace ZThread in POSIX_ThreadOps.cc
+
+  explicit typenames added to Observable where required
+	
+VERSION 2.1.4:
+
+  Refined the Guard template to allow policy to control its behavior keeping the 
+  interface compatible with the previous Guard implementation.
+  	
+  Removed const-ness of the notify method for Observable objects.
+
+  Applied new Guard and policies to Observable, restoring the serialization of the 
+  2 argument notify method (fixing the Timer)
+
+  Added policies to Singleton
+	
+VERSION 2.1.3:
+	
+  Minor update for win32 build. Just a few adjustments so it build correctly
+  under MSVC.
+
+VERSION 2.1.2:
+
+  Unused daemon threads no longer cause assertion failure.
+	
+  LOCK templates renamed to LockType to avoid collisions with
+  LOCK symbols defined in some linux headers.
+
+  Added a TypedLock
+  Added ClassLock policy for SmartPtr.
+  
+  Updated Timer.
+	
+VERSION 2.1.1:
+
+  Fixed a race condtion in the ConditionImpl.
+	
+VERSION 2.1.0:
+
+  Updated the autoconf configuration to allow windows or posix version to be
+  be selected. 
+
+  Documented all the build flags, see BUILDING
+	
+  Changes to the implementation to make things more general, robust and easier to
+  maintain. 
+
+  Exploring a more tightly synchronized implementation whose logic is
+  simpler than the loosely synchronized versions in 2.0.X.
+
+	
+VERSION 2.0.5:
+
+  There was an error in the way threads were being started, the parent thread was
+  waiting on the childs monitor, which shouldn't happen, and if the child's yeild()
+  didn't return control to the parent before the child continued, then deadlock could 
+  occur.
+
+  Updated tryAcquire()'s & join() with timeout, to help account for phantom signals
+  that could be sent in some circumstances.
+
+  Update the timed wait on ConditionImpl which was erroneously returning true.
+	
+  My next task is to reevaulate the monitor solution once again and see if there 
+  is a way to improve the monitor itself to reduce the complexity of the synchronization
+  objects. Probably, using more traditional monitors will be more helpful - the main
+  purpose of the new implementation was to join together the logic for the synch objects
+  so that future changes could be made more easily.
+	
+VERSION 2.0.4:
+
+  Added a random stress option that is used to assist in testing the library and
+  ensure the 3 basic synchronization objects are correct. It works by
+  inserting random sleeps wherever there is a lack of atomicity.
+
+  Fixed the errors made in the synchronization logic in the last release. 
+  Fixed a typo resulting from my notoriously bad spelling in Timer.
+	
+VERSION 2.0.3:
+
+  Updates to Timer.
+	
+  Updates to ConditionImpl.
+
+VERSION 2.0.2:
+
+  Updates to the some of the #defines for Windows platforms
+	
+  Updates to the synchronization objects implementation. 
+	
+  Updated executors docs somewhat, I didn't realize how unclear the documents were
+  I wrote them two years ago :)
+	
+  SynchExecutors will consume tasks now by default, unless you specify otherwise
+  using the template parameter. This makes all the Executors behave similarly.
+	
+VERSION 2.0.1:
+	
+
+  Settled on all the changes for the 2.0.X series, this will be the first 
+  stable 2.0.X release.
+
+  Removed CheckedMutex, Mutex now throws Deadlock_Exception in order to increase
+  usability. 
+
+  The newer monitor implementation for to control the threads & interruption allowed
+  me to merge alot more of the code together for the POSIX & WIN32 implementations; 
+  which makes this much easier to maintain. Gradually, I'll probably begin to do this 
+  will the thread & threadlocal implementations as well.
+
+  This newer implementation also deals with some of the subtle synchronization 
+  errors in the 1.0.X version.
+
+  After having learned Win95 does not support the InterlockedComparExchange() function
+  an alternate spin lock implementation was added for people who need support on that 
+  platform (FastMutex classes).
+	
+VERSION 2.0.0d:
+
+  Removed the overlapped locks in release(), eliminating that potential deadlock.
+	
+VERSION 2.0.0c:
+	
+  Timeouts of 0 are now correctly treated as 0 instead of infinite
+  waits.
+
+  Updates for Conditions.
+  Fixed all tryAcquire()'s
+	
+VERSION 2.0.0b:
+
+  Small fix in the Win32 kill(), notify() instead of interrupt(). 
+
+  Custom spin lock was added for the FastMutex & RecursiveFastMutex 
+  Win32 implementations - apparently, TryEnterCriticalSection() does
+  not work at all on some windows platforms.
+
+  Misc project adjustments, (defines etc).
+	
+VERSION 2.0.0a:
+
+  POSIX & WIN32 implementations now function quite similarly and will simpler to maintain.
+
+  Revised the primatives for both Win32 & POSIX implementations, check the 
+  docs for changes in Mutexes, Conditions & Semaphores. These updates
+  address subtle synchronization problems in the original implementation
+  as well as usability in general.
+	
+  Timer values relative to time library loaded, to avoid overflows.
+
+  Reimplemented Threads
+	
+   join() is interruptable & has optional timeout - see docs	
+   kill() is more reliable - see docs
+   misc updates that address previous implementations subtle errors
+	
+  Fixed BlockingQueue cancel() method.
+  Fixed ThreadManager sending interrupt() to threads no longer running when
+  wantNotify() was true.
+	
+  Reimplemented ThreadLocals
+
+  More detailed documentation.
+	
+VERSION 1.5.4:
+
+  Fixed a bug in Win32_MutexImpl.cxx, and Win32_RecursiveMutexImpl.cxx. The waiter lists
+  were erroneously decremented in some cases, which caused some mutexes to never
+  unlock.
+	
+  Fixed the subtle race condition in the POSIX_FastRecursiveMutex implementation.
+  The power went out for 48 hrs so I was un-busy enough and came up with something
+  I think will fix it.
+
+  Updated a documentation error.
+
+  Updated Timer.cxx so that Timer::now() returns more accurate millisecond timing.
+
+  Updated Win32_ThreadManager to be more stlport friendly. 
+
+	
+VERSION 1.5.3:
+
+  Fixed a bug in WIN32_ThreadImpl.cxx that caused Thread::sleep() to
+  throw Synchronization_Exception instead of Interrupted_Exception.
+
+  Fixed a bug in MonitoredQueue that threq NoSuchElement_Exception 
+  rather than Timeout_Exception.
+
+  Fixed POSIX_ThreadImpl.cxx, ThreadImpl::wait(...) The timing for the POSIX
+  implementation should be better now. It now spends far less time playing with
+  time values so it is more acurate.
+	
+VERSION 1.5.2:
+
+  Updated executor templates to allow for a little more flexibilty. You can now just plugin
+  a new queue or lock implementation rather than having to subclass the AbstractExecutor and
+  reimplementing an Exector when all you really neede to change was the queue.
+	
+  Updated templates to help compilers that were having trouble generating default 
+  values for static members.
+
+  Updated time-math in the thread implementation - nanoseconds are measured in billionths
+  now as they should be instead of in millionths.
+
+  Added EXTRA_CXXFLAGS and EXTRA_LDFLAGS to the build files so that users can customize
+  the build. For example, make "EXTRA_CXXFLAGS=-my-compilers-flags", etc.
+
+  Removed unneccessary 'using namespace std' statements. More friendly for people using 
+  various STL implementations which have std::fatal & std::abort defined. That overlap
+  caused ambiguity errors when the using statements were present.
+	
+VERSION 1.5.1:
+
+  Updates to misc. throw() specification errors that some compilers caught
+  Small update to Win32 project files
+	
+VERSION 1.5.0:
+
+  Simplified templates (Executors, etc) avoids multiple definition error when linking
+  Timer error fixed  
+  Misc bugs (minor) in Win32 implementation repaired.
+  Moved old Mutex to PlainMutex, replace with a Mutex that can be interrupted
+  which is more useful in general. For most cases the FastMutexes can be used in
+  thier place when the user desires no interruption
+
+  Added a couple contributed header for disabling warning with VC, you
+  can use them to disable warnings in general for visual c's 
+  handling of stl symbols. (optional - vc specific)
+	
+	
+VERSION 1.4.4:
+
+  Fixed bad throw clauses in the examples that gcc 3.0 choked on.
+  Updated templates to include a default template with a specialzation for
+  daemon threads, resolves alot of problems with compilers generating the 
+  code for those tempalte multiple times.
+	
+VERSION 1.4.4:
+
+  Fixed bad throw clauses in the examples that gcc 3.0 choked on.
+  Fixed typo with #ifndef/#define in Win32_FastRecursiveMutex.h
+  Corrected documentation for AutoPtr 
+  Improved the GNU autoconf/automake builds (again). 
+  - Added '--enable-examples' option to configuration
+  - Updated configuration files to with libtool 1.4, the older ltconfig
+    cause some problems with some systems.
+  - Fixed the 'distcheck' rule. 
+	
+VERSION 1.4.3:	
+
+  Moved the headers to a more standandard directory, everyone asked me
+  for it.
+	
+  Fixed a timeout oversight the ThreadImpl.
+  - Blocking with a timeout was not responding correctly.
+  - Added one more thread state, JOINING. Prevents multiple joins,
+    while allowing the rest of the logic to function correctly.
+	
+  Improved the GNU autoconf/automake builds. 
+  - Added 'make rpm'
+  - Added 'make docs'
+  - Fixed 'make dist'; previously, I had intended ppl only to use 
+    'make' & and 'make install'
+  - You learn more about autoconf every time you have to update this
+    stuff. Good tool, big learning curve :)
+	
+VERSION 1.4.2:
+	
+  Fixed a typo in the AutoPtr class template
+	
+VERSION 1.4.1:
+
+  Added a pthread.m4 macro, Updaed other misc build files
+  Fixed some errors with the throw clauses on Worker & InheritableThreadLocal
+  Fixed the Timer class which has been overlooked since the improvements
+  to managing static object were made
+	
+VERSION 1.4.0:
+
+  Make more distinct the change in kill() and other behavoir in the  
+  last few version.
+	
+VERSION 1.3.5:
+
+  Enchanced the ThreadLocal variables.
+  Updated & simplified FastMutexs. 
+   
+VERSION 1.3.4:
+
+	Revised the implementation classes a bit.
+	Revised the Worker class so it can be canceled/killed
+	without having effects on executing tasks.
+	Added new/better support for killing threads
+	Added more comments to the implementation classes
+	
+VERSION 1.3.3:
+
+	Non-realtime thread priorties, prelimary support
+	
+VERSION 1.3.2:
+
+	Updated subtle bug with threads starting up on some posix
+	systems.
+	
+	Updated errors in the Win32 semaphore classes.
+	Updated redudancy is in the POSIX semaphore classes.
+
+	Converted Barrier & Latch to more appropriate template 
+	classes
+	
+VERSION 1.3.1:
+
+	Updated errors in Win32 build files
+	Updated the Observable template to be friendly with more compilers
+	
+VERSION 1.3.0:
+	
+	Updated compilation bug in Win32 dynamic build. That build will
+	compiler correctly again and the dll version will have the same
+	behavior as all other builds, making things more predictable.
+
+	Updated executor classes to make room for reusable task objects
+	and a little more flexibility
+
+	
+VERSION 1.2.4:
+
+	Fixed an oversight in the documentation configuration file and
+	the Timer.cxx, I released 1.2.3 just a little too hastily :)
+	
+VERSION 1.2.3:
+
+	Updated WIN32 & POSIX Thread management
+	Bug fix in WIN32 thread wait() routines
+	Added daemon thread support for static objects
+	
+VERSION 1.2.2:
+
+	Factory template added
+	Added support for handling static destruction problems
+
+VERSION 1.2.1:
+
+ 	Fixed subtle bug in POSIX_ConditionImpl
+ 	Upated all classes  - misc changes
+
+VERSION 1.2.0:
+
+	Updated much of the implementation classes for the synchronization
+	objects. Much faster, and reduced contention.
+
+	Updated the Cancelation interface
+	Updated all classes using the Cancalation interface
+	
+VERSION 1.1.3:
+
+	Spell checked the documents (tedius)
+
+	Bug fix in Barrier.cxx
+	Bug fix in WIN32_FastRecursiveMutex.cxx
+	Bug fix in WIN32_ConditionImpl.cxx
+	
+	Cleaned up the System & ThreadImpl interactions
+	Cleaned up POSIX & WIN32 ThreadImpl classes
+
+	Updated Documentation (noticable change)
+	Updated ThreadLocal classes
+	Updated ThreadImpl classes
+
+	Miscellaneuos updates to make some class definitions for
+	formal (addition of needed throw() clauses, etc)
+
+	Had some testing on Tru64 unix that was posative
+	
+VERSION 1.1.2:
+	
+	Bug fixes in the Thread class. I had overlooked that reference Thread
+ 	objects (eg from Thread::current()) were deleting the thread implementations
+	mistakenly
+
+	Added a very usful Observable template
+	Added timer classes
+
+	There might be several other bug fixes I forgot to document completely, most
+	of this work was done because I was using Zthreads in creating another application
+	so I just fixed and enhanced the library as was appropriate
+
+	Also, there are now static & shared library builds for all supported platforms
+
+VERSION 1.1.1:
+
+	StaticSingletion template was added
+
+	This is another build update, the library will now install
+ 	so it is much easier to use way.
+
+	Versioned shared libraries were also added using libtool. You
+        can link against the shared library, or your can link against
+        the .la file in build directory
+
+	A 'zthread-config' script was also added to help other write 
+	configure scripts that look for various versions of the library
+
+ 
+        Some very useful information for the autoconf tools that helped
+        can be found at the following URL
+      
+        http://www.murrayc.com/learning/linux/building_libraries/building_libraries.shtml#RecommendedReading
+
+VERSION 1.1.0-2:
+	
+	This release basically include some packaging fixes. 
+	The autoconf scripts generate Makefiles now that link with
+	-pthread instead of -lpthread on FreeBSD
+
+VERSION 1.1.0-1:
+
+	Someone used BoundsChecker and caught a small memory leak
+	that was fixed. There was an '==' where a '!=' was needed.
+	I wish I could include thier name, but when my university
+	email account was closed it ate all my old email so I ended up
+	losing that corespondance
+
+VERSION 1.1.0:
+
+	This release has many changes.
+
+	For one, I have tightened up the exception classes. This makes
+	the exceptions easier to handle, the code in general, easer to
+	read. The exceptions can carry useful information now where as
+	before they were just objects of different types being thrown
+
+	Some exceptions have been removed because they were reduntant
+
+	Thread priorites have been remove because I don't feel there is
+	a good reason to have them. Thread priorities act differently 
+	across all machines, and my goal in creating this library was
+	to build a usable archtechure for controlled predicatable 
+	multithreading. Thread priorites don't fit in.
+
+	Runnable objects return void now. There is no need to a runnable
+	object to return a value. I felt this was an uneeded complexity.
+	Enough has been provided in this library to have the results of	
+	task run by other threads commincated in a number of better ways
+	than a return value.
+
+	A ThreadLocal object was added to provided access to local thread
+	storage. This is very much like Java' ThreadLocal object.
+
+	All of the basic synchronization objects have been improved. Several
+	new ones have been added whose purposes are straitforward.
+
+	The implementation of the this package was revised and refactored.
+	There is no longer a need for a SyncFactory, and a whole layer of 
+	virtual function calls was also removed. This increased the speed
+	and elegance of the code. The ThreadImpl classes were also better
+	encapsulated.
+
+	The Thread class is now extendable and you can use pretty much just
+	a like a Java Thread.
+
+	The queue classes have all been updated. I think there may even
+	be one more than before. 
+
+	I have refined these queue classes as the executor pattern I was
+	using improved. I added a 'Cancelable' interface to these objects
+	hopefully I will have the time to write a small paper on the pattern
+	to fully explain it. Most of the executor pattern I improved in 
+	java and I just recently updated zthreads to reflect this. I may
+	relese a java supplement to the library shortly. I find that java 
+	is very useful when expirementing with different types of patterns.
+	
+	

@@ -48,8 +48,8 @@
   include <new>  
   define __THROW_BAD_ALLOC throw bad_alloc  
 #elif !defined(__THROW_BAD_ALLOC)  
-  include <iostream.h>  
-  define __THROW_BAD_ALLOC cerr << "out of memory" << endl; exit(1)  
+#include <iostream>  
+#define __THROW_BAD_ALLOC cerr << "out of memory" << endl; exit(1)  
 #endif  
   
 #ifndef __ALLOC  
@@ -74,8 +74,8 @@
 // __STL_WIN32THREADS   // MSVC编译器  
 #if !defined(__STL_PTHREADS) && !defined(_NOTHREADS) \  
  && !defined(__STL_SGI_THREADS) && !defined(__STL_WIN32THREADS)  
-  define _NOTHREADS  
-##endif  
+#define _NOTHREADS  
+#endif  
   
 #ifdef __STL_PTHREADS  
     // POSIX Threads  

@@ -1,0 +1,12 @@
+﻿生成启动时间为 2017/9/9 21:40:43。
+     1>项目“D:\licf\Study\VS Project\All Code I Have Done\C Programming Book\C Programming Book.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>ClCompile:
+         D:\licf\Program Files(x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt isPrime.c
+         isPrime.c
+     1>d:\licf\study\vs project\all code i have done\c programming book\isprime.c(13): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+     1>d:\licf\study\vs project\all code i have done\c programming book\isprime.c(20): warning C4715: “isPrimNum”: 不是所有的控件路径都返回值
+     1>已完成生成项目“D:\licf\Study\VS Project\All Code I Have Done\C Programming Book\C Programming Book.vcxproj”(ClCompile 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.21

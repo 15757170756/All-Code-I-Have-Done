@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\C++11">
+      <UniqueIdentifier>{31823ef9-4291-4dc8-ac27-28bb8a999ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\C++ STL">
+      <UniqueIdentifier>{1c26ef6c-ae4c-473c-8010-b644ee80cf7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\C++ 内存管理">
+      <UniqueIdentifier>{5b001974-5b58-435e-8a4c-d84b279001dd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="type_traits.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_vector.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_uninitialized.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_tree.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_stack.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_slist.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_set.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_relops.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_queue.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_pair.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_multiset.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_multimap.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_map.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_list.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_iterator.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_heap.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_hashtable.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_hash_set.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_hash_map.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_deque.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_construct.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_config.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_alloc.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl_algo.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="stl.algobase.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+    <ClInclude Include="defalloc.h">
+      <Filter>源文件\C++ STL</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sample.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="move-aware.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="template6-tuple.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="template7-tup.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="test1.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="template4.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="template3.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="template2.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="lambda.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="alias.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="initializer_list.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="tuple.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="print.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="hashTable.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="stl_vector.cpp">
+      <Filter>源文件\C++ STL</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cpp">
+      <Filter>源文件\C++ STL</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

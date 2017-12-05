@@ -1,0 +1,14 @@
+﻿生成启动时间为 2017/10/15 15:58:28。
+     1>项目“D:\licf\Study\VS Project\All Code I Have Done\DataStructure\DataStructure\DataStructure.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\licf\Program Files(x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt bubbleSort.c
+         bubbleSort.c
+     1>d:\licf\study\vs project\all code i have done\datastructure\datastructure\bubblesort.c(78): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>d:\licf\study\vs project\all code i have done\datastructure\datastructure\bubblesort.c(78): error C2143: 语法错误 : 缺少“;”(在“}”的前面)
+     1>d:\licf\study\vs project\all code i have done\datastructure\datastructure\bubblesort.c(78): error C2143: 语法错误 : 缺少“;”(在“,”的前面)
+     1>d:\licf\study\vs project\all code i have done\datastructure\datastructure\bubblesort.c(92): fatal error C1004: 发现意外的文件尾
+     1>已完成生成项目“D:\licf\Study\VS Project\All Code I Have Done\DataStructure\DataStructure\DataStructure.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.29

@@ -1,0 +1,136 @@
+03-13-2005:
+
+     Add upgrade/downgrade to ReadWriteLock implementations
+
+07-15-2003:
+
+     Made lots of changes, consider ThreadLocals
+
+07-01-2002:
+ 
+     Expand Handle & CountedPtr to be assignable
+     Removed io interruption from the monitor; going with the you don't pay for 
+     what you don't use philosiphy & will demonstrate how the same behavior can
+     be achieved by extendind Thread & using ThreadFactories
+
+
+06-19-2002:
+
+     Update the Thread::current() method to return a more useful type. Want to
+     simplify keeping a reference to threads outside the scope of the function
+     requesting one.
+
+06-01-2002:
+
+     The only thing that I' planning on finding a better solution for is 
+     that passing of Runnable objects. I have some strict rules about ownership,
+     right now - but even that seems a little too awkward. I'd like to make
+     this automatic, perhaps using a kind of reference counting. I just haven't
+     had time to fully evalute things yet.
+
+05-27-2002:
+
+     Possibly revise ThreadOps to act as an identifier for a native 
+     thread.
+
+05-26-2002:
+    
+     Cleanup dependancies
+
+05-14-2002:
+     
+     Consider making Singleton return references instead of pointers.     
+
+05-13-2002:
+
+     Re-evaluate the policy templates. Update to make more usable,
+     remove the template method work around if possible.
+
+     Consider making ThreadLocals clear()able - removing all mapped 
+     values to simplify the task of those using the PoolExecutor.
+     (keeping stale values from interfering with tasks)
+
+     Consider adding Futures as described by Doug Lea.
+
+     Possibly make the Observable class have some paramatized type that
+     controls weather the listeners should be copied and notified, or 
+     if the lock should just be held throughout notification - weather 
+     this is helpful or not depends on how long the listeners usually take. 
+
+     Executors could be a good candiate for policies.
+
+04-26-2002:
+ 
+     Explore some of the updates to Doug Lea's concurrent 
+     package.
+
+     Find someone familar with mingw32/cygwin to help adjust
+     whatever details are needed to compile correctly there,
+     I've gotten the autoconf scripts setup but there are a 
+     few things that still need to be worked out.
+
+04-24-2002:
+
+     - Possible Timer enhancements
+     - Add a small allocator for tiny obejcts, like TimerEvents
+     - Make Timer use const TimerEvent pointers instead of id's.
+     - Replace the used key set added to the timer with a user
+       supplied id generator.
+
+02-20-2002:
+
+       Possibly add a cleanup thread that joins daemon threads sooner.
+       
+02-07-2002:
+		
+       Add a test suite, should have done this a long time ago - 
+       but have been busy :) At least for some common problem
+       situations.
+
+*DONE* 
+
+     Consider using an InstanceLock for the IntrusivePtr extended by Thread
+     to aliviate contention.
+
+*DONE* 
+
+       I need to start using a real make for windows that will work
+       with ms compilers. DevStudio is next to useless.
+
+*DONE* 
+
+       Had to make the Event used to block threads have a non-recursvie lock
+       due to that type of lock not being 100% reliable on some POSIX system.
+       Should update the WIN32 implementation to also no rely on the recsiveness
+       of the CRITICAL_SECTION it uses to ease maintenece.
+
+
+*DONE* 
+
+       Find some better Win32 build method for Visual Studio. 
+       - Suggestions very welcome for this
+    
+       Check cygwin & mingw32 builds
+
+*DONE* 
+
+       Fix the 'distcheck' rule
+       Update 'dist' rule to remove junk from visual studio builds.
+  
+*DONE* 12-31-2000:
+
+	Go outside sometime :)
+
+*DONE* 
+	perhaps create some VC templates and autoconf tempalates for new
+	projects using this package
+ 		
+
+*DONE* 6-20-2000:
+	
+	Project configuration:
+		
+	create a include/ directory off project root and move all the 
+	headers that clients should use there - keep the system dependant
+	headers & all sources in the src/ directory
+ 		
