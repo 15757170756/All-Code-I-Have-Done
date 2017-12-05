@@ -57,6 +57,18 @@
     <ClCompile Include="面试题06-重建二叉树-根据后序遍历和中序遍历.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题09-斐波那契数列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题10-Excel字母编码输出第几列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题10-二进制中1的个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题11-数值的整数次方.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">

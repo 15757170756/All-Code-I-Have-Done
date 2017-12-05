@@ -84,6 +84,10 @@
     <ClCompile Include="面试题07-两个队列实现栈.cpp" />
     <ClCompile Include="面试题08-旋转数组的最小数字.cpp" />
     <ClCompile Include="面试题08-时间效率为On的员工年龄排序.cpp" />
+    <ClCompile Include="面试题09-斐波那契数列.cpp" />
+    <ClCompile Include="面试题10-二进制中1的个数.cpp" />
+    <ClCompile Include="面试题10-Excel字母编码输出第几列.cpp" />
+    <ClCompile Include="面试题11-数值的整数次方.cpp" />
     <ClCompile Include="面试题30-最小的k个数.cpp" />
     <ClCompile Include="面试题31-连续子数组的最大和.cpp" />
     <ClCompile Include="面试题36-数组中的逆序对.cpp" />

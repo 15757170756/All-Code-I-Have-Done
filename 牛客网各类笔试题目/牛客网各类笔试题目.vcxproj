@@ -76,6 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="编码求对应的index.cpp" />
     <ClCompile Include="连续子数组的最大和.cpp" />
     <ClCompile Include="递归函数调用理解题目.cpp" />
     <ClCompile Include="餐馆.cpp" />

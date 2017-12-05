@@ -22,6 +22,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\滴滴2016.09.06校招 在线笔试">
       <UniqueIdentifier>{cdc7c3e8-4ec3-4aea-a508-92389261507c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷二">
+      <UniqueIdentifier>{f9c3fcd4-16dd-46c6-9b4c-a938345cd823}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -32,6 +35,9 @@
     </ClCompile>
     <ClCompile Include="餐馆.cpp">
       <Filter>源文件\各大公司在线笔试题目\滴滴2016.09.06校招 在线笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="编码求对应的index.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷二</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
