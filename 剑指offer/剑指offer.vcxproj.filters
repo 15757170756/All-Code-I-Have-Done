@@ -69,6 +69,15 @@
     <ClCompile Include="面试题11-数值的整数次方.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题12-打印1到最大的n位数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题13-在O(1)时间删除链表结点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题14-调整数组顺序使奇数位于偶数前面.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">

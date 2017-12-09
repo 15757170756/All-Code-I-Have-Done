@@ -88,6 +88,9 @@
     <ClCompile Include="面试题10-二进制中1的个数.cpp" />
     <ClCompile Include="面试题10-Excel字母编码输出第几列.cpp" />
     <ClCompile Include="面试题11-数值的整数次方.cpp" />
+    <ClCompile Include="面试题12-打印1到最大的n位数.cpp" />
+    <ClCompile Include="面试题13-在O(1)时间删除链表结点.cpp" />
+    <ClCompile Include="面试题14-调整数组顺序使奇数位于偶数前面.cpp" />
     <ClCompile Include="面试题30-最小的k个数.cpp" />
     <ClCompile Include="面试题31-连续子数组的最大和.cpp" />
     <ClCompile Include="面试题36-数组中的逆序对.cpp" />

@@ -28,6 +28,9 @@
     <Filter Include="源文件\Graph">
       <UniqueIdentifier>{a97cf44f-3f9d-4f25-9c60-605f4ef14acb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\queue">
+      <UniqueIdentifier>{96e9bbf2-5a67-4e55-89c5-e7b7d30b9145}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataStructure\三角形求和最大.cpp">
@@ -77,6 +80,18 @@
     </ClCompile>
     <ClCompile Include="DataStructure\sort Algorithm Compare.c">
       <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="单向链表的各类操作.cpp">
+      <Filter>源文件\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="单项循环链表.cpp">
+      <Filter>源文件\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="双向链表.cpp">
+      <Filter>源文件\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="双向循环链表.cpp">
+      <Filter>源文件\LinkedList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

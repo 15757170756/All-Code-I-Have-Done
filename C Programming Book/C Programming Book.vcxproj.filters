@@ -111,5 +111,8 @@
     <ClCompile Include="数组与指针的区别.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="递归实现全排列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
