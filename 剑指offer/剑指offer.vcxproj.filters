@@ -78,6 +78,15 @@
     <ClCompile Include="面试题14-调整数组顺序使奇数位于偶数前面.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题15-链表中倒数第k个结点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题16-反转链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题17-合并两个排序的链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">
