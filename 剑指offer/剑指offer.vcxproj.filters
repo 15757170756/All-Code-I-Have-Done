@@ -87,6 +87,9 @@
     <ClCompile Include="面试题17-合并两个排序的链表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题18-树的子结构.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">

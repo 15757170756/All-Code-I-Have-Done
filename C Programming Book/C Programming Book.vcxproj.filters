@@ -114,5 +114,8 @@
     <ClCompile Include="递归实现全排列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="static和const关键字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

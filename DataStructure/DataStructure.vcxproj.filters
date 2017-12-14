@@ -31,6 +31,15 @@
     <Filter Include="源文件\queue">
       <UniqueIdentifier>{96e9bbf2-5a67-4e55-89c5-e7b7d30b9145}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Binary Tree\红黑树">
+      <UniqueIdentifier>{99d96709-96da-4292-9596-bbba3bbae88a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Binary Tree\二叉排序树">
+      <UniqueIdentifier>{f675b6c1-5c1a-4841-a380-00fb446e45b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Binary Tree\树的各种遍历-递归非递归">
+      <UniqueIdentifier>{98287296-e428-4148-9feb-b76df19fdba2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataStructure\三角形求和最大.cpp">
@@ -66,12 +75,6 @@
     <ClCompile Include="DataStructure\quickSortNonRecursion.cpp">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
-    <ClCompile Include="DataStructure\BSTree.cpp">
-      <Filter>源文件\Binary Tree</Filter>
-    </ClCompile>
-    <ClCompile Include="DataStructure\RedBlackTree.cpp">
-      <Filter>源文件\Binary Tree</Filter>
-    </ClCompile>
     <ClCompile Include="DataStructure\selectSort.c">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
@@ -93,13 +96,19 @@
     <ClCompile Include="双向循环链表.cpp">
       <Filter>源文件\LinkedList</Filter>
     </ClCompile>
+    <ClCompile Include="DataStructure\RedBlackTree.cpp">
+      <Filter>源文件\Binary Tree\红黑树</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\BSTree.cpp">
+      <Filter>源文件\Binary Tree\二叉排序树</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DataStructure\BSTree.h">
-      <Filter>源文件\Binary Tree</Filter>
-    </ClInclude>
     <ClInclude Include="DataStructure\RedBlackTree.h">
-      <Filter>源文件\Binary Tree</Filter>
+      <Filter>源文件\Binary Tree\红黑树</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\BSTree.h">
+      <Filter>源文件\Binary Tree\二叉排序树</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

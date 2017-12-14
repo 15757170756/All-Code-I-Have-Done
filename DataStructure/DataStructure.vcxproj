@@ -94,6 +94,7 @@
     <ClCompile Include="DataStructure\shellSort.c" />
     <ClCompile Include="DataStructure\sort Algorithm Compare.c" />
     <ClCompile Include="DataStructure\三角形求和最大.cpp" />
+    <ClCompile Include="KD树.cpp" />
     <ClCompile Include="单向链表的各类操作.cpp" />
     <ClCompile Include="单项循环链表.cpp" />
     <ClCompile Include="双向循环链表.cpp" />

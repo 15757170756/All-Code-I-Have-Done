@@ -26,6 +26,7 @@
     <ClCompile Include="isPrime.c" />
     <ClCompile Include="Josephus Problem.c" />
     <ClCompile Include="sizeof.cpp" />
+    <ClCompile Include="static和const关键字.cpp" />
     <ClCompile Include="StringSplit.cpp" />
     <ClCompile Include="students LinkedList info.c" />
     <ClCompile Include="Magic Matric.c" />
