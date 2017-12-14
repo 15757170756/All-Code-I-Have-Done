@@ -20,7 +20,8 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -298,8 +299,10 @@
     <ClCompile Include="move-aware.cpp" />
     <ClCompile Include="newdelete expression.cpp" />
     <ClCompile Include="Per-class allocator 1.cpp" />
+    <ClCompile Include="Per-class allocator 2.cpp" />
     <ClCompile Include="print.cpp" />
     <ClCompile Include="sample.cpp" />
+    <ClCompile Include="static allocator.cpp" />
     <ClCompile Include="stl_vector.cpp" />
     <ClCompile Include="template2.cpp" />
     <ClCompile Include="template3.cpp" />

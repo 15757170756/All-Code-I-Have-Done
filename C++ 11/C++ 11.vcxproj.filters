@@ -725,6 +725,12 @@
     <ClCompile Include="Per-class allocator 1.cpp">
       <Filter>源文件\C++ 内存管理</Filter>
     </ClCompile>
+    <ClCompile Include="Per-class allocator 2.cpp">
+      <Filter>源文件\C++ 内存管理</Filter>
+    </ClCompile>
+    <ClCompile Include="static allocator.cpp">
+      <Filter>源文件\C++ 内存管理</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GUN 4.8\algorithm">

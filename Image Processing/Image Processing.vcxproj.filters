@@ -144,6 +144,9 @@
     <ClCompile Include="canny2.cpp">
       <Filter>源文件\Canny</Filter>
     </ClCompile>
+    <ClCompile Include="各种滤波算法-中值滤波 均值滤波 高斯滤波等.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraCalibrator.h">
