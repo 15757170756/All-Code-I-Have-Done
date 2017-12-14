@@ -34,6 +34,8 @@ Node* newNode(int arr[])
 // The parameter depth is used to decide axis of comparison
 Node* insertRec(Node* root, int point[], unsigned int depth)
 {
+
+#if 0
 	if (root == nullptr)
 		return newNode(point);
 
@@ -48,6 +50,35 @@ Node* insertRec(Node* root, int point[], unsigned int depth)
 		root->rightChild = insertRec(root->rightChild, point, depth + 1);
 
 	return root;
+#endif
+
+
+#if 1
+	//非递归插入元素
+	if (root == nullptr)
+		return newNode(point);
+
+	Node* temp = newNode(point);
+	unsigned int cd;
+	Node* currentNode = root;
+	Node* preNode = nullptr;
+	while (currentNode) {
+		cd = depth % k;
+		preNode = currentNode;
+		if (point[cd] < (currentNode->point[cd]))
+			currentNode = currentNode->leftChild;
+		else
+			currentNode = currentNode->rightChild;
+		++depth;
+	}
+	cd = (--depth) % k;
+	if (point[cd] < (preNode->point[cd]))
+		preNode->leftChild = temp;
+	else
+		preNode->rightChild = temp;
+
+	return root;
+#endif
 }
 
 // Function to insert a new point with given point in
@@ -73,6 +104,8 @@ bool isPointSame(int point1[], int point2[])
 // The parameter depth is used to determine current axis.
 bool searchRec(Node* root, int point[], unsigned int depth)
 {
+
+#if 0
 	if (root == nullptr)
 		return false;
 	if (isPointSame(root->point, point))
@@ -85,6 +118,32 @@ bool searchRec(Node* root, int point[], unsigned int depth)
 		return searchRec(root->leftChild, point, depth + 1);
 
 	return searchRec(root->rightChild, point, depth + 1);
+#endif
+
+
+#if 1
+	//非递归搜索
+	if (root == nullptr)
+		return false;
+
+	unsigned int cd;
+	Node* currentNode = root;
+
+	while (currentNode) {
+		cd = depth % k;
+		if (isPointSame(currentNode->point, point))
+			return true;
+
+		else if (point[cd] < (currentNode->point[cd]))
+			currentNode = currentNode->leftChild;
+		else
+			currentNode = currentNode->rightChild;
+		++depth;
+	}
+
+	if (currentNode == nullptr)
+		return false;
+#endif
 }
 
 // Searches a Point in the K D tree. It mainly uses
@@ -407,9 +466,44 @@ void inorderIterative(Node* root)
 中序遍历KD树
 迭代法，非递归,非栈
 */
+/* Function to traverse binary tree without recursion and
+without stack */
 void inorderIterativeNonStack(Node* root)
 {
+	Node* currentNode, *preNode;
+	if (!root)
+		return;
 
+	currentNode = root;
+	while (currentNode != nullptr) {
+		if (currentNode->leftChild == nullptr) {
+			cout << "(" << currentNode->point[0] << "," <<
+				currentNode->point[1] << ")" << ' ';
+			currentNode = currentNode->rightChild;
+		}
+		else {
+			/* Find the inorder predecessor of current */
+			preNode = currentNode->leftChild;
+			while (preNode->rightChild != nullptr &&
+				preNode->rightChild != currentNode)
+				preNode = preNode->rightChild;
+
+			/* Make current as right child of its inorder predecessor */
+			if (preNode->rightChild == nullptr) {
+				preNode->rightChild = currentNode;
+				currentNode = currentNode->leftChild;
+			}
+
+			/* Revert the changes made in if part to restore the original
+			tree i.e., fix the right child of predecssor */
+			else {
+				preNode->rightChild = nullptr;
+				cout << "(" << currentNode->point[0] << "," <<
+					currentNode->point[1] << ")" << ' ';
+				currentNode = currentNode->rightChild;
+			}
+		}
+	}
 }
 
 /*
@@ -481,6 +575,36 @@ void postorderIterativeTwoStacks(Node* root)
 
 }
 
+
+/*
+非递归层次遍历
+使用队列
+*/
+void levelTraverse(Node* root)
+{
+	if (!root)
+		return;
+
+	queue<Node*> queueNode;
+	Node* currentNode = root;
+
+	queueNode.push(currentNode);
+
+	//和先序遍历有些类似
+	while (!queueNode.empty()) {
+		currentNode = queueNode.front();
+		cout << "(" << currentNode->point[0] << ","
+			<< currentNode->point[1] << ")" << ' ';
+		queueNode.pop();
+
+		if (currentNode->leftChild)
+			queueNode.push(currentNode->leftChild);
+		if (currentNode->rightChild)
+			queueNode.push(currentNode->rightChild);
+	}
+
+}
+
 int main()
 {
 	auto startTime = system_clock::now();
@@ -506,6 +630,9 @@ int main()
 	cout << endl;
 	cout << "inorderIterative:\n";
 	inorderIterative(root);
+	cout << endl;
+	cout << "inorderIterativeNonStack:\n";
+	inorderIterativeNonStack(root);
 	cout << endl << endl;
 
 	cout << "postorder:\n";
@@ -518,9 +645,19 @@ int main()
 	postorderIterativeTwoStacks(root);
 	cout << endl << endl;
 
+	cout << "levelTraverse:\n";
+	levelTraverse(root);
+	cout << endl << endl;
+
+	int point0[] = { 3, 7 };
+	cout << "search (3, 7) ";
+	(search(root, point0)) ? cout << "Found\n" : cout << "Not Found\n";
+
 	int point1[] = { 10, 19 };
+	cout << "search (10, 19) ";
 	(search(root, point1)) ? cout << "Found\n" : cout << "Not Found\n";
 
+	cout << "search (12, 19) ";
 	int point2[] = { 12, 19 };
 	(search(root, point2)) ? cout << "Found\n" : cout << "Not Found\n";
 
@@ -547,11 +684,4 @@ int main()
 		<< double(durationTime.count()) * microseconds::period::num / microseconds::period::den
 		<< "秒" << endl;
 	return 0;
-
 }
-
-
-
-
-
-
