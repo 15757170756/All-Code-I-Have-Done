@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <cstdio>
 #include <cstdlib>
@@ -54,7 +54,7 @@ Node* insertRec(Node* root, int point[], unsigned int depth)
 
 
 #if 1
-	//·Çµİ¹é²åÈëÔªËØ
+	//éé€’å½’æ’å…¥å…ƒç´ 
 	if (root == nullptr)
 		return newNode(point);
 
@@ -122,7 +122,7 @@ bool searchRec(Node* root, int point[], unsigned int depth)
 
 
 #if 1
-	//·Çµİ¹éËÑË÷
+	//éé€’å½’æœç´¢
 	if (root == nullptr)
 		return false;
 
@@ -172,7 +172,7 @@ To find minimum we traverse nodes starting from root.
 If dimension of current level is same as given dimension,
 then required minimum lies on left side if there is left child.
 This is same as Binary Search Tree Minimum.
-Above is simple, what to do when current level¡¯s
+Above is simple, what to do when current levelâ€™s
 dimension is different.When dimension of
 current level is different, minimum may be either
 in left subtree or right subtree or current node
@@ -211,7 +211,7 @@ int findMin(Node* root, int d)
 
 
 /*
-·µ»ØµÄ²»ÊÇ¾ßÌåµÄÖµ£¬¶øÊÇº¬ÓĞ¸ÃÖµµÄ½áµã
+è¿”å›çš„ä¸æ˜¯å…·ä½“çš„å€¼ï¼Œè€Œæ˜¯å«æœ‰è¯¥å€¼çš„ç»“ç‚¹
 */
 // A utility function to find minimum of three integers
 Node* minNode(Node* x, Node* y, Node* z, int d)
@@ -272,26 +272,26 @@ search for the point to be deleted.Below are steps are followed for every node v
 
 If node to be deleted is a leaf node, simply delete it(Same as BST Delete)
 If node to be deleted has right child as not NULL(Different from BST)
-Find minimum of current node¡¯s dimension in right subtree.
+Find minimum of current nodeâ€™s dimension in right subtree.
 Replace the node with above found minimum and recursively delete minimum in right subtree.
 Else If node to be deleted has left child as not NULL(Different from BST)
-Find minimum of current node¡¯s dimension in left subtree.
+Find minimum of current nodeâ€™s dimension in left subtree.
 Replace the node with above found minimum and recursively delete minimum in left subtree.
 Make new left subtree as right child of current node.
-2) If current doesn¡¯t contain the point to be deleted
+2) If current doesnâ€™t contain the point to be deleted
 
 If node to be deleted is smaller than current node on current dimension, recur for left subtree.
 Else recur for right subtree.
 Why 1.b and 1.c are different from BST ?
-In BST delete, if a node¡¯s left child is empty and right is not empty,
+In BST delete, if a nodeâ€™s left child is empty and right is not empty,
 we replace the node with right child.In K D Tree,
 doing this would violate the KD tree property as dimension of right child of
-node is different from node¡¯s dimension.For example,
+node is different from nodeâ€™s dimension.For example,
 if node divides point by x axis values.then its children divide by y axis,
-so we can¡¯t simply replace node with right child.Same is true for the case
+so we canâ€™t simply replace node with right child.Same is true for the case
 when right child is not empty and left child is empty.
 
-Why 1.c doesn¡¯t find max in left subtree and recur for max like 1.b ?
+Why 1.c doesnâ€™t find max in left subtree and recur for max like 1.b ?
 Doing this violates the property that all equal values are in right subtree.
 For example, if we delete (!0, 10) in below subtree and replace if with
 
@@ -366,7 +366,7 @@ Node* deleteNode(Node *root, int point[])
 }
 
 /*
-ÏÈĞò±éÀúKDÊ÷
+å…ˆåºéå†KDæ ‘
 */
 void preorder(Node* root)
 {
@@ -378,7 +378,7 @@ void preorder(Node* root)
 }
 
 /*
-ÖĞĞò±éÀúKDÊ÷
+ä¸­åºéå†KDæ ‘
 */
 void inorder(Node* root)
 {
@@ -390,7 +390,7 @@ void inorder(Node* root)
 }
 
 /*
-ºóĞò±éÀúKDÊ÷
+ååºéå†KDæ ‘
 */
 void postorder(Node* root)
 {
@@ -403,15 +403,15 @@ void postorder(Node* root)
 
 
 /*
-ÏÈĞò±éÀúKDÊ÷
-µü´ú·¨£¬·Çµİ¹é
+å…ˆåºéå†KDæ ‘
+è¿­ä»£æ³•ï¼Œéé€’å½’
 */
 /***************************************
-¶ş²æÊ÷µÄ·Çµİ¹éÇ°Ğò±éÀú£¬Ç°Ğò±éÀúË¼Ïë£º
-ÏÈÈÃ¸ù½øÕ»£¬Ö»ÒªÕ»²»Îª¿Õ£¬¾Í¿ÉÒÔ×öµ¯³ö²Ù×÷£¬
-Ã¿´Îµ¯³öÒ»¸ö½áµã£¬¼ÇµÃ°ÑËüµÄ×óÓÒ½áµã¶¼½øÕ»£¬
-¼ÇµÃÓÒ×ÓÊ÷ÏÈ½øÕ»£¬ÕâÑù¿ÉÒÔ±£Ö¤ÓÒ×ÓÊ÷ÔÚÕ»ÖĞ
-×Ü´¦ÓÚ×ó×ÓÊ÷µÄÏÂÃæ¡£
+äºŒå‰æ ‘çš„éé€’å½’å‰åºéå†ï¼Œå‰åºéå†æ€æƒ³ï¼š
+å…ˆè®©æ ¹è¿›æ ˆï¼Œåªè¦æ ˆä¸ä¸ºç©ºï¼Œå°±å¯ä»¥åšå¼¹å‡ºæ“ä½œï¼Œ
+æ¯æ¬¡å¼¹å‡ºä¸€ä¸ªç»“ç‚¹ï¼Œè®°å¾—æŠŠå®ƒçš„å·¦å³ç»“ç‚¹éƒ½è¿›æ ˆï¼Œ
+è®°å¾—å³å­æ ‘å…ˆè¿›æ ˆï¼Œè¿™æ ·å¯ä»¥ä¿è¯å³å­æ ‘åœ¨æ ˆä¸­
+æ€»å¤„äºå·¦å­æ ‘çš„ä¸‹é¢ã€‚
 ********************************************/
 void preorderIterative(Node* root)
 {
@@ -434,8 +434,8 @@ void preorderIterative(Node* root)
 }
 
 /*
-ÖĞĞò±éÀúKDÊ÷
-µü´ú·¨£¬·Çµİ¹é
+ä¸­åºéå†KDæ ‘
+è¿­ä»£æ³•ï¼Œéé€’å½’
 */
 
 void inorderIterative(Node* root)
@@ -446,12 +446,12 @@ void inorderIterative(Node* root)
 	stack<Node*> stackNode;
 	Node* currentTree = root;
 	while (currentTree != nullptr || !stackNode.empty()) {
-		//ÏÈÒ»Ö±±éÀúµ½×î×óÒ¶½Úµã
+		//å…ˆä¸€ç›´éå†åˆ°æœ€å·¦å¶èŠ‚ç‚¹
 		while (currentTree != nullptr) {
 			stackNode.push(currentTree);
 			currentTree = currentTree->leftChild;
 		}
-		//È»ºóÒÀ´Îpop£¬ÔÙÁí±éÀúÓÒ×ÓÊ÷
+		//ç„¶åä¾æ¬¡popï¼Œå†å¦éå†å³å­æ ‘
 		if (!stackNode.empty()) {
 			currentTree = stackNode.top();
 			stackNode.pop();
@@ -463,8 +463,8 @@ void inorderIterative(Node* root)
 }
 
 /*
-ÖĞĞò±éÀúKDÊ÷
-µü´ú·¨£¬·Çµİ¹é,·ÇÕ»
+ä¸­åºéå†KDæ ‘
+è¿­ä»£æ³•ï¼Œéé€’å½’,éæ ˆ
 */
 /* Function to traverse binary tree without recursion and
 without stack */
@@ -507,8 +507,8 @@ void inorderIterativeNonStack(Node* root)
 }
 
 /*
-ºóĞò±éÀúKDÊ÷
-µü´ú·¨£¬·Çµİ¹é
+ååºéå†KDæ ‘
+è¿­ä»£æ³•ï¼Œéé€’å½’
 */
 void postorderIterative(Node* root)
 {
@@ -520,7 +520,7 @@ void postorderIterative(Node* root)
 	Node* preVisited = nullptr;
 
 	while (currentTree != nullptr || !stackNode.empty()) {
-		//Õâ¸öºÍÖĞĞò±éÀúÒ»Ñù£¬ÒòÎªÏÈÒª·ÃÎÊ×ó×ÓÊ÷
+		//è¿™ä¸ªå’Œä¸­åºéå†ä¸€æ ·ï¼Œå› ä¸ºå…ˆè¦è®¿é—®å·¦å­æ ‘
 		while (currentTree != nullptr) {
 			stackNode.push(currentTree);
 			currentTree = currentTree->leftChild;
@@ -540,9 +540,9 @@ void postorderIterative(Node* root)
 }
 
 /*
-ºóĞò±éÀúKDÊ÷
-µü´ú·¨£¬·Çµİ¹é
-Ê¹ÓÃÁ½¸öÕ»
+ååºéå†KDæ ‘
+è¿­ä»£æ³•ï¼Œéé€’å½’
+ä½¿ç”¨ä¸¤ä¸ªæ ˆ
 */
 void postorderIterativeTwoStacks(Node* root)
 {
@@ -553,14 +553,14 @@ void postorderIterativeTwoStacks(Node* root)
 	Node* currentNode;
 	stackNode1.push(root);
 
-	//ÀûÓÃÏÈĞò±éÀúºÍºóĞò±éÀúµÄ±éÀú´ÎĞò
+	//åˆ©ç”¨å…ˆåºéå†å’Œååºéå†çš„éå†æ¬¡åº
 	while (!stackNode1.empty()) {
 		currentNode = stackNode1.top();
 		stackNode1.pop();
 		stackNode2.push(currentNode);
 
-		//stack1µÄ±éÀúË³ĞòÎª¸ùÓÒ×ó£¬
-		//È»ºóstack2ÕıºÃÊÇÒ»¸öÕ»£¬Óëstack1ÄæĞò
+		//stack1çš„éå†é¡ºåºä¸ºæ ¹å³å·¦ï¼Œ
+		//ç„¶åstack2æ­£å¥½æ˜¯ä¸€ä¸ªæ ˆï¼Œä¸stack1é€†åº
 		if (currentNode->leftChild)
 			stackNode1.push(currentNode->leftChild);
 		if (currentNode->rightChild)
@@ -577,8 +577,8 @@ void postorderIterativeTwoStacks(Node* root)
 
 
 /*
-·Çµİ¹é²ã´Î±éÀú
-Ê¹ÓÃ¶ÓÁĞ
+éé€’å½’å±‚æ¬¡éå†
+ä½¿ç”¨é˜Ÿåˆ—
 */
 void levelTraverse(Node* root)
 {
@@ -590,7 +590,7 @@ void levelTraverse(Node* root)
 
 	queueNode.push(currentNode);
 
-	//ºÍÏÈĞò±éÀúÓĞĞ©ÀàËÆ
+	//å’Œå…ˆåºéå†æœ‰äº›ç±»ä¼¼
 	while (!queueNode.empty()) {
 		currentNode = queueNode.front();
 		cout << "(" << currentNode->point[0] << ","
@@ -680,8 +680,8 @@ int main()
 	auto endTime = system_clock::now();
 	auto durationTime = duration_cast<microseconds>(endTime - startTime);
 
-	cout << "»¨·ÑÁË£º"
+	cout << "èŠ±è´¹äº†ï¼š"
 		<< double(durationTime.count()) * microseconds::period::num / microseconds::period::den
-		<< "Ãë" << endl;
+		<< "ç§’" << endl;
 	return 0;     
 }
