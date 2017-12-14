@@ -683,5 +683,5 @@ int main()
 	cout << "»¨·ÑÁË£º"
 		<< double(durationTime.count()) * microseconds::period::num / microseconds::period::den
 		<< "Ãë" << endl;
-	return 0; 
+	return 0;     
 }
