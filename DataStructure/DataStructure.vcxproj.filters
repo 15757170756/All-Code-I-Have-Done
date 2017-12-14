@@ -102,6 +102,9 @@
     <ClCompile Include="DataStructure\BSTree.cpp">
       <Filter>源文件\Binary Tree\二叉排序树</Filter>
     </ClCompile>
+    <ClCompile Include="KD树.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\RedBlackTree.h">
