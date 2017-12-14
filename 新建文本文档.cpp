@@ -54,13 +54,13 @@ template <class T, class Alloc = alloc>
 class vector
 {
 public:
-	// 标记为'STL标准强制要求'的typedefs用于提供iterator_traits<I>支持
+	// 标记为'STL标准强制要求'的typedefs用于提供iterator_traits<I>支持 啥地方
 	typedef T value_type;                         // STL标准强制要求
 	typedef value_type* pointer;                  // STL标准强制要求
 	typedef const value_type* const_pointer;
 	// 由于vector的特性, 一般我们实作的时候都分配给其连续的内存空间,
 	// 所以其迭代器只需要定义成原生指针即可满足需要
-	typedef value_type* iterator;                 // STL标准强制要求
+	typedef value_type* iterator;                 // STL标准强制要求啥地方
 	typedef const value_type* const_iterator;
 	typedef value_type& reference;                // STL标准强制要求
 	typedef const value_type& const_reference;
