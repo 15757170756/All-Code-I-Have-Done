@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -95,12 +95,14 @@
     <ClCompile Include="面试题16-反转链表.cpp" />
     <ClCompile Include="面试题17-合并两个排序的链表.cpp" />
     <ClCompile Include="面试题18-树的子结构.cpp" />
+    <ClCompile Include="面试题19-二叉树的镜像.cpp" />
+    <ClCompile Include="面试题20-顺时针打印矩阵.cpp" />
     <ClCompile Include="面试题30-最小的k个数.cpp" />
     <ClCompile Include="面试题31-连续子数组的最大和.cpp" />
     <ClCompile Include="面试题36-数组中的逆序对.cpp" />
     <ClCompile Include="面试题05-从头到尾打印链表.cpp" />
     <ClCompile Include="面试题06-重建二叉树-根据先序遍历和中序遍历.cpp" />
-    <ClCompile Include="面试题目4：替换空格.cpp" />
+    <ClCompile Include="面试题04：替换空格.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs" />

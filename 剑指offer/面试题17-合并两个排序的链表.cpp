@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <algorithm>
 #include <vector>
@@ -13,7 +13,7 @@ struct listNode {
 typedef listNode* linkList;
 
 /*
-Á´±íµÄ¸÷Àà»ù±¾²Ù×÷
+é“¾è¡¨çš„å„ç±»åŸºæœ¬æ“ä½œ
 */
 
 
@@ -29,8 +29,8 @@ void push_back(linkList* pHead, int value)
 	}
 	else {
 		/*
-		ÕâÑùĞ´ÓĞ´íÎó£¬ÒòÎª×îºó°ÑnewNode
-		¸³Öµ¸ølastNode£¬¶ø²»ÊÇ
+		è¿™æ ·å†™æœ‰é”™è¯¯ï¼Œå› ä¸ºæœ€åæŠŠnewNode
+		èµ‹å€¼ç»™lastNodeï¼Œè€Œä¸æ˜¯
 		lastNode->next;
 		*/
 		//listNode* lastNode = *pHead;
@@ -72,8 +72,8 @@ void printList(linkList pHead)
 
 
 /*
-É¾³ıËùÓĞÖµÎªkeyµÄ½áµã£¬
-²»ÊÇÉ¾³ıµ¥¸ö
+åˆ é™¤æ‰€æœ‰å€¼ä¸ºkeyçš„ç»“ç‚¹ï¼Œ
+ä¸æ˜¯åˆ é™¤å•ä¸ª
 */
 void deleteKey(linkList* pHead, int key)
 {
@@ -81,7 +81,7 @@ void deleteKey(linkList* pHead, int key)
 		return;
 
 	listNode* currentNode = *pHead, *preNode;
-	//´¦ÀíÍ·½áµãÒª±»É¾³ı
+	//å¤„ç†å¤´ç»“ç‚¹è¦è¢«åˆ é™¤
 	while (currentNode != nullptr && currentNode->data == key) {
 		*pHead = currentNode->next;
 		delete currentNode;
@@ -103,7 +103,7 @@ void deleteKey(linkList* pHead, int key)
 }
 
 /*
-»á°Ñ´«½øÀ´µÄÍ·Ö¸ÕëÆÆ»µµô
+ä¼šæŠŠä¼ è¿›æ¥çš„å¤´æŒ‡é’ˆç ´åæ‰
 */
 listNode* reverseList(listNode* pHead)
 {
@@ -145,7 +145,7 @@ void reverseList(linkList* pHead)
 }
 
 /*
-µİ¹é½â·¨
+é€’å½’è§£æ³•
 */
 listNode* mergeList(listNode* list1, listNode* list2)
 {
@@ -169,8 +169,8 @@ listNode* mergeList(listNode* list1, listNode* list2)
 }
 
 /*
-·Çµİ¹é½â·¨
-·ÂÕÕ¹é²¢ÅÅĞò
+éé€’å½’è§£æ³•
+ä»¿ç…§å½’å¹¶æ’åº
 */
 listNode* mergeListNonRecursive(listNode* list1, listNode* list2)
 {

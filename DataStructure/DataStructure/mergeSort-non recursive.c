@@ -1,4 +1,4 @@
-/***************************************
+ï»¿/***************************************
 Iterative Merge Sort:
 The above function is recursive, 
 so uses function call stack to store
@@ -9,7 +9,7 @@ with parameters. Also, function calls involve
 overheads like storing activation record of the 
 caller function and then resuming execution. 
 Unlike Iterative QuickSort, the iterative 
-MergeSort doesn¡¯t require explicit auxiliary stack.
+MergeSort doesnâ€™t require explicit auxiliary stack.
 The above function can be easily converted to 
 iterative version. Following is iterative Merge Sort.
 ****************************************/

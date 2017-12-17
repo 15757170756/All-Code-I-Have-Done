@@ -82,7 +82,7 @@ listNode* reverseList2(linkList pHead)
 /*
 反转链表，无返回值
 在
-剑指offer上看的代码
+剑指offer上看的代码 
 */
 void reverseList3(linkList* pHead)
 {

@@ -18,9 +18,6 @@
     <ClCompile Include="面试题30-最小的k个数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="面试题目4：替换空格.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="数对之差最大的值.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -88,6 +85,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="面试题18-树的子结构.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题19-二叉树的镜像.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题20-顺时针打印矩阵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="面试题04：替换空格.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

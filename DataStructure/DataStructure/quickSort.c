@@ -1,10 +1,10 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
-int partition_exchangeElem(int arr[], int low, int high);//½»»»ÔªËØ
-int partition_nonExchangeElem(int arr[], int low, int high);//²»½»»»ÔªËØ
+int partition_exchangeElem(int arr[], int low, int high);//äº¤æ¢å…ƒç´ 
+int partition_nonExchangeElem(int arr[], int low, int high);//ä¸äº¤æ¢å…ƒç´ 
 void swap(int* a, int *b) { int temp = *a; *a = *b; *b = temp; }
 void quickSort(int arr[], int low, int high);
-void quickSortTailRecursion(int arr[], int low, int high);//Î²µİ¹é
+void quickSortTailRecursion(int arr[], int low, int high);//å°¾é€’å½’
 void printArray(int arr[], int size);
 
 int main()
