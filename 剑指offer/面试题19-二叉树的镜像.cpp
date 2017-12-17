@@ -1,8 +1,9 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
+#include <queue>
 
 using namespace::std;
 
@@ -15,7 +16,7 @@ struct BinaryTreeNode {
 typedef BinaryTreeNode* BinaryTree;
 
 /*
-±È½Ï±¿µÄ·½·¨¹¹½¨¶þ²æÊ÷
+æ¯”è¾ƒç¬¨çš„æ–¹æ³•æž„å»ºäºŒå‰æ ‘
 */
 BinaryTreeNode* creatBinaryTreeNode(int data)
 {
@@ -38,35 +39,40 @@ void connectTreeNode(
 	}
 }
 
-bool doseTree1HaveTree2(BinaryTreeNode* tree1,
-	BinaryTreeNode* tree2)
+void mirrorTree(BinaryTreeNode* root)
 {
-	if (tree2 == nullptr)
-		return true;
-	if (tree1 == nullptr)
-		return false;
+	if (!root || (!root->leftChild &&
+		!root->rightChild))
+		return;
 
-	if (tree1->data != tree2->data)
-		return false;
+	//å…ˆçœ‹æ ¹èŠ‚ç‚¹çš„ä¸¤ä¸ªå­èŠ‚ç‚¹
+	BinaryTreeNode* pTemp = root->leftChild;
+	root->leftChild = root->rightChild;
+	root->rightChild = pTemp;
 
-	return (doseTree1HaveTree2(tree1->leftChild, tree2->leftChild) &&
-		doseTree1HaveTree2(tree1->rightChild, tree2->rightChild));
+	if (root->leftChild)
+		mirrorTree(root->leftChild);
+
+	if (root->rightChild)
+		mirrorTree(root->rightChild);
+
 }
 
-bool hasSubTree(BinaryTreeNode* tree1, BinaryTreeNode* tree2)
+void levelTraverse(BinaryTreeNode* root)
 {
-	bool result = false;
+	queue<BinaryTreeNode*> queueTree;
+	BinaryTreeNode* currentNode = root;
+	queueTree.push(currentNode);
 
-	if (!tree1 || !tree2)
-		return false;
-
-	if (tree1->data == tree2->data)
-		result = doseTree1HaveTree2(tree1, tree2);
-
-	if (!result)
-		result = hasSubTree(tree1->leftChild, tree2);
-	if (!result)
-		result = hasSubTree(tree1->rightChild, tree2);
+	while (!queueTree.empty()){
+		currentNode = queueTree.front();
+		cout << currentNode->data << ' ';
+		queueTree.pop();
+		if (currentNode->leftChild)
+			queueTree.push(currentNode->leftChild);
+		if (currentNode->rightChild)
+			queueTree.push(currentNode->rightChild);
+	}
 }
 
 int main()
@@ -82,12 +88,11 @@ int main()
 	connectTreeNode(pNodeA2, pNodeA4, pNodeA5);
 	connectTreeNode(pNodeA5, pNodeA6, pNodeA7);
 
-	BinaryTreeNode* pNodeB1 = creatBinaryTreeNode(8);
-	BinaryTreeNode* pNodeB2 = creatBinaryTreeNode(9);
-	BinaryTreeNode* pNodeB3 = creatBinaryTreeNode(4);
-	connectTreeNode(pNodeB1, pNodeB2, pNodeB3);
+	levelTraverse(pNodeA1);
+	cout << endl;
 
-	cout << boolalpha << hasSubTree(pNodeA1, pNodeB1) << noboolalpha << endl;
+	mirrorTree(pNodeA1);
+	levelTraverse(pNodeA1);
 
 	return 0;
 }
