@@ -31,6 +31,9 @@
     <Filter Include="源文件\Canny">
       <UniqueIdentifier>{1d00a535-d94c-4649-acb1-0d45de564d61}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\另一个版本SIFT">
+      <UniqueIdentifier>{2f4cdc65-a107-4442-aec4-d5ada54fa888}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="彩色图像直方图均衡化.cpp">
@@ -147,6 +150,12 @@
     <ClCompile Include="各种滤波算法-中值滤波 均值滤波 高斯滤波等.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="另一个版本SIFTmain.cpp">
+      <Filter>源文件\另一个版本SIFT</Filter>
+    </ClCompile>
+    <ClCompile Include="另一个版本SIFTsift.cpp">
+      <Filter>源文件\另一个版本SIFT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraCalibrator.h">
@@ -169,6 +178,9 @@
     </ClInclude>
     <ClInclude Include="sift.h">
       <Filter>源文件\教你一步一步用c语言实现sift算法</Filter>
+    </ClInclude>
+    <ClInclude Include="另一个版本SIFTsift.h">
+      <Filter>源文件\另一个版本SIFT</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

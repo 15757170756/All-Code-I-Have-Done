@@ -1,7 +1,7 @@
-#include "include.h"
+ï»¿#include "include.h"
 #include "sift.h"
 
-//ÏÂ²ÉÑùÔ­À´µÄÍ¼Ïñ£¬·µ»ØËõĞ¡2±¶³ß´çµÄÍ¼Ïñ  
+//ä¸‹é‡‡æ ·åŸæ¥çš„å›¾åƒï¼Œè¿”å›ç¼©å°2å€å°ºå¯¸çš„å›¾åƒ  
 CvMat *halfSizeImage(CvMat *im)
 {
 	unsigned int i, j;
@@ -17,7 +17,7 @@ CvMat *halfSizeImage(CvMat *im)
 	return imnew;
 }
 
-//ÉÏ²ÉÑùÔ­À´µÄÍ¼Ïñ£¬·µ»Ø·Å´ó2±¶³ß´çµÄÍ¼Ïñ  
+//ä¸Šé‡‡æ ·åŸæ¥çš„å›¾åƒï¼Œè¿”å›æ”¾å¤§2å€å°ºå¯¸çš„å›¾åƒ  
 CvMat * doubleSizeImage(CvMat * im)
 {
 	unsigned int i, j;
@@ -35,7 +35,7 @@ CvMat * doubleSizeImage(CvMat * im)
 	return imnew;
 }
 
-//ÉÏ²ÉÑùÔ­À´µÄÍ¼Ïñ£¬·µ»Ø·Å´ó2±¶³ß´çµÄÏßĞÔ²åÖµÍ¼Ïñ  
+//ä¸Šé‡‡æ ·åŸæ¥çš„å›¾åƒï¼Œè¿”å›æ”¾å¤§2å€å°ºå¯¸çš„çº¿æ€§æ’å€¼å›¾åƒ  
 CvMat * doubleSizeImage2(CvMat * im)
 {
 	unsigned int i, j;
@@ -76,7 +76,7 @@ CvMat * doubleSizeImage2(CvMat * im)
 	return imnew;
 }
 
-//Ë«ÏßĞÔ²åÖµ£¬·µ»ØÏñËØ¼äµÄ»Ò¶ÈÖµ  
+//åŒçº¿æ€§æ’å€¼ï¼Œè¿”å›åƒç´ é—´çš„ç°åº¦å€¼  
 float getPixelBI(CvMat * im, float col, float row)
 {
 	int irow, icol;
@@ -120,7 +120,7 @@ float getPixelBI(CvMat * im, float col, float row)
 	return rfrac * row1 + (1.0 - rfrac) * row2;
 }
 
-//¾ØÕó¹éÒ»»¯  
+//çŸ©é˜µå½’ä¸€åŒ–  
 void normalizeMat(CvMat* mat)
 {
 #define Mat(ROW,COL) ((float *)(mat->data.fl + mat->step/sizeof(float) *(ROW)))[(COL)]  
@@ -134,7 +134,7 @@ void normalizeMat(CvMat* mat)
 			Mat(j, i) /= sum;
 }
 
-//ÏòÁ¿¹éÒ»»¯  
+//å‘é‡å½’ä¸€åŒ–  
 void normalizeVec(float* vec, int dim)
 {
 	unsigned int i;
@@ -145,7 +145,7 @@ void normalizeVec(float* vec, int dim)
 		vec[i] /= sum;
 }
 
-//µÃµ½ÏòÁ¿µÄÅ·Ê½³¤¶È£¬2-·¶Êı  
+//å¾—åˆ°å‘é‡çš„æ¬§å¼é•¿åº¦ï¼Œ2-èŒƒæ•°  
 float GetVecNorm(float* vec, int dim)
 {
 	float sum = 0.0;
@@ -154,7 +154,7 @@ float GetVecNorm(float* vec, int dim)
 	return sqrt(sum);
 }
 
-//²úÉú1D¸ßË¹ºË  
+//äº§ç”Ÿ1Dé«˜æ–¯æ ¸  
 float* GaussianKernel1D(float sigma, int dim)
 {
 
@@ -179,7 +179,7 @@ float* GaussianKernel1D(float sigma, int dim)
 	return kern;
 }
 
-//²úÉú2D¸ßË¹ºË¾ØÕó  
+//äº§ç”Ÿ2Dé«˜æ–¯æ ¸çŸ©é˜µ  
 CvMat* GaussianKernel2D(float sigma)
 {
 	// int dim = (int) max(3.0f, GAUSSKERN * sigma);  
@@ -210,7 +210,7 @@ CvMat* GaussianKernel2D(float sigma)
 	return mat;
 }
 
-//x·½ÏòÏñËØ´¦×÷¾í»ı  
+//xæ–¹å‘åƒç´ å¤„ä½œå·ç§¯  
 float ConvolveLocWidth(float* kernel, int dim, CvMat * src, int x, int y)
 {
 #define Src(ROW,COL) ((float *)(src->data.fl + src->step/sizeof(float) *(ROW)))[(COL)]  
@@ -233,7 +233,7 @@ float ConvolveLocWidth(float* kernel, int dim, CvMat * src, int x, int y)
 	return pixel;
 }
 
-//x·½Ïò×÷¾í»ı  
+//xæ–¹å‘ä½œå·ç§¯  
 void Convolve1DWidth(float* kern, int dim, CvMat * src, CvMat * dst)
 {
 #define DST(ROW,COL) ((float *)(dst->data.fl + dst->step/sizeof(float) *(ROW)))[(COL)]  
@@ -249,7 +249,7 @@ void Convolve1DWidth(float* kern, int dim, CvMat * src, CvMat * dst)
 	}
 }
 
-//y·½ÏòÏñËØ´¦×÷¾í»ı  
+//yæ–¹å‘åƒç´ å¤„ä½œå·ç§¯  
 float ConvolveLocHeight(float* kernel, int dim, CvMat * src, int x, int y)
 {
 #define Src(ROW,COL) ((float *)(src->data.fl + src->step/sizeof(float) *(ROW)))[(COL)]  
@@ -271,7 +271,7 @@ float ConvolveLocHeight(float* kernel, int dim, CvMat * src, int x, int y)
 	return pixel;
 }
 
-//y·½Ïò×÷¾í»ı  
+//yæ–¹å‘ä½œå·ç§¯  
 void Convolve1DHeight(float* kern, int dim, CvMat * src, CvMat * dst)
 {
 #define Dst(ROW,COL) ((float *)(dst->data.fl + dst->step/sizeof(float) *(ROW)))[(COL)]  
@@ -286,7 +286,7 @@ void Convolve1DHeight(float* kern, int dim, CvMat * src, CvMat * dst)
 	}
 }
 
-//¾í»ıÄ£ºıÍ¼Ïñ  
+//å·ç§¯æ¨¡ç³Šå›¾åƒ  
 int BlurImage(CvMat * src, CvMat * dst, float sigma)
 {
 	float* convkernel;
@@ -307,22 +307,22 @@ int BlurImage(CvMat * src, CvMat * dst, float sigma)
 
 
 /********************************************************************
-Îå¸ö²½Öè
-ok£¬½ÓÏÂÀ´£¬½øÈëÖØµã²¿·Ö£¬ÔÛÃÇÒÀ¾İÉÏÎÄ½éÉÜµÄsiftËã·¨µÄ¼¸¸ö²½Öè£¬À´Ò»Ò»ÊµÏÖÕâĞ©º¯Êı¡£
-ÎªÁË°æÊöÇåÎú£¬ÔÙÌùÒ»ÏÂ£¬Ö÷º¯Êı£¬Ë³±ãÔÙ¼ÓÇ¿ÏÂ¶Ôsift Ëã·¨µÄÎå¸ö²½ÖèµÄÈÏÊ¶£º
-1¡¢SIFTËã·¨µÚÒ»²½£ºÍ¼ÏñÔ¤´¦Àí
-CvMat *ScaleInitImage(CvMat * im);                  //½ğ×ÖËş³õÊ¼»¯
-2¡¢SIFTËã·¨µÚ¶ş²½£º½¨Á¢¸ßË¹½ğ×ÖËşº¯Êı
-ImageOctaves* BuildGaussianOctaves(CvMat * image);  //½¨Á¢¸ßË¹½ğ×ÖËş
-3¡¢SIFTËã·¨µÚÈı²½£ºÌØÕ÷µãÎ»ÖÃ¼ì²â£¬×îºóÈ·¶¨ÌØÕ÷µãµÄÎ»ÖÃ
+äº”ä¸ªæ­¥éª¤
+okï¼Œæ¥ä¸‹æ¥ï¼Œè¿›å…¥é‡ç‚¹éƒ¨åˆ†ï¼Œå’±ä»¬ä¾æ®ä¸Šæ–‡ä»‹ç»çš„siftç®—æ³•çš„å‡ ä¸ªæ­¥éª¤ï¼Œæ¥ä¸€ä¸€å®ç°è¿™äº›å‡½æ•°ã€‚
+ä¸ºäº†ç‰ˆè¿°æ¸…æ™°ï¼Œå†è´´ä¸€ä¸‹ï¼Œä¸»å‡½æ•°ï¼Œé¡ºä¾¿å†åŠ å¼ºä¸‹å¯¹sift ç®—æ³•çš„äº”ä¸ªæ­¥éª¤çš„è®¤è¯†ï¼š
+1ã€SIFTç®—æ³•ç¬¬ä¸€æ­¥ï¼šå›¾åƒé¢„å¤„ç†
+CvMat *ScaleInitImage(CvMat * im);                  //é‡‘å­—å¡”åˆå§‹åŒ–
+2ã€SIFTç®—æ³•ç¬¬äºŒæ­¥ï¼šå»ºç«‹é«˜æ–¯é‡‘å­—å¡”å‡½æ•°
+ImageOctaves* BuildGaussianOctaves(CvMat * image);  //å»ºç«‹é«˜æ–¯é‡‘å­—å¡”
+3ã€SIFTç®—æ³•ç¬¬ä¸‰æ­¥ï¼šç‰¹å¾ç‚¹ä½ç½®æ£€æµ‹ï¼Œæœ€åç¡®å®šç‰¹å¾ç‚¹çš„ä½ç½®
 int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr);
-4¡¢SIFTËã·¨µÚËÄ²½£º¼ÆËã¸ßË¹Í¼ÏñµÄÌİ¶È·½ÏòºÍ·ùÖµ£¬¼ÆËã¸÷¸öÌØÕ÷µãµÄÖ÷·½Ïò
+4ã€SIFTç®—æ³•ç¬¬å››æ­¥ï¼šè®¡ç®—é«˜æ–¯å›¾åƒçš„æ¢¯åº¦æ–¹å‘å’Œå¹…å€¼ï¼Œè®¡ç®—å„ä¸ªç‰¹å¾ç‚¹çš„ä¸»æ–¹å‘
 void ComputeGrad_DirecandMag(int numoctaves, ImageOctaves *GaussianPyr);
-5¡¢SIFTËã·¨µÚÎå²½£º³éÈ¡¸÷¸öÌØÕ÷µã´¦µÄÌØÕ÷ÃèÊö×Ö
+5ã€SIFTç®—æ³•ç¬¬äº”æ­¥ï¼šæŠ½å–å„ä¸ªç‰¹å¾ç‚¹å¤„çš„ç‰¹å¾æè¿°å­—
 void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr);
-ok£¬½ÓÏÂÀ´Ò»Ò»¾ßÌåÊµÏÖÕâ¼¸¸öº¯Êı£º
-SIFTËã·¨µÚÒ»²½
-SIFTËã·¨µÚÒ»²½£ºÀ©´óÍ¼Ïñ£¬Ô¤ÂË²¨ÌŞ³ıÔëÉù£¬µÃµ½½ğ×ÖËşµÄ×îµ×²ã - µÚÒ»½×µÄµÚÒ»²ã£º
+okï¼Œæ¥ä¸‹æ¥ä¸€ä¸€å…·ä½“å®ç°è¿™å‡ ä¸ªå‡½æ•°ï¼š
+SIFTç®—æ³•ç¬¬ä¸€æ­¥
+SIFTç®—æ³•ç¬¬ä¸€æ­¥ï¼šæ‰©å¤§å›¾åƒï¼Œé¢„æ»¤æ³¢å‰”é™¤å™ªå£°ï¼Œå¾—åˆ°é‡‘å­—å¡”çš„æœ€åº•å±‚ - ç¬¬ä¸€é˜¶çš„ç¬¬ä¸€å±‚ï¼š
 ********************************************************************************/
 CvMat *ScaleInitImage(CvMat * im)
 {
@@ -330,14 +330,14 @@ CvMat *ScaleInitImage(CvMat * im)
 	CvMat *imMat;
 	CvMat * dst;
 	CvMat *tempMat;
-	//Ê×ÏÈ¶ÔÍ¼Ïñ½øĞĞÆ½»¬ÂË²¨£¬ÒÖÖÆÔëÉù  
+	//é¦–å…ˆå¯¹å›¾åƒè¿›è¡Œå¹³æ»‘æ»¤æ³¢ï¼ŒæŠ‘åˆ¶å™ªå£°  
 	imMat = cvCreateMat(im->rows, im->cols, CV_32FC1);
 	BlurImage(im, imMat, INITSIGMA);
-	//Õë¶ÔÁ½ÖÖÇé¿ö·Ö±ğ½øĞĞ´¦Àí£º³õÊ¼»¯·Å´óÔ­Ê¼Í¼Ïñ»òÕßÔÚÔ­Í¼Ïñ»ù´¡ÉÏ½øĞĞºóĞø²Ù×÷  
-	//½¨Á¢½ğ×ÖËşµÄ×îµ×²ã  
+	//é’ˆå¯¹ä¸¤ç§æƒ…å†µåˆ†åˆ«è¿›è¡Œå¤„ç†ï¼šåˆå§‹åŒ–æ”¾å¤§åŸå§‹å›¾åƒæˆ–è€…åœ¨åŸå›¾åƒåŸºç¡€ä¸Šè¿›è¡Œåç»­æ“ä½œ  
+	//å»ºç«‹é‡‘å­—å¡”çš„æœ€åº•å±‚  
 	if (DOUBLE_BASE_IMAGE_SIZE)
 	{
-		tempMat = doubleSizeImage2(imMat);//¶ÔÀ©´óÁ½±¶µÄÍ¼Ïñ½øĞĞ¶ş´Î²ÉÑù£¬²ÉÑùÂÊÎª0.5£¬²ÉÓÃÏßĞÔ²åÖµ  
+		tempMat = doubleSizeImage2(imMat);//å¯¹æ‰©å¤§ä¸¤å€çš„å›¾åƒè¿›è¡ŒäºŒæ¬¡é‡‡æ ·ï¼Œé‡‡æ ·ç‡ä¸º0.5ï¼Œé‡‡ç”¨çº¿æ€§æ’å€¼  
 #define TEMPMAT(ROW,COL) ((float *)(tempMat->data.fl + tempMat->step/sizeof(float) * (ROW)))[(COL)]  
 
 		dst = cvCreateMat(tempMat->rows, tempMat->cols, CV_32FC1);
@@ -348,7 +348,7 @@ CvMat *ScaleInitImage(CvMat * im)
 		sigma = sqrt((4 * INITSIGMA*INITSIGMA) + preblur_sigma * preblur_sigma);
 		//  sigma = sqrt(SIGMA * SIGMA - INITSIGMA * INITSIGMA * 4);  
 		//printf("Init Sigma: %f/n", sigma);  
-		BlurImage(dst, tempMat, sigma);       //µÃµ½½ğ×ÖËşµÄ×îµ×²ã-·Å´ó2±¶µÄÍ¼Ïñ  
+		BlurImage(dst, tempMat, sigma);       //å¾—åˆ°é‡‘å­—å¡”çš„æœ€åº•å±‚-æ”¾å¤§2å€çš„å›¾åƒ  
 		cvReleaseMat(&dst);
 		return tempMat;
 	}
@@ -359,22 +359,22 @@ CvMat *ScaleInitImage(CvMat * im)
 		preblur_sigma = 1.0;//sqrt(2 - 4*INITSIGMA*INITSIGMA);  
 		sigma = sqrt((4 * INITSIGMA*INITSIGMA) + preblur_sigma * preblur_sigma);
 		//printf("Init Sigma: %f/n", sigma);  
-		BlurImage(imMat, dst, sigma);        //µÃµ½½ğ×ÖËşµÄ×îµ×²ã£ºÔ­Ê¼Í¼Ïñ´óĞ¡  
+		BlurImage(imMat, dst, sigma);        //å¾—åˆ°é‡‘å­—å¡”çš„æœ€åº•å±‚ï¼šåŸå§‹å›¾åƒå¤§å°  
 		return dst;
 	}
 }
 
 /***************************************
-SIFTËã·¨µÚ¶ş²½
-SIFTµÚ¶ş²½£¬½¨Á¢Gaussian½ğ×ÖËş£¬
-¸ø¶¨½ğ×ÖËşµÚÒ»½×µÚÒ»²ãÍ¼Ïñºó£¬
-¼ÆËã¸ßË¹½ğ×ÖËşÆäËû³ß¶ÈÍ¼Ïñ£¬
-Ã¿Ò»½×µÄÊıÄ¿ÓÉ±äÁ¿SCALESPEROCTAVE¾ö¶¨£¬
-¸ø¶¨Ò»¸ö»ù±¾Í¼Ïñ£¬¼ÆËãËüµÄ¸ßË¹½ğ×ÖËşÍ¼Ïñ£¬
-·µ»ØÍâ²¿ÏòÁ¿ÊÇ½×ÌİÖ¸Õë£¬
-ÄÚ²¿ÏòÁ¿ÊÇÃ¿Ò»¸ö½×ÌİÄÚ²¿µÄ²»Í¬³ß¶ÈÍ¼Ïñ¡£
+SIFTç®—æ³•ç¬¬äºŒæ­¥
+SIFTç¬¬äºŒæ­¥ï¼Œå»ºç«‹Gaussiané‡‘å­—å¡”ï¼Œ
+ç»™å®šé‡‘å­—å¡”ç¬¬ä¸€é˜¶ç¬¬ä¸€å±‚å›¾åƒåï¼Œ
+è®¡ç®—é«˜æ–¯é‡‘å­—å¡”å…¶ä»–å°ºåº¦å›¾åƒï¼Œ
+æ¯ä¸€é˜¶çš„æ•°ç›®ç”±å˜é‡SCALESPEROCTAVEå†³å®šï¼Œ
+ç»™å®šä¸€ä¸ªåŸºæœ¬å›¾åƒï¼Œè®¡ç®—å®ƒçš„é«˜æ–¯é‡‘å­—å¡”å›¾åƒï¼Œ
+è¿”å›å¤–éƒ¨å‘é‡æ˜¯é˜¶æ¢¯æŒ‡é’ˆï¼Œ
+å†…éƒ¨å‘é‡æ˜¯æ¯ä¸€ä¸ªé˜¶æ¢¯å†…éƒ¨çš„ä¸åŒå°ºåº¦å›¾åƒã€‚
 *****************************************/
-//SIFTËã·¨µÚ¶ş²½  
+//SIFTç®—æ³•ç¬¬äºŒæ­¥  
 ImageOctaves* BuildGaussianOctaves(CvMat * image)
 {
 	ImageOctaves *octaves;
@@ -383,14 +383,14 @@ ImageOctaves* BuildGaussianOctaves(CvMat * image)
 	CvMat *temp;
 
 	int i, j;
-	double k = pow(2, 1.0 / ((float)SCALESPEROCTAVE));  //·½²î±¶Êı  
+	double k = pow(2, 1.0 / ((float)SCALESPEROCTAVE));  //æ–¹å·®å€æ•°  
 	float preblur_sigma, initial_sigma, sigma1, sigma2, sigma, absolute_sigma, sigma_f;
-	//¼ÆËã½ğ×ÖËşµÄ½×ÌİÊıÄ¿  
+	//è®¡ç®—é‡‘å­—å¡”çš„é˜¶æ¢¯æ•°ç›®  
 	int dim = min(image->rows, image->cols);
-	int numoctaves = (int)(log((double)dim) / log(2.0)) - 2;    //½ğ×ÖËş½×Êı  
-	//ÏŞ¶¨½ğ×ÖËşµÄ½×ÌİÊı  
+	int numoctaves = (int)(log((double)dim) / log(2.0)) - 2;    //é‡‘å­—å¡”é˜¶æ•°  
+	//é™å®šé‡‘å­—å¡”çš„é˜¶æ¢¯æ•°  
 	numoctaves = min(numoctaves, MAXOCTAVES);
-	//Îª¸ßË¹½ğËşºÍDOG½ğ×ÖËş·ÖÅäÄÚ´æ  
+	//ä¸ºé«˜æ–¯é‡‘å¡”å’ŒDOGé‡‘å­—å¡”åˆ†é…å†…å­˜  
 	octaves = (ImageOctaves*)malloc(numoctaves * sizeof(ImageOctaves));
 	DOGoctaves = (ImageOctaves*)malloc(numoctaves * sizeof(ImageOctaves));
 
@@ -403,15 +403,15 @@ ImageOctaves* BuildGaussianOctaves(CvMat * image)
 	initial_sigma = sqrt(2);//sqrt( (4*INITSIGMA*INITSIGMA) + preblur_sigma * preblur_sigma );  
 	//   initial_sigma = sqrt(SIGMA * SIGMA - INITSIGMA * INITSIGMA * 4);  
 
-	//ÔÚÃ¿Ò»½×½ğ×ÖËşÍ¼ÏñÖĞ½¨Á¢²»Í¬µÄ³ß¶ÈÍ¼Ïñ  
+	//åœ¨æ¯ä¸€é˜¶é‡‘å­—å¡”å›¾åƒä¸­å»ºç«‹ä¸åŒçš„å°ºåº¦å›¾åƒ  
 	for (i = 0; i < numoctaves; i++)
 	{
-		//Ê×ÏÈ½¨Á¢½ğ×ÖËşÃ¿Ò»½×ÌİµÄ×îµ×²ã£¬ÆäÖĞ0½×ÌİµÄ×îµ×²ãÒÑ¾­½¨Á¢ºÃ  
+		//é¦–å…ˆå»ºç«‹é‡‘å­—å¡”æ¯ä¸€é˜¶æ¢¯çš„æœ€åº•å±‚ï¼Œå…¶ä¸­0é˜¶æ¢¯çš„æœ€åº•å±‚å·²ç»å»ºç«‹å¥½  
 		printf("Building octave %d of dimesion (%d, %d)/n", i, tempMat->cols, tempMat->rows);
-		//Îª¸÷¸ö½×Ìİ·ÖÅäÄÚ´æ  
+		//ä¸ºå„ä¸ªé˜¶æ¢¯åˆ†é…å†…å­˜  
 		octaves[i].Octave = (ImageLevels*)malloc((SCALESPEROCTAVE + 3) * sizeof(ImageLevels));
 		DOGoctaves[i].Octave = (ImageLevels*)malloc((SCALESPEROCTAVE + 2) * sizeof(ImageLevels));
-		//´æ´¢¸÷¸ö½×ÌİµÄ×îµ×²ã  
+		//å­˜å‚¨å„ä¸ªé˜¶æ¢¯çš„æœ€åº•å±‚  
 		(octaves[i].Octave)[0].Level = tempMat;
 
 		octaves[i].col = tempMat->cols;
@@ -436,11 +436,11 @@ ImageOctaves* BuildGaussianOctaves(CvMat * image)
 			printf("0 scale and blur sigma : %f /n", ((octaves[i].Octave)[0].absolute_sigma));
 		}
 		sigma = initial_sigma;
-		//½¨Á¢±¾½×ÌİÆäËû²ãµÄÍ¼Ïñ  
+		//å»ºç«‹æœ¬é˜¶æ¢¯å…¶ä»–å±‚çš„å›¾åƒ  
 		for (j = 1; j < SCALESPEROCTAVE + 3; j++)
 		{
-			dst = cvCreateMat(tempMat->rows, tempMat->cols, CV_32FC1);//ÓÃÓÚ´æ´¢¸ßË¹²ã  
-			temp = cvCreateMat(tempMat->rows, tempMat->cols, CV_32FC1);//ÓÃÓÚ´æ´¢DOG²ã  
+			dst = cvCreateMat(tempMat->rows, tempMat->cols, CV_32FC1);//ç”¨äºå­˜å‚¨é«˜æ–¯å±‚  
+			temp = cvCreateMat(tempMat->rows, tempMat->cols, CV_32FC1);//ç”¨äºå­˜å‚¨DOGå±‚  
 			// 2 passes of 1D on original  
 			//   if(i!=0)  
 			//   {  
@@ -459,11 +459,11 @@ ImageOctaves* BuildGaussianOctaves(CvMat * image)
 
 			(octaves[i].Octave)[j].levelsigma = sigma;
 			(octaves[i].Octave)[j].absolute_sigma = absolute_sigma;
-			//²úÉú¸ßË¹²ã  
-			int length = BlurImage((octaves[i].Octave)[j - 1].Level, dst, sigma_f);//ÏàÓ¦³ß¶È  
+			//äº§ç”Ÿé«˜æ–¯å±‚  
+			int length = BlurImage((octaves[i].Octave)[j - 1].Level, dst, sigma_f);//ç›¸åº”å°ºåº¦  
 			(octaves[i].Octave)[j].levelsigmalength = length;
 			(octaves[i].Octave)[j].Level = dst;
-			//²úÉúDOG²ã  
+			//äº§ç”ŸDOGå±‚  
 			cvSub(((octaves[i].Octave)[j]).Level, ((octaves[i].Octave)[j - 1]).Level, temp, 0);
 			//         cvAbsDiff( ((octaves[i].Octave)[j]).Level, ((octaves[i].Octave)[j-1]).Level, temp );  
 			((DOGoctaves[i].Octave)[j - 1]).Level = temp;
@@ -475,19 +475,19 @@ ImageOctaves* BuildGaussianOctaves(CvMat * image)
 }
 
 /***************************************
-SIFTËã·¨µÚÈı²½
-SIFTËã·¨µÚÈı²½£¬
-ÌØÕ÷µãÎ»ÖÃ¼ì²â£¬
-×îºóÈ·¶¨ÌØÕ÷µãµÄÎ»ÖÃ¼ì²âDOG½ğ×ÖËşÖĞµÄ¾Ö²¿×î´óÖµ£¬
-ÕÒµ½Ö®ºó£¬»¹Òª¾­¹ıÁ½¸ö¼ìÑé²ÅÄÜÈ·ÈÏÎªÌØÕ÷µã£º
-Ò»ÊÇËü±ØĞëÓĞÃ÷ÏÔµÄ²îÒì£¬
-¶şÊÇËû²»Ó¦¸ÃÊÇ±ßÔµµã£¬
-£¨Ò²¾ÍÊÇËµ£¬ÔÚ¼«Öµµã´¦µÄÖ÷ÇúÂÊ±ÈÓ¦¸ÃĞ¡ÓÚÄ³Ò»¸öãĞÖµ£©¡£
+SIFTç®—æ³•ç¬¬ä¸‰æ­¥
+SIFTç®—æ³•ç¬¬ä¸‰æ­¥ï¼Œ
+ç‰¹å¾ç‚¹ä½ç½®æ£€æµ‹ï¼Œ
+æœ€åç¡®å®šç‰¹å¾ç‚¹çš„ä½ç½®æ£€æµ‹DOGé‡‘å­—å¡”ä¸­çš„å±€éƒ¨æœ€å¤§å€¼ï¼Œ
+æ‰¾åˆ°ä¹‹åï¼Œè¿˜è¦ç»è¿‡ä¸¤ä¸ªæ£€éªŒæ‰èƒ½ç¡®è®¤ä¸ºç‰¹å¾ç‚¹ï¼š
+ä¸€æ˜¯å®ƒå¿…é¡»æœ‰æ˜æ˜¾çš„å·®å¼‚ï¼Œ
+äºŒæ˜¯ä»–ä¸åº”è¯¥æ˜¯è¾¹ç¼˜ç‚¹ï¼Œ
+ï¼ˆä¹Ÿå°±æ˜¯è¯´ï¼Œåœ¨æå€¼ç‚¹å¤„çš„ä¸»æ›²ç‡æ¯”åº”è¯¥å°äºæŸä¸€ä¸ªé˜ˆå€¼ï¼‰ã€‚
 ***************************************/
-//SIFTËã·¨µÚÈı²½£¬ÌØÕ÷µãÎ»ÖÃ¼ì²â£¬  
+//SIFTç®—æ³•ç¬¬ä¸‰æ­¥ï¼Œç‰¹å¾ç‚¹ä½ç½®æ£€æµ‹ï¼Œ  
 int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 {
-	//¼ÆËãÓÃÓÚDOG¼«Öµµã¼ì²âµÄÖ÷ÇúÂÊ±ÈµÄãĞÖµ  
+	//è®¡ç®—ç”¨äºDOGæå€¼ç‚¹æ£€æµ‹çš„ä¸»æ›²ç‡æ¯”çš„é˜ˆå€¼  
 	double curvature_threshold;
 	curvature_threshold = ((CURVATURE_THRESHOLD + 1)*(CURVATURE_THRESHOLD + 1)) / CURVATURE_THRESHOLD;
 #define ImLevels(OCTAVE,LEVEL,ROW,COL) ((float *)(DOGoctaves[(OCTAVE)].Octave[(LEVEL)].Level->data.fl + DOGoctaves[(OCTAVE)].Octave[(LEVEL)].Level->step/sizeof(float) *(ROW)))[(COL)]  
@@ -495,9 +495,9 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 	int   keypoint_count = 0;
 	for (int i = 0; i<numoctaves; i++)
 	{
-		for (int j = 1; j<SCALESPEROCTAVE + 1; j++)//È¡ÖĞ¼äµÄscaleperoctave¸ö²ã  
+		for (int j = 1; j<SCALESPEROCTAVE + 1; j++)//å–ä¸­é—´çš„scaleperoctaveä¸ªå±‚  
 		{
-			//ÔÚÍ¼ÏñµÄÓĞĞ§ÇøÓòÄÚÑ°ÕÒ¾ßÓĞÏÔÖøĞÔÌØÕ÷µÄ¾Ö²¿×î´óÖµ  
+			//åœ¨å›¾åƒçš„æœ‰æ•ˆåŒºåŸŸå†…å¯»æ‰¾å…·æœ‰æ˜¾è‘—æ€§ç‰¹å¾çš„å±€éƒ¨æœ€å¤§å€¼  
 			//float sigma=(GaussianPyr[i].Octave)[j].levelsigma;  
 			//int dim = (int) (max(3.0f, 2.0*GAUSSKERN *sigma + 1.0f)*0.5);  
 			int dim = (int)(0.5*((GaussianPyr[i].Octave)[j].levelsigmalength) + 0.5);
@@ -507,7 +507,7 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 					if (fabs(ImLevels(i, j, m, n)) >= CONTRAST_THRESHOLD)
 					{
 
-						if (ImLevels(i, j, m, n) != 0.0)  //1¡¢Ê×ÏÈÊÇ·ÇÁã  
+						if (ImLevels(i, j, m, n) != 0.0)  //1ã€é¦–å…ˆæ˜¯éé›¶  
 						{
 							float inf_val = ImLevels(i, j, m, n);
 							if (((inf_val <= ImLevels(i, j - 1, m - 1, n - 1)) &&
@@ -518,7 +518,7 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 								(inf_val <= ImLevels(i, j - 1, m + 1, n)) &&
 								(inf_val <= ImLevels(i, j - 1, m - 1, n + 1)) &&
 								(inf_val <= ImLevels(i, j - 1, m, n + 1)) &&
-								(inf_val <= ImLevels(i, j - 1, m + 1, n + 1)) &&    //µ×²ãµÄĞ¡³ß¶È9  
+								(inf_val <= ImLevels(i, j - 1, m + 1, n + 1)) &&    //åº•å±‚çš„å°å°ºåº¦9  
 
 								(inf_val <= ImLevels(i, j, m - 1, n - 1)) &&
 								(inf_val <= ImLevels(i, j, m, n - 1)) &&
@@ -527,7 +527,7 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 								(inf_val <= ImLevels(i, j, m + 1, n)) &&
 								(inf_val <= ImLevels(i, j, m - 1, n + 1)) &&
 								(inf_val <= ImLevels(i, j, m, n + 1)) &&
-								(inf_val <= ImLevels(i, j, m + 1, n + 1)) &&     //µ±Ç°²ã8  
+								(inf_val <= ImLevels(i, j, m + 1, n + 1)) &&     //å½“å‰å±‚8  
 
 								(inf_val <= ImLevels(i, j + 1, m - 1, n - 1)) &&
 								(inf_val <= ImLevels(i, j + 1, m, n - 1)) &&
@@ -537,7 +537,7 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 								(inf_val <= ImLevels(i, j + 1, m + 1, n)) &&
 								(inf_val <= ImLevels(i, j + 1, m - 1, n + 1)) &&
 								(inf_val <= ImLevels(i, j + 1, m, n + 1)) &&
-								(inf_val <= ImLevels(i, j + 1, m + 1, n + 1))     //ÏÂÒ»²ã´ó³ß¶È9          
+								(inf_val <= ImLevels(i, j + 1, m + 1, n + 1))     //ä¸‹ä¸€å±‚å¤§å°ºåº¦9          
 								) ||
 								((inf_val >= ImLevels(i, j - 1, m - 1, n - 1)) &&
 								(inf_val >= ImLevels(i, j - 1, m, n - 1)) &&
@@ -567,13 +567,13 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 								(inf_val >= ImLevels(i, j + 1, m - 1, n + 1)) &&
 								(inf_val >= ImLevels(i, j + 1, m, n + 1)) &&
 								(inf_val >= ImLevels(i, j + 1, m + 1, n + 1))
-								))      //2¡¢Âú×ã26¸öÖĞ¼«Öµµã  
+								))      //2ã€æ»¡è¶³26ä¸ªä¸­æå€¼ç‚¹  
 							{
-								//´Ë´¦¿É´æ´¢  
-								//È»ºó±ØĞë¾ßÓĞÃ÷ÏÔµÄÏÔÖøĞÔ£¬¼´±ØĞë´óÓÚCONTRAST_THRESHOLD=0.02  
+								//æ­¤å¤„å¯å­˜å‚¨  
+								//ç„¶åå¿…é¡»å…·æœ‰æ˜æ˜¾çš„æ˜¾è‘—æ€§ï¼Œå³å¿…é¡»å¤§äºCONTRAST_THRESHOLD=0.02  
 								if (fabs(ImLevels(i, j, m, n)) >= CONTRAST_THRESHOLD)
 								{
-									//×îºóÏÔÖø´¦µÄÌØÕ÷µã±ØĞë¾ßÓĞ×ã¹»µÄÇúÂÊ±È£¬CURVATURE_THRESHOLD=10.0£¬Ê×ÏÈ¼ÆËãHessian¾ØÕó  
+									//æœ€åæ˜¾è‘—å¤„çš„ç‰¹å¾ç‚¹å¿…é¡»å…·æœ‰è¶³å¤Ÿçš„æ›²ç‡æ¯”ï¼ŒCURVATURE_THRESHOLD=10.0ï¼Œé¦–å…ˆè®¡ç®—HessiançŸ©é˜µ  
 									// Compute the entries of the Hessian matrix at the extrema location.  
 									/*
 									1   0   -1
@@ -591,9 +591,9 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 									Det_H = Dxx*Dyy - Dxy*Dxy;
 									// Compute the ratio of the principal curvatures.  
 									curvature_ratio = (1.0*Tr_H*Tr_H) / Det_H;
-									if ((Det_H >= 0.0) && (curvature_ratio <= curvature_threshold))  //×îºóµÃµ½×î¾ßÓĞÏÔÖøĞÔÌØÕ÷µÄÌØÕ÷µã  
+									if ((Det_H >= 0.0) && (curvature_ratio <= curvature_threshold))  //æœ€åå¾—åˆ°æœ€å…·æœ‰æ˜¾è‘—æ€§ç‰¹å¾çš„ç‰¹å¾ç‚¹  
 									{
-										//½«Æä´æ´¢ÆğÀ´£¬ÒÔ¼ÆËãºóÃæµÄÌØÕ÷ÃèÊö×Ö  
+										//å°†å…¶å­˜å‚¨èµ·æ¥ï¼Œä»¥è®¡ç®—åé¢çš„ç‰¹å¾æè¿°å­—  
 										keypoint_count++;
 										Keypoint k;
 										/* Allocate memory for the keypoint. */
@@ -602,8 +602,8 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 										keypoints = k;
 										k->row = m*(GaussianPyr[i].subsample);
 										k->col = n*(GaussianPyr[i].subsample);
-										k->sy = m;    //ĞĞ  
-										k->sx = n;    //ÁĞ  
+										k->sy = m;    //è¡Œ  
+										k->sx = n;    //åˆ—  
 										k->octave = i;
 										k->level = j;
 										k->scale = (GaussianPyr[i].Octave)[j].absolute_sigma;
@@ -618,12 +618,12 @@ int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr)
 	return keypoint_count;
 }
 
-//ÔÚÍ¼ÏñÖĞ£¬ÏÔÊ¾SIFTÌØÕ÷µãµÄÎ»ÖÃ  
+//åœ¨å›¾åƒä¸­ï¼Œæ˜¾ç¤ºSIFTç‰¹å¾ç‚¹çš„ä½ç½®  
 void DisplayKeypointLocation(IplImage* image, ImageOctaves *GaussianPyr)
 {
 
-	Keypoint p = keypoints; // pÖ¸ÏòµÚÒ»¸ö½áµã  
-	while (p) // Ã»µ½±íÎ²  
+	Keypoint p = keypoints; // pæŒ‡å‘ç¬¬ä¸€ä¸ªç»“ç‚¹  
+	while (p) // æ²¡åˆ°è¡¨å°¾  
 	{
 		cvLine(image, cvPoint((int)((p->col) - 3), (int)(p->row)),
 			cvPoint((int)((p->col) + 3), (int)(p->row)), CV_RGB(255, 255, 0),
@@ -651,7 +651,7 @@ void ComputeGrad_DirecandMag(int numoctaves, ImageOctaves *GaussianPyr)
 	{
 		mag_pyr[i].Octave = (ImageLevels*)malloc((SCALESPEROCTAVE)* sizeof(ImageLevels));
 		grad_pyr[i].Octave = (ImageLevels*)malloc((SCALESPEROCTAVE)* sizeof(ImageLevels));
-		for (int j = 1; j<SCALESPEROCTAVE + 1; j++)//È¡ÖĞ¼äµÄscaleperoctave¸ö²ã  
+		for (int j = 1; j<SCALESPEROCTAVE + 1; j++)//å–ä¸­é—´çš„scaleperoctaveä¸ªå±‚  
 		{
 			CvMat *Mag = cvCreateMat(GaussianPyr[i].row, GaussianPyr[i].col, CV_32FC1);
 			CvMat *Ori = cvCreateMat(GaussianPyr[i].row, GaussianPyr[i].col, CV_32FC1);
@@ -668,11 +668,11 @@ void ComputeGrad_DirecandMag(int numoctaves, ImageOctaves *GaussianPyr)
 			for (int m = 1; m<(GaussianPyr[i].row - 1); m++)
 				for (int n = 1; n<(GaussianPyr[i].col - 1); n++)
 				{
-					//¼ÆËã·ùÖµ  
+					//è®¡ç®—å¹…å€¼  
 					TEMPMAT1(m, n) = 0.5*(ImLevels(i, j, m, n + 1) - ImLevels(i, j, m, n - 1));  //dx  
 					TEMPMAT2(m, n) = 0.5*(ImLevels(i, j, m + 1, n) - ImLevels(i, j, m - 1, n));  //dy  
 					MAG(m, n) = sqrt(TEMPMAT1(m, n)*TEMPMAT1(m, n) + TEMPMAT2(m, n)*TEMPMAT2(m, n));  //mag  
-					//¼ÆËã·½Ïò  
+					//è®¡ç®—æ–¹å‘  
 					ORI(m, n) = atan(TEMPMAT2(m, n) / TEMPMAT1(m, n));
 					if (ORI(m, n) == CV_PI)
 						ORI(m, n) = -CV_PI;
@@ -687,9 +687,9 @@ void ComputeGrad_DirecandMag(int numoctaves, ImageOctaves *GaussianPyr)
 
 
 /***************************************
-SIFTËã·¨µÚËÄ²½
-//SIFTËã·¨µÚËÄ²½£º
-¼ÆËã¸÷¸öÌØÕ÷µãµÄÖ÷·½Ïò£¬È·¶¨Ö÷·½Ïò
+SIFTç®—æ³•ç¬¬å››æ­¥
+//SIFTç®—æ³•ç¬¬å››æ­¥ï¼š
+è®¡ç®—å„ä¸ªç‰¹å¾ç‚¹çš„ä¸»æ–¹å‘ï¼Œç¡®å®šä¸»æ–¹å‘
 ***************************************/
 void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOctaves *mag_pyr, ImageOctaves *grad_pyr)
 {
@@ -705,42 +705,42 @@ void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOc
 #define ImLevels(OCTAVES,LEVELS,ROW,COL) ((float *)((GaussianPyr[(OCTAVES)].Octave[(LEVELS)].Level)->data.fl + (GaussianPyr[(OCTAVES)].Octave[(LEVELS)].Level)->step/sizeof(float) *(ROW)))[(COL)]  
 
 	int keypoint_count = 0;
-	Keypoint p = keypoints; // pÖ¸ÏòµÚÒ»¸ö½áµã  
+	Keypoint p = keypoints; // pæŒ‡å‘ç¬¬ä¸€ä¸ªç»“ç‚¹  
 
-	while (p) // Ã»µ½±íÎ²  
+	while (p) // æ²¡åˆ°è¡¨å°¾  
 	{
 		int i = p->octave;
 		int j = p->level;
-		int m = p->sy;   //ĞĞ  
-		int n = p->sx;   //ÁĞ  
+		int m = p->sy;   //è¡Œ  
+		int n = p->sx;   //åˆ—  
 		if ((m >= zero_pad) && (m<GaussianPyr[i].row - zero_pad) &&
 			(n >= zero_pad) && (n<GaussianPyr[i].col - zero_pad))
 		{
 			float sigma = (((GaussianPyr[i].Octave)[j].absolute_sigma)) / (GaussianPyr[i].subsample);
-			//²úÉú¶şÎ¬¸ßË¹Ä£°å  
+			//äº§ç”ŸäºŒç»´é«˜æ–¯æ¨¡æ¿  
 			CvMat* mat = GaussianKernel2D(sigma);
 			int dim = (int)(0.5 * (mat->rows));
-			//·ÖÅäÓÃÓÚ´æ´¢Patch·ùÖµºÍ·½ÏòµÄ¿Õ¼ä  
+			//åˆ†é…ç”¨äºå­˜å‚¨Patchå¹…å€¼å’Œæ–¹å‘çš„ç©ºé—´  
 #define MAT(ROW,COL) ((float *)(mat->data.fl + mat->step/sizeof(float) *(ROW)))[(COL)]  
 
-			//ÉùÃ÷·½ÏòÖ±·½Í¼±äÁ¿  
+			//å£°æ˜æ–¹å‘ç›´æ–¹å›¾å˜é‡  
 			double* orienthist = (double *)malloc(36 * sizeof(double));
 			for (int sw = 0; sw < 36; ++sw)
 			{
 				orienthist[sw] = 0.0;
 			}
-			//ÔÚÌØÕ÷µãµÄÖÜÎ§Í³¼ÆÌİ¶È·½Ïò  
+			//åœ¨ç‰¹å¾ç‚¹çš„å‘¨å›´ç»Ÿè®¡æ¢¯åº¦æ–¹å‘  
 			for (int x = m - dim, mm = 0; x <= (m + dim); x++, mm++)
 				for (int y = n - dim, nn = 0; y <= (n + dim); y++, nn++)
 				{
-					//¼ÆËãÌØÕ÷µã´¦µÄ·ùÖµ  
+					//è®¡ç®—ç‰¹å¾ç‚¹å¤„çš„å¹…å€¼  
 					double dx = 0.5*(ImLevels(i, j, x, y + 1) - ImLevels(i, j, x, y - 1));  //dx  
 					double dy = 0.5*(ImLevels(i, j, x + 1, y) - ImLevels(i, j, x - 1, y));  //dy  
 					double mag = sqrt(dx*dx + dy*dy);  //mag  
-					//¼ÆËã·½Ïò  
+					//è®¡ç®—æ–¹å‘  
 					double Ori = atan(1.0*dy / dx);
-					int binIdx = FindClosestRotationBin(36, Ori);                   //µÃµ½ÀëÏÖÓĞ·½Ïò×î½üµÄÖ±·½¿é  
-					orienthist[binIdx] = orienthist[binIdx] + 1.0* mag * MAT(mm, nn);//ÀûÓÃ¸ßË¹¼ÓÈ¨ÀÛ¼Ó½øÖ±·½Í¼ÏàÓ¦µÄ¿é  
+					int binIdx = FindClosestRotationBin(36, Ori);                   //å¾—åˆ°ç¦»ç°æœ‰æ–¹å‘æœ€è¿‘çš„ç›´æ–¹å—  
+					orienthist[binIdx] = orienthist[binIdx] + 1.0* mag * MAT(mm, nn);//åˆ©ç”¨é«˜æ–¯åŠ æƒç´¯åŠ è¿›ç›´æ–¹å›¾ç›¸åº”çš„å—  
 				}
 			// Find peaks in the orientation histogram using nonmax suppression.  
 			AverageWeakBins(orienthist, 36);
@@ -808,7 +808,7 @@ void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOc
 				double maxPeakValue, maxDegreeCorrection;
 				if (InterpolateOrientation(orienthist[maxBin == 0 ? (36 - 1) : (maxBin - 1)],
 					orienthist[maxBin], orienthist[(maxBin + 1) % 36],
-					¡ãreeCorrection, &peakValue) == false)
+					Â°reeCorrection, &peakValue) == false)
 				{
 					printf("BUG: Parabola fitting broken");
 				}
@@ -818,8 +818,8 @@ void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOc
 					degree += 2.0 * PI;
 				else if (degree > PI)
 					degree -= 2.0 * PI;
-				//´æ´¢·½Ïò£¬¿ÉÒÔÖ±½ÓÀûÓÃ¼ì²âµ½µÄÁ´±í½øĞĞ¸Ã²½Ö÷·½ÏòµÄÖ¸¶¨;  
-				//·ÖÅäÄÚ´æÖØĞÂ´æ´¢ÌØÕ÷µã  
+				//å­˜å‚¨æ–¹å‘ï¼Œå¯ä»¥ç›´æ¥åˆ©ç”¨æ£€æµ‹åˆ°çš„é“¾è¡¨è¿›è¡Œè¯¥æ­¥ä¸»æ–¹å‘çš„æŒ‡å®š;  
+				//åˆ†é…å†…å­˜é‡æ–°å­˜å‚¨ç‰¹å¾ç‚¹  
 				Keypoint k;
 				/* Allocate memory for the keypoint Descriptor. */
 				k = (Keypoint)malloc(sizeof(struct KeypointSt));
@@ -828,8 +828,8 @@ void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOc
 				k->descrip = (float*)malloc(LEN * sizeof(float));
 				k->row = p->row;
 				k->col = p->col;
-				k->sy = p->sy;    //ĞĞ  
-				k->sx = p->sx;    //ÁĞ  
+				k->sy = p->sy;    //è¡Œ  
+				k->sx = p->sx;    //åˆ—  
 				k->octave = p->octave;
 				k->level = p->level;
 				k->scale = p->scale;
@@ -842,7 +842,7 @@ void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOc
 	}
 }
 
-//Ñ°ÕÒÓë·½ÏòÖ±·½Í¼×î½üµÄÖù£¬È·¶¨Æäindex   
+//å¯»æ‰¾ä¸æ–¹å‘ç›´æ–¹å›¾æœ€è¿‘çš„æŸ±ï¼Œç¡®å®šå…¶index   
 int FindClosestRotationBin(int binCount, float angle)
 {
 	angle += CV_PI;
@@ -887,7 +887,7 @@ void AverageWeakBins(double* hist, int binCount)
 // 'peakValue' the maximum estimated peak value is stored.  
 bool InterpolateOrientation(double left, double middle, double right, double *degreeCorrection, double *peakValue)
 {
-	double a = ((left + right) - 2.0 * middle) / 2.0;   //Å×ÎïÏßÄóºÏÏµÊıa  
+	double a = ((left + right) - 2.0 * middle) / 2.0;   //æŠ›ç‰©çº¿æåˆç³»æ•°a  
 	// degreeCorrection = peakValue = Double.NaN;  
 
 	// Not a parabol  
@@ -902,11 +902,11 @@ bool InterpolateOrientation(double left, double middle, double right, double *de
 	return true;
 }
 
-//ÏÔÊ¾ÌØÕ÷µã´¦µÄÖ÷·½Ïò  
+//æ˜¾ç¤ºç‰¹å¾ç‚¹å¤„çš„ä¸»æ–¹å‘  
 void DisplayOrientation(IplImage* image, ImageOctaves *GaussianPyr)
 {
-	Keypoint p = keyDescriptors; // pÖ¸ÏòµÚÒ»¸ö½áµã  
-	while (p) // Ã»µ½±íÎ²  
+	Keypoint p = keyDescriptors; // pæŒ‡å‘ç¬¬ä¸€ä¸ªç»“ç‚¹  
+	while (p) // æ²¡åˆ°è¡¨å°¾  
 	{
 		float scale = (GaussianPyr[p->octave].Octave)[p->level].absolute_sigma;
 		float autoscale = 3.0;
@@ -937,12 +937,12 @@ void DisplayOrientation(IplImage* image, ImageOctaves *GaussianPyr)
 
 
 /***************************************
-SIFTËã·¨µÚÎå²½
-SIFTËã·¨µÚÎå²½£º³éÈ¡¸÷¸öÌØÕ÷µã´¦µÄÌØÕ÷ÃèÊö×Ö£¬
-È·¶¨ÌØÕ÷µãµÄÃèÊö×Ö¡£ÃèÊö×ÖÊÇPatchÍø¸ñÄÚÌİ¶È·½ÏòµÄÃèÊö£¬
-Ğı×ªÍø¸ñµ½Ö÷·½Ïò£¬²åÖµµÃµ½Íø¸ñ´¦Ìİ¶ÈÖµ¡£
-Ò»¸öÌØÕ÷µã¿ÉÒÔÓÃ2 * 2 * 8 = 32Î¬µÄÏòÁ¿£¬
-Ò²¿ÉÒÔÓÃ4 * 4 * 8 = 128Î¬µÄÏòÁ¿¸ü¾«È·µÄ½øĞĞÃèÊö¡£
+SIFTç®—æ³•ç¬¬äº”æ­¥
+SIFTç®—æ³•ç¬¬äº”æ­¥ï¼šæŠ½å–å„ä¸ªç‰¹å¾ç‚¹å¤„çš„ç‰¹å¾æè¿°å­—ï¼Œ
+ç¡®å®šç‰¹å¾ç‚¹çš„æè¿°å­—ã€‚æè¿°å­—æ˜¯Patchç½‘æ ¼å†…æ¢¯åº¦æ–¹å‘çš„æè¿°ï¼Œ
+æ—‹è½¬ç½‘æ ¼åˆ°ä¸»æ–¹å‘ï¼Œæ’å€¼å¾—åˆ°ç½‘æ ¼å¤„æ¢¯åº¦å€¼ã€‚
+ä¸€ä¸ªç‰¹å¾ç‚¹å¯ä»¥ç”¨2 * 2 * 8 = 32ç»´çš„å‘é‡ï¼Œ
+ä¹Ÿå¯ä»¥ç”¨4 * 4 * 8 = 128ç»´çš„å‘é‡æ›´ç²¾ç¡®çš„è¿›è¡Œæè¿°ã€‚
 ***************************************/
 void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr)
 {
@@ -950,7 +950,7 @@ void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr)
 	float orient_bin_spacing = PI / 4;
 	float orient_angles[8] = { -PI, -PI + orient_bin_spacing, -PI*0.5, -orient_bin_spacing,
 		0.0, orient_bin_spacing, PI*0.5, PI + orient_bin_spacing };
-	//²úÉúÃèÊö×ÖÖĞĞÄ¸÷µã×ø±ê  
+	//äº§ç”Ÿæè¿°å­—ä¸­å¿ƒå„ç‚¹åæ ‡  
 	float *feat_grid = (float *)malloc(2 * 16 * sizeof(float));
 	for (int i = 0; i<GridSpacing; i++)
 	{
@@ -960,7 +960,7 @@ void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr)
 			feat_grid[i * 2 * GridSpacing + j + 1] = -6.0 + 0.5*j*GridSpacing;
 		}
 	}
-	//²úÉúÍø¸ñ  
+	//äº§ç”Ÿç½‘æ ¼  
 	float *feat_samples = (float *)malloc(2 * 256 * sizeof(float));
 	for (i = 0; i<4 * GridSpacing; i++)
 	{
@@ -971,14 +971,14 @@ void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr)
 		}
 	}
 	float feat_window = 2 * GridSpacing;
-	Keypoint p = keyDescriptors; // pÖ¸ÏòµÚÒ»¸ö½áµã  
-	while (p) // Ã»µ½±íÎ²  
+	Keypoint p = keyDescriptors; // pæŒ‡å‘ç¬¬ä¸€ä¸ªç»“ç‚¹  
+	while (p) // æ²¡åˆ°è¡¨å°¾  
 	{
 		float scale = (GaussianPyr[p->octave].Octave)[p->level].absolute_sigma;
 
 		float sine = sin(p->ori);
 		float cosine = cos(p->ori);
-		//¼ÆËãÖĞĞÄµã×ø±êĞı×ªÖ®ºóµÄÎ»ÖÃ  
+		//è®¡ç®—ä¸­å¿ƒç‚¹åæ ‡æ—‹è½¬ä¹‹åçš„ä½ç½®  
 		float *featcenter = (float *)malloc(2 * 16 * sizeof(float));
 		for (int i = 0; i<GridSpacing; i++)
 		{
@@ -1015,7 +1015,7 @@ void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr)
 			/*
 			0   1   0
 			1   *   1
-			0   1   0   ¾ßÌå²åÖµ²ßÂÔÈçÍ¼Ê¾
+			0   1   0   å…·ä½“æ’å€¼ç­–ç•¥å¦‚å›¾ç¤º
 			*/
 			float sample12 = getPixelBI(((GaussianPyr[p->octave].Octave)[p->level]).Level, x_sample, y_sample - 1);
 			float sample21 = getPixelBI(((GaussianPyr[p->octave].Octave)[p->level]).Level, x_sample - 1, y_sample);
@@ -1047,7 +1047,7 @@ void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr)
 					pos_wght[m * 8 + n] = x_wght[m] * y_wght[m];
 			free(x_wght);
 			free(y_wght);
-			//¼ÆËã·½ÏòµÄ¼ÓÈ¨£¬Ê×ÏÈĞı×ªÌİ¶È³¡µ½Ö÷·½Ïò£¬È»ºó¼ÆËã²îÒì   
+			//è®¡ç®—æ–¹å‘çš„åŠ æƒï¼Œé¦–å…ˆæ—‹è½¬æ¢¯åº¦åœºåˆ°ä¸»æ–¹å‘ï¼Œç„¶åè®¡ç®—å·®å¼‚   
 			float diff[8], orient_wght[128];
 			for (m = 0; m<8; ++m)
 			{
@@ -1091,7 +1091,7 @@ void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr)
 	free(feat_samples);
 }
 
-//ÎªÁËÏÔÊ¾Í¼Ïó½ğ×ÖËş£¬¶ø×÷µÄÍ¼ÏñË®Æ½Æ´½Ó  
+//ä¸ºäº†æ˜¾ç¤ºå›¾è±¡é‡‘å­—å¡”ï¼Œè€Œä½œçš„å›¾åƒæ°´å¹³æ‹¼æ¥  
 CvMat* MosaicHorizen(CvMat* im1, CvMat* im2)
 {
 	int row, col;
@@ -1110,7 +1110,7 @@ CvMat* MosaicHorizen(CvMat* im1, CvMat* im2)
 	return mosaic;
 }
 
-//ÎªÁËÏÔÊ¾Í¼Ïó½ğ×ÖËş£¬¶ø×÷µÄÍ¼Ïñ´¹Ö±Æ´½Ó  
+//ä¸ºäº†æ˜¾ç¤ºå›¾è±¡é‡‘å­—å¡”ï¼Œè€Œä½œçš„å›¾åƒå‚ç›´æ‹¼æ¥  
 CvMat* MosaicVertical(CvMat* im1, CvMat* im2)
 {
 	int row, col;

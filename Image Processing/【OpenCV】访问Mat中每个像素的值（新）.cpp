@@ -1,3 +1,8 @@
+#include <opencv2/opencv.hpp>
+
+using namespace::std;
+using namespace::cv;
+
 //方法零：.ptr和[]操作符
 //
 //Mat最直接的访问方法是通过.ptr<>函数得到一行的指针，并用[]操作符访问某一列的像素值。

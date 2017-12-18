@@ -18,5 +18,8 @@
     <ClCompile Include="least Square Sum.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="高斯牛顿算法.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

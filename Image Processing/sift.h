@@ -1,92 +1,92 @@
-#include "include.h"
+ï»¿#include "include.h"
 
 //Data structure for a float image.  
-typedef struct ImageSt {        /*½ğ×ÖËşÃ¿Ò»²ã*/
+typedef struct ImageSt {        /*é‡‘å­—å¡”æ¯ä¸€å±‚*/
 
 	float levelsigma;
 	int levelsigmalength;
 	float absolute_sigma;
-	CvMat *Level;       //CvMatÊÇOPENCVµÄ¾ØÕóÀà£¬ÆäÔªËØ¿ÉÒÔÊÇÍ¼ÏñµÄÏóËØÖµ         
+	CvMat *Level;       //CvMatæ˜¯OPENCVçš„çŸ©é˜µç±»ï¼Œå…¶å…ƒç´ å¯ä»¥æ˜¯å›¾åƒçš„è±¡ç´ å€¼         
 } ImageLevels;
 
-typedef struct ImageSt1 {      /*½ğ×ÖËşÃ¿Ò»½×Ìİ*/
+typedef struct ImageSt1 {      /*é‡‘å­—å¡”æ¯ä¸€é˜¶æ¢¯*/
 	int row, col;          //Dimensions of image.   
 	float subsample;
 	ImageLevels *Octave;
 } ImageOctaves;
 
 ImageOctaves *DOGoctaves;
-//DOG pyr£¬DOGËã×Ó¼ÆËã¼òµ¥£¬ÊÇ³ß¶È¹éÒ»»¯µÄLoGËã×ÓµÄ½üËÆ¡£  
+//DOG pyrï¼ŒDOGç®—å­è®¡ç®—ç®€å•ï¼Œæ˜¯å°ºåº¦å½’ä¸€åŒ–çš„LoGç®—å­çš„è¿‘ä¼¼ã€‚  
 
 ImageOctaves *mag_thresh;
 ImageOctaves *mag_pyr;
 ImageOctaves *grad_pyr;
 
-//keypointÊı¾İ½á¹¹£¬Lists of keypoints are linked by the "next" field.  
+//keypointæ•°æ®ç»“æ„ï¼ŒLists of keypoints are linked by the "next" field.  
 typedef struct KeypointSt
 {
-	float row, col; /* ·´À¡»ØÔ­Í¼Ïñ´óĞ¡£¬ÌØÕ÷µãµÄÎ»ÖÃ */
-	float sx, sy;    /* ½ğ×ÖËşÖĞÌØÕ÷µãµÄÎ»ÖÃ*/
-	int octave, level;/*½ğ×ÖËşÖĞ£¬ÌØÕ÷µãËùÔÚµÄ½×Ìİ¡¢²ã´Î*/
+	float row, col; /* åé¦ˆå›åŸå›¾åƒå¤§å°ï¼Œç‰¹å¾ç‚¹çš„ä½ç½® */
+	float sx, sy;    /* é‡‘å­—å¡”ä¸­ç‰¹å¾ç‚¹çš„ä½ç½®*/
+	int octave, level;/*é‡‘å­—å¡”ä¸­ï¼Œç‰¹å¾ç‚¹æ‰€åœ¨çš„é˜¶æ¢¯ã€å±‚æ¬¡*/
 
-	float scale, ori, mag; /*ËùÔÚ²ãµÄ³ß¶Èsigma,Ö÷·½Ïòorientation (range [-PI,PI])£¬ÒÔ¼°·ùÖµ*/
-	float *descrip;       /*ÌØÕ÷ÃèÊö×ÖÖ¸Õë£º128Î¬»ò32Î¬µÈ*/
+	float scale, ori, mag; /*æ‰€åœ¨å±‚çš„å°ºåº¦sigma,ä¸»æ–¹å‘orientation (range [-PI,PI])ï¼Œä»¥åŠå¹…å€¼*/
+	float *descrip;       /*ç‰¹å¾æè¿°å­—æŒ‡é’ˆï¼š128ç»´æˆ–32ç»´ç­‰*/
 	struct KeypointSt *next;/* Pointer to next keypoint in list. */
 } *Keypoint;
 
-//¶¨ÒåÌØÕ÷µã¾ßÌå±äÁ¿  
-Keypoint keypoints = NULL;      //ÓÃÓÚÁÙÊ±´æ´¢ÌØÕ÷µãµÄÎ»ÖÃµÈ  
-Keypoint keyDescriptors = NULL; //ÓÃÓÚ×îºóµÄÈ·¶¨ÌØÕ÷µãÒÔ¼°ÌØÕ÷ÃèÊö×Ö  
+//å®šä¹‰ç‰¹å¾ç‚¹å…·ä½“å˜é‡  
+Keypoint keypoints = NULL;      //ç”¨äºä¸´æ—¶å­˜å‚¨ç‰¹å¾ç‚¹çš„ä½ç½®ç­‰  
+Keypoint keyDescriptors = NULL; //ç”¨äºæœ€åçš„ç¡®å®šç‰¹å¾ç‚¹ä»¥åŠç‰¹å¾æè¿°å­—  
 
 
-CvMat * halfSizeImage(CvMat * im);     //ËõĞ¡Í¼Ïñ£ºÏÂ²ÉÑù  
-CvMat * doubleSizeImage(CvMat * im);   //À©´óÍ¼Ïñ£º×î½üÁÙ·½·¨  
-CvMat * doubleSizeImage2(CvMat * im);  //À©´óÍ¼Ïñ£ºÏßĞÔ²åÖµ  
-float getPixelBI(CvMat * im, float col, float row);//Ë«ÏßĞÔ²åÖµº¯Êı  
-void normalizeVec(float* vec, int dim);//ÏòÁ¿¹éÒ»»¯    
-CvMat* GaussianKernel2D(float sigma);  //µÃµ½2Î¬¸ßË¹ºË  
-void normalizeMat(CvMat* mat);        //¾ØÕó¹éÒ»»¯  
-float* GaussianKernel1D(float sigma, int dim); //µÃµ½1Î¬¸ßË¹ºË  
+CvMat * halfSizeImage(CvMat * im);     //ç¼©å°å›¾åƒï¼šä¸‹é‡‡æ ·  
+CvMat * doubleSizeImage(CvMat * im);   //æ‰©å¤§å›¾åƒï¼šæœ€è¿‘ä¸´æ–¹æ³•  
+CvMat * doubleSizeImage2(CvMat * im);  //æ‰©å¤§å›¾åƒï¼šçº¿æ€§æ’å€¼  
+float getPixelBI(CvMat * im, float col, float row);//åŒçº¿æ€§æ’å€¼å‡½æ•°  
+void normalizeVec(float* vec, int dim);//å‘é‡å½’ä¸€åŒ–    
+CvMat* GaussianKernel2D(float sigma);  //å¾—åˆ°2ç»´é«˜æ–¯æ ¸  
+void normalizeMat(CvMat* mat);        //çŸ©é˜µå½’ä¸€åŒ–  
+float* GaussianKernel1D(float sigma, int dim); //å¾—åˆ°1ç»´é«˜æ–¯æ ¸  
 
-//ÔÚ¾ßÌåÏñËØ´¦¿í¶È·½Ïò½øĞĞ¸ßË¹¾í»ı  
+//åœ¨å…·ä½“åƒç´ å¤„å®½åº¦æ–¹å‘è¿›è¡Œé«˜æ–¯å·ç§¯  
 float ConvolveLocWidth(float* kernel, int dim, CvMat * src, int x, int y);
-//ÔÚÕû¸öÍ¼Ïñ¿í¶È·½Ïò½øĞĞ1D¸ßË¹¾í»ı  
+//åœ¨æ•´ä¸ªå›¾åƒå®½åº¦æ–¹å‘è¿›è¡Œ1Dé«˜æ–¯å·ç§¯  
 void Convolve1DWidth(float* kern, int dim, CvMat * src, CvMat * dst);
-//ÔÚ¾ßÌåÏñËØ´¦¸ß¶È·½Ïò½øĞĞ¸ßË¹¾í»ı  
+//åœ¨å…·ä½“åƒç´ å¤„é«˜åº¦æ–¹å‘è¿›è¡Œé«˜æ–¯å·ç§¯  
 float ConvolveLocHeight(float* kernel, int dim, CvMat * src, int x, int y);
-//ÔÚÕû¸öÍ¼Ïñ¸ß¶È·½Ïò½øĞĞ1D¸ßË¹¾í»ı  
+//åœ¨æ•´ä¸ªå›¾åƒé«˜åº¦æ–¹å‘è¿›è¡Œ1Dé«˜æ–¯å·ç§¯  
 void Convolve1DHeight(float* kern, int dim, CvMat * src, CvMat * dst);
-//ÓÃ¸ßË¹º¯ÊıÄ£ºıÍ¼Ïñ    
+//ç”¨é«˜æ–¯å‡½æ•°æ¨¡ç³Šå›¾åƒ    
 int BlurImage(CvMat * src, CvMat * dst, float sigma);
 
-//SIFTËã·¨µÚÒ»²½£ºÍ¼ÏñÔ¤´¦Àí  
-CvMat *ScaleInitImage(CvMat * im);                  //½ğ×ÖËş³õÊ¼»¯  
+//SIFTç®—æ³•ç¬¬ä¸€æ­¥ï¼šå›¾åƒé¢„å¤„ç†  
+CvMat *ScaleInitImage(CvMat * im);                  //é‡‘å­—å¡”åˆå§‹åŒ–  
 
-//SIFTËã·¨µÚ¶ş²½£º½¨Á¢¸ßË¹½ğ×ÖËşº¯Êı  
-ImageOctaves* BuildGaussianOctaves(CvMat * image);  //½¨Á¢¸ßË¹½ğ×ÖËş  
+//SIFTç®—æ³•ç¬¬äºŒæ­¥ï¼šå»ºç«‹é«˜æ–¯é‡‘å­—å¡”å‡½æ•°  
+ImageOctaves* BuildGaussianOctaves(CvMat * image);  //å»ºç«‹é«˜æ–¯é‡‘å­—å¡”  
 
-//SIFTËã·¨µÚÈı²½£ºÌØÕ÷µãÎ»ÖÃ¼ì²â£¬×îºóÈ·¶¨ÌØÕ÷µãµÄÎ»ÖÃ  
+//SIFTç®—æ³•ç¬¬ä¸‰æ­¥ï¼šç‰¹å¾ç‚¹ä½ç½®æ£€æµ‹ï¼Œæœ€åç¡®å®šç‰¹å¾ç‚¹çš„ä½ç½®  
 int DetectKeypoint(int numoctaves, ImageOctaves *GaussianPyr);
 void DisplayKeypointLocation(IplImage* image, ImageOctaves *GaussianPyr);
 
-//SIFTËã·¨µÚËÄ²½£º¼ÆËã¸ßË¹Í¼ÏñµÄÌİ¶È·½ÏòºÍ·ùÖµ£¬¼ÆËã¸÷¸öÌØÕ÷µãµÄÖ÷·½Ïò  
+//SIFTç®—æ³•ç¬¬å››æ­¥ï¼šè®¡ç®—é«˜æ–¯å›¾åƒçš„æ¢¯åº¦æ–¹å‘å’Œå¹…å€¼ï¼Œè®¡ç®—å„ä¸ªç‰¹å¾ç‚¹çš„ä¸»æ–¹å‘  
 void ComputeGrad_DirecandMag(int numoctaves, ImageOctaves *GaussianPyr);
 
-int FindClosestRotationBin(int binCount, float angle);  //½øĞĞ·½ÏòÖ±·½Í¼Í³¼Æ  
-void AverageWeakBins(double* bins, int binCount);       //¶Ô·½ÏòÖ±·½Í¼ÂË²¨  
-//È·¶¨ÕæÕıµÄÖ÷·½Ïò  
+int FindClosestRotationBin(int binCount, float angle);  //è¿›è¡Œæ–¹å‘ç›´æ–¹å›¾ç»Ÿè®¡  
+void AverageWeakBins(double* bins, int binCount);       //å¯¹æ–¹å‘ç›´æ–¹å›¾æ»¤æ³¢  
+//ç¡®å®šçœŸæ­£çš„ä¸»æ–¹å‘  
 bool InterpolateOrientation(double left, double middle, double right, double *degreeCorrection, double *peakValue);
-//È·¶¨¸÷¸öÌØÕ÷µã´¦µÄÖ÷·½Ïòº¯Êı  
+//ç¡®å®šå„ä¸ªç‰¹å¾ç‚¹å¤„çš„ä¸»æ–¹å‘å‡½æ•°  
 void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOctaves *mag_pyr, ImageOctaves *grad_pyr);
-//ÏÔÊ¾Ö÷·½Ïò  
+//æ˜¾ç¤ºä¸»æ–¹å‘  
 void DisplayOrientation(IplImage* image, ImageOctaves *GaussianPyr);
 
-//SIFTËã·¨µÚÎå²½£º³éÈ¡¸÷¸öÌØÕ÷µã´¦µÄÌØÕ÷ÃèÊö×Ö  
+//SIFTç®—æ³•ç¬¬äº”æ­¥ï¼šæŠ½å–å„ä¸ªç‰¹å¾ç‚¹å¤„çš„ç‰¹å¾æè¿°å­—  
 void ExtractFeatureDescriptors(int numoctaves, ImageOctaves *GaussianPyr);
 
-//ÎªÁËÏÔÊ¾Í¼Ïó½ğ×ÖËş£¬¶ø×÷µÄÍ¼ÏñË®Æ½¡¢´¹Ö±Æ´½Ó  
+//ä¸ºäº†æ˜¾ç¤ºå›¾è±¡é‡‘å­—å¡”ï¼Œè€Œä½œçš„å›¾åƒæ°´å¹³ã€å‚ç›´æ‹¼æ¥  
 CvMat* MosaicHorizen(CvMat* im1, CvMat* im2);
 CvMat* MosaicVertical(CvMat* im1, CvMat* im2);
 
-//ÌØÕ÷ÃèÊöµã£¬Íø¸ñ    
+//ç‰¹å¾æè¿°ç‚¹ï¼Œç½‘æ ¼    
 #define GridSpacing 4  

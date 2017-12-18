@@ -1,9 +1,9 @@
-#include "include.h"
+ï»¿#include "include.h"
 #include "sift.h"
 
 int main(void)
 {
-	//ÉùÃ÷µ±Ç°Ö¡IplImageÖ¸Õë  
+	//å£°æ˜Žå½“å‰å¸§IplImageæŒ‡é’ˆ  
 	IplImage* src = NULL;
 	IplImage* image1 = NULL;
 	IplImage* grey_im1 = NULL;
@@ -24,47 +24,47 @@ int main(void)
 
 #define Im1Mat(ROW,COL) ((float *)(image1Mat->data.fl + image1Mat->step/sizeof(float) *(ROW)))[(COL)]  
 
-	//»Ò¶ÈÍ¼ÏóÏñËØµÄÊý¾Ý½á¹¹  
+	//ç°åº¦å›¾è±¡åƒç´ çš„æ•°æ®ç»“æž„  
 #define Im1B(ROW,COL) ((uchar*)(image1->imageData + image1->widthStep*(ROW)))[(COL)*3]  
 #define Im1G(ROW,COL) ((uchar*)(image1->imageData + image1->widthStep*(ROW)))[(COL)*3+1]  
 #define Im1R(ROW,COL) ((uchar*)(image1->imageData + image1->widthStep*(ROW)))[(COL)*3+2]  
 
 	storage = cvCreateMemStorage(0);
 
-	//¶ÁÈ¡Í¼Æ¬  
+	//è¯»å–å›¾ç‰‡  
 	if ((src = cvLoadImage("street1.jpg", 1)) == 0)  // test1.jpg einstein.pgm back1.bmp  
 		return -1;
 
-	//ÎªÍ¼Ïñ·ÖÅäÄÚ´æ   
+	//ä¸ºå›¾åƒåˆ†é…å†…å­˜   
 	image1 = cvCreateImage(cvSize(src->width, src->height), IPL_DEPTH_8U, 3);
 	grey_im1 = cvCreateImage(cvSize(src->width, src->height), IPL_DEPTH_8U, 1);
 	DoubleSizeImage = cvCreateImage(cvSize(2 * (src->width), 2 * (src->height)), IPL_DEPTH_8U, 3);
 
-	//ÎªÍ¼ÏñÕóÁÐ·ÖÅäÄÚ´æ£¬¼ÙÉèÁ½·ùÍ¼ÏñµÄ´óÐ¡ÏàÍ¬£¬tempMat¸úËæimage1µÄ´óÐ¡  
+	//ä¸ºå›¾åƒé˜µåˆ—åˆ†é…å†…å­˜ï¼Œå‡è®¾ä¸¤å¹…å›¾åƒçš„å¤§å°ç›¸åŒï¼ŒtempMatè·Ÿéšimage1çš„å¤§å°  
 	image1Mat = cvCreateMat(src->height, src->width, CV_32FC1);
-	//×ª»¯³Éµ¥Í¨µÀÍ¼ÏñÔÙ´¦Àí  
+	//è½¬åŒ–æˆå•é€šé“å›¾åƒå†å¤„ç†  
 	cvCvtColor(src, grey_im1, CV_BGR2GRAY);
-	//×ª»»½øÈëMatÊý¾Ý½á¹¹,Í¼Ïñ²Ù×÷Ê¹ÓÃµÄÊÇ¸¡µãÐÍ²Ù×÷  
+	//è½¬æ¢è¿›å…¥Matæ•°æ®ç»“æž„,å›¾åƒæ“ä½œä½¿ç”¨çš„æ˜¯æµ®ç‚¹åž‹æ“ä½œ  
 	cvConvert(grey_im1, image1Mat);
 
 	double t = (double)cvGetTickCount();
-	//Í¼Ïñ¹éÒ»»¯  
+	//å›¾åƒå½’ä¸€åŒ–  
 	cvConvertScale(image1Mat, image1Mat, 1.0 / 255, 0);
 
 	int dim = min(image1Mat->rows, image1Mat->cols);
-	numoctaves = (int)(log((double)dim) / log(2.0)) - 2;    //½ð×ÖËþ½×Êý  
+	numoctaves = (int)(log((double)dim) / log(2.0)) - 2;    //é‡‘å­—å¡”é˜¶æ•°  
 	numoctaves = min(numoctaves, MAXOCTAVES);
 
-	//SIFTËã·¨µÚÒ»²½£¬Ô¤ÂË²¨³ýÔëÉù£¬½¨Á¢½ð×ÖËþµ×²ã  
+	//SIFTç®—æ³•ç¬¬ä¸€æ­¥ï¼Œé¢„æ»¤æ³¢é™¤å™ªå£°ï¼Œå»ºç«‹é‡‘å­—å¡”åº•å±‚  
 	tempMat = ScaleInitImage(image1Mat);
-	//SIFTËã·¨µÚ¶þ²½£¬½¨Á¢Guassian½ð×ÖËþºÍDOG½ð×ÖËþ  
+	//SIFTç®—æ³•ç¬¬äºŒæ­¥ï¼Œå»ºç«‹Guassiané‡‘å­—å¡”å’ŒDOGé‡‘å­—å¡”  
 	Gaussianpyr = BuildGaussianOctaves(tempMat);
 
 	t = (double)cvGetTickCount() - t;
 	printf("the time of build Gaussian pyramid and DOG pyramid is %.1f/n", t / (cvGetTickFrequency()*1000.));
 
 #define ImLevels(OCTAVE,LEVEL,ROW,COL) ((float *)(Gaussianpyr[(OCTAVE)].Octave[(LEVEL)].Level->data.fl + Gaussianpyr[(OCTAVE)].Octave[(LEVEL)].Level->step/sizeof(float) *(ROW)))[(COL)]  
-	//ÏÔÊ¾¸ßË¹½ð×ÖËþ  
+	//æ˜¾ç¤ºé«˜æ–¯é‡‘å­—å¡”  
 	for (int i = 0; i < numoctaves; i++)
 	{
 		if (i == 0)
@@ -103,7 +103,7 @@ int main(void)
 	cvShowImage("mosaic1", mosaic1);
 	cvWaitKey(0);
 	cvDestroyWindow("mosaic1");
-	//ÏÔÊ¾DOG½ð×ÖËþ  
+	//æ˜¾ç¤ºDOGé‡‘å­—å¡”  
 	for (int i = 0; i < numoctaves; i++)
 	{
 		if (i == 0)
@@ -133,7 +133,7 @@ int main(void)
 			mosaicVertical1 = MosaicVertical(mosaicVertical1, mosaicHorizen1);
 		}
 	}
-	//¿¼ÂÇµ½DOG½ð×ÖËþ¸÷²ãÍ¼Ïñ¶¼»áÓÐÕý¸º£¬ËùÒÔ£¬±ØÐëÑ°ÕÒ×î¸ºµÄ£¬ÒÔ½«ËùÓÐÍ¼ÏñÌ§¸ßÒ»¸öÌ¨½×È¥ÏÔÊ¾  
+	//è€ƒè™‘åˆ°DOGé‡‘å­—å¡”å„å±‚å›¾åƒéƒ½ä¼šæœ‰æ­£è´Ÿï¼Œæ‰€ä»¥ï¼Œå¿…é¡»å¯»æ‰¾æœ€è´Ÿçš„ï¼Œä»¥å°†æ‰€æœ‰å›¾åƒæŠ¬é«˜ä¸€ä¸ªå°é˜¶åŽ»æ˜¾ç¤º  
 	double min_val = 0;
 	double max_val = 0;
 	cvMinMaxLoc(mosaicVertical1, &min_val, &max_val, NULL, NULL, NULL);
@@ -148,7 +148,7 @@ int main(void)
 	cvShowImage("mosaic1", mosaic2);
 	cvWaitKey(0);
 
-	//SIFTËã·¨µÚÈý²½£ºÌØÕ÷µãÎ»ÖÃ¼ì²â£¬×îºóÈ·¶¨ÌØÕ÷µãµÄÎ»ÖÃ  
+	//SIFTç®—æ³•ç¬¬ä¸‰æ­¥ï¼šç‰¹å¾ç‚¹ä½ç½®æ£€æµ‹ï¼Œæœ€åŽç¡®å®šç‰¹å¾ç‚¹çš„ä½ç½®  
 	int keycount = DetectKeypoint(numoctaves, Gaussianpyr);
 	printf("the keypoints number are %d ;/n", keycount);
 	cvCopy(src, image1, NULL);
@@ -160,7 +160,7 @@ int main(void)
 	cvWaitKey(0);
 	cvDestroyWindow("image1");
 
-	//SIFTËã·¨µÚËÄ²½£º¼ÆËã¸ßË¹Í¼ÏñµÄÌÝ¶È·½ÏòºÍ·ùÖµ£¬¼ÆËã¸÷¸öÌØÕ÷µãµÄÖ÷·½Ïò  
+	//SIFTç®—æ³•ç¬¬å››æ­¥ï¼šè®¡ç®—é«˜æ–¯å›¾åƒçš„æ¢¯åº¦æ–¹å‘å’Œå¹…å€¼ï¼Œè®¡ç®—å„ä¸ªç‰¹å¾ç‚¹çš„ä¸»æ–¹å‘  
 	ComputeGrad_DirecandMag(numoctaves, Gaussianpyr);
 	AssignTheMainOrientation(numoctaves, Gaussianpyr, mag_pyr, grad_pyr);
 	cvCopy(src, image1, NULL);
@@ -172,14 +172,14 @@ int main(void)
 	cvShowImage("image1", image1);
 	cvWaitKey(0);
 
-	//SIFTËã·¨µÚÎå²½£º³éÈ¡¸÷¸öÌØÕ÷µã´¦µÄÌØÕ÷ÃèÊö×Ö  
+	//SIFTç®—æ³•ç¬¬äº”æ­¥ï¼šæŠ½å–å„ä¸ªç‰¹å¾ç‚¹å¤„çš„ç‰¹å¾æè¿°å­—  
 	ExtractFeatureDescriptors(numoctaves, Gaussianpyr);
 	cvWaitKey(0);
 
-	//Ïú»Ù´°¿Ú  
+	//é”€æ¯çª—å£  
 	cvDestroyWindow("image1");
 	cvDestroyWindow("mosaic1");
-	//ÊÍ·ÅÍ¼Ïñ  
+	//é‡Šæ”¾å›¾åƒ  
 	cvReleaseImage(&image1);
 	cvReleaseImage(&grey_im1);
 	cvReleaseImage(&mosaic1);

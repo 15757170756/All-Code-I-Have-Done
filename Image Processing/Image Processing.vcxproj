@@ -112,6 +112,8 @@
     <ClCompile Include="stitching_detailed-OpenCV 3.3.cpp" />
     <ClCompile Include="thres.cpp" />
     <ClCompile Include="【OpenCV】访问Mat中每个像素的值（新）.cpp" />
+    <ClCompile Include="另一个版本SIFTmain.cpp" />
+    <ClCompile Include="另一个版本SIFTsift.cpp" />
     <ClCompile Include="各种滤波算法-中值滤波 均值滤波 高斯滤波等.cpp" />
     <ClCompile Include="彩色图像直方图均衡化.cpp" />
     <ClCompile Include="角点检测.cpp" />
@@ -124,6 +126,7 @@
     <ClInclude Include="sift.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="tvf.h" />
+    <ClInclude Include="另一个版本SIFTsift.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="【OpenCV】访问Mat中每个像素的值（新）.jpg" />
