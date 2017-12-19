@@ -34,6 +34,9 @@
     <Filter Include="源文件\另一个版本SIFT">
       <UniqueIdentifier>{2f4cdc65-a107-4442-aec4-d5ada54fa888}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\sba">
+      <UniqueIdentifier>{e822cfd9-2101-4079-aea0-f555f68b886d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="彩色图像直方图均衡化.cpp">
@@ -156,6 +159,33 @@
     <ClCompile Include="另一个版本SIFTsift.cpp">
       <Filter>源文件\另一个版本SIFT</Filter>
     </ClCompile>
+    <ClCompile Include="sba算法\sba_chkjac.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\sba_crsm.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\sba_lapack.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\sba_levmar.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\sba_levmar_wrap.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\utils\hess2eps.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\demo\eucsbademo.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\demo\imgproj.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
+    <ClCompile Include="sba算法\demo\readparams.c">
+      <Filter>源文件\sba</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraCalibrator.h">
@@ -181,6 +211,18 @@
     </ClInclude>
     <ClInclude Include="另一个版本SIFTsift.h">
       <Filter>源文件\另一个版本SIFT</Filter>
+    </ClInclude>
+    <ClInclude Include="sba算法\sba.h">
+      <Filter>源文件\sba</Filter>
+    </ClInclude>
+    <ClInclude Include="sba算法\sba_chkjac.h">
+      <Filter>源文件\sba</Filter>
+    </ClInclude>
+    <ClInclude Include="sba算法\demo\eucsbademo.h">
+      <Filter>源文件\sba</Filter>
+    </ClInclude>
+    <ClInclude Include="sba算法\demo\readparams.h">
+      <Filter>源文件\sba</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

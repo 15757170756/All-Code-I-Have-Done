@@ -25,6 +25,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷二">
       <UniqueIdentifier>{f9c3fcd4-16dd-46c6-9b4c-a938345cd823}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题">
+      <UniqueIdentifier>{1b386768-671a-42f3-ab63-f3295035230d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -38,6 +41,18 @@
     </ClCompile>
     <ClCompile Include="编码求对应的index.cpp">
       <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷二</Filter>
+    </ClCompile>
+    <ClCompile Include="买帽子.cpp">
+      <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="度度熊回家.cpp">
+      <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="寻找三角形.cpp">
+      <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="有趣的排序.cpp">
+      <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

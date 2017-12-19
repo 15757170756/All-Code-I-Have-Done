@@ -45,6 +45,7 @@
     <ClCompile Include="最长公共子序列.cpp" />
     <ClCompile Include="朴素字符串匹配算法与KMP算法.cpp" />
     <ClCompile Include="递归实现全排列.cpp" />
+    <ClCompile Include="钢条切割问题.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BE3F05F2-BABA-48AA-8036-F61FFA86AD9E}</ProjectGuid>

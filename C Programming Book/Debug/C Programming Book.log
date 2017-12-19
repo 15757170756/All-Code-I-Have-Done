@@ -1,43 +1,7 @@
-﻿生成启动时间为 2017/12/13 13:53:45。
+﻿生成启动时间为 2017/12/19 19:47:30。
      1>项目“D:\licf\Study\VS Project\All Code I Have Done\C Programming Book\C Programming Book.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\licf\Program Files(x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt argcSort.c binarySearch.c BytesAligning.c "delete Specific data in LinkedList.c" gcd.c Hanoi.c "insert s1 s1 pos.c" integertoString.c isPalindrome.c isPrime.c "Josephus Problem.c" "students LinkedList info.c" "Magic Matric.c" "Monkey eat pears.c" "Multiply Table.c" "Saddle Point in 2D array.c" "Specific Letter Graphic.c" "Spiral Matrix.c" "str Operation.c" studentsInfo.c studentsRegisterTable.c swap.c "the Day in this year.c"
-         the Day in this year.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(21): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(31): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(37): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(43): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(47): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(53): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(59): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(65): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(71): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(77): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(83): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(89): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\the day in this year.c(95): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-         swap.c
-         studentsRegisterTable.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\studentsregistertable.c(34): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\studentsregistertable.c(56): warning C4996: 'gets': This function or variable may be unsafe. Consider using gets_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(254) : 参见“gets”的声明
-         studentsInfo.c
+         D:\licf\Program Files(x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "Multiply Table.c" argcSort.c integertoString.c "str Operation.c"
          str Operation.c
      1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(6): warning C4013: “assert”未定义；假设外部返回 int
      1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(6): error C2065: “NULL”: 未声明的标识符
@@ -86,77 +50,21 @@
      1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(177): error C2059: 语法错误:“)”
      1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(178): error C2449: 在文件范围内找到“{”(是否缺少函数头?)
      1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(192): error C2059: 语法错误:“}”
-         Spiral Matrix.c
-         Specific Letter Graphic.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\specific letter graphic.c(23): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-         Saddle Point in 2D array.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\saddle point in 2d array.c(19): warning C4013: “findSaddlepoint”未定义；假设外部返回 int
-         Multiply Table.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\multiply table.c(36): error C2084: 函数“int main()”已有主体
-                 d:\licf\study\vs project\all code i have done\c programming book\multiply table.c(4) : 参见“main”的前一个定义
-         Monkey eat pears.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\monkey eat pears.c(53): warning C4013: “system”未定义；假设外部返回 int
-         Magic Matric.c
-         students LinkedList info.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(38): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(43): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(44): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(45): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(47): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(50): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(51): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(52): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(53): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(55): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\students linkedlist info.c(101): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 参见“strcpy”的声明
-         Josephus Problem.c
-         isPrime.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\isprime.c(14): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\isprime.c(17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\isprime.c(30): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-         isPalindrome.c
          integertoString.c
      1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(42): error C2084: 函数“int main()”已有主体
                  d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(5) : 参见“main”的前一个定义
      1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(46): warning C4013: “strlen”未定义；假设外部返回 int
      1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(88): warning C4020: “num2str”: 实参太多
      1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(98): warning C4029: 声明的形参表不同于定义
-         insert s1 s1 pos.c
-         Hanoi.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\hanoi.c(10): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-     1>d:\licf\study\vs project\all code i have done\c programming book\hanoi.c(23): warning C4013: “move”未定义；假设外部返回 int
-         gcd.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\gcd.c(7): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-         delete Specific data in LinkedList.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\delete specific data in linkedlist.c(99): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\licf\program files(x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : 参见“scanf”的声明
-         正在生成代码...
-         正在编译...
-         BytesAligning.c
-         binarySearch.c
          argcSort.c
      1>d:\licf\study\vs project\all code i have done\c programming book\argcsort.c(32): error C2084: 函数“int main()”已有主体
                  d:\licf\study\vs project\all code i have done\c programming book\argcsort.c(12) : 参见“main”的前一个定义
+         Multiply Table.c
+     1>d:\licf\study\vs project\all code i have done\c programming book\multiply table.c(36): error C2084: 函数“int main()”已有主体
+                 d:\licf\study\vs project\all code i have done\c programming book\multiply table.c(4) : 参见“main”的前一个定义
          正在生成代码...
-     1>d:\licf\study\vs project\all code i have done\c programming book\binarysearch.c(35): warning C4715: “binarySearch”: 不是所有的控件路径都返回值
      1>已完成生成项目“D:\licf\Study\VS Project\All Code I Have Done\C Programming Book\C Programming Book.vcxproj”(Build 个目标)的操作 - 失败。
 
 生成失败。
 
-已用时间 00:00:03.00
+已用时间 00:00:00.69

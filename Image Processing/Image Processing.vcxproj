@@ -104,6 +104,15 @@
     <ClCompile Include="newDesign.cpp" />
     <ClCompile Include="node.cpp" />
     <ClCompile Include="nonMaximaSuppression.cpp" />
+    <ClCompile Include="sba算法\demo\eucsbademo.c" />
+    <ClCompile Include="sba算法\demo\imgproj.c" />
+    <ClCompile Include="sba算法\demo\readparams.c" />
+    <ClCompile Include="sba算法\sba_chkjac.c" />
+    <ClCompile Include="sba算法\sba_crsm.c" />
+    <ClCompile Include="sba算法\sba_lapack.c" />
+    <ClCompile Include="sba算法\sba_levmar.c" />
+    <ClCompile Include="sba算法\sba_levmar_wrap.c" />
+    <ClCompile Include="sba算法\utils\hess2eps.c" />
     <ClCompile Include="sift.cpp" />
     <ClCompile Include="siftmain.cpp" />
     <ClCompile Include="stitchingByGuoZhanKuo.cpp" />
@@ -123,6 +132,10 @@
     <ClInclude Include="crack_detection.h" />
     <ClInclude Include="dt.h" />
     <ClInclude Include="include.h" />
+    <ClInclude Include="sba算法\demo\eucsbademo.h" />
+    <ClInclude Include="sba算法\demo\readparams.h" />
+    <ClInclude Include="sba算法\sba.h" />
+    <ClInclude Include="sba算法\sba_chkjac.h" />
     <ClInclude Include="sift.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="tvf.h" />

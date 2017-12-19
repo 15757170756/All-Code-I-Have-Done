@@ -96,6 +96,9 @@
     <ClCompile Include="面试题04：替换空格.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题21-包含min函数的栈.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">
