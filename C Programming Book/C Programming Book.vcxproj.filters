@@ -102,9 +102,6 @@
     <ClCompile Include="isIPAddressLegal.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="最长公共子序列.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="朴素字符串匹配算法与KMP算法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

@@ -76,10 +76,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="买帽子.cpp" />
-    <ClCompile Include="寻找三角形.cpp" />
-    <ClCompile Include="度度熊回家.cpp" />
-    <ClCompile Include="有趣的排序.cpp" />
+    <ClCompile Include="5不等式数列.cpp" />
+    <ClCompile Include="1买帽子.cpp" />
+    <ClCompile Include="3寻找三角形.cpp" />
+    <ClCompile Include="2度度熊回家.cpp" />
+    <ClCompile Include="4有趣的排序.cpp" />
     <ClCompile Include="编码求对应的index.cpp" />
     <ClCompile Include="连续子数组的最大和.cpp" />
     <ClCompile Include="递归函数调用理解题目.cpp" />

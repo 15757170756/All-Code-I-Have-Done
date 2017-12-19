@@ -42,16 +42,19 @@
     <ClCompile Include="编码求对应的index.cpp">
       <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷二</Filter>
     </ClCompile>
-    <ClCompile Include="买帽子.cpp">
+    <ClCompile Include="5不等式数列.cpp">
       <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
     </ClCompile>
-    <ClCompile Include="度度熊回家.cpp">
+    <ClCompile Include="1买帽子.cpp">
       <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
     </ClCompile>
-    <ClCompile Include="寻找三角形.cpp">
+    <ClCompile Include="2度度熊回家.cpp">
       <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
     </ClCompile>
-    <ClCompile Include="有趣的排序.cpp">
+    <ClCompile Include="3寻找三角形.cpp">
+      <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="4有趣的排序.cpp">
       <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
     </ClCompile>
   </ItemGroup>

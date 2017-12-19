@@ -40,11 +40,11 @@
     <Filter Include="源文件\Binary Tree\树的各种遍历-递归非递归">
       <UniqueIdentifier>{98287296-e428-4148-9feb-b76df19fdba2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\动态规划">
+      <UniqueIdentifier>{16008afa-5a2f-4457-9c64-63b3dd6e887f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DataStructure\三角形求和最大.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="DataStructure\bubbleSort.c">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
@@ -104,6 +104,15 @@
     </ClCompile>
     <ClCompile Include="KD树.cpp">
       <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\三角形求和最大.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="..\C Programming Book\最长公共子序列.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hihoCode\1601- 最大得分.cpp">
+      <Filter>源文件\动态规划</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

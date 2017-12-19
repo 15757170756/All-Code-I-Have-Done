@@ -1,28 +1,28 @@
-/*Ê±¼äÏÞÖÆ:10000ms
-µ¥µãÊ±ÏÞ : 1000ms
-ÄÚ´æÏÞÖÆ : 256MB
-ÃèÊö
-Ð¡HiºÍÐ¡HoÔÚÍæÒ»¸öÓÎÏ·¡£¸ø¶¨Ò»¸öÊý×éA = [A1, A2, ... AN]£¬Ð¡Hi¿ÉÒÔÖ¸¶¨M¸ö²»Í¬µÄÖµS1£¬S2, S3 ... SM£¬
-ÕâÑùËûµÄ×ÜµÃ·ÖÊÇ ¦²Si ¡Á count(Si)¡££¨count(Si)ÊÇÊý×éÖÐÓëSiÏàµÈµÄÔªËØµÄ¸öÊý)¡£
-ÎªÁËÔö¼ÓÄÑ¶È£¬Ð¡HoÒªÇóÐ¡HiÑ¡ÔñµÄS1..SMÆäÖÐÈÎÒâÁ½¸öSiºÍSj¶¼Âú×ã | Si - Sj | > 1¡£
-ÄãÄÜ°ïÖúÐ¡HiËã³öËû×î´óµÃ·ÖÊÇ¶àÉÙÂð£¿
-ÊäÈë
-µÚÒ»ÐÐ°üº¬Á½¸öÕûÊýNºÍM¡£
-µÚ¶þÐÐ°üº¬N¸öÕûÊýA1, A2, ... AN¡£
-¶ÔÓÚ30%µÄÊý¾Ý£¬1 ¡Ü M ¡Ü N ¡Ü 10
-¶ÔÓÚ100%µÄÊý¾Ý£¬1 ¡Ü M ¡Ü N ¡Ü 1000 1 ¡Ü Ai ¡Ü 100000
-Êä³ö
-×î´óµÃ·Ö
-ÑùÀýÊäÈë
+ï»¿/*æ—¶é—´é™åˆ¶:10000ms
+å•ç‚¹æ—¶é™ : 1000ms
+å†…å­˜é™åˆ¶ : 256MB
+æè¿°
+å°Hiå’Œå°Hoåœ¨çŽ©ä¸€ä¸ªæ¸¸æˆã€‚ç»™å®šä¸€ä¸ªæ•°ç»„A = [A1, A2, ... AN]ï¼Œå°Hiå¯ä»¥æŒ‡å®šMä¸ªä¸åŒçš„å€¼S1ï¼ŒS2, S3 ... SMï¼Œ
+è¿™æ ·ä»–çš„æ€»å¾—åˆ†æ˜¯ Î£Si Ã— count(Si)ã€‚ï¼ˆcount(Si)æ˜¯æ•°ç»„ä¸­ä¸ŽSiç›¸ç­‰çš„å…ƒç´ çš„ä¸ªæ•°)ã€‚
+ä¸ºäº†å¢žåŠ éš¾åº¦ï¼Œå°Hoè¦æ±‚å°Hié€‰æ‹©çš„S1..SMå…¶ä¸­ä»»æ„ä¸¤ä¸ªSiå’ŒSjéƒ½æ»¡è¶³ | Si - Sj | > 1ã€‚
+ä½ èƒ½å¸®åŠ©å°Hiç®—å‡ºä»–æœ€å¤§å¾—åˆ†æ˜¯å¤šå°‘å—ï¼Ÿ
+è¾“å…¥
+ç¬¬ä¸€è¡ŒåŒ…å«ä¸¤ä¸ªæ•´æ•°Nå’ŒMã€‚
+ç¬¬äºŒè¡ŒåŒ…å«Nä¸ªæ•´æ•°A1, A2, ... ANã€‚
+å¯¹äºŽ30%çš„æ•°æ®ï¼Œ1 â‰¤ M â‰¤ N â‰¤ 10
+å¯¹äºŽ100%çš„æ•°æ®ï¼Œ1 â‰¤ M â‰¤ N â‰¤ 1000 1 â‰¤ Ai â‰¤ 100000
+è¾“å‡º
+æœ€å¤§å¾—åˆ†
+æ ·ä¾‹è¾“å…¥
 5 2
 1 2 1 2 3
-ÑùÀýÊä³ö
+æ ·ä¾‹è¾“å‡º
 5
 */
 
 /*
-×Ô¼ºÐ´µÄ
-³¬Ê±ÁË
+è‡ªå·±å†™çš„
+è¶…æ—¶äº†
 */
 
 
@@ -107,9 +107,14 @@ int main()
 
 
 
+
+
+
+
+
 /*
-ÍøÉÏ²éµÄ
-ACµÄ
+ç½‘ä¸ŠæŸ¥çš„
+ACçš„
 */
 #include<cstdio>
 #include<cstdlib>
@@ -140,11 +145,11 @@ int main()
 	Max = dp[1][1];
 	for (i = 2; i <= cnt; i++)
 		for (j = 1; j <= m; j++){
-			dp[i][j] = dp[i - 1][j];//²»ÓÃµÚi¸ö
+			dp[i][j] = dp[i - 1][j];//ä¸ç”¨ç¬¬iä¸ª
 			if (b[i] - b[i - 1] > 1) 
-				dp[i][j] = max(dp[i][j], dp[i - 1][j - 1] + b[i] * c[i]);//ÒªµÚi¸ö£¬Ç°Ò»¸öÒ²Òª
+				dp[i][j] = max(dp[i][j], dp[i - 1][j - 1] + b[i] * c[i]);//è¦ç¬¬iä¸ªï¼Œå‰ä¸€ä¸ªä¹Ÿè¦
 			else
-				dp[i][j] = max(dp[i][j], dp[i - 2][j - 1] + b[i] * c[i]);//ÒªµÚi¸ö£¬¶øÇ°Ò»¸ö²»Òª
+				dp[i][j] = max(dp[i][j], dp[i - 2][j - 1] + b[i] * c[i]);//è¦ç¬¬iä¸ªï¼Œè€Œå‰ä¸€ä¸ªä¸è¦
 			Max = max(Max, dp[i][j]);
 		}
 	printf("%lld\n", Max);

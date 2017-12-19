@@ -78,6 +78,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\C Programming Book\最长公共子序列.cpp" />
+    <ClCompile Include="..\hihoCode\1601- 最大得分.cpp" />
     <ClCompile Include="DataStructure\BSTree.cpp" />
     <ClCompile Include="DataStructure\bubbleSort.c" />
     <ClCompile Include="DataStructure\heapSort.c" />

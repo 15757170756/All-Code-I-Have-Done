@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <vector>
 
@@ -17,21 +17,14 @@ int main(int argc, char* argv[])
 	print_lcs(vec1, str1, str1.size(), str2.size());
 	cout << endl;
 
-	vector<vector<int>> vec2(str1.size() + 1, vector<int>(str2.size() + 1, -1));
-	result = lcs_2(str1, str2, vec2);
-	cout << "result = " << result << endl;
-	print_lcs2(vec2, str1, str1.size(), str2.size());
-	cout << endl;
-
 	getchar();
-
 	return 0;
 }
 
 
 
 /*
-×î³¤¹«¹²×ÓÐòÁÐ
+æœ€é•¿å…¬å…±å­åºåˆ—
 */
 int lcs(const string str1, const string str2, vector<vector<int>>& vec)
 {
