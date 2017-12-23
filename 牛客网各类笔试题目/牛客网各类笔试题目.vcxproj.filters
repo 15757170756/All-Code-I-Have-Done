@@ -28,6 +28,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题">
       <UniqueIdentifier>{1b386768-671a-42f3-ab63-f3295035230d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题">
+      <UniqueIdentifier>{56c5c926-3fa8-4b72-b678-9a5c071122ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -56,6 +59,15 @@
     </ClCompile>
     <ClCompile Include="4有趣的排序.cpp">
       <Filter>源文件\各大公司在线笔试题目\百度2017春招笔试真题编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="构造回文.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="算法基础-字符移位.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="有趣的数字.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

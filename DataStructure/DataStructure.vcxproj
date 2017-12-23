@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClCompile Include="..\C Programming Book\最长公共子序列.cpp" />
     <ClCompile Include="..\hihoCode\1601- 最大得分.cpp" />
+    <ClCompile Include="0-1背包问题.cpp" />
     <ClCompile Include="DataStructure\BSTree.cpp" />
     <ClCompile Include="DataStructure\bubbleSort.c" />
     <ClCompile Include="DataStructure\heapSort.c" />
@@ -101,6 +102,8 @@
     <ClCompile Include="单项循环链表.cpp" />
     <ClCompile Include="双向循环链表.cpp" />
     <ClCompile Include="双向链表.cpp" />
+    <ClCompile Include="字典树.cpp" />
+    <ClCompile Include="矩阵链乘法.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\BSTree.h" />

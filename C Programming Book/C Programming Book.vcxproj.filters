@@ -117,5 +117,8 @@
     <ClCompile Include="钢条切割问题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="判断是不是2的幂次方.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

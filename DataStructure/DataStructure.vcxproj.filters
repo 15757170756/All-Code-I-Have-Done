@@ -114,6 +114,15 @@
     <ClCompile Include="..\hihoCode\1601- 最大得分.cpp">
       <Filter>源文件\动态规划</Filter>
     </ClCompile>
+    <ClCompile Include="字典树.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="矩阵链乘法.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="0-1背包问题.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\RedBlackTree.h">

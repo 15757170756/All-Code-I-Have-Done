@@ -808,7 +808,7 @@ void AssignTheMainOrientation(int numoctaves, ImageOctaves *GaussianPyr, ImageOc
 				double maxPeakValue, maxDegreeCorrection;
 				if (InterpolateOrientation(orienthist[maxBin == 0 ? (36 - 1) : (maxBin - 1)],
 					orienthist[maxBin], orienthist[(maxBin + 1) % 36],
-					°reeCorrection, &peakValue) == false)
+					reeCorrection, &peakValue) == false)
 				{
 					printf("BUG: Parabola fitting broken");
 				}
