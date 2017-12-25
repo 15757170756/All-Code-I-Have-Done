@@ -41,7 +41,10 @@
     <ClCompile Include="swap.c" />
     <ClCompile Include="the Day in this year.c" />
     <ClCompile Include="xing to the end.cpp" />
+    <ClCompile Include="判断括号是否匹配.cpp" />
     <ClCompile Include="判断是不是2的幂次方.cpp" />
+    <ClCompile Include="括号匹配一共多少种.cpp" />
+    <ClCompile Include="指针和引用的区别.cpp" />
     <ClCompile Include="数组与指针的区别.cpp" />
     <ClCompile Include="朴素字符串匹配算法与KMP算法.cpp" />
     <ClCompile Include="递归实现全排列.cpp" />

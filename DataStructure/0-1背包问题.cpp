@@ -24,7 +24,12 @@ int knapSack(int W, int wt[], int val[], int n)
 		}
 	}
 
-	return K[n][W];
+	int maxValue = K[n][W];
+	for (int i = 0; i < n + 1; ++i)
+		delete[](int*)K[i];
+	delete[] K;
+
+	return maxValue;
 }
 
 int main()
@@ -48,11 +53,11 @@ int main()
 如何让背包里装入的物品具有最大的价值总和？
 
 name weight	value	1	2	3	4	5	6	7	8	9	10
-a	2	    6	0	6	6	9	9	12	12	15	15	15
-b	2	    3	0	3	3	6	6	9	9	9	10	11
-c	6	    5	0	0	0	6	6	6	6	6	10	11
-d	5	    4	0	0	0	6	6	6	6	6	10	10
-e	4	    6	0	0	0	6	6	6	6	6	6	6
+a	2	   6	0	6	6	9	9	12	12	15	15	15
+b	2	   3	0	3	3	6	6	9	9	9	10	11
+c	6	   5	0	0	0	6	6	6	6	6	10	11
+d	5	   4	0	0	0	6	6	6	6	6	10	10
+e	4	   6	0	0	0	6	6	6	6	6	6	6
 
 只要你能通过找规律手工填写出上面这张表就算理解了01背包的动态规划算法。
 

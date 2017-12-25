@@ -24,5 +24,14 @@
     <ClCompile Include="1015-KMP算法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1595-Numbers.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1670-比赛日程安排.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1671-反转子串.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

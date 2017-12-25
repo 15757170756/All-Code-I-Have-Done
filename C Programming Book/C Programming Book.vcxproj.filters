@@ -120,5 +120,14 @@
     <ClCompile Include="判断是不是2的幂次方.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="判断括号是否匹配.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="指针和引用的区别.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="括号匹配一共多少种.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
