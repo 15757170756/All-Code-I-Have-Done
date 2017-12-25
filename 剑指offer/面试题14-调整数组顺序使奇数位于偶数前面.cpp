@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <algorithm>
 #include <vector>
@@ -54,7 +54,7 @@ void adjustPlace2(int arr[], int arrLength)
 }
 
 /*
-½£Ö¸offerµÄ´ğ°¸
+å‰‘æŒ‡offerçš„ç­”æ¡ˆ
 */
 void adjustPlace3(int arr[], int arrLength)
 {
@@ -77,11 +77,11 @@ void adjustPlace3(int arr[], int arrLength)
 }
 
 /*
-À©Õ¹ĞÔ½â·¨£º
-ÊÊÓÃº¯ÊıÖ¸ÕëÓÃÓÚÅĞ¶Ï
-Õâ¸öÀàËÆËã·¨ÖĞµÄlambdaº¯Êı
-Âú×ãº¯ÊıÖ¸ÕëµÄ·ÅÔÚÇ°Ãæ£¬
-²»Âú×ãµÄ·ÅÔÚºóÃæ
+æ‰©å±•æ€§è§£æ³•ï¼š
+é€‚ç”¨å‡½æ•°æŒ‡é’ˆç”¨äºåˆ¤æ–­
+è¿™ä¸ªç±»ä¼¼ç®—æ³•ä¸­çš„lambdaå‡½æ•°
+æ»¡è¶³å‡½æ•°æŒ‡é’ˆçš„æ”¾åœ¨å‰é¢ï¼Œ
+ä¸æ»¡è¶³çš„æ”¾åœ¨åé¢
 */
 
 void adjustPlace4Aux(int arr[], int arrLength, bool(*func)(int))
@@ -115,8 +115,8 @@ void adjustPlace4(int arr[], int arrLength)
 }
 
 /*
-±ÈÈç£º½«3µÄ±¶Êı·ÅÔÚÇ°Ãæ£¬
-²»ÊÇ3µÄ±¶Êı·ÅÔÚºóÃæ
+æ¯”å¦‚ï¼šå°†3çš„å€æ•°æ”¾åœ¨å‰é¢ï¼Œ
+ä¸æ˜¯3çš„å€æ•°æ”¾åœ¨åé¢
 */
 void adjustPlace5Aux(int arr[], int arrLength, bool(*func)(int))
 {
@@ -159,3 +159,65 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ä½¿ç”¨STLç®—æ³•å®ç°ï¼Œè¶…çº§ç®€å•
+#include <iostream>
+#include <algorithm>
+#include <iterator>
+
+using namespace::std;
+
+bool isOdd(int x)
+{
+	return x % 2 != 0;
+}
+
+int main()
+{
+	int oddevne[] = { 1, 2, 3, 4, 5, 6 };
+	int arrSize = sizeof(oddevne) / sizeof(int);
+	stable_partition(oddevne, oddevne + arrSize, isOdd);
+	copy(oddevne, oddevne + arrSize, ostream_iterator<int>(cout, " "));
+	cout << endl;
+	return 0;
+}
+
+/*
+output:
+1 5 3 4 2 6
+è¿™é‡ŒåŸæ¥æ•°ç»„çš„ç›¸å¯¹é¡ºåºå˜äº†
+æ¢æˆstable_partition(oddevne, oddevne + arrSize, &isOdd);
+å°±å¯ä»¥äº†
+
+
+stable_partitionçš„è¾“å‡ºï¼š
+1 3 5 2 4 6
+*/
+

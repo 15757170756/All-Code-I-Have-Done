@@ -39,6 +39,18 @@
     <ClCompile Include="join用法.cpp">
       <Filter>源文件\C++ 并发编程实战</Filter>
     </ClCompile>
+    <ClCompile Include="单生产者-单消费者模型.cpp">
+      <Filter>源文件\C++ 并发编程实战</Filter>
+    </ClCompile>
+    <ClCompile Include="多生产者-单消费者模型.cpp">
+      <Filter>源文件\C++ 并发编程实战</Filter>
+    </ClCompile>
+    <ClCompile Include="单生产者-多消费者模型.cpp">
+      <Filter>源文件\C++ 并发编程实战</Filter>
+    </ClCompile>
+    <ClCompile Include="多生产者-多消费者模型.cpp">
+      <Filter>源文件\C++ 并发编程实战</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LiftOff.h">
