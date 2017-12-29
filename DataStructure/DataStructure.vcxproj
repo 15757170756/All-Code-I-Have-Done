@@ -98,12 +98,20 @@
     <ClCompile Include="DataStructure\sort Algorithm Compare.c" />
     <ClCompile Include="DataStructure\三角形求和最大.cpp" />
     <ClCompile Include="KD树.cpp" />
+    <ClCompile Include="使用优先队列和STL解决迪杰斯特拉算法.cpp" />
+    <ClCompile Include="使用优先队列实现Prim最小生成树算法.cpp" />
     <ClCompile Include="单向链表的各类操作.cpp" />
     <ClCompile Include="单项循环链表.cpp" />
     <ClCompile Include="双向循环链表.cpp" />
     <ClCompile Include="双向链表.cpp" />
     <ClCompile Include="字典树.cpp" />
+    <ClCompile Include="并查集.cpp" />
+    <ClCompile Include="广度优先搜索%28BFS%29有向图.cpp" />
+    <ClCompile Include="广度优先搜索BFS.cpp" />
+    <ClCompile Include="深度优先搜索DFS-迭代.cpp" />
+    <ClCompile Include="深度优先搜索DFS-递归.cpp" />
     <ClCompile Include="矩阵链乘法.cpp" />
+    <ClCompile Include="邻接链表创建图.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\BSTree.h" />

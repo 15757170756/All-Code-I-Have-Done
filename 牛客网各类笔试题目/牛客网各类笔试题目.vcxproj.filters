@@ -31,6 +31,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题">
       <UniqueIdentifier>{56c5c926-3fa8-4b72-b678-9a5c071122ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合">
+      <UniqueIdentifier>{c89c818f-04d8-4177-8cdc-6e182bedcbbe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -68,6 +71,33 @@
     </ClCompile>
     <ClCompile Include="有趣的数字.cpp">
       <Filter>源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="送你一个励志故事——涵盖20多所互联网公司的校招面经.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="魔法币.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="相反数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="字符串碎片.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="游历魔法王国.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="重排数列.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="最长公共子括号序列.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="合唱.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="射击游戏.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

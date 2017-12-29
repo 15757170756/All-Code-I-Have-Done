@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 #include <string>
 #include "opencv2/opencv_modules.hpp"
@@ -94,7 +94,7 @@ static void printUsage()
 vector<String> img_names;
 bool preview = false;
 bool try_cuda = false;
-double work_megapix = 0.6;
+double work_megapix = 0.6;  //设置图片大小
 double seam_megapix = 0.1;
 double compose_megapix = -1;
 float conf_thresh = 1.f;
@@ -399,6 +399,26 @@ int main(int argc, char* argv[])
 
 	Mat full_img, img;
 	vector<ImageFeatures> features(num_images);
+	/*
+	struct CV_EXPORTS ImageFeatures
+	{
+	int img_idx;
+	Size img_size;
+	std::vector<KeyPoint> keypoints;
+	UMat descriptors;
+	};
+
+	KeyPoint {
+	CV_PROP_RW Point2f pt; //!< coordinates of the keypoints
+	CV_PROP_RW float size; //!< diameter of the meaningful keypoint neighborhood
+	CV_PROP_RW float angle; //!< computed orientation of the keypoint (-1 if not applicable);
+	//!< it's in [0,360) degrees and measured relative to
+	//!< image coordinate system, ie in clockwise.
+	CV_PROP_RW float response; //!< the response by which the most strong keypoints have been selected. Can be used for the further sorting or subsampling
+	CV_PROP_RW int octave; //!< octave (pyramid layer) from which the keypoint has been extracted
+	CV_PROP_RW int class_id; //!< object class (if the keypoints need to be clustered by an object they belong to)
+	}
+	*/
 	vector<Mat> images(num_images);
 	vector<Size> full_img_sizes(num_images);
 	double seam_work_aspect = 1;
@@ -455,6 +475,29 @@ int main(int argc, char* argv[])
 	t = getTickCount();
 #endif
 	vector<MatchesInfo> pairwise_matches;
+	/*
+	struct CV_EXPORTS MatchesInfo
+	{
+	MatchesInfo();
+	MatchesInfo(const MatchesInfo &other);
+	const MatchesInfo& operator =(const MatchesInfo &other);
+
+	int src_img_idx, dst_img_idx;       //!< Images indices (optional)
+	std::vector<DMatch> matches;
+	std::vector<uchar> inliers_mask;    //!< Geometrically consistent matches mask
+	int num_inliers;                    //!< Number of geometrically consistent matches
+	Mat H;                              //!< Estimated homography
+	double confidence;                  //!< Confidence two images are from the same panorama
+	};
+
+	class CV_EXPORTS_W_SIMPLE DMatch
+	{
+		CV_PROP_RW int queryIdx; // query descriptor index
+		CV_PROP_RW int trainIdx; // train descriptor index
+		CV_PROP_RW int imgIdx;   // train image index
+		CV_PROP_RW float distance;
+
+	*/
 	Ptr<FeaturesMatcher> matcher;
 	if (matcher_type == "affine")
 		matcher = makePtr<AffineBestOf2NearestMatcher>(false, try_cuda, match_conf);
@@ -464,6 +507,36 @@ int main(int argc, char* argv[])
 		matcher = makePtr<BestOf2NearestRangeMatcher>(range_width, try_cuda, match_conf);
 
 	(*matcher)(features, pairwise_matches);
+	/*
+	查看依次调用：
+	这个是可调用对象，应该是重载了operator()；
+	但是查看BestOf2NearestMatcher类发现没有重载operator()，于是网上搜，发现
+	这个类的基类FeaturesMatcher有重载operator()，
+	void operator ()(const std::vector<ImageFeatures> &features, std::vector<MatchesInfo> &pairwise_matches,
+	const cv::UMat &mask = cv::UMat());
+	在这个函数中，又有一个类MatchPairsBody，也是一个可调用对象，然后判断
+	if (is_thread_safe_) 
+	void MatchPairsBody::operator ()(const Range &r) const
+	MatchPairsBody中的FeaturesMatcher &matcher又是一个可调用对象，调用了
+	matcher(features[from], features[to], pairwise_matches[pair_idx]);
+	而FeaturesMatcher的operator()调用的是match方法
+	void operator ()(const ImageFeatures &features1, const ImageFeatures &features2,
+	MatchesInfo& matches_info) { match(features1, features2, matches_info); }
+	而此基类的match方法是虚函数=0，这个类是抽象类，所以这个match又调用了
+	基类BestOf2NearestMatcher的match方法
+	void match(const ImageFeatures &features1, const ImageFeatures &features2, MatchesInfo &matches_info);
+	一个很重要的遗漏了，match方法的第二句是(*impl_)(features1, features2, matches_info);
+	而这个impl_的类型是Ptr<FeaturesMatcher>，而在BestOf2NearestMatcher的构造函数中有一句
+	impl_ = makePtr<CpuMatcher>(match_conf);is_thread_safe_ = impl_->isThreadSafe();
+	CpuMatcher是声明和定义在matchers.cpp中的，也继承了FeaturesMatcher，构造函数：
+	CpuMatcher(float match_conf) : FeaturesMatcher(true), match_conf_(match_conf) {}
+	所以is_thread_safe_ = true；所以其实是先调用了CpuMatcher的match方法，所以呀，这里面有用到KDTree，
+	不然匹配都没用到KD树就感觉奇怪呀 
+	Ptr<flann::IndexParams> indexParams = makePtr<flann::KDTreeIndexParams>();
+	Ptr<flann::SearchParams> searchParams = makePtr<flann::SearchParams>();
+	主要是调用了knnMatch方法，这个还暂时看不懂
+	*/
+
 	matcher->collectGarbage();
 
 	LOGLN("Pairwise matching, time: " << ((getTickCount() - t) / getTickFrequency()) << " sec");
@@ -478,9 +551,18 @@ int main(int argc, char* argv[])
 
 	// Leave only images we are sure are from the same panorama
 	vector<int> indices = leaveBiggestComponent(features, pairwise_matches, conf_thresh);
+	/*
+	使用查并集法，将图片的匹配关系找出，并删除那些不属于同一全景图的图片.
+	并查集用于不相交集合，这个方法其实还是挺巧妙的，如果某两张图片的置信度比较低，
+	比如0 1 0.709677 ，表示0和1的置信度为0.7，但是0 7 1.84211 所以最终第一张图片也会加入
+	全局的。
+	*/
+
 	vector<Mat> img_subset;
 	vector<String> img_names_subset;
 	vector<Size> full_img_sizes_subset;
+
+	//重新将留下的图像读入
 	for (size_t i = 0; i < indices.size(); ++i)
 	{
 		img_names_subset.push_back(img_names[indices[i]]);
@@ -505,13 +587,98 @@ int main(int argc, char* argv[])
 		estimator = makePtr<AffineBasedEstimator>();
 	else
 		estimator = makePtr<HomographyBasedEstimator>();
+	/*
+	@brief Homography based rotation estimator.
+
+	class CV_EXPORTS HomographyBasedEstimator : public Estimator
+	{
+	public:
+	HomographyBasedEstimator(bool is_focals_estimated = false)
+	: is_focals_estimated_(is_focals_estimated) {}
+
+	private:
+	virtual bool estimate(const std::vector<ImageFeatures> &features,
+	const std::vector<MatchesInfo> &pairwise_matches,
+	std::vector<CameraParams> &cameras);
+
+	bool is_focals_estimated_;
+	*/
 
 	vector<CameraParams> cameras;
+	/*
+	struct CV_EXPORTS CameraParams
+	{
+		CameraParams();
+		CameraParams(const CameraParams& other);
+		const CameraParams& operator =(const CameraParams& other);
+		Mat K() const;
+
+		double focal; // Focal length
+		double aspect; // Aspect ratio
+		double ppx; // Principal point X
+		double ppy; // Principal point Y
+		Mat R; // Rotation
+		Mat t; // Translation
+	};
+	*/
 	if (!(*estimator)(features, pairwise_matches, cameras))
 	{
 		cout << "Homography estimation failed.\n";
 		return -1;
 	}
+	/*
+	可以看出HomographyBasedEstimator继承了类Estimator，而estimate方法为虚函数
+	};和上面的match一样类HomographyBasedEstimator中没有重载operator()操作符，而
+	基类estimate中有调用操作符重载
+	bool operator ()(const std::vector<ImageFeatures> &features,
+	const std::vector<MatchesInfo> &pairwise_matches,
+	std::vector<CameraParams> &cameras)
+	{ return estimate(features, pairwise_matches, cameras); } 而类Estimator中的
+	estimate方法为纯虚的所以其实还是调用了
+	bool HomographyBasedEstimator::estimate(
+	const std::vector<ImageFeatures> &features,
+	const std::vector<MatchesInfo> &pairwise_matches,
+	std::vector<CameraParams> &cameras)：
+	首先由之前pairwise_matches中的H估算相机内参矩阵
+	——estimateFocal(features, pairwise_matches, focals);
+	我一开始比较纳闷，为什么Initial camera intrinsics #的值都是
+	一样的，后来看源码才知道，因为取了中位数，理论上16幅图片，至少15
+	个H矩阵，然后应该有很多不同的相机参数。
+	这里又调用了focalsFromHomography(m.H, f0, f1, f0ok, f1ok);
+	关于里面各种h[i]乘来乘去计算f0与f1，可以参考论文
+	《Construction of Panoramic Image Mosaics with Global and Local Alignment》
+	的第五节，上面有推导公式，其实也蛮简单的。
+	当然除了估计相机内参，还有一个旋转外参，这里主要用到了
+	findMaxSpanningTree(num_images, pairwise_matches, span_tree, span_tree_centers);
+	span_tree.walkBreadthFirst(span_tree_centers[0], 
+	CalcRotation(num_images, pairwise_matches, cameras));
+	先来说说
+	void findMaxSpanningTree(int num_images, const std::vector<MatchesInfo> &pairwise_matches,
+	Graph &span_tree, std::vector<int> &centers)
+	Graph数据结构其实就是图，用邻接链表表示
+	class CV_EXPORTS Graph
+	{
+	public:
+	Graph(int num_vertices = 0) { create(num_vertices); }
+	void create(int num_vertices) { edges_.assign(num_vertices, std::list<GraphEdge>()); }
+	int numVertices() const { return static_cast<int>(edges_.size()); }
+	void addEdge(int from, int to, float weight);
+	template <typename B> B forEach(B body) const;
+	template <typename B> B walkBreadthFirst(int from, B body) const;
+	private:
+	std::vector< std::list<GraphEdge> > edges_;
+	};
+	表示一条有向边
+	struct CV_EXPORTS GraphEdge
+	{
+	GraphEdge(int from, int to, float weight);
+	bool operator <(const GraphEdge& other) const { return weight < other.weight; }
+	bool operator >(const GraphEdge& other) const { return weight > other.weight; }
+
+	int from, to;
+	float weight;
+	};
+	*/
 
 	for (size_t i = 0; i < cameras.size(); ++i)
 	{
