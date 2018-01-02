@@ -1,7 +1,7 @@
 ﻿// Program to print BFS traversal from a given
 // source vertex. BFS(int s) traverses vertices 
 // reachable from s.
-#include<iostream>
+#include <iostream>
 #include <list>
 
 using namespace std;
@@ -34,6 +34,7 @@ Graph::Graph(int V)
 void Graph::addEdge(int v, int w)
 {
 	adj[v].push_back(w); // Add w to v’s list.
+	//adj[w].push_back(v); 如果想要无向图的话，再加这一句
 }
 
 void Graph::BFS(int s)
@@ -44,22 +45,22 @@ void Graph::BFS(int s)
 		visited[i] = false;
 
 	// Create a queue for BFS
-	list<int> queue;
+	list<int> queue; //or queue<int> q
 
 	// Mark the current node as visited and enqueue it
 	visited[s] = true;
-	queue.push_back(s);
+	queue.push_back(s);  //q.push(s);
 
 	// 'i' will be used to get all adjacent
 	// vertices of a vertex
-	list<int>::iterator i;
+	list<int>::const_iterator i;
 
-	while (!queue.empty())
+	while (!queue.empty()) //while (!q.empty())
 	{
 		// Dequeue a vertex from queue and print it
-		s = queue.front();
+		s = queue.front(); //s = q.front();
 		cout << s << " ";
-		queue.pop_front();
+		queue.pop_front(); //q.pop();
 
 		// Get all adjacent vertices of the dequeued
 		// vertex s. If a adjacent has not been visited, 
@@ -69,7 +70,7 @@ void Graph::BFS(int s)
 			if (!visited[*i])
 			{
 				visited[*i] = true;
-				queue.push_back(*i);
+				queue.push_back(*i); //q.push(*i);
 			}
 		}
 	}
@@ -93,3 +94,9 @@ int main()
 
 	return 0;
 }
+
+/*
+output:
+Following is Breadth First Traversal (starting from vertex 2)
+2 0 3 1
+*/

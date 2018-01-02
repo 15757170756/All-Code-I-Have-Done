@@ -21,13 +21,16 @@ Note :  There are two possible MSTs, the other
 MST includes edge 0 - 7 in place of 1 - 2.
 We have discussed below Prim¡¯s MST implementations.
 
-Prim¡¯s Algorithm for Adjacency Matrix Representation(In C / C++ with time complexity O(v2)
-Prim¡¯s Algorithm for Adjacency List Representation(In C with Time Complexity O(ELogV))
+Prim¡¯s Algorithm for Adjacency Matrix Representation
+(In C / C++ with time complexity O(v2)
+Prim¡¯s Algorithm for Adjacency List Representation
+(In C with Time Complexity O(ELogV))
 The second implementation is time complexity wise better, 
 but is really complex as we have implemented our own priority queue.
 STL provides priority_queue, 
 but the provided priority queue doesn¡¯t support decrease key operation.
-And in Prim¡¯s algorithm, we need a priority queue and below operations on priority queue :
+And in Prim¡¯s algorithm, 
+we need a priority queue and below operations on priority queue :
 
 ExtractMin : from all those vertices which have not yet been included in MST, 
 we need to get vertex with minimum key value.
@@ -35,7 +38,8 @@ DecreaseKey : After extracting vertex we need to update keys of its adjacent ver
 and if new key is smaller, then update that in data structure.
 The algorithm discussed here can be modified so that decrease key is never required.
 The idea is, not to insert all vertices in priority queue,
-but only those which are not MST and have been visited through a vertex that has included in MST.
+but only those which are not MST and have been visited through a vertex 
+that has included in MST.
 We keep track of vertices included in MST in a separate boolean array inMST[].
 
 1) Initialize keys of all vertices as infinite and

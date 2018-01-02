@@ -490,7 +490,7 @@ int main(int argc, char* argv[])
 	double confidence;                  //!< Confidence two images are from the same panorama
 	};
 
-	class CV_EXPORTS_W_SIMPLE DMatch
+	class DMatch
 	{
 		CV_PROP_RW int queryIdx; // query descriptor index
 		CV_PROP_RW int trainIdx; // train descriptor index
@@ -506,11 +506,12 @@ int main(int argc, char* argv[])
 	else
 		matcher = makePtr<BestOf2NearestRangeMatcher>(range_width, try_cuda, match_conf);
 
+	//从features获取pairwise_matches
 	(*matcher)(features, pairwise_matches);
 	/*
 	查看依次调用：
 	这个是可调用对象，应该是重载了operator()；
-	但是查看BestOf2NearestMatcher类发现没有重载operator()，于是网上搜，发现
+	但是查看BestOf2NearestMatcher类发现没有重载operator()，于是往上搜，发现
 	这个类的基类FeaturesMatcher有重载operator()，
 	void operator ()(const std::vector<ImageFeatures> &features, std::vector<MatchesInfo> &pairwise_matches,
 	const cv::UMat &mask = cv::UMat());
@@ -547,6 +548,7 @@ int main(int argc, char* argv[])
 		LOGLN("Saving matches graph...");
 		ofstream f(save_graph_to.c_str());
 		f << matchesGraphAsString(img_names, pairwise_matches, conf_thresh);
+		// Nm代表匹配的数量，NI代表正确匹配的数量，C表示置信度
 	}
 
 	// Leave only images we are sure are from the same panorama
@@ -621,6 +623,7 @@ int main(int argc, char* argv[])
 		Mat t; // Translation
 	};
 	*/
+	//从pairwise_matches获取相机参数
 	if (!(*estimator)(features, pairwise_matches, cameras))
 	{
 		cout << "Homography estimation failed.\n";
@@ -652,7 +655,7 @@ int main(int argc, char* argv[])
 	findMaxSpanningTree(num_images, pairwise_matches, span_tree, span_tree_centers);
 	span_tree.walkBreadthFirst(span_tree_centers[0], 
 	CalcRotation(num_images, pairwise_matches, cameras));
-	先来说说
+	先来说说 最大生成树方法，使用的是kruskal最小生成树算法
 	void findMaxSpanningTree(int num_images, const std::vector<MatchesInfo> &pairwise_matches,
 	Graph &span_tree, std::vector<int> &centers)
 	Graph数据结构其实就是图，用邻接链表表示
@@ -678,6 +681,21 @@ int main(int argc, char* argv[])
 	int from, to;
 	float weight;
 	};
+	findMaxSpanningTree：
+	由于可能输入多个图像，产生了多个匹配特征点的MatchesInfo结构，
+	每个MatchesInfo包含两幅图像之间匹配的特征点(内点)以及H矩阵，
+	需要确定这些图像之间的邻接关系，
+	这里以两幅图像之间的内点数量为权值构建最大生成树，
+	保证这样的一个图片序列两两之间的内点数最多，也就最有可能是邻接的；
+	找出节点数为1的结点，以此为根做广度优先遍历，计算每个结点所在的层，
+	最终找出最大生成树的中心结点位置。
+	用广度优先遍历这棵最大生成树，
+	分别计算每两个邻接图像(也就是每个相机)的旋转矩阵R。
+	span_tree.walkBreadthFirst:
+	原理：
+	根据上面的公式：H=K1*R12*K2的逆，R12=K1的逆*H*K2,R1=R2*R12=R2*K1的逆*H*K2，
+	已知上幅图像的R、两个相机的内参Ki(焦距、主点)、两幅图的单应矩阵H，
+	可以求得下幅图的R。
 	*/
 
 	for (size_t i = 0; i < cameras.size(); ++i)
@@ -691,6 +709,85 @@ int main(int argc, char* argv[])
 	Ptr<detail::BundleAdjusterBase> adjuster;
 	if (ba_cost_func == "reproj") adjuster = makePtr<detail::BundleAdjusterReproj>();
 	else if (ba_cost_func == "ray") adjuster = makePtr<detail::BundleAdjusterRay>();
+	/*
+	// Minimizes sun of ray-to-ray distances.
+	// It can estimate focal length. It ignores the refinement mask for now.
+	class CV_EXPORTS BundleAdjusterRay : public BundleAdjusterBase
+	{
+	public:
+	BundleAdjusterRay() : BundleAdjusterBase(4, 3) {}
+
+	private:
+	void setUpInitialCameraParams(const std::vector<CameraParams> &cameras);
+	void obtainRefinedCameraParams(std::vector<CameraParams> &cameras) const;
+	void calcError(Mat &err);
+	void calcJacobian(Mat &jac);
+
+	Mat err1_, err2_;
+	};
+
+
+	class CV_EXPORTS BundleAdjusterBase : public Estimator
+	{
+	public:
+	const Mat refinementMask() const { return refinement_mask_.clone(); }
+	void setRefinementMask(const Mat &mask)
+	{
+	CV_Assert(mask.type() == CV_8U && mask.size() == Size(3, 3));
+	refinement_mask_ = mask.clone();
+	}
+
+	double confThresh() const { return conf_thresh_; }
+	void setConfThresh(double conf_thresh) { conf_thresh_ = conf_thresh; }
+
+	CvTermCriteria termCriteria() { return term_criteria_; }
+	void setTermCriteria(const CvTermCriteria& term_criteria) { term_criteria_ = term_criteria; }
+
+	protected:
+	BundleAdjusterBase(int num_params_per_cam, int num_errs_per_measurement)
+	: num_params_per_cam_(num_params_per_cam),
+	num_errs_per_measurement_(num_errs_per_measurement)
+	{
+	setRefinementMask(Mat::ones(3, 3, CV_8U));
+	setConfThresh(1.);
+	setTermCriteria(cvTermCriteria(CV_TERMCRIT_EPS + CV_TERMCRIT_ITER, 1000, DBL_EPSILON));
+	}
+
+	// Runs bundle adjustment
+	virtual void estimate(const std::vector<ImageFeatures> &features,
+	const std::vector<MatchesInfo> &pairwise_matches,
+	std::vector<CameraParams> &cameras);
+
+	virtual void setUpInitialCameraParams(const std::vector<CameraParams> &cameras) = 0;
+	virtual void obtainRefinedCameraParams(std::vector<CameraParams> &cameras) const = 0;
+	virtual void calcError(Mat &err) = 0;
+	virtual void calcJacobian(Mat &jac) = 0;
+
+	// 3x3 8U mask, where 0 means don't refine respective parameter, != 0 means refine
+	Mat refinement_mask_;
+
+	int num_images_;
+	int total_num_matches_;
+
+	int num_params_per_cam_;
+	int num_errs_per_measurement_;
+
+	const ImageFeatures *features_;
+	const MatchesInfo *pairwise_matches_;
+
+	// Threshold to filter out poorly matched image pairs
+	double conf_thresh_;
+
+	//Levenberg–Marquardt algorithm termination criteria
+	CvTermCriteria term_criteria_;
+
+	// Camera parameters matrix (CV_64F)
+	Mat cam_params_;
+
+	// Connected images pairs
+	std::vector<std::pair<int,int> > edges_;
+	};
+	*/
 	else if (ba_cost_func == "affine") adjuster = makePtr<detail::BundleAdjusterAffinePartial>();
 	else if (ba_cost_func == "no") adjuster = makePtr<NoBundleAdjuster>();
 	else
@@ -699,18 +796,52 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 	adjuster->setConfThresh(conf_thresh);
+	//// Threshold to filter out poorly matched image pairs
+
 	Mat_<uchar> refine_mask = Mat::zeros(3, 3, CV_8U);
 	if (ba_refine_mask[0] == 'x') refine_mask(0, 0) = 1;
 	if (ba_refine_mask[1] == 'x') refine_mask(0, 1) = 1;
 	if (ba_refine_mask[2] == 'x') refine_mask(0, 2) = 1;
 	if (ba_refine_mask[3] == 'x') refine_mask(1, 1) = 1;
 	if (ba_refine_mask[4] == 'x') refine_mask(1, 2) = 1;
+
+	// 3x3 8U mask, where 0 means don't refine respective parameter, != 0 means refine
 	adjuster->setRefinementMask(refine_mask);
 	if (!(*adjuster)(features, pairwise_matches, cameras))
 	{
 		cout << "Camera parameters adjusting failed.\n";
 		return -1;
 	}
+	/*
+	Bundle Adjustment（光束法平差）算法主要是解决所有相机参数的联合。
+	这是全景拼接必须的一步，因为多个成对的单应性矩阵合成全景图时，会忽略全局的限制，
+	造成累积误差。因此每一个图像都要加上光束法平差值，使图像被初始化成相同的旋转和焦距长度。
+	光束法平差的目标函数是一个具有鲁棒性的映射误差的平方和函数。
+	即每一个特征点都要映射到其他的图像中，计算出使误差的平方和最小的相机参数
+
+	这里的类BundleAdjusterRay和之前的一样，此类中没有重载operator()，但是它的基类BundleAdjusterBase
+	居然也没有，不过BundleAdjusterBase的基类Estimator倒是有的，然后调用了estimate方法，但是此方法在
+	Estimator中是纯虚的，所以调用下面的方法，    
+	virtual void estimate(const std::vector<ImageFeatures> &features,
+	const std::vector<MatchesInfo> &pairwise_matches,
+	std::vector<CameraParams> &cameras); 此方法定义在类BundleAdjusterBase中
+	在estimate方法中首先调用了setUpInitialCameraParams(cameras);这个过程代码很少，但是原理不懂
+	计算cam_params_的值，先初始化cam_params(num_images_*4,1,CV_64F);
+	cam_params_[i*4+0] =  cameras[i].focal;cam_params_后面3个值，是cameras[i].R先经过奇异值分解，
+	然后对u*vt进行Rodrigues运算，得到的rvec第一行3个值赋给cam_params_。
+	奇异值分解的定义：
+	在矩阵M的奇异值分解中 M = UΣV*
+	·U的列(columns)组成一套对M的正交"输入"或"分析"的基向量。这些向量是MM*的特征向量。
+	·V的列(columns)组成一套对M的正交"输出"的基向量。这些向量是M*M的特征向量。
+	·Σ对角线上的元素是奇异值，可视为是在输入与输出间进行的标量的"膨胀控制"。
+	这些是M*M及MM*的奇异值，并与U和V的行向量相对应。
+
+	CvLevMarq solver(num_images_ * num_params_per_cam_,
+	total_num_matches_ * num_errs_per_measurement_,
+	term_criteria_);代码看到这里，发现num_params_per_cam_和num_errs_per_measurement_这两个
+	参数都没有赋值语句，所以不知道这两个参数的具体值
+	*/
+
 
 	// Find median focal length
 

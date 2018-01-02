@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\LM算法">
+      <UniqueIdentifier>{d14a87e2-9cdb-4953-8774-87a8e503b05b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\levmar-2.6">
+      <UniqueIdentifier>{833bc89d-d530-4e53-8975-a7da94040fea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="least Square Sum.cpp">
@@ -21,5 +27,73 @@
     <ClCompile Include="高斯牛顿算法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="levmarq.cpp">
+      <Filter>源文件\LM算法</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\Axb.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\Axb_core.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\expfit.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lm.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lm_core.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmbc.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmbc_core.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmblec.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmblec_core.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmbleic.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmbleic_core.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmdemo.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmlec.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\lmlec_core.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\misc.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+    <ClCompile Include="levmar-2.6\misc_core.c">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="levmarq.h">
+      <Filter>源文件\LM算法</Filter>
+    </ClInclude>
+    <ClInclude Include="levmar-2.6\compiler.h">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClInclude>
+    <ClInclude Include="levmar-2.6\levmar.h">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClInclude>
+    <ClInclude Include="levmar-2.6\lm.h">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClInclude>
+    <ClInclude Include="levmar-2.6\misc.h">
+      <Filter>源文件\levmar-2.6</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

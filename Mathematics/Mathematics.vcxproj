@@ -78,7 +78,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="least Square Sum.cpp" />
+    <ClCompile Include="levmar-2.6\Axb.c" />
+    <ClCompile Include="levmar-2.6\Axb_core.c" />
+    <ClCompile Include="levmar-2.6\expfit.c" />
+    <ClCompile Include="levmar-2.6\lm.c" />
+    <ClCompile Include="levmar-2.6\lmbc.c" />
+    <ClCompile Include="levmar-2.6\lmbc_core.c" />
+    <ClCompile Include="levmar-2.6\lmblec.c" />
+    <ClCompile Include="levmar-2.6\lmblec_core.c" />
+    <ClCompile Include="levmar-2.6\lmbleic.c" />
+    <ClCompile Include="levmar-2.6\lmbleic_core.c" />
+    <ClCompile Include="levmar-2.6\lmdemo.c" />
+    <ClCompile Include="levmar-2.6\lmlec.c" />
+    <ClCompile Include="levmar-2.6\lmlec_core.c" />
+    <ClCompile Include="levmar-2.6\lm_core.c" />
+    <ClCompile Include="levmar-2.6\misc.c" />
+    <ClCompile Include="levmar-2.6\misc_core.c" />
+    <ClCompile Include="levmarq.cpp" />
     <ClCompile Include="高斯牛顿算法.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="levmar-2.6\compiler.h" />
+    <ClInclude Include="levmar-2.6\levmar.h" />
+    <ClInclude Include="levmar-2.6\lm.h" />
+    <ClInclude Include="levmar-2.6\misc.h" />
+    <ClInclude Include="levmarq.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

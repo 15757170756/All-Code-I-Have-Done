@@ -47,6 +47,7 @@
     <ClCompile Include="指针和引用的区别.cpp" />
     <ClCompile Include="数组与指针的区别.cpp" />
     <ClCompile Include="朴素字符串匹配算法与KMP算法.cpp" />
+    <ClCompile Include="某一入栈顺序 求一共有几种出栈顺序.cpp" />
     <ClCompile Include="递归实现全排列.cpp" />
     <ClCompile Include="钢条切割问题.cpp" />
   </ItemGroup>

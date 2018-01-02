@@ -129,5 +129,8 @@
     <ClCompile Include="括号匹配一共多少种.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="某一入栈顺序 求一共有几种出栈顺序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

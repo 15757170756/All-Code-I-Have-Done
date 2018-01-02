@@ -37,9 +37,6 @@
     <Filter Include="源文件\Binary Tree\二叉排序树">
       <UniqueIdentifier>{f675b6c1-5c1a-4841-a380-00fb446e45b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\Binary Tree\树的各种遍历-递归非递归">
-      <UniqueIdentifier>{98287296-e428-4148-9feb-b76df19fdba2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\动态规划">
       <UniqueIdentifier>{16008afa-5a2f-4457-9c64-63b3dd6e887f}</UniqueIdentifier>
     </Filter>
@@ -126,19 +123,7 @@
     <ClCompile Include="并查集.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="广度优先搜索%28BFS%29有向图.cpp">
-      <Filter>源文件\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="广度优先搜索BFS.cpp">
-      <Filter>源文件\Graph</Filter>
-    </ClCompile>
     <ClCompile Include="邻接链表创建图.cpp">
-      <Filter>源文件\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="深度优先搜索DFS-递归.cpp">
-      <Filter>源文件\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="深度优先搜索DFS-迭代.cpp">
       <Filter>源文件\Graph</Filter>
     </ClCompile>
     <ClCompile Include="使用优先队列和STL解决迪杰斯特拉算法.cpp">
@@ -146,6 +131,33 @@
     </ClCompile>
     <ClCompile Include="使用优先队列实现Prim最小生成树算法.cpp">
       <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="最小生成树prim算法一般实现(使用邻接矩阵).cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="最小生成树kruskal算法实现.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="广度优先搜索BFS%28有向图%29.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="深度优先搜索DFS-递归%28有向图%29.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="深度优先搜索DFS-迭代%28有向图%29.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="最小生成树prim算法一般实现(使用邻接链表).cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="使用并查集和STL实现kruskal最小生成树算法.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="广度优先搜索%28BFS%29-OpenCV.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="二叉树的各种遍历-递归非递归(以KD树为例).cpp">
+      <Filter>源文件\Binary Tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -155,5 +167,10 @@
     <ClInclude Include="DataStructure\BSTree.h">
       <Filter>源文件\Binary Tree\二叉排序树</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="scipy中KDTree例子.py">
+      <Filter>源文件\Binary Tree</Filter>
+    </None>
   </ItemGroup>
 </Project>
