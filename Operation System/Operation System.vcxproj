@@ -77,6 +77,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BasicThreads.cpp" />
+    <ClCompile Include="C++简单内存池.cpp" />
     <ClCompile Include="join用法.cpp" />
     <ClCompile Include="MoreBasicThread.cpp" />
     <ClCompile Include="NoThread.cpp" />

@@ -853,6 +853,9 @@ int main(int argc, char* argv[])
 	}
 
 	sort(focals.begin(), focals.end());
+	/*
+	现在不知道这个warped_image_scale干嘛的，
+	*/
 	float warped_image_scale;
 	if (focals.size() % 2 == 1)
 		warped_image_scale = static_cast<float>(focals[focals.size() / 2]);
