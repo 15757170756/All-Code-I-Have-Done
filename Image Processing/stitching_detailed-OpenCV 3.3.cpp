@@ -945,7 +945,7 @@ int main(int argc, char* argv[])
 		cout << "Can't create the following warper '" << warp_type << "'\n";
 		return 1;
 	}
-
+	//定义图像映射变换器，设置映射的尺度为相机的焦距，所有相机的焦距都相同 
 	Ptr<RotationWarper> warper = warper_creator->create(static_cast<float>(warped_image_scale * seam_work_aspect));
 
 	for (int i = 0; i < num_images; ++i)

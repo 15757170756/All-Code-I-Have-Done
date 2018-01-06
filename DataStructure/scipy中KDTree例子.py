@@ -20,15 +20,35 @@ def kdtree( data, leafsize=10 ):
         kd-tree:    list of tuples
     """
 
+    # shape =(ndim,ndata)
     ndim = data.shape[0]
     ndata = data.shape[1]
 
     # find bounding hyper-rectangle
     hrect = numpy.zeros((2,data.shape[0]))
+    """
+    [0,:]表示取第1行，[:,2]表示取第3行
+    min函数中的axis=1表示按行取最小，即
+    array([[0, 1],
+       [2, 3]])
+    >>> np.amin(a)           # Minimum of the flattened array
+    0
+    >>> np.amin(a, axis=0)   # Minima along the first axis
+    array([0, 1])
+    >>> np.amin(a, axis=1)   # Minima along the second axis
+    array([0, 2])
+    """
     hrect[0,:] = data.min(axis=1)
     hrect[1,:] = data.max(axis=1)
 
     # create root of kd-tree
+    """
+    >>> x = np.array([3, 1, 2])
+    >>> np.argsort(x)
+    array([1, 2, 0])
+    以第一行的数组进行排序，然后每一列
+    依次排序，分割下标为第一行的中间那个
+    """
     idx = numpy.argsort(data[0,:], kind='mergesort')
     data[:,:] = data[:,idx]
     splitval = data[0,ndata/2]

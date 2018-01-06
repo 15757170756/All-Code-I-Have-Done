@@ -108,6 +108,9 @@
     <ClCompile Include="面试题24-二叉树的后序遍历序列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题25-二叉树中和为某一值的路径.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">

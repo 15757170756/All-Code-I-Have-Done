@@ -102,8 +102,8 @@ int* compute_prefix_function(string patten)
 {
 	int m = patten.size();
 	int* next = new int[m];
-	next[0] = 0;
 	int k = 0;
+	next[0] = k;
 	for (int q = 1; q < m; ++q) {
 		while (k > 0 && patten[k] != patten[q])
 			k = next[k - 1];

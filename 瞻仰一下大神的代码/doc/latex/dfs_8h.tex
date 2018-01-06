@@ -1,0 +1,18 @@
+\hypertarget{dfs_8h}{}\section{src/graph\+\_\+algorithms/basic\+\_\+graph/graph\+\_\+dfs/dfs.h File Reference}
+\label{dfs_8h}\index{src/graph\+\_\+algorithms/basic\+\_\+graph/graph\+\_\+dfs/dfs.\+h@{src/graph\+\_\+algorithms/basic\+\_\+graph/graph\+\_\+dfs/dfs.\+h}}
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_introduction_to_algorithm}{Introduction\+To\+Algorithm}
+\begin{DoxyCompactList}\small\item\em Namespace of Introdunction\+To\+Algorithm. \end{DoxyCompactList}\item 
+ \hyperlink{namespace_introduction_to_algorithm_1_1_graph_algorithm}{Introduction\+To\+Algorithm\+::\+Graph\+Algorithm}
+\begin{DoxyCompactList}\small\item\em Namespace of \hyperlink{namespace_introduction_to_algorithm_1_1_graph_algorithm}{Graph\+Algorithm}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Graph\+Type $>$ }\\void \hyperlink{namespace_introduction_to_algorithm_1_1_graph_algorithm_a5fbba98b1c6a8b55f026158acc815768}{Introduction\+To\+Algorithm\+::\+Graph\+Algorithm\+::visit} (std\+::shared\+\_\+ptr$<$ Graph\+Type $>$ graph, typename Graph\+Type\+::\+V\+I\+D\+Type v\+\_\+id, int \&time, std\+::function$<$ void(typename Graph\+Type\+::\+V\+I\+D\+Type, int)$>$ pre\+\_\+action=\mbox{[}$\,$\mbox{]}(typename Graph\+Type\+::\+V\+I\+D\+Type, int)\{\}, std\+::function$<$ void(typename Graph\+Type\+::\+V\+I\+D\+Type, int)$>$ post\+\_\+action=\mbox{[}$\,$\mbox{]}(typename Graph\+Type\+::\+V\+I\+D\+Type, int)\{\})
+\begin{DoxyCompactList}\small\item\em visit：深度优先搜索的辅助函数，用于访问顶点，算法导论22章22.3节 \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Graph\+Type $>$ }\\void \hyperlink{namespace_introduction_to_algorithm_1_1_graph_algorithm_a9f44099f26242f50087b3cc16dff965f}{Introduction\+To\+Algorithm\+::\+Graph\+Algorithm\+::depth\+\_\+first\+\_\+search} (std\+::shared\+\_\+ptr$<$ Graph\+Type $>$ graph, std\+::function$<$ void(typename Graph\+Type\+::\+V\+I\+D\+Type, int)$>$ pre\+\_\+action=\mbox{[}$\,$\mbox{]}(typename Graph\+Type\+::\+V\+I\+D\+Type, int)\{\}, std\+::function$<$ void(typename Graph\+Type\+::\+V\+I\+D\+Type, int)$>$ post\+\_\+action=\mbox{[}$\,$\mbox{]}(typename Graph\+Type\+::\+V\+I\+D\+Type, int)\{\}, std\+::function$<$ void(typename Graph\+Type\+::\+V\+I\+D\+Type, int)$>$ pre\+\_\+root\+\_\+action=\mbox{[}$\,$\mbox{]}(typename Graph\+Type\+::\+V\+I\+D\+Type, int)\{\}, std\+::function$<$ void(typename Graph\+Type\+::\+V\+I\+D\+Type, int)$>$ post\+\_\+root\+\_\+action=\mbox{[}$\,$\mbox{]}(typename Graph\+Type\+::\+V\+I\+D\+Type, int)\{\}, const std\+::vector$<$ typename Graph\+Type\+::\+V\+I\+D\+Type $>$ \&search\+\_\+order=std\+::vector$<$ typename Graph\+Type\+::\+V\+I\+D\+Type $>$())
+\begin{DoxyCompactList}\small\item\em depth\+\_\+first\+\_\+search：深度优先搜索，算法导论22章22.3节 \end{DoxyCompactList}\end{DoxyCompactItemize}
