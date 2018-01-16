@@ -79,6 +79,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\C Programming Book\最长公共子序列.cpp" />
+    <ClCompile Include="..\C Programming Book\最长回文子序列.cpp" />
+    <ClCompile Include="..\C Programming Book\钢条切割问题.cpp" />
     <ClCompile Include="..\hihoCode\1601- 最大得分.cpp" />
     <ClCompile Include="0-1背包问题.cpp" />
     <ClCompile Include="DataStructure\BSTree.cpp" />
@@ -105,6 +107,7 @@
     <ClCompile Include="单项循环链表.cpp" />
     <ClCompile Include="双向循环链表.cpp" />
     <ClCompile Include="双向链表.cpp" />
+    <ClCompile Include="回文子序列个数.cpp" />
     <ClCompile Include="字典树.cpp" />
     <ClCompile Include="并查集.cpp" />
     <ClCompile Include="广度优先搜索%28BFS%29-OpenCV.cpp" />

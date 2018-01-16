@@ -23,3 +23,34 @@ AkleBiCeilD
 输出例子1:
 kleieilABCD
 */
+
+
+/*
+看来刷剑指offer还是蛮有用的，
+不过这个STL 的解法是看了陈硕的关于网络编程的
+书后面，这本书虽然有些“不务正业”
+但是对我等基础差的还是蛮好的。
+*/
+#include <iostream>
+#include <algorithm>
+#include <iterator>
+#include <string.h>
+
+using namespace::std;
+
+bool isUpper(char ch)
+{
+	return !(ch >= 'A' && ch <= 'Z');
+}
+
+int main()
+{
+	char str[1000];// = "AkleBiCeilD";
+	while (cin >> str) {
+		int strLen = strlen(str);
+		stable_partition(str, str + strLen, isUpper);
+		cout << str << endl;
+	}
+
+	return 0;
+}

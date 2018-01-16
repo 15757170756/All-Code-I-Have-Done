@@ -113,6 +113,7 @@
     <ClCompile Include="sba算法\sba_levmar.c" />
     <ClCompile Include="sba算法\sba_levmar_wrap.c" />
     <ClCompile Include="sba算法\utils\hess2eps.c" />
+    <ClCompile Include="sift-OpenCV2410.cpp" />
     <ClCompile Include="sift.cpp" />
     <ClCompile Include="siftmain.cpp" />
     <ClCompile Include="stitchingByGuoZhanKuo.cpp" />

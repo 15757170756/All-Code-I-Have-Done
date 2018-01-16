@@ -893,6 +893,14 @@ int main(int argc, char* argv[])
 	// Warp images and their masks
 
 	Ptr<WarperCreator> warper_creator;
+	/*
+	class WarperCreator
+	{
+	public:
+	virtual ~WarperCreator() {}
+	virtual Ptr<detail::RotationWarper> create(float scale) const = 0;
+	};
+	*/
 #ifdef HAVE_OPENCV_CUDAWARPING
 	if (try_cuda && cuda::getCudaEnabledDeviceCount() > 0)
 	{
@@ -914,6 +922,14 @@ int main(int argc, char* argv[])
 			warper_creator = makePtr<cv::CylindricalWarper>();
 		else if (warp_type == "spherical")
 			warper_creator = makePtr<cv::SphericalWarper>();
+		/*
+		@brief Spherical warper factory class /
+		class SphericalWarper : public WarperCreator
+		{
+		public:
+			Ptr<detail::RotationWarper> create(float scale) const { return makePtr<detail::SphericalWarper>(scale); }
+		};
+		*/
 		else if (warp_type == "fisheye")
 			warper_creator = makePtr<cv::FisheyeWarper>();
 		else if (warp_type == "stereographic")
@@ -945,8 +961,74 @@ int main(int argc, char* argv[])
 		cout << "Can't create the following warper '" << warp_type << "'\n";
 		return 1;
 	}
-	//定义图像映射变换器，设置映射的尺度为相机的焦距，所有相机的焦距都相同 
+	
 	Ptr<RotationWarper> warper = warper_creator->create(static_cast<float>(warped_image_scale * seam_work_aspect));
+	/*
+	class CV_EXPORTS RotationWarper
+{
+public:
+    virtual ~RotationWarper() {}
+
+    /** @brief Projects the image point.
+
+    @param pt Source point
+    @param K Camera intrinsic parameters
+    @param R Camera rotation matrix
+    @return Projected point
+     
+    virtual Point2f warpPoint(const Point2f &pt, InputArray K, InputArray R) = 0;
+
+    /** @brief Builds the projection maps according to the given camera data.
+
+    @param src_size Source image size
+    @param K Camera intrinsic parameters
+    @param R Camera rotation matrix
+    @param xmap Projection map for the x axis
+    @param ymap Projection map for the y axis
+    @return Projected image minimum bounding box
+     
+    virtual Rect buildMaps(Size src_size, InputArray K, InputArray R, OutputArray xmap, OutputArray ymap) = 0;
+
+    /** @brief Projects the image.
+
+    @param src Source image
+    @param K Camera intrinsic parameters
+    @param R Camera rotation matrix
+    @param interp_mode Interpolation mode
+    @param border_mode Border extrapolation mode
+    @param dst Projected image
+    @return Project image top-left corner
+   
+    virtual Point warp(InputArray src, InputArray K, InputArray R, int interp_mode, int border_mode,
+                       OutputArray dst) = 0;
+
+    /** @brief Projects the image backward.
+
+    @param src Projected image
+    @param K Camera intrinsic parameters
+    @param R Camera rotation matrix
+    @param interp_mode Interpolation mode
+    @param border_mode Border extrapolation mode
+    @param dst_size Backward-projected image size
+    @param dst Backward-projected image
+     
+    virtual void warpBackward(InputArray src, InputArray K, InputArray R, int interp_mode, int border_mode,
+                              Size dst_size, OutputArray dst) = 0;
+
+    /**
+    @param src_size Source image bounding box
+    @param K Camera intrinsic parameters
+    @param R Camera rotation matrix
+    @return Projected image minimum bounding box
+     
+    virtual Rect warpRoi(Size src_size, InputArray K, InputArray R) = 0;
+
+    virtual float getScale() const { return 1.f; }
+    virtual void setScale(float) {}
+};
+
+	*/
+
 
 	for (int i = 0; i < num_images; ++i)
 	{
@@ -957,6 +1039,21 @@ int main(int argc, char* argv[])
 		K(1, 1) *= swa; K(1, 2) *= swa;
 
 		corners[i] = warper->warp(images[i], K, cameras[i].R, INTER_LINEAR, BORDER_REFLECT, images_warped[i]);
+		/*
+		SphericalWarper::warp调用的函数有buildMaps、remap
+		Rect buildMaps(Size src_size, InputArray K, InputArray R, OutputArray xmap, OutputArray ymap);
+		CV_EXPORTS_W void remap( InputArray src, OutputArray dst,
+		InputArray map1, InputArray map2,
+		int interpolation, int borderMode = BORDER_CONSTANT,
+		const Scalar& borderValue = Scalar());
+
+		buildMaps调用的是return RotationWarperBase<SphericalProjector>::buildMaps(src_size, K, R, xmap, ymap);
+		先是调用了template <class P>
+		void RotationWarperBase<P>::detectResultRoi(Size src_size, Point &dst_tl, Point &dst_br)
+		中有正向投影，然后又调用反向投影函数mapBackward，关于投影类型，在 P projector_;有体现，因为是
+		模板类，可以使用不同投影类型
+		
+		*/
 		sizes[i] = images_warped[i].size();
 
 		warper->warp(masks[i], K, cameras[i].R, INTER_NEAREST, BORDER_CONSTANT, masks_warped[i]);
@@ -970,6 +1067,7 @@ int main(int argc, char* argv[])
 
 	Ptr<ExposureCompensator> compensator = ExposureCompensator::createDefault(expos_comp_type);
 	compensator->feed(corners, images_warped, masks_warped);
+	//获取每幅图像的增益系数
 
 	Ptr<SeamFinder> seam_finder;
 	if (seam_find_type == "no")
@@ -1063,6 +1161,9 @@ int main(int argc, char* argv[])
 				Mat K;
 				cameras[i].K().convertTo(K, CV_32F);
 				Rect roi = warper->warpRoi(sz, K, cameras[i].R);
+				/*
+				warpRoi函数的功能和warp差不多
+				*/
 				corners[i] = roi.tl();
 				sizes[i] = roi.size();
 			}

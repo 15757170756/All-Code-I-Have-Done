@@ -67,7 +67,8 @@ int main() {
 		"live 2001:0db8:0000:0000:0000:ff00:0042:8329 "
 		"another 2001:0db8::ff00:0042:8329 "
 		"2404:6800:4004:801::2003"
-		"zip form ::1 ";
+		"zip form ::1 "
+		"abcg:8693::ff00";
 	auto result = std::sregex_iterator(test.cbegin(), test.cend(), ipv6_pattern);
 	const auto results_end = std::sregex_iterator();
 

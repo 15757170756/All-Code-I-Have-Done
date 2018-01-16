@@ -186,6 +186,9 @@
     <ClCompile Include="sba算法\demo\readparams.c">
       <Filter>源文件\sba</Filter>
     </ClCompile>
+    <ClCompile Include="sift-OpenCV2410.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraCalibrator.h">
