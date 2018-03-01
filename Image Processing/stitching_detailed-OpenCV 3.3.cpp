@@ -1043,8 +1043,7 @@ public:
 		SphericalWarper::warp调用的函数有buildMaps、remap
 		Rect buildMaps(Size src_size, InputArray K, InputArray R, OutputArray xmap, OutputArray ymap);
 		CV_EXPORTS_W void remap( InputArray src, OutputArray dst,
-		InputArray map1, InputArray map2,
-		int interpolation, int borderMode = BORDER_CONSTANT,
+		InputArray map1, InputArray map2,int interpolation, int borderMode = BORDER_CONSTANT,
 		const Scalar& borderValue = Scalar());
 
 		buildMaps调用的是return RotationWarperBase<SphericalProjector>::buildMaps(src_size, K, R, xmap, ymap);
@@ -1053,6 +1052,8 @@ public:
 		中有正向投影，然后又调用反向投影函数mapBackward，关于投影类型，在 P projector_;有体现，因为是
 		模板类，可以使用不同投影类型
 		
+		这个corners[i]的值我现在还没法理解，虽然说的是第i幅图像相对于中心图像投影变换后左上角的坐标值，
+		但有
 		*/
 		sizes[i] = images_warped[i].size();
 

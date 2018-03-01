@@ -40,6 +40,12 @@
     <Filter Include="源文件\动态规划">
       <UniqueIdentifier>{16008afa-5a2f-4457-9c64-63b3dd6e887f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Binary Tree\字典树">
+      <UniqueIdentifier>{c4657b52-e521-4cac-a203-9f1b70d4d2bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\并查集">
+      <UniqueIdentifier>{b994b7bb-f39d-4847-87cd-0eedb48dbf24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataStructure\bubbleSort.c">
@@ -70,9 +76,6 @@
       <Filter>源文件\Sort</Filter>
     </ClCompile>
     <ClCompile Include="DataStructure\quickSortNonRecursion.cpp">
-      <Filter>源文件\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="DataStructure\selectSort.c">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
     <ClCompile Include="DataStructure\shellSort.c">
@@ -111,17 +114,11 @@
     <ClCompile Include="..\hihoCode\1601- 最大得分.cpp">
       <Filter>源文件\动态规划</Filter>
     </ClCompile>
-    <ClCompile Include="字典树.cpp">
-      <Filter>源文件\Binary Tree</Filter>
-    </ClCompile>
     <ClCompile Include="矩阵链乘法.cpp">
       <Filter>源文件\动态规划</Filter>
     </ClCompile>
     <ClCompile Include="0-1背包问题.cpp">
       <Filter>源文件\动态规划</Filter>
-    </ClCompile>
-    <ClCompile Include="并查集.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="邻接链表创建图.cpp">
       <Filter>源文件\Graph</Filter>
@@ -167,6 +164,45 @@
     </ClCompile>
     <ClCompile Include="回文子序列个数.cpp">
       <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\selectSort.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="桶排序.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="计数排序.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="基数排序.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="希尔排序.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="字典树.cpp">
+      <Filter>源文件\Binary Tree\字典树</Filter>
+    </ClCompile>
+    <ClCompile Include="字典树例题.cpp">
+      <Filter>源文件\Binary Tree\字典树</Filter>
+    </ClCompile>
+    <ClCompile Include="字典树简单实现.cpp">
+      <Filter>源文件\Binary Tree\字典树</Filter>
+    </ClCompile>
+    <ClCompile Include="并查集.cpp">
+      <Filter>源文件\并查集</Filter>
+    </ClCompile>
+    <ClCompile Include="Wireless Network.cpp">
+      <Filter>源文件\并查集</Filter>
+    </ClCompile>
+    <ClCompile Include="最近公共祖先.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Going from u to v or from v to u.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="营救猪坚强.cpp">
+      <Filter>源文件\Graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

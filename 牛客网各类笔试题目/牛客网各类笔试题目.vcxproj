@@ -76,6 +76,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="1头条校招.cpp" />
+    <ClCompile Include="2异或.cpp" />
     <ClCompile Include="5不等式数列.cpp" />
     <ClCompile Include="1买帽子.cpp" />
     <ClCompile Include="3寻找三角形.cpp" />

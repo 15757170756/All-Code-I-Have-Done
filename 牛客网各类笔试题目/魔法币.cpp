@@ -14,7 +14,6 @@
 输入描述:
 输入包括一行,包括一个正整数n(1 ≤ n ≤ 10^9),表示小易需要的魔法币数量。
 
-
 输出描述:
 输出一个字符串,每个字符表示该次小易选取投入的魔法机器。其中只包含字符'1'和'2'。
 
@@ -23,4 +22,37 @@
 
 输出例子1:
 122
+*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+
+int main()
+{
+	unsigned int n;
+	cin >> n;
+	vector<char> vecChar;
+	while (n) {
+		if (n % 2 == 0) {
+			vecChar.push_back('2');
+			n = n / 2 - 1;
+		}
+		else {
+			vecChar.push_back('1');
+			n = (n - 1) / 2;
+		}
+	}
+	for (int i = vecChar.size() - 1; i >= 0; --i)
+		cout << vecChar[i];
+
+	return 0;
+}
+
+/*
+您的代码已保存
+答案正确:恭喜！您提交的程序通过了所有的测试用例
 */

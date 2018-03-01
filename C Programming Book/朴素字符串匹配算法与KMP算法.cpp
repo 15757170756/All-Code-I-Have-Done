@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int native_string_matcher(char* mainStr, char* subStr);
+int nativeStringMatcher(char* mainStr, char* subStr);
 int* compute_prefix_function(char* patten);
 int KMP_match(char* text, char* patten);
 
@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 {
 	char* mainStr = "abcabcabcd";
 	char* subStr = "abc";
-	int idx = native_string_matcher(mainStr, subStr);
+	int idx = nativeStringMatcher(mainStr, subStr);
 	cout << idx << endl;
 
 	idx = KMP_match(mainStr, subStr);
@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 }
 
 
-int native_string_matcher(char* mainStr, char* subStr)
+int nativeStringMatcher(char* mainStr, char* subStr)
 {
 	int mainStrLen = strlen(mainStr);
 	int subStrLen = strlen(subStr);

@@ -256,7 +256,7 @@ _GLIBCXX_BEGIN_NAMESPACE_CONTAINER
       vector(const allocator_type& __a)
       : _Base(__a) { }
 
-#if __cplusplus >= 201103L
+#if __cplusplus >= 199711L
       /**
        *  @brief  Creates a %vector with default constructed elements.
        *  @param  __n  The number of elements to initially create.
@@ -316,7 +316,7 @@ _GLIBCXX_BEGIN_NAMESPACE_CONTAINER
 				      _M_get_Tp_allocator());
       }
 
-#if __cplusplus >= 201103L
+#if __cplusplus >= 199711L
       /**
        *  @brief  %Vector move constructor.
        *  @param  __x  A %vector of identical element and allocator types.

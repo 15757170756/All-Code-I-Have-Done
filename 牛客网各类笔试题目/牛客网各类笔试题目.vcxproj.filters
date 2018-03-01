@@ -34,6 +34,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合">
       <UniqueIdentifier>{c89c818f-04d8-4177-8cdc-6e182bedcbbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\今日头条2017秋招开发工程师笔试试卷">
+      <UniqueIdentifier>{8ef47b8c-6f12-4a3e-aa8b-1a407400b58c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -98,6 +101,12 @@
     </ClCompile>
     <ClCompile Include="射击游戏.cpp">
       <Filter>源文件\各大公司在线笔试题目\网易2018校园招聘编程题真题集合</Filter>
+    </ClCompile>
+    <ClCompile Include="2异或.cpp">
+      <Filter>源文件\各大公司在线笔试题目\今日头条2017秋招开发工程师笔试试卷</Filter>
+    </ClCompile>
+    <ClCompile Include="1头条校招.cpp">
+      <Filter>源文件\各大公司在线笔试题目\今日头条2017秋招开发工程师笔试试卷</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

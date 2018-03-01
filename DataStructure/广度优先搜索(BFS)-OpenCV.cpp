@@ -24,7 +24,8 @@ inline GraphEdge::GraphEdge(int _from, int _to, float _weight)
 class Graph
 {
 public:
-	Graph(int num_vertices = 0) { create(num_vertices); }
+	Graph(int num_vertices = 0) 
+	{ create(num_vertices); }
 	void create(int num_vertices) { edges_.assign(num_vertices, std::list<GraphEdge>()); }
 	int numVertices() const { return static_cast<int>(edges_.size()); }
 	void addEdge(int from, int to, float weight);
@@ -32,7 +33,7 @@ public:
 	template <typename B> B walkBreadthFirst(int from, B body) const;
 
 private:
-	std::vector< std::list<GraphEdge> > edges_;
+	std::vector<std::list<GraphEdge>> edges_;
 };
 
 void Graph::addEdge(int from, int to, float weight)

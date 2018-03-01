@@ -3,23 +3,24 @@
 
 空间限制：32768K
 
-度度熊有一个N个数的数组，他想将数组从小到大 排好序，但是萌萌的度度熊只会下面这个操作：
+度度熊有一个N个数的数组，他想将数组从小到大排好序，
+但是萌萌的度度熊只会下面这个操作：
 任取数组中的一个数然后将它放置在数组的最后一个位置。
 问最少操作多少次可以使得数组从小到大有序？
 输入描述 :
-首先输入一个正整数N，接下来的一行输入N个整数。(N <= 50, 每个数的绝对值小于等于1000)
-
+首先输入一个正整数N，接下来的一行输入N个整数。
+(N <= 50, 每个数的绝对值小于等于1000)
 
 输出描述 :
-	 输出一个整数表示最少的操作次数。
+输出一个整数表示最少的操作次数。
 
  输入例子1 :
 4
 19 7 8 25
 
 输出例子1 :
-	  2
-	  */
+2
+*/
 
 //牛客网上面别人的代码
 
@@ -84,3 +85,70 @@ int main()
 	cout << count << endl;
 	return 0;
 }
+
+
+
+
+
+
+
+
+/*
+后来自己又写了一下，
+感觉还是得多练习
+*/
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include <map>
+#include <vector>
+
+using namespace::std;
+
+void argSort(vector<int>& arrayIn, vector<int>& argcOut)
+{
+	multimap<int, int> intMap;
+	for (int i = 0; i < arrayIn.size(); ++i)
+		intMap.emplace(arrayIn[i], i);
+	for (multimap<int, int>::const_iterator iter = intMap.begin();
+		iter != intMap.end(); ++iter)
+		argcOut.emplace_back(iter->second);
+}
+
+
+int main(int argc, char* argv[])
+{
+	int n;
+	cin >> n;
+	vector<int> vec(n);
+	for (auto& e : vec)
+		cin >> e;
+
+	vector<int> argVec;
+	argSort(vec, argVec);
+	int cnt = 0;
+	for (int i = 0; i < n - 1; ++i) {
+		int diff = argVec[i + 1] - argVec[i];
+		if (diff == 1)
+			++cnt;
+	}
+
+	int result = n - 1 - cnt;
+	cout << result << endl;
+
+	return 0;
+}
+/*
+您的代码已保存
+答案错误:您提交的程序没有通过所有的测试用例
+case通过率为60.00%
+
+测试用例:
+9
+2 1 3 4 5 6 7 8 9
+
+对应输出应该为:
+8
+你的输出为:
+2
+*/

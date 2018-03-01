@@ -135,5 +135,29 @@
     <ClCompile Include="分解质因数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="16进制与10进制相互转换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="找使数组排序的最小序列差.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="argSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="打印螺旋矩阵-方阵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="打印zigzag矩阵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="分治算法求最近点对 .cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="C++11 计算程序时间.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="数组中出现次数最多的一个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

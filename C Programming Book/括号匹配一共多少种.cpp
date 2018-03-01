@@ -90,3 +90,59 @@ output:
 一定要改造一下，使之为迭代或者是能够
 得到每个字符串，而不是简单输出
 */
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace::std;
+
+# define MAX_SIZE 100
+
+void _getParenthesis(int pos, int n, int open, int close, vector<string>& resultVec);
+
+// Wrapper over _printParenthesis()
+void getParenthesis(int n, vector<string>& resultVec)
+{
+	if (n > 0)
+		_getParenthesis(0, n, 0, 0, resultVec);
+	return;
+}
+
+void _getParenthesis(int pos, int n, int open, int close, vector<string>& resultVec)
+{
+	static char str[MAX_SIZE];
+
+	if (close == n)
+	{
+		resultVec.push_back(str);
+		//printf("%s \n", str);
+		return;
+	}
+	else
+	{
+		if (open > close)
+		{
+			str[pos] = '}';
+			_getParenthesis(pos + 1, n, open, close + 1, resultVec);
+		}
+
+		if (open < n)
+		{
+			str[pos] = '{';
+			_getParenthesis(pos + 1, n, open + 1, close, resultVec);
+		}
+	}
+}
+
+// Driver program to test above functions
+int main()
+{
+	int n = 20;
+	vector<string> vec;
+	getParenthesis(n, vec);
+	//for (int i = 0; i < vec.size(); ++i)
+	//	cout << vec[i] << endl;
+	cout << vec.size();
+	return 0;
+}

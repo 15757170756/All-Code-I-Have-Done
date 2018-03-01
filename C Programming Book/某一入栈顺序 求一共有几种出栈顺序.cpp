@@ -6,14 +6,15 @@
 
 using namespace::std;
 
-bool isPopOrder(const vector<int>& pPush, const vector<int>& pPop)
+template<typename T>
+bool isPopOrder(const vector<T>& pPush, const vector<T>& pPop)
 {
 	bool isOK = false;
 
 	if (pPush.size() > 0 && pPop.size() > 0) {
 		int nLength = pPush.size();
-		vector<int>::const_iterator pNextPush = pPush.begin();
-		vector<int>::const_iterator pNextPop = pPop.begin();
+		vector<T>::const_iterator pNextPush = pPush.begin();
+		vector<T>::const_iterator pNextPop = pPop.begin();
 
 		stack<int> stackData;
 
@@ -50,21 +51,20 @@ void permutations(vector<T> v, vector<vector<T>> &resultVec)
 
 int main()
 {
-	vector<int> pPush = { 1, 2, 3, 4, 5 };
-	vector<vector<int>> resultVec;
+	vector<char> pPush = { 'A', 'B', 'C', 'D' };
+	vector<vector<char>> resultVec;
 	permutations(pPush, resultVec);
 	int cnt = 0;
 	for (int i = 0; i < resultVec.size(); ++i) {
-		vector<int>& temp = resultVec[i];
+		vector<char>& temp = resultVec[i];
 		if (isPopOrder(pPush, temp)) {
 			++cnt;
-			copy(temp.begin(), temp.end(), ostream_iterator<int>(cout, " "));
+			copy(temp.begin(), temp.end(), ostream_iterator<char>(cout, " "));
 			cout << endl;
 		}
 
 	}
 	cout << "total:" << cnt << endl;
-
 
 	return 0;
 }

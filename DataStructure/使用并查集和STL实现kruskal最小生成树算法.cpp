@@ -15,7 +15,7 @@ typedef  pair<int, int> iPair;
 struct Graph
 {
 	int V, E;
-	vector< pair<int, iPair> > edges;
+	vector<pair<int, iPair>> edges;
 
 	// Constructor
 	Graph(int V, int E)

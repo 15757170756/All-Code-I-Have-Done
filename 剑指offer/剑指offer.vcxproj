@@ -102,6 +102,9 @@
     <ClCompile Include="面试题23-从上往下打印二叉树.cpp" />
     <ClCompile Include="面试题24-二叉树的后序遍历序列.cpp" />
     <ClCompile Include="面试题25-二叉树中和为某一值的路径.cpp" />
+    <ClCompile Include="面试题26-复杂链表的复制.cpp" />
+    <ClCompile Include="面试题27-二叉搜索树与双向链表.cpp" />
+    <ClCompile Include="面试题28-字符串排列.cpp" />
     <ClCompile Include="面试题30-最小的k个数.cpp" />
     <ClCompile Include="面试题31-连续子数组的最大和.cpp" />
     <ClCompile Include="面试题36-数组中的逆序对.cpp" />

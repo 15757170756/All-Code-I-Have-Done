@@ -23,3 +23,44 @@ aaabbaaac
 输出例子1:
 2.25
 */
+
+
+
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <vector>
+
+using namespace::std;
+
+int main()
+{
+	string s;
+	cin >> s;
+	vector<int> substrLen;
+
+	for (int i = 0; i < s.size();) {
+		int cnt = 0;
+		for (int j = i; j < s.size(); ++j) {
+			if (s[j] == s[j + 1])
+				++cnt;
+			else
+				break;
+		}
+		substrLen.push_back(cnt + 1);
+		i += (cnt + 1);
+	}
+
+	double aver = 0;
+	for (int i = 0; i < substrLen.size(); ++i)
+		aver += substrLen[i];
+	aver = aver / substrLen.size();
+	cout.setf(ios::fixed);
+	cout << setprecision(2) << aver << endl;
+	return 0;
+}
+
+/*
+您的代码已保存
+答案正确:恭喜！您提交的程序通过了所有的测试用例
+*/

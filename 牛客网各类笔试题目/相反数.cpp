@@ -21,3 +21,34 @@
 输出例子1:
 6556
 */
+
+
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <vector>
+
+using namespace::std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	string str;
+	int temp = n;
+	while (temp) {
+		char lastDigit = temp % 10 + '0';
+		str.push_back(lastDigit);
+		temp /= 10;
+	}
+	int inverseDigit = stoi(str);
+	cout << n + inverseDigit << endl;
+
+	return 0;
+}
+
+
+/*
+您的代码已保存
+答案正确:恭喜！您提交的程序通过了所有的测试用例
+*/

@@ -150,8 +150,7 @@ bool my_next_permutation(BidirIt first, BidirIt last)
 		i1 = i;
 		if (*--i < *i1) {
 			i2 = last;
-			while (!(*i < *--i2))
-				;
+			while (!(*i < *--i2));
 			std::iter_swap(i, i2);
 			std::reverse(i1, last);
 			return true;

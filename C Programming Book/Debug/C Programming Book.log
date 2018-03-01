@@ -1,70 +1,225 @@
-﻿生成启动时间为 2018/1/7 21:10:22。
+﻿生成启动时间为 2018/1/21 10:27:28。
      1>项目“D:\licf\Study\VS Project\All Code I Have Done\C Programming Book\C Programming Book.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\licf\Program Files(x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "Multiply Table.c" argcSort.c integertoString.c "str Operation.c"
-         str Operation.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(6): warning C4013: “assert”未定义；假设外部返回 int
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(6): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(6): warning C4047: “!=”:“const char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(20): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(20): warning C4047: “!=”:“char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(20): warning C4047: “!=”:“const char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(33): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(33): warning C4047: “!=”:“const char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(48): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(48): warning C4047: “!=”:“char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(48): warning C4047: “!=”:“const char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(53): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(61): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(61): warning C4047: “!=”:“const char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(67): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(71): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(71): warning C4047: “return”:“char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(76): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(76): warning C4047: “!=”:“char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(76): warning C4047: “!=”:“const char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(88): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(88): warning C4047: “!=”:“const char *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(101): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(101): warning C4047: “!=”:“void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(101): warning C4047: “!=”:“const void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(114): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(114): warning C4047: “!=”:“void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(114): warning C4047: “!=”:“const void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(123): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(123): warning C4047: “return”:“void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(128): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(128): warning C4047: “!=”:“const void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(135): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(135): warning C4047: “return”:“void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(140): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(140): warning C4047: “!=”:“const void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(155): error C2065: “NULL”: 未声明的标识符
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(155): warning C4047: “!=”:“void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(155): warning C4047: “!=”:“const void *”与“int”的间接级别不同
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(160): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(177): error C2146: 语法错误: 缺少“)”(在标识符“count”的前面)
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(177): error C2081: “size_t”: 形参表中的名称非法
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(177): error C2061: 语法错误: 标识符“count”
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(177): error C2059: 语法错误:“;”
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(177): error C2059: 语法错误:“)”
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(178): error C2449: 在文件范围内找到“{”(是否缺少函数头?)
-     1>d:\licf\study\vs project\all code i have done\c programming book\str operation.c(192): error C2059: 语法错误:“}”
-         integertoString.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(42): error C2084: 函数“int main()”已有主体
-                 d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(5) : 参见“main”的前一个定义
-     1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(46): warning C4013: “strlen”未定义；假设外部返回 int
-     1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(88): warning C4020: “num2str”: 实参太多
-     1>d:\licf\study\vs project\all code i have done\c programming book\integertostring.c(98): warning C4029: 声明的形参表不同于定义
-         argcSort.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\argcsort.c(32): error C2084: 函数“int main()”已有主体
-                 d:\licf\study\vs project\all code i have done\c programming book\argcsort.c(12) : 参见“main”的前一个定义
-         Multiply Table.c
-     1>d:\licf\study\vs project\all code i have done\c programming book\multiply table.c(36): error C2084: 函数“int main()”已有主体
-                 d:\licf\study\vs project\all code i have done\c programming book\multiply table.c(4) : 参见“main”的前一个定义
+         D:\licf\Program Files(x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "16进制与10进制相互转换.cpp" binarySearch.cpp "combination permutation powerset.cpp" isIPAddressLegal.cpp sizeof.cpp "static和const关键字.cpp" StringSplit.cpp "xing to the end.cpp" "分解质因数.cpp" "判断括号是否匹配.cpp" "判断是不是2的幂次方.cpp" "找使数组排序的最小序列差.cpp" "括号匹配一共多少种.cpp" "指针和引用的区别.cpp" "数组与指针的区别.cpp" "朴素字符串匹配算法与KMP算法.cpp" "某一入栈顺序 求一共有几种出栈顺序.cpp" "递归实现全排列.cpp" "钢条切割问题.cpp"
+         钢条切割问题.cpp
+         递归实现全排列.cpp
+         某一入栈顺序 求一共有几种出栈顺序.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\某一入栈顺序 求一共有几种出栈顺序.cpp(57): warning C4018: “<”: 有符号/无符号不匹配
+         朴素字符串匹配算法与KMP算法.cpp
+         数组与指针的区别.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(1): error C2059: 语法错误:“常量”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(4): error C2014: 预处理器命令必须作为第一个非空白空间启动
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(5): error C2059: 语法错误:“常量”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(6): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(7): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(8): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(9): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(10): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(12): error C2143: 语法错误 : 缺少“;”(在“常量”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(12): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(13): error C2014: 预处理器命令必须作为第一个非空白空间启动
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(14): error C2059: 语法错误:“常量”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(14): error C2084: 函数“int main(void)”已有主体
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(5) : 参见“main”的前一个定义
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(15): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(16): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(17): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(18): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(19): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(20): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(24): error C2146: 语法错误: 缺少“;”(在标识符“问题就来了，这两个程序运行结果是一样的，你能说这两个程序是完全一样的么？？”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(24): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(24): error C2146: 语法错误: 缺少“;”(在标识符“Eexactly，NO”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(24): error C2143: 语法错误 : 缺少“;”(在“!”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(25): error C2588: “::!Why？我想当你看完这篇文章，肯定豁然开朗（分析见最后）。”: 非法的全局 finalizer
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(26): error C2146: 语法错误: 缺少“;”(在标识符“通过以上简单的引入例子，可以对数组和指针有个简单认识，”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(26): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(27): error C2146: 语法错误: 缺少“;”(在标识符“接下来本文从数组和指针在访问方式上的区别、在函数调用上的区别以及数组和指针内在的联系上进行分析。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(27): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(27): error C2143: 语法错误 : 缺少“;”(在“常量”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(34): error C2146: 语法错误: 缺少“;”(在标识符“左值表示存储结果的地方？等等，我看了原版，感觉也不是翻译的问题，让人非似懂的。大家的意见呢？）”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(34): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(35): error C2146: 语法错误: 缺少“;”(在标识符“编译器为每个变量分配地址（左值）。这个地址在编译时可知且一直存在，”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(35): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(36): error C2146: 语法错误: 缺少“;”(在标识符“而它的右值在运行时才能知道。通俗的说：每个变量都有一个地址，”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(36): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(37): error C2146: 语法错误: 缺少“;”(在标识符“这个地址在编译时可以知道，而地址里存储的内容（也就是变量的右值）只有在运行时才能知道。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(37): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(37): error C2146: 语法错误: 缺少“;”(在标识符“如果需要用到变量的值”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(37): error C2065: “也就是已知地址存储的值”: 未声明的标识符
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(38): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(38): error C2146: 语法错误: 缺少“;”(在标识符“，那么编译器发出指令从指定地址读入变量值并放入相应寄存器中。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(39): error C2146: 语法错误: 缺少“;”(在标识符“（1）数组的访问方式”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(39): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(40): error C2146: 语法错误: 缺少“;”(在标识符“关键之处在于每个符号的地址在编译时可知，如果编译器需要一个地址（比如说加上偏移量）来执行某种操作，”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(40): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(41): error C2146: 语法错误: 缺少“;”(在标识符“可以可以直接操作。相反、对于指针，必须在运行时取得它的地址，然后才能”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(41): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43): error C2146: 语法错误: 缺少“;”(在标识符“对它进行接触引用操作。下图A展示了对数组下标的引用，体现数组的访问形式：”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43): error C2146: 语法错误: 缺少“;”(在标识符“看到这里，就明白为什么extern”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43): error C2144: 语法错误:“char”的前面应有“;”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43): error C2146: 语法错误: 缺少“;”(在标识符“和extern”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(44): error C2146: 语法错误: 缺少“;”(在标识符“相同的原因了。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(45): error C2146: 语法错误: 缺少“;”(在标识符“这两个声明都是提示a是一个数组，也就是一个内存地址，数组内的字符可以由这个地址（加偏移量）找到。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(45): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(46): error C2146: 语法错误: 缺少“;”(在标识符“（2）指针的访问方式”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(46): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(46): error C2146: 语法错误: 缺少“;”(在标识符“若声明的是一个指针，如”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(46): error C2144: 语法错误:“char”的前面应有“;”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(49): error C2146: 语法错误: 缺少“;”(在标识符“必须知道地址p的内容，把它作为字符的地址并从这个地址中取得这个字符。如下图B所示，体现指针访问的形式。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(50): error C2146: 语法错误: 缺少“;”(在标识符“（3）若“定义为指针，但是以数组的方式引用”，这样会发生什么？”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(50): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(51): error C2146: 语法错误: 缺少“;”(在标识符“当一个外部数组的实际定义是一个指针，但却以数组的方式对其引用时，会发生些什么？”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(51): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(52): error C2146: 语法错误: 缺少“;”(在标识符“会向图A中方式直接的引用访问？事实是编译器所执行的是图B中的对内存间接引用。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(52): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(54): error C2146: 语法错误: 缺少“;”(在标识符“因为我们告诉编译器拥有的一个指针，如图C所示。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(54): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55): error C2146: 语法错误: 缺少“;”(在标识符“我们这里对照图C中的访问方式：”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55): error C2143: 语法错误 : 缺少“;”(在“常量”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55): error C2372: “p”: 重定义；不同的间接寻址类型
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55) : 参见“p”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(57): error C2143: 语法错误 : 缺少“;”(在“常量”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(57): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(57): error C2086: “char a[100]”: 重定义
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43) : 参见“a”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(57): error C2369: “a”: 重定义；不同的下标
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43) : 参见“a”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(58): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(60): error C2146: 语法错误: 缺少“;”(在标识符“（4）数组和指针的一些特点对比”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(60): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(60): error C2146: 语法错误: 缺少“;”(在标识符“表1”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(61): error C2146: 语法错误: 缺少“;”(在标识符“数组和指针的区别”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(61): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(62): error C2146: 语法错误: 缺少“;”(在标识符“指针”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(62): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(63): error C2146: 语法错误: 缺少“;”(在标识符“数组”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(63): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(63): error C2146: 语法错误: 缺少“;”(在标识符“保存数据的地址”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(64): error C2146: 语法错误: 缺少“;”(在标识符“保存数据”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(64): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(65): error C2146: 语法错误: 缺少“;”(在标识符“间接访问数据，首先取得指针的内容，把它作为地址，然后从这个地址提取数据。”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(65): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(65): error C2146: 语法错误: 缺少“;”(在标识符“如果指针有一个下标”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(65): error C2065: “i”: 未声明的标识符
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(65): error C2146: 语法错误: 缺少“;”(在标识符“直接访问数据，a”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(65): error C2146: 语法错误: 缺少“;”(在标识符“只是简单的以a”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(65): error C2143: 语法错误 : 缺少“;”(在“+”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(71): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(71): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(71): error C2371: “p”: 重定义；不同的基类型
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55) : 参见“p”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(71): error C2440: “初始化”: 无法从“double”转换为“int *”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(71): error C2059: 语法错误:“!”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(95): error C2059: 语法错误:“)”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(98): error C2369: “a”: 重定义；不同的下标
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43) : 参见“a”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(98): error C2371: “p”: 重定义；不同的基类型
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55) : 参见“p”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(99): error C2057: 应输入常量表达式
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(99): error C2466: 不能分配常量大小为 0 的数组
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(100): error C2146: 语法错误: 缺少“;”(在标识符“p”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(100): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(100): error C2040: “p”:“int”与“char *”的间接寻址级别不同
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(100): error C2440: “初始化”: 无法从“char [100]”转换为“int”
+                 没有使该转换得以执行的上下文
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(101): error C2057: 应输入常量表达式
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(101): error C2466: 不能分配常量大小为 0 的数组
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(101): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(101): error C2372: “p”: 重定义；不同的间接寻址类型
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55) : 参见“p”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(102): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(102): error C2040: “p”:“int”与“char *”的间接寻址级别不同
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(102): error C2440: “初始化”: 无法从“char [100]”转换为“int”
+                 没有使该转换得以执行的上下文
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(103): error C2143: 语法错误 : 缺少“)”(在“+”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(103): error C2143: 语法错误 : 缺少“;”(在“+”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(103): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(103): error C2371: “p”: 重定义；不同的基类型
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55) : 参见“p”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(103): error C2059: 语法错误:“)”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(104): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(104): error C2040: “p”:“int”与“char *”的间接寻址级别不同
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(104): error C2440: “初始化”: 无法从“char *”转换为“int”
+                 没有使该转换得以执行的上下文
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(105): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(105): error C2371: “p”: 重定义；不同的基类型
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(55) : 参见“p”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2057: 应输入常量表达式
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2466: 不能分配常量大小为 0 的数组
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2146: 语法错误: 缺少“;”(在标识符“在编译时总是被编译器改写成”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2143: 语法错误 : 缺少“)”(在“+”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2143: 语法错误 : 缺少“;”(在“+”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2372: “a”: 重定义；不同的间接寻址类型
+                 d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(43) : 参见“a”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(106): error C2059: 语法错误:“)”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(107): error C2059: 语法错误:“)”
+     1>d:\licf\study\vs project\all code i have done\c programming book\数组与指针的区别.cpp(107): fatal error C1003: 错误计数超过 100；正在停止编译
+         指针和引用的区别.cpp
+         括号匹配一共多少种.cpp
+         找使数组排序的最小序列差.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\找使数组排序的最小序列差.cpp(25): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\找使数组排序的最小序列差.cpp(42): warning C4018: “<”: 有符号/无符号不匹配
+         判断是不是2的幂次方.cpp
+         判断括号是否匹配.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\判断括号是否匹配.cpp(22): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\判断括号是否匹配.cpp(115): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\判断括号是否匹配.cpp(131): error C2084: 函数“int main(void)”已有主体
+                 d:\licf\study\vs project\all code i have done\c programming book\判断括号是否匹配.cpp(75) : 参见“main”的前一个定义
+         分解质因数.cpp
+         xing to the end.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\xing to the end.cpp(23): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\xing to the end.cpp(30): warning C4018: “<”: 有符号/无符号不匹配
+         StringSplit.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\stringsplit.cpp(41): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\stringsplit.cpp(48): warning C4018: “<”: 有符号/无符号不匹配
+         static和const关键字.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(1): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(1): error C2143: 语法错误 : 缺少“;”(在“:”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(4): error C2143: 语法错误 : 缺少“;”(在“常量”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(4): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(22): error C3872: “0xa0”:  此字符不允许在标识符中使用
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(24): error C3872: “0xa0”:  此字符不允许在标识符中使用
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(24): error C2146: 语法错误: 缺少“;”(在标识符“的返回结果必须是一个const对象。如果不是，这样的变态代码也不会编译出错：”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(24): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(24): error C2146: 语法错误: 缺少“;”(在标识符“classA a”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(25): error C3872: “0xa0”:  此字符不允许在标识符中使用
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(25): error C2143: 语法错误 : 缺少“)”(在“*”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(25): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(25): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(25): error C2059: 语法错误:“)”
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(25): error C2440: “初始化”: 无法从“int”转换为“int *”
+                 从整型转换为指针类型要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(26): error C2146: 语法错误: 缺少“;”(在标识符“操作”的前面)
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(26): error C4430: 缺少类型说明符 - 假定为 int。注意:  C++ 不支持默认 int
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(26): error C3872: “0xa0”:  此字符不允许在标识符中使用
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(26): error C2297: “*”: 非法，右操作数包含“int *”类型
+     1>d:\licf\study\vs project\all code i have done\c programming book\static和const关键字.cpp(26): error C2143: 语法错误 : 缺少“;”(在“=”的前面)
+         sizeof.cpp
+         isIPAddressLegal.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\isipaddresslegal.cpp(118): error C2731: “main”: 无法重载函数
+                 d:\licf\study\vs project\all code i have done\c programming book\isipaddresslegal.cpp(117) : 参见“main”的声明
+     1>d:\licf\study\vs project\all code i have done\c programming book\isipaddresslegal.cpp(121): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\isipaddresslegal.cpp(146): warning C4018: “<”: 有符号/无符号不匹配
+         combination permutation powerset.cpp
+     1>d:\licf\study\vs project\all code i have done\c programming book\combination permutation powerset.cpp(34): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\combination permutation powerset.cpp(37): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\combination permutation powerset.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\combination permutation powerset.cpp(50): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\combination permutation powerset.cpp(60): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\licf\study\vs project\all code i have done\c programming book\combination permutation powerset.cpp(63): warning C4018: “<”: 有符号/无符号不匹配
+         binarySearch.cpp
+         16进制与10进制相互转换.cpp
          正在生成代码...
+     1>d:\licf\study\vs project\all code i have done\c programming book\16进制与10进制相互转换.cpp(44): warning C4715: “decToHex”: 不是所有的控件路径都返回值
+     1>d:\licf\study\vs project\all code i have done\c programming book\binarysearch.cpp(35): warning C4715: “binarySearch”: 不是所有的控件路径都返回值
      1>已完成生成项目“D:\licf\Study\VS Project\All Code I Have Done\C Programming Book\C Programming Book.vcxproj”(Build 个目标)的操作 - 失败。
 
 生成失败。
 
-已用时间 00:00:01.53
+已用时间 00:00:06.17
