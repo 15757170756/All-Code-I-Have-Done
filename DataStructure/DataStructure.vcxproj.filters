@@ -46,6 +46,9 @@
     <Filter Include="源文件\并查集">
       <UniqueIdentifier>{b994b7bb-f39d-4847-87cd-0eedb48dbf24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Hash思想">
+      <UniqueIdentifier>{420181bc-ff60-4f63-b4bd-2a3cc5398ae7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataStructure\bubbleSort.c">
@@ -203,6 +206,39 @@
     </ClCompile>
     <ClCompile Include="营救猪坚强.cpp">
       <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="原地归并排序.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="整数Hash的应用1.cpp">
+      <Filter>源文件\Hash思想</Filter>
+    </ClCompile>
+    <ClCompile Include="整数Hash的应用2.cpp">
+      <Filter>源文件\Hash思想</Filter>
+    </ClCompile>
+    <ClCompile Include="..\牛客网各类笔试题目\合唱.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="..\牛客网各类笔试题目\5不等式数列.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hihoCode\1702-矩阵迷宫.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hihoCode\1037- 数字三角形.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="链式前向星存图.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\hihoCode\1050-树中的最长路.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="先序遍历中序遍历已知求后序遍历.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="后序遍历中序遍历已知求先序遍历.cpp">
+      <Filter>源文件\Binary Tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

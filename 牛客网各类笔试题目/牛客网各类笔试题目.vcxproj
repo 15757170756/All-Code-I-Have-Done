@@ -77,6 +77,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1头条校招.cpp" />
+    <ClCompile Include="2019阿里巴巴实习生招聘算法工程师-图像图形编程测验.cpp" />
     <ClCompile Include="2异或.cpp" />
     <ClCompile Include="5不等式数列.cpp" />
     <ClCompile Include="1买帽子.cpp" />
@@ -84,8 +85,13 @@
     <ClCompile Include="2度度熊回家.cpp" />
     <ClCompile Include="4有趣的排序.cpp" />
     <ClCompile Include="合唱.cpp" />
+    <ClCompile Include="回文素数.cpp" />
     <ClCompile Include="字符串碎片.cpp" />
+    <ClCompile Include="字符串编码.cpp" />
     <ClCompile Include="射击游戏.cpp" />
+    <ClCompile Include="推箱子.cpp" />
+    <ClCompile Include="无聊的牛牛和羊羊.cpp" />
+    <ClCompile Include="最大和.cpp" />
     <ClCompile Include="最长公共子括号序列.cpp" />
     <ClCompile Include="有趣的数字.cpp" />
     <ClCompile Include="构造回文.cpp" />
@@ -93,10 +99,12 @@
     <ClCompile Include="相反数.cpp" />
     <ClCompile Include="算法基础-字符移位.cpp" />
     <ClCompile Include="编码求对应的index.cpp" />
+    <ClCompile Include="赛马.cpp" />
     <ClCompile Include="连续子数组的最大和.cpp" />
     <ClCompile Include="送你一个励志故事——涵盖20多所互联网公司的校招面经.cpp" />
     <ClCompile Include="递归函数调用理解题目.cpp" />
     <ClCompile Include="重排数列.cpp" />
+    <ClCompile Include="青草游戏.cpp" />
     <ClCompile Include="餐馆.cpp" />
     <ClCompile Include="魔法币.cpp" />
   </ItemGroup>

@@ -731,6 +731,15 @@
     <ClCompile Include="static allocator.cpp">
       <Filter>源文件\C++ 内存管理</Filter>
     </ClCompile>
+    <ClCompile Include="emplace与insert区别.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="function类使用.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\C Programming Book\C++11 计算程序时间.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GUN 4.8\algorithm">

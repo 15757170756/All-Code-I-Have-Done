@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 
 int inversePairs(int* data, int length);
@@ -26,7 +26,6 @@ int inversePairs(int* data, int length)
 	delete[] copy;
 	return count;
 }
-
 
 int inversePairsCore(int* data, int* copy, int start, int end)
 {
@@ -59,6 +58,65 @@ int inversePairsCore(int* data, int* copy, int start, int end)
 }
 
 
+/*
+ä½¿ç”¨å½’å¹¶æ’åºæ–¹æ³•
+*/
+#include <iostream>
+
+using namespace::std;
+
+const int N = 1005;
+
+int a[N], tmp[N];
+int ans;
+
+void Merge(int left, int mid, int right)
+{
+	int i = left;
+	int j = mid + 1;
+	int k = left;
+	while (i <= mid&&j <= right) {
+		if (a[i] > a[j]) {
+			tmp[k++] = a[j++];
+			ans += mid - i + 1;
+		}
+		else
+			tmp[k++] = a[i++];
+	}
+	while (i <= mid)
+		tmp[k++] = a[i++];
+	while (i <= mid)
+		tmp[k++] = a[i++];
+
+	for (int i = left; i <= right; ++i)
+		a[i] = tmp[i];
+}
+
+void mergeSort(int left, int right)
+{
+	if (left < right) {
+		int mid = (left + right) >> 1;
+		mergeSort(left, mid);
+		mergeSort(mid + 1, right);
+		Merge(left, mid, right);
+	}
+}
+
+int main()
+{
+	int n, T, tt = 1;
+	scanf("%d", &T);
+	while (T--)
+	{
+		scanf("%d", &n);
+		for (int i = 0; i < n; i++)
+			scanf("%d", &a[i]);
+		ans = 0;
+		mergeSort(0, n - 1);
+		printf("Scenario #%d:\n%d\n\n", tt++, ans);
+	}
+	return 0;
+}
 
 
 
@@ -74,7 +132,7 @@ int inversePairsCore(int* data, int* copy, int start, int end)
 
 
 /*
-ÁíÍâÒ»ÖÖ·½·¨
+å¦å¤–ä¸€ç§æ–¹æ³•
 */
 #include<cstdio>  
 #include<vector> 
@@ -90,28 +148,28 @@ public:
 			return 0;
 		return getCount(data, 0, len - 1);
 	}
-	int getCount(vector<int>& data, int begin, int end)  // ÕâÀïdataĞèÒªÓÃ&½øĞĞÒıÓÃ´«Öµ  
+	int getCount(vector<int>& data, int begin, int end)  // è¿™é‡Œdataéœ€è¦ç”¨&è¿›è¡Œå¼•ç”¨ä¼ å€¼  
 	{
 		if (begin >= end)
-			return 0;      // µİ¹éÖÕÖ¹Ìõ¼ş 
+			return 0;      // é€’å½’ç»ˆæ­¢æ¡ä»¶ 
 
 		int mid = (begin + end) / 2;
-		int lCount = getCount(data, begin, mid);   // µİ¹é£¬¹é²¢ÅÅĞò£¬²¢¼ÆËã±¾´ÎÄæĞò¶ÔÊı   
+		int lCount = getCount(data, begin, mid);   // é€’å½’ï¼Œå½’å¹¶æ’åºï¼Œå¹¶è®¡ç®—æœ¬æ¬¡é€†åºå¯¹æ•°   
 		int rCount = getCount(data, mid + 1, end);
 
-		vector<int> temp = data; // ¸¨ÖúÊı×é£¬ÓÃÓÚ¹é²¢ÅÅĞò  
-		int forIdx = mid, backIdx = end, tempIdx = end;  // forIdx£ºÇ°°ë²¿·ÖµÄÏÂ±ê£¬backIdx£ººó°ë²¿·ÖµÄÏÂ±ê£¬tempIdx£º¸¨ÖúÊı×éµÄÏÂ±ê         
-		int crossCount = 0;    // ¼ÇÂ¼½»²æµÄÄæĞò¶ÔÊı  
+		vector<int> temp = data; // è¾…åŠ©æ•°ç»„ï¼Œç”¨äºå½’å¹¶æ’åº  
+		int forIdx = mid, backIdx = end, tempIdx = end;  // forIdxï¼šå‰åŠéƒ¨åˆ†çš„ä¸‹æ ‡ï¼ŒbackIdxï¼šååŠéƒ¨åˆ†çš„ä¸‹æ ‡ï¼ŒtempIdxï¼šè¾…åŠ©æ•°ç»„çš„ä¸‹æ ‡         
+		int crossCount = 0;    // è®°å½•äº¤å‰çš„é€†åºå¯¹æ•°  
 
 		while (forIdx >= begin && backIdx >= mid + 1)
 		{
-			if (data[forIdx] > data[backIdx])   // ´æÔÚ½»²æµÄÄæĞò¶Ô£¬ÏÈÍ³¼ÆÒ»ÏÂ£¬È»ºóÒÀ´Î½«½Ï´óÖµ·Å½ø¸¨ÖúÊı×é  
+			if (data[forIdx] > data[backIdx])   // å­˜åœ¨äº¤å‰çš„é€†åºå¯¹ï¼Œå…ˆç»Ÿè®¡ä¸€ä¸‹ï¼Œç„¶åä¾æ¬¡å°†è¾ƒå¤§å€¼æ”¾è¿›è¾…åŠ©æ•°ç»„  
 			{
 				temp[tempIdx--] = data[forIdx--];
 				crossCount += backIdx - mid;
 			}
 			else {
-				temp[tempIdx--] = data[backIdx--];  // ²»´æÔÚ½»²æµÄÄæĞò¶Ô£¬ÒÀ´Î½«½Ï´óÖµ·Å½ø¸¨ÖúÊı×é   
+				temp[tempIdx--] = data[backIdx--];  // ä¸å­˜åœ¨äº¤å‰çš„é€†åºå¯¹ï¼Œä¾æ¬¡å°†è¾ƒå¤§å€¼æ”¾è¿›è¾…åŠ©æ•°ç»„   
 			}
 		}
 
@@ -126,7 +184,7 @@ public:
 	}
 };
 
-// ÒÔÏÂÎª²âÊÔ²¿·Ö  
+// ä»¥ä¸‹ä¸ºæµ‹è¯•éƒ¨åˆ†  
 int main()
 {
 	Solution sol;

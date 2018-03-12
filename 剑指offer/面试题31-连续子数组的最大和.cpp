@@ -55,6 +55,8 @@ int main()
 
 
 
+
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -71,4 +73,83 @@ int main(){
 		mx = max(sum, mx);
 	}
 	printf("%d\n", mx);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <limits>
+
+using namespace::std;
+
+int findGreatestSumOfSubArray(int *arr, int length)
+{
+	int maxSum = 0, thisSum = 0;
+	int i = length - 1;
+	if (0 == i || findGreatestSumOfSubArray(arr, i) <= 0)
+		return arr[i];
+	else
+		return arr[i] + findGreatestSumOfSubArray(arr, i - 1);
+}
+
+int findGreatestSumOfSubArray2(int *arr, int length)
+{
+	if (nullptr == arr || length <= 0)
+		return 0;
+	int maxSum = INT_MIN, thisSum = 0;
+	for (int i = 0; i < length; ++i) {
+		if (thisSum <= 0)
+			thisSum = arr[i];
+		else
+			thisSum += arr[i];
+		if (maxSum < thisSum)
+			maxSum = thisSum;
+	}
+
+	return maxSum;
+}
+
+int findGreatestSumOfSubArrayWrong(int *arr, int length)
+{
+	if (nullptr == arr || length <= 0)
+		return 0;
+	int maxSum = INT_MIN, thisSum = 0;
+	for (int i = 0; i < length; ++i) {
+		thisSum += arr[i];
+		if (thisSum <= 0)
+			thisSum = 0;
+		if (maxSum < thisSum)
+			maxSum = thisSum;
+	}
+
+	return maxSum;
+}
+
+int main()
+{
+	int arr[] = { -2, 1, -2, 1, 2 };
+	int length = sizeof(arr) / sizeof(arr[0]);
+	cout << findGreatestSumOfSubArray2(arr, length) << endl;
+	cout << findGreatestSumOfSubArrayWrong(arr, length) << endl;
 }

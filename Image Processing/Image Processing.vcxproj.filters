@@ -129,9 +129,6 @@
     <ClCompile Include="stitchingWKK.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="stitching_detailed-OpenCV 3.3.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="blenderTwoImg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -187,6 +184,9 @@
       <Filter>源文件\sba</Filter>
     </ClCompile>
     <ClCompile Include="sift-OpenCV2410.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stitching\stitching_detailed-OpenCV 3.3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -48,6 +48,7 @@
     <ClCompile Include="分解质因数.cpp" />
     <ClCompile Include="判断括号是否匹配.cpp" />
     <ClCompile Include="判断是不是2的幂次方.cpp" />
+    <ClCompile Include="字符串标记——招银网络科技在线笔试题.cpp" />
     <ClCompile Include="打印zigzag矩阵.cpp" />
     <ClCompile Include="打印螺旋矩阵-方阵.cpp" />
     <ClCompile Include="找使数组排序的最小序列差.cpp" />

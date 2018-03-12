@@ -25,8 +25,9 @@ int knapSack(int W, int wt[], int val[], int n)
 	}
 
 	int maxValue = K[n][W];
+
 	for (int i = 0; i < n + 1; ++i)
-		delete[](int*)K[i];
+		delete[] (int*)K[i];
 	delete[] K;
 
 	return maxValue;
@@ -43,6 +44,60 @@ int main()
 	return 0;
 }
 
+
+
+
+
+/*
+样例输入
+5 1000
+144 990
+487 436
+210 673
+567 58
+1056 897
+样例输出
+2099
+*/
+//只需要一维数组
+#include <iostream>
+#include <vector>
+#include <fstream>
+
+using namespace::std;
+
+int max(int a, int b) { return (a > b) ? a : b; }
+
+int knapSack(int W, vector<int> &wt, vector<int> &val, int n)
+{
+	vector<int> K(W + 1, 0);
+	for (int i = 0; i < n; ++i)
+		for (int j = W; j >= wt[i]; --j)
+			K[j] = max(K[j], K[j - wt[i]] + val[i]);
+
+	return K[W];
+}
+
+int main()
+{
+	ifstream in("input.txt");
+	int n, Weight;
+	cin >> n >> Weight;
+	vector<int> value, wt;
+	for (int i = 0; i < n; ++i) {
+		int tempValue, tempWt;
+		cin >> tempWt >> tempValue;
+		value.push_back(tempValue);
+		wt.push_back(tempWt);
+	}
+	//for (int i = 0; i < n; ++i)
+	//	cout << wt[i] << ' ' << value[i] << endl;
+
+	cout << knapSack(Weight, wt, value, n) << endl;
+
+	return 0;
+}
+
 /*
 假设山洞里共有a,b,c,d ,e这5件宝物（不是5种宝物），
 它们的重量分别是2,2,6,5,4，它们的价值分别是6,3,5,4,6，
@@ -53,11 +108,11 @@ int main()
 如何让背包里装入的物品具有最大的价值总和？
 
 name weight	value	1	2	3	4	5	6	7	8	9	10
-a	2	   6	0	6	6	9	9	12	12	15	15	15
-b	2	   3	0	3	3	6	6	9	9	9	10	11
-c	6	   5	0	0	0	6	6	6	6	6	10	11
-d	5	   4	0	0	0	6	6	6	6	6	10	10
-e	4	   6	0	0	0	6	6	6	6	6	6	6
+a	    2	   6	0	6	6	9	9	12	12	15	15	15
+b	    2	   3	0	3	3	6	6	9	9	9	10	11
+c	    6	   5	0	0	0	6	6	6	6	6	10	11
+d	    5	   4	0	0	0	6	6	6	6	6	10	10
+e	    4	   6	0	0	0	6	6	6	6	6	6	6
 
 只要你能通过找规律手工填写出上面这张表就算理解了01背包的动态规划算法。
 
@@ -93,3 +148,5 @@ f[i-1,j-Wi]就是指单元格b6,值为9，Pi指的是a物品的价值，即6
 
 以下是actionscript3 的代码
 */
+
+

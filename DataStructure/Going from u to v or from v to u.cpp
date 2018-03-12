@@ -4,12 +4,21 @@ Time Limit: 2000MS		Memory Limit: 65536K
 Total Submissions: 18561		Accepted: 5002
 Description
 
-In order to make their sons brave, Jiajia and Wind take them to a big cave. The cave has n rooms, and one-way corridors connecting some rooms. Each time, Wind choose two rooms x and y, and ask one of their little sons go from one to the other. The son can either go from x to y, or from y to x. Wind promised that her tasks are all possible, but she actually doesn't know how to decide if a task is possible. To make her life easier, Jiajia decided to choose a cave in which every pair of rooms is a possible task. Given a cave, can you tell Jiajia whether Wind can randomly choose two rooms without worrying about anything?
+In order to make their sons brave, Jiajia and Wind take them to a big cave. The cave has n rooms, 
+and one-way corridors connecting some rooms. Each time, Wind choose two rooms x and y,
+and ask one of their little sons go from one to the other. The son can either go from x to y, 
+or from y to x. Wind promised that her tasks are all possible,
+but she actually doesn't know how to decide if a task is possible.
+To make her life easier, Jiajia decided to choose a cave in which every pair of rooms is a possible task. 
+Given a cave, can you tell Jiajia whether Wind can randomly choose two rooms without worrying about anything?
 Input
 
 The first line contains a single integer T, the number of test cases. And followed T cases.
 
-The first line for each case contains two integers n, m(0 < n < 1001,m < 6000), the number of rooms and corridors in the cave. The next m lines each contains two integers u and v, indicating that there is a corridor connecting room u and room v directly.
+The first line for each case contains two integers n, m(0 < n < 1001,m < 6000), 
+the number of rooms and corridors in the cave. 
+The next m lines each contains two integers u and v,
+indicating that there is a corridor connecting room u and room v directly.
 Output
 
 The output should contain T lines. Write 'Yes' if the cave has the property stated above, or 'No' otherwise.
@@ -23,6 +32,9 @@ Sample Input
 Sample Output
 
 Yes
+
+http://blog.csdn.net/acdreamers/article/details/12051719
+http://poj.org/problem?id=2762
 */
 
 

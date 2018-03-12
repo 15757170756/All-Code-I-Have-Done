@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="[Offer收割]编程练习赛49">
+      <UniqueIdentifier>{94044601-61d0-4b5d-9b80-5350a6d96538}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="[Offer收割]编程练习赛50">
+      <UniqueIdentifier>{008cff9e-7dd1-4b4a-88ae-9c59610d57c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1601- 最大得分.cpp">
@@ -33,8 +39,29 @@
     <ClCompile Include="1671-反转子串.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="1050-树中最长的路径.cpp">
+    <ClCompile Include="题目1-相似颜色.cpp">
+      <Filter>[Offer收割]编程练习赛49</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-挑选子集.cpp">
+      <Filter>[Offer收割]编程练习赛49</Filter>
+    </ClCompile>
+    <ClCompile Include="1702-矩阵迷宫.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1050-树中的最长路.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-循环数组.cpp">
+      <Filter>[Offer收割]编程练习赛50</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-座位问题.cpp">
+      <Filter>[Offer收割]编程练习赛50</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-末尾有最多0的乘积.cpp">
+      <Filter>[Offer收割]编程练习赛50</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4-麻烦的第K大问题.cpp">
+      <Filter>[Offer收割]编程练习赛50</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

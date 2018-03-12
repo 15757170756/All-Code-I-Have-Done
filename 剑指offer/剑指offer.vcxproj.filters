@@ -120,6 +120,9 @@
     <ClCompile Include="面试题28-字符串排列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题29-数组中出现次数超过一半的数字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">

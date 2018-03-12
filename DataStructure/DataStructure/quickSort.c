@@ -1,4 +1,5 @@
 ﻿#include <stdio.h>
+#include <cstdlib>
 
 int partition_exchangeElem(int arr[], int low, int high);//交换元素
 int partition_nonExchangeElem(int arr[], int low, int high);//不交换元素
@@ -36,6 +37,24 @@ int partition_exchangeElem(int arr[], int low, int high)
 
 int partition_nonExchangeElem(int arr[], int low, int high)
 {
+	int pivotkey = arr[low];
+	while (low < high) {
+		while (low < high && arr[high] >= pivotkey)
+			--high;
+		arr[low] = arr[high];
+		while (low < high && arr[low] <= pivotkey)
+			++low;
+		arr[high] = arr[low];
+	}
+
+	arr[low] = pivotkey;
+	return low;
+}
+
+int randomizedPartition(int arr[], int low, int high)
+{
+	int randInteger = low + rand() % (high - low + 1);
+	swap(&arr[randInteger], &arr[low]);
 	int pivotkey = arr[low];
 	while (low < high) {
 		while (low < high && arr[high] >= pivotkey)

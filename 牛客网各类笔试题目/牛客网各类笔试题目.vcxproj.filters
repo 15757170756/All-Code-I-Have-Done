@@ -37,6 +37,12 @@
     <Filter Include="源文件\各大公司在线笔试题目\今日头条2017秋招开发工程师笔试试卷">
       <UniqueIdentifier>{8ef47b8c-6f12-4a3e-aa8b-1a407400b58c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\爱奇艺2018秋季校招C++工程师（第二场）">
+      <UniqueIdentifier>{8aef403b-44a6-4fe9-a2d2-ef9bb02bfda3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\2017网易游戏雷火盘古实习生招聘笔试真题">
+      <UniqueIdentifier>{954b259f-740a-44b5-ad80-339083d0ea83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -107,6 +113,30 @@
     </ClCompile>
     <ClCompile Include="1头条校招.cpp">
       <Filter>源文件\各大公司在线笔试题目\今日头条2017秋招开发工程师笔试试卷</Filter>
+    </ClCompile>
+    <ClCompile Include="2019阿里巴巴实习生招聘算法工程师-图像图形编程测验.cpp">
+      <Filter>源文件\各大公司在线笔试题目</Filter>
+    </ClCompile>
+    <ClCompile Include="回文素数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\爱奇艺2018秋季校招C++工程师（第二场）</Filter>
+    </ClCompile>
+    <ClCompile Include="青草游戏.cpp">
+      <Filter>源文件\各大公司在线笔试题目\爱奇艺2018秋季校招C++工程师（第二场）</Filter>
+    </ClCompile>
+    <ClCompile Include="无聊的牛牛和羊羊.cpp">
+      <Filter>源文件\各大公司在线笔试题目\爱奇艺2018秋季校招C++工程师（第二场）</Filter>
+    </ClCompile>
+    <ClCompile Include="字符串编码.cpp">
+      <Filter>源文件\各大公司在线笔试题目\2017网易游戏雷火盘古实习生招聘笔试真题</Filter>
+    </ClCompile>
+    <ClCompile Include="最大和.cpp">
+      <Filter>源文件\各大公司在线笔试题目\2017网易游戏雷火盘古实习生招聘笔试真题</Filter>
+    </ClCompile>
+    <ClCompile Include="推箱子.cpp">
+      <Filter>源文件\各大公司在线笔试题目\2017网易游戏雷火盘古实习生招聘笔试真题</Filter>
+    </ClCompile>
+    <ClCompile Include="赛马.cpp">
+      <Filter>源文件\各大公司在线笔试题目\2017网易游戏雷火盘古实习生招聘笔试真题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

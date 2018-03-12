@@ -78,11 +78,18 @@
   <ItemGroup>
     <ClCompile Include="1015-KMP算法.cpp" />
     <ClCompile Include="1037- 数字三角形.cpp" />
-    <ClCompile Include="1050-树中最长的路径.cpp" />
+    <ClCompile Include="1050-树中的最长路.cpp" />
     <ClCompile Include="1595-Numbers.cpp" />
     <ClCompile Include="1601- 最大得分.cpp" />
     <ClCompile Include="1671-反转子串.cpp" />
     <ClCompile Include="1670-比赛日程安排.cpp" />
+    <ClCompile Include="1702-矩阵迷宫.cpp" />
+    <ClCompile Include="题目1-循环数组.cpp" />
+    <ClCompile Include="题目1-相似颜色.cpp" />
+    <ClCompile Include="题目2-座位问题.cpp" />
+    <ClCompile Include="题目2-挑选子集.cpp" />
+    <ClCompile Include="题目3-末尾有最多0的乘积.cpp" />
+    <ClCompile Include="题目4-麻烦的第K大问题.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

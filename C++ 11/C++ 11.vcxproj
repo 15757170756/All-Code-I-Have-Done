@@ -290,8 +290,11 @@
     <ClInclude Include="type_traits.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\C Programming Book\C++11 计算程序时间.cpp" />
     <ClCompile Include="alias.cpp" />
     <ClCompile Include="Array new.cpp" />
+    <ClCompile Include="emplace与insert区别.cpp" />
+    <ClCompile Include="function类使用.cpp" />
     <ClCompile Include="hashTable.cpp" />
     <ClCompile Include="initializer_list.cpp" />
     <ClCompile Include="lambda.cpp" />
