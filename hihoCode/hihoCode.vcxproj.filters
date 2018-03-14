@@ -19,6 +19,18 @@
     <Filter Include="[Offer收割]编程练习赛50">
       <UniqueIdentifier>{008cff9e-7dd1-4b4a-88ae-9c59610d57c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="[Offer收割]编程练习赛29">
+      <UniqueIdentifier>{c80edf88-d95d-44f5-a8c6-31bdc9d47502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="[Offer收割]编程练习赛41">
+      <UniqueIdentifier>{d1902940-bc75-400f-b62a-b77fe1a24872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="[Offer收割]编程练习赛31">
+      <UniqueIdentifier>{b715abb4-0a63-461f-b2e7-90d176b6847a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hihoCoder挑战赛31">
+      <UniqueIdentifier>{c5a46598-44ec-4123-af93-d8fd7093bd71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1601- 最大得分.cpp">
@@ -62,6 +74,54 @@
     </ClCompile>
     <ClCompile Include="题目4-麻烦的第K大问题.cpp">
       <Filter>[Offer收割]编程练习赛50</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-矩阵迷宫.cpp">
+      <Filter>[Offer收割]编程练习赛49</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4-第K小先序遍历.cpp">
+      <Filter>[Offer收割]编程练习赛49</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-逃离迷宫4.cpp">
+      <Filter>[Offer收割]编程练习赛29</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-料理次元.cpp">
+      <Filter>[Offer收割]编程练习赛29</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-最大得分.cpp">
+      <Filter>[Offer收割]编程练习赛29</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4-本质不同的回文子串的数量.cpp">
+      <Filter>[Offer收割]编程练习赛29</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-比赛日程安排.cpp">
+      <Filter>[Offer收割]编程练习赛41</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-反转子串.cpp">
+      <Filter>[Offer收割]编程练习赛41</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-区间问题.cpp">
+      <Filter>[Offer收割]编程练习赛41</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4-01间隔矩阵.cpp">
+      <Filter>[Offer收割]编程练习赛41</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-H星人社交网络.cpp">
+      <Filter>[Offer收割]编程练习赛31</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-Jerry的奶酪.cpp">
+      <Filter>[Offer收割]编程练习赛31</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-数组分拆II.cpp">
+      <Filter>[Offer收割]编程练习赛31</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-Numbers.cpp">
+      <Filter>hihoCoder挑战赛31</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-Beautiful Sequence.cpp">
+      <Filter>hihoCoder挑战赛31</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-Good 01-Sequence.cpp">
+      <Filter>hihoCoder挑战赛31</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

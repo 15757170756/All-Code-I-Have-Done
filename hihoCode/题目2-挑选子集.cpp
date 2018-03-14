@@ -86,3 +86,57 @@ void combinations(const vector<T> &v, size_t count, vector<vector<int>> &resultV
 结果:Memory Limit Exceeded
 得分:50 / 100
 */
+
+
+
+
+
+
+
+
+
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const int maxn = 105;
+const int maxh = 17;
+const int lim = 100000;
+const int mod = 1000000009;
+typedef long long ll;
+
+int n, m, k;
+
+int cnt[maxn];
+
+int cc[maxn][maxn];
+int main()
+{
+	cc[0][0] = 1;
+	for (int i = 1; i < maxn; i++)
+	{
+		cc[i][0] = 1;
+		for (int j = 1; j <= i; j++)
+		{
+			cc[i][j] = (cc[i - 1][j - 1] + cc[i - 1][j]) % mod;
+		}
+	}
+	cin >> n >> m >> k;
+	int x;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> x;
+		cnt[x % k]++;
+	}
+	int res = 0;
+	for (int i = 0; i < k; i++)
+	{
+		if (cnt[i] >= m)
+		{
+			res = (res + cc[cnt[i]][m]) % mod;
+		}
+	}
+	cout << res << endl;
+}

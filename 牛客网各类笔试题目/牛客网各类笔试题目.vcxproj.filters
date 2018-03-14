@@ -43,6 +43,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\2017网易游戏雷火盘古实习生招聘笔试真题">
       <UniqueIdentifier>{954b259f-740a-44b5-ad80-339083d0ea83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷（一）">
+      <UniqueIdentifier>{eecfe15c-3d20-4564-8abd-d5a3901a43b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -137,6 +140,18 @@
     </ClCompile>
     <ClCompile Include="赛马.cpp">
       <Filter>源文件\各大公司在线笔试题目\2017网易游戏雷火盘古实习生招聘笔试真题</Filter>
+    </ClCompile>
+    <ClCompile Include="问答题1.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷（一）</Filter>
+    </ClCompile>
+    <ClCompile Include="问答题2.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷（一）</Filter>
+    </ClCompile>
+    <ClCompile Include="质数和对数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷（一）</Filter>
+    </ClCompile>
+    <ClCompile Include="geohash编码.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷（一）</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

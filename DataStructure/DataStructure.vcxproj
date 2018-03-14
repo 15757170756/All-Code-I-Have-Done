@@ -96,7 +96,6 @@
     <ClCompile Include="DataStructure\insertSort.c" />
     <ClCompile Include="DataStructure\mergeSort-non recursive.c" />
     <ClCompile Include="DataStructure\mergeSort-recursive.c" />
-    <ClCompile Include="DataStructure\quickSort.c" />
     <ClCompile Include="DataStructure\quickSort.cpp" />
     <ClCompile Include="DataStructure\quickSortNonRecursion.cpp" />
     <ClCompile Include="DataStructure\RedBlackTree.cpp" />

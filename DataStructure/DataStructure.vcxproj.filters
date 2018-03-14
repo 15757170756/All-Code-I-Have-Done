@@ -72,12 +72,6 @@
     <ClCompile Include="DataStructure\mergeSort-recursive.c">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
-    <ClCompile Include="DataStructure\quickSort.c">
-      <Filter>源文件\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="DataStructure\quickSort.cpp">
-      <Filter>源文件\Sort</Filter>
-    </ClCompile>
     <ClCompile Include="DataStructure\quickSortNonRecursion.cpp">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
@@ -239,6 +233,9 @@
     </ClCompile>
     <ClCompile Include="后序遍历中序遍历已知求先序遍历.cpp">
       <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\quickSort.cpp">
+      <Filter>源文件\Sort</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿链接：https://www.nowcoder.com/questionTerminal/5c2f7a22343e40179bea3a3cdeace8fb?toCommentId=73619
+﻿/*
+链接：https://www.nowcoder.com/questionTerminal/5c2f7a22343e40179bea3a3cdeace8fb?toCommentId=73619
 来源：牛客网
 
 1）函数体内static变量的作用范围为该函数体，不同于auto变量，
@@ -24,3 +25,4 @@ operator*的返回结果必须是一个const对象。如果不是，这样的变
 classA a, b, c;
 (a * b) = c; // 对a*b的结果赋值   
 操作(a * b) = c显然不符合编程者的初衷，也没有任何意义。
+*/
