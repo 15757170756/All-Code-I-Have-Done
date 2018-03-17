@@ -85,6 +85,9 @@
     <ClCompile Include="2度度熊回家.cpp" />
     <ClCompile Include="4有趣的排序.cpp" />
     <ClCompile Include="geohash编码.cpp" />
+    <ClCompile Include="[编程题] 勇敢的妞妞.cpp" />
+    <ClCompile Include="[编程题] 寻宝.cpp" />
+    <ClCompile Include="[编程题] 打车.cpp" />
     <ClCompile Include="合唱.cpp" />
     <ClCompile Include="回文素数.cpp" />
     <ClCompile Include="字符串碎片.cpp" />

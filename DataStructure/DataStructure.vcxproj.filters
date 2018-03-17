@@ -237,6 +237,9 @@
     <ClCompile Include="DataStructure\quickSort.cpp">
       <Filter>源文件\Sort</Filter>
     </ClCompile>
+    <ClCompile Include="..\hihoCode\1043-完全背包.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\RedBlackTree.h">

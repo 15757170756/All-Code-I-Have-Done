@@ -48,3 +48,35 @@ int main()
 	printf("Sorted character array is %sn", arr);
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace::std;
+
+int main()
+{
+	int k = 10;
+	vector<int> arr = { 10, 9, 5, 2, 4, 1, 2, 7, 8, 9, 3, 0, 9, 8 };
+	int arrLength = arr.size();
+	vector<int> output(arrLength);
+	vector<int> count(k + 1);
+	for (int i = 0; i < arrLength; ++i)
+		++count[arr[i]];
+	for (int i = 1; i <= k; ++i)
+		count[i] += count[i - 1];
+	for (int i = 0; i < arrLength; ++i) {
+		output[count[arr[i]] - 1] = arr[i];
+		--count[arr[i]];
+	}
+	for (int i = 0; i < arrLength; ++i)
+		cout << output[i] << endl;
+}

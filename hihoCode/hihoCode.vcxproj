@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="1015-KMP算法.cpp" />
     <ClCompile Include="1037- 数字三角形.cpp" />
+    <ClCompile Include="1043-完全背包.cpp" />
     <ClCompile Include="1050-树中的最长路.cpp" />
     <ClCompile Include="1595-Numbers.cpp" />
     <ClCompile Include="1601- 最大得分.cpp" />

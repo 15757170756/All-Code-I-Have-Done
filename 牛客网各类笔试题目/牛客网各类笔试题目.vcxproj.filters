@@ -46,6 +46,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷（一）">
       <UniqueIdentifier>{eecfe15c-3d20-4564-8abd-d5a3901a43b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\2018年校招全国统一模拟笔试%28第一场%29编程题">
+      <UniqueIdentifier>{bc85790d-17e6-44d4-b8ef-4ace23a70126}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -152,6 +155,15 @@
     </ClCompile>
     <ClCompile Include="geohash编码.cpp">
       <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷（一）</Filter>
+    </ClCompile>
+    <ClCompile Include="[编程题] 寻宝.cpp">
+      <Filter>源文件\各大公司在线笔试题目\2018年校招全国统一模拟笔试%28第一场%29编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="[编程题] 打车.cpp">
+      <Filter>源文件\各大公司在线笔试题目\2018年校招全国统一模拟笔试%28第一场%29编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="[编程题] 勇敢的妞妞.cpp">
+      <Filter>源文件\各大公司在线笔试题目\2018年校招全国统一模拟笔试%28第一场%29编程题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -66,3 +66,70 @@ int main()
 			{
 				if (a % b != 0) a %= b;
 				else a = b;
+			}
+		}
+		if (x == a && y == b) puts("YES");
+		else puts("NO");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <algorithm>
+
+long long x, y, a, b;
+
+int T;
+
+bool judge(long long a, long long b) {
+	if (a == x && b == y) return true;
+	while (a != x && b != y) {
+		if (a == 0 || b == 0) return false;
+		if (a > b) a = a % b;
+		else b = b % a;
+	}
+	if (a == x) {
+		if (b >= y && (b - y) % a == 0) return true;
+		return false;
+	}
+	if (b == y) {
+		if (a >= x && (a - x) % b == 0) return true;
+		return false;
+	}
+	return true;
+}
+
+int main() {
+	scanf("%d", &T);
+	while (T--) {
+		scanf("%lld %lld %lld %lld", &x, &y, &a, &b);
+		if (judge(a, b)) printf("YES\n");
+		else printf("NO\n");
+	}
+
+	return 0;
+}

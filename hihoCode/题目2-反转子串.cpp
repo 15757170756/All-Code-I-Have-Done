@@ -26,7 +26,10 @@ agfdecbhijk
 */
 
 
-#include <bits/stdc++.h>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <cstring>
 
 using namespace std;
 const int MAXN = 6e6 + 6;

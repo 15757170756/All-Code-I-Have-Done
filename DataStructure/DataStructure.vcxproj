@@ -82,6 +82,7 @@
     <ClCompile Include="..\C Programming Book\最长回文子序列.cpp" />
     <ClCompile Include="..\C Programming Book\钢条切割问题.cpp" />
     <ClCompile Include="..\hihoCode\1037- 数字三角形.cpp" />
+    <ClCompile Include="..\hihoCode\1043-完全背包.cpp" />
     <ClCompile Include="..\hihoCode\1050-树中的最长路.cpp" />
     <ClCompile Include="..\hihoCode\1601- 最大得分.cpp" />
     <ClCompile Include="..\hihoCode\1702-矩阵迷宫.cpp" />

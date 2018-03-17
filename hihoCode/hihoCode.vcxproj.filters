@@ -81,9 +81,6 @@
     <ClCompile Include="题目4-第K小先序遍历.cpp">
       <Filter>[Offer收割]编程练习赛49</Filter>
     </ClCompile>
-    <ClCompile Include="题目1-逃离迷宫4.cpp">
-      <Filter>[Offer收割]编程练习赛29</Filter>
-    </ClCompile>
     <ClCompile Include="题目2-料理次元.cpp">
       <Filter>[Offer收割]编程练习赛29</Filter>
     </ClCompile>
@@ -122,6 +119,12 @@
     </ClCompile>
     <ClCompile Include="题目3-Good 01-Sequence.cpp">
       <Filter>hihoCoder挑战赛31</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-逃离迷宫4.cpp">
+      <Filter>[Offer收割]编程练习赛29</Filter>
+    </ClCompile>
+    <ClCompile Include="1043-完全背包.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -162,5 +162,8 @@
     <ClCompile Include="字符串标记——招银网络科技在线笔试题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0-N随机数产生K-L的随机数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

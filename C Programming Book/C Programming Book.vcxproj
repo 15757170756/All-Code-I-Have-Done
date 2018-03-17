@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="0-N随机数产生K-L的随机数.cpp" />
     <ClCompile Include="16进制与10进制相互转换.cpp" />
     <ClCompile Include="argcSort.c" />
     <ClCompile Include="argSort.cpp" />

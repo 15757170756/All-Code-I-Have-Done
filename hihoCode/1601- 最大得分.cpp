@@ -138,7 +138,8 @@ int main()
 {
 	long long  n, i, j, k, m, cnt = 0;
 	scanf("%lld%lld", &n, &m);
-	for (i = 1; i <= n; i++) scanf("%lld", &a[i]);
+	for (i = 1; i <= n; i++) 
+		scanf("%lld", &a[i]);
 	sort(a + 1, a + n + 1);
 	for (i = 1; i <= n; i++){
 		if (a[i] != a[i - 1]) {
@@ -147,17 +148,24 @@ int main()
 		}
 		else  c[cnt]++;
 	}
+
 	memset(dp, -1, sizeof(dp));
-	for (i = 0; i <= cnt; i++) dp[i][0] = 0;
+
+	for (i = 0; i <= cnt; i++) 
+		dp[i][0] = 0;
+
 	dp[1][1] = b[1] * c[1];
 	Max = dp[1][1];
+
 	for (i = 2; i <= cnt; i++)
 		for (j = 1; j <= m; j++){
 			dp[i][j] = dp[i - 1][j];//不用第i个
 			if (b[i] - b[i - 1] > 1) 
-				dp[i][j] = max(dp[i][j], dp[i - 1][j - 1] + b[i] * c[i]);//要第i个，前一个也要
+				dp[i][j] = max(dp[i][j], 
+				dp[i - 1][j - 1] + b[i] * c[i]);//要第i个，前一个也要
 			else
-				dp[i][j] = max(dp[i][j], dp[i - 2][j - 1] + b[i] * c[i]);//要第i个，而前一个不要
+				dp[i][j] = max(dp[i][j], 
+				dp[i - 2][j - 1] + b[i] * c[i]);//要第i个，而前一个不要
 			Max = max(Max, dp[i][j]);
 		}
 	printf("%lld\n", Max);
