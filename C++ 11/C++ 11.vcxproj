@@ -315,6 +315,9 @@
     <ClCompile Include="template7-tup.cpp" />
     <ClCompile Include="test1.cpp" />
     <ClCompile Include="tuple.cpp" />
+    <ClCompile Include="vector增长研究.cpp" />
+    <ClCompile Include="引用计数.cpp" />
+    <ClCompile Include="智能指针的死穴 -- 循环引用.cpp" />
     <ClCompile Include="重载operator new 与operator delete-1.cpp" />
     <ClCompile Include="重载operator new 与operator delete-2.cpp" />
   </ItemGroup>
@@ -343,7 +346,7 @@
     <None Include="GUN 4.8\bits\sstream.tcc" />
     <None Include="GUN 4.8\bits\streambuf.tcc" />
     <None Include="GUN 4.8\bits\valarray_array.tcc" />
-    <None Include="GUN 4.8\bits\vector.tcc" />
+    <None Include="GUN 4.8\bits\vector.cc" />
     <None Include="GUN 4.8\cassert" />
     <None Include="GUN 4.8\ccomplex" />
     <None Include="GUN 4.8\cctype" />

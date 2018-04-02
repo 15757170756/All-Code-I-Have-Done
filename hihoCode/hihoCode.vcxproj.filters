@@ -31,6 +31,15 @@
     <Filter Include="hihoCoder挑战赛31">
       <UniqueIdentifier>{c5a46598-44ec-4123-af93-d8fd7093bd71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="[Offer收割]编程练习赛51">
+      <UniqueIdentifier>{b026508a-1868-43c7-bbbd-b9e975e302f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="[Offer收割]编程练习赛52">
+      <UniqueIdentifier>{087b311b-509a-4aff-9d68-d29406c54e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="[Offer收割]编程练习赛53">
+      <UniqueIdentifier>{6ba1465f-09e8-4969-97e4-62f6d476958a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1601- 最大得分.cpp">
@@ -125,6 +134,33 @@
     </ClCompile>
     <ClCompile Include="1043-完全背包.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-灯光控制.cpp">
+      <Filter>[Offer收割]编程练习赛51</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-相似的字符串.cpp">
+      <Filter>[Offer收割]编程练习赛51</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-等差子数列.cpp">
+      <Filter>[Offer收割]编程练习赛51</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4-评论框排版.cpp">
+      <Filter>[Offer收割]编程练习赛51</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-字符串排序.cpp">
+      <Filter>[Offer收割]编程练习赛52</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-继承顺位.cpp">
+      <Filter>[Offer收割]编程练习赛53</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-hiho字符串3.cpp">
+      <Filter>[Offer收割]编程练习赛53</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-最长一次上升子序列.cpp">
+      <Filter>[Offer收割]编程练习赛53</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4-具选择.cpp">
+      <Filter>[Offer收割]编程练习赛53</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

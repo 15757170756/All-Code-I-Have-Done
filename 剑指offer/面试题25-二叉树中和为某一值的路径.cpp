@@ -44,8 +44,8 @@ void findPath(
 {
 	currentSum += pRoot->data;
 	path.push_back(pRoot->data);
-	bool isLeaf = (pRoot->leftChild == nullptr &&
-		pRoot->rightChild == nullptr);
+	bool isLeaf = (pRoot->leftChild == nullptr
+		&& pRoot->rightChild == nullptr);
 	if (currentSum == expectedSum && isLeaf) {
 		cout << "A path is found: ";
 		vector<int>::const_iterator iter = path.begin();

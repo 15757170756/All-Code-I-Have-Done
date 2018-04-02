@@ -29,9 +29,11 @@
     <ClCompile Include="isPalindrome.c" />
     <ClCompile Include="isPrime.c" />
     <ClCompile Include="Josephus Problem.c" />
+    <ClCompile Include="memcpy(内存有重叠).cpp" />
     <ClCompile Include="sizeof.cpp" />
     <ClCompile Include="static和const关键字.cpp" />
     <ClCompile Include="StringSplit.cpp" />
+    <ClCompile Include="string_to_int%28atoi%29.cpp" />
     <ClCompile Include="students LinkedList info.c" />
     <ClCompile Include="Magic Matric.c" />
     <ClCompile Include="Monkey eat pears.c" />
@@ -39,7 +41,7 @@
     <ClCompile Include="Saddle Point in 2D array.c" />
     <ClCompile Include="Specific Letter Graphic.c" />
     <ClCompile Include="Spiral Matrix.c" />
-    <ClCompile Include="str Operation.c" />
+    <ClCompile Include="面试中可能要写的小程序.c" />
     <ClCompile Include="studentsInfo.c" />
     <ClCompile Include="studentsRegisterTable.c" />
     <ClCompile Include="swap.c" />
@@ -49,6 +51,7 @@
     <ClCompile Include="分解质因数.cpp" />
     <ClCompile Include="判断括号是否匹配.cpp" />
     <ClCompile Include="判断是不是2的幂次方.cpp" />
+    <ClCompile Include="四种类型转换比较.cpp" />
     <ClCompile Include="字符串标记——招银网络科技在线笔试题.cpp" />
     <ClCompile Include="打印zigzag矩阵.cpp" />
     <ClCompile Include="打印螺旋矩阵-方阵.cpp" />
@@ -59,8 +62,13 @@
     <ClCompile Include="数组中出现次数最多的一个数.cpp" />
     <ClCompile Include="朴素字符串匹配算法与KMP算法.cpp" />
     <ClCompile Include="某一入栈顺序 求一共有几种出栈顺序.cpp" />
+    <ClCompile Include="洗牌算法.cpp" />
+    <ClCompile Include="爱心程序.cpp" />
+    <ClCompile Include="统计数组中出现的次数.cpp" />
+    <ClCompile Include="缀表达式求值.cpp" />
     <ClCompile Include="递归实现全排列.cpp" />
     <ClCompile Include="钢条切割问题.cpp" />
+    <ClCompile Include="验证函数重载.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BE3F05F2-BABA-48AA-8036-F61FFA86AD9E}</ProjectGuid>

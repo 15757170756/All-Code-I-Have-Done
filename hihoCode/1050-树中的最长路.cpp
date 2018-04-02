@@ -82,7 +82,9 @@ queue<node> q;
 bool vis[MAXN];
 int n;
 int bfs(int u, int& ans){
-	while (!q.empty()) q.pop();
+	while (!q.empty()) 
+		q.pop();
+
 	q.push(node(u, 0));
 	vis[u] = true;
 	while (!q.empty()){

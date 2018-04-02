@@ -49,6 +49,21 @@
     <Filter Include="源文件\各大公司在线笔试题目\2018年校招全国统一模拟笔试%28第一场%29编程题">
       <UniqueIdentifier>{bc85790d-17e6-44d4-b8ef-4ace23a70126}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\[2019暑期实习生]游戏研发工程师在线笔试第一批">
+      <UniqueIdentifier>{495bc172-1ccf-4f12-8413-252cec8bde20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\腾讯微信后台电话面试编程题">
+      <UniqueIdentifier>{6228311d-a496-4e0a-bd4f-f0bae0f1395f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\美团2018春招实习生在线笔试编程题">
+      <UniqueIdentifier>{c685c7b9-5a44-45df-99ce-148328f024c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\今日头条2018春季校园招聘研发岗位笔试">
+      <UniqueIdentifier>{183975b0-b095-4315-a0c7-9ad120a32681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\网易2018春招笔试编程题">
+      <UniqueIdentifier>{c8d412bd-7dee-4110-b279-398e6f8ca8af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -164,6 +179,60 @@
     </ClCompile>
     <ClCompile Include="[编程题] 勇敢的妞妞.cpp">
       <Filter>源文件\各大公司在线笔试题目\2018年校招全国统一模拟笔试%28第一场%29编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="[编程100分] 会话列表.cpp">
+      <Filter>源文件\各大公司在线笔试题目\[2019暑期实习生]游戏研发工程师在线笔试第一批</Filter>
+    </ClCompile>
+    <ClCompile Include="[编程100分] 表达式求值.cpp">
+      <Filter>源文件\各大公司在线笔试题目\[2019暑期实习生]游戏研发工程师在线笔试第一批</Filter>
+    </ClCompile>
+    <ClCompile Include="包含多少个0.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯微信后台电话面试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="有序列表中插入一个节点.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯微信后台电话面试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="判断整数是否是对称数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯微信后台电话面试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="推荐系统的打散策略.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯微信后台电话面试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="可能问到的智力题.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯微信后台电话面试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="字符串距离.cpp">
+      <Filter>源文件\各大公司在线笔试题目\美团2018春招实习生在线笔试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="数字字符.cpp">
+      <Filter>源文件\各大公司在线笔试题目\美团2018春招实习生在线笔试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="拼凑零钱.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017校招开发工程师笔试试卷二</Filter>
+    </ClCompile>
+    <ClCompile Include="差值为K的数字对个数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\今日头条2018春季校园招聘研发岗位笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="书写666.cpp">
+      <Filter>源文件\各大公司在线笔试题目\今日头条2018春季校园招聘研发岗位笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2.cpp">
+      <Filter>源文件\各大公司在线笔试题目\今日头条2018春季校园招聘研发岗位笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="牛牛的闹钟.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018春招笔试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="矩形重叠.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018春招笔试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="牛牛的背包问题.cpp">
+      <Filter>源文件\各大公司在线笔试题目\网易2018春招笔试编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="On实现逆序对.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="按规则输出字符.cpp">
+      <Filter>源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

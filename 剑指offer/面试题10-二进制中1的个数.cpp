@@ -58,6 +58,17 @@ int NumberOf13(int n)
 ：1111 1011，然后-1再取反
 ：1111 0101，为-5
 */
+
+int BitLength(unsigned int n)
+{
+	int c = 0;  // counter
+	while (n)
+	{
+		++c;
+		n >>= 1;
+	}
+	return c;
+}
 int main()
 {
 	int n = -1234;
@@ -67,4 +78,13 @@ int main()
 	cout << cnt << endl;
 
 	return 0;
+}
+
+struct LinkNode 
+{ int val; 
+	struct LinkNode * next;
+}; 
+struct LinkNode *insert(LinkNode * head, LinkNode * node)
+{
+
 }

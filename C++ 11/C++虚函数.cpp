@@ -59,7 +59,7 @@ int main()
 	pFun = (Fun)*((int*)*(int*)(&d) + 4);  // Derive::h1()
 	pFun();
 
-	Base *pb = new Derive();
+	Base *pb = new Derive;
 	pb->f();
 }
 

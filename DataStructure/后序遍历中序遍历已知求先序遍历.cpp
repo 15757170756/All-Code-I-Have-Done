@@ -74,19 +74,19 @@ void PostTraverse(TreeNode *pRoot)
 
 int main()
 {
-	string preorderStr = "DEBFCA";
+	string postorderStr = "DEBFCA";
 	string inorderStr = "DBEACF";
-	vector<char> preorder;// = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
+	vector<char> postorder;// = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
 	vector<char> inorder;// = { 'c', 'b', 'a', 'e', 'f', 'd', 'i', 'h', 'j', 'g' };
-	for (int i = 0; i < preorderStr.size(); ++i) {
-		preorder.emplace_back(preorderStr[i]);
+	for (int i = 0; i < postorderStr.size(); ++i) {
+		postorder.emplace_back(postorderStr[i]);
 		inorder.emplace_back(inorderStr[i]);
 	}
 
 	Solution<char> sol;
 	TreeNode *root;
 
-	root = sol.buildTree(preorder, inorder);
+	root = sol.buildTree(postorder, inorder);
 	// PostTraverse(root);
 	PreTraverse(root);
 

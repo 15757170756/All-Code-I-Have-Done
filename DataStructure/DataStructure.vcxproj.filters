@@ -240,6 +240,36 @@
     <ClCompile Include="..\hihoCode\1043-完全背包.cpp">
       <Filter>源文件\动态规划</Filter>
     </ClCompile>
+    <ClCompile Include="高楼扔鸡蛋.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="二叉树非递归遍历.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="排序算法集锦.cpp">
+      <Filter>源文件\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Astar算法.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Astar解决八数码问题.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\剑指offer\面试题31-连续子数组的最大和.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="最长递增子序列的长度.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="BFS解决八数码问题.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="IDAstar解决15数码问题.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="B树.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\RedBlackTree.h">

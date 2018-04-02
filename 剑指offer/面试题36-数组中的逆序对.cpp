@@ -58,9 +58,41 @@ int inversePairsCore(int* data, int* copy, int start, int end)
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*
 使用归并排序方法
+http://blog.csdn.net/acdreamers/article/details/16849761
+我们知道,求逆序对最典型的方法就是树状数组，但是还有一种方法就是Merge_sort(),即归并排序。
+
+实际上归并排序的交换次数就是这个数组的逆序对个数，为什么呢？
+
+我们可以这样考虑：
+归并排序是将数列a[l,h]分成两半a[l,mid]和a[mid+1,h]分别进行归并排序，
+然后再将这两半合并起来。
+在合并的过程中（设l<=i<=mid，mid+1<=j<=h），当a[i]<=a[j]时，
+并不产生逆序数；当a[i]>a[j]时，在
+前半部分中比a[i]大的数都比a[j]大，将a[j]放在a[i]前面的话，
+逆序数要加上mid+1-i。因此，可以在归并
+排序中的合并过程中计算逆序数.
+
+题目:http://poj.org/problem?id=1804
+
+题意:给定一个序列a[],每次只允许交换相邻两个数,最少要交换多少次才能把它变成非递降序列.
+
+
 */
+
+
 #include <iostream>
 
 using namespace::std;
@@ -85,8 +117,8 @@ void Merge(int left, int mid, int right)
 	}
 	while (i <= mid)
 		tmp[k++] = a[i++];
-	while (i <= mid)
-		tmp[k++] = a[i++];
+	while (j <= right)
+		tmp[k++] = a[j++];
 
 	for (int i = left; i <= right; ++i)
 		a[i] = tmp[i];

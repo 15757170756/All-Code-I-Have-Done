@@ -189,6 +189,12 @@
     <ClCompile Include="stitching\stitching_detailed-OpenCV 3.3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="图像旋转一定角度.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="图像平移.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraCalibrator.h">

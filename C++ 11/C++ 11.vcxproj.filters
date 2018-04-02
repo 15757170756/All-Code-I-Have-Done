@@ -743,6 +743,15 @@
     <ClCompile Include="C++虚函数.cpp">
       <Filter>源文件\C++ 内存管理</Filter>
     </ClCompile>
+    <ClCompile Include="vector增长研究.cpp">
+      <Filter>源文件\C++ STL</Filter>
+    </ClCompile>
+    <ClCompile Include="引用计数.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
+    <ClCompile Include="智能指针的死穴 -- 循环引用.cpp">
+      <Filter>源文件\C++11</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GUN 4.8\algorithm">
@@ -1033,9 +1042,6 @@
     <None Include="GUN 4.8\bits\valarray_array.tcc">
       <Filter>源文件\GUN 4.8</Filter>
     </None>
-    <None Include="GUN 4.8\bits\vector.tcc">
-      <Filter>源文件\GUN 4.8</Filter>
-    </None>
     <None Include="GUN 4.8\debug\array">
       <Filter>源文件\GUN 4.8</Filter>
     </None>
@@ -1175,6 +1181,9 @@
       <Filter>源文件\GUN 4.8</Filter>
     </None>
     <None Include="GUN 4.8\tr2\type_traits">
+      <Filter>源文件\GUN 4.8</Filter>
+    </None>
+    <None Include="GUN 4.8\bits\vector.cc">
       <Filter>源文件\GUN 4.8</Filter>
     </None>
   </ItemGroup>
