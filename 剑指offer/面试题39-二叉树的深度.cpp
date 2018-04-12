@@ -137,7 +137,9 @@ int depth2(TreeNode *root)
 			if (tmp->right != NULL)
 				q.push(tmp->right);
 		}//while
-
+		for (int i = 0; i < q.size(); ++i) {
+			TreeNode *tmp = q.front();
+		}
 		++d;
 		nodes = q;
 	}//while

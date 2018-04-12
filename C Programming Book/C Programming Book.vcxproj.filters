@@ -18,9 +18,6 @@
     <ClCompile Include="gcd.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="isPrime.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Monkey eat pears.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -187,6 +184,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="memcpy(内存有重叠).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="isPrime.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -89,6 +89,8 @@
     <ClCompile Include="..\剑指offer\面试题31-连续子数组的最大和.cpp" />
     <ClCompile Include="..\牛客网各类笔试题目\5不等式数列.cpp" />
     <ClCompile Include="..\牛客网各类笔试题目\合唱.cpp" />
+    <ClCompile Include="..\牛客网各类笔试题目\题目2-编程回文串方案数.cpp" />
+    <ClCompile Include="..\牛客网各类笔试题目\题目3-马走日字形.cpp" />
     <ClCompile Include="0-1背包问题.cpp" />
     <ClCompile Include="Astar算法.cpp" />
     <ClCompile Include="Astar解决八数码问题.cpp" />
@@ -141,6 +143,7 @@
     <ClCompile Include="最近公共祖先.cpp" />
     <ClCompile Include="最长递增子序列的长度.cpp" />
     <ClCompile Include="桶排序.cpp" />
+    <ClCompile Include="求所有回文子序列.cpp" />
     <ClCompile Include="深度优先搜索DFS-迭代%28有向图%29.cpp" />
     <ClCompile Include="深度优先搜索DFS-递归%28有向图%29.cpp" />
     <ClCompile Include="最小生成树kruskal算法实现.cpp" />

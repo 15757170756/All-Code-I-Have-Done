@@ -87,6 +87,7 @@
     <ClCompile Include="1702-矩阵迷宫.cpp" />
     <ClCompile Include="题目1-H星人社交网络.cpp" />
     <ClCompile Include="题目1-Numbers.cpp" />
+    <ClCompile Include="题目1-Queen Attack.cpp" />
     <ClCompile Include="题目1-字符串排序.cpp" />
     <ClCompile Include="题目1-比赛日程安排.cpp" />
     <ClCompile Include="题目1-灯光控制.cpp" />

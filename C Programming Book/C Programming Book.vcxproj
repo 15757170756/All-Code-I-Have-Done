@@ -27,7 +27,7 @@
     <ClCompile Include="integertoString.c" />
     <ClCompile Include="isIPAddressLegal.cpp" />
     <ClCompile Include="isPalindrome.c" />
-    <ClCompile Include="isPrime.c" />
+    <ClCompile Include="isPrime.cpp" />
     <ClCompile Include="Josephus Problem.c" />
     <ClCompile Include="memcpy(内存有重叠).cpp" />
     <ClCompile Include="sizeof.cpp" />

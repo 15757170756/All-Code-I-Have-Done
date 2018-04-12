@@ -39,3 +39,15 @@ int isPrimNum(int n) {
 	else
 		return 2;
 }
+
+bool isPrimNum2(int n)
+{
+	if (n < 2)
+		return false;
+	int k = (int)sqrt((double)n);
+	for (int i = 2; i <= k; ++i)
+		if (n % i == 0)
+			return false;
+
+	return true;
+}

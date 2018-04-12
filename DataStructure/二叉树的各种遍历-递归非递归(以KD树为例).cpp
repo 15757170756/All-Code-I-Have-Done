@@ -445,7 +445,8 @@ void inorderIterative(Node* root)
 
 	stack<Node*> stackNode;
 	Node* currentTree = root;
-	while (currentTree != nullptr || !stackNode.empty()) {
+	while (currentTree != nullptr
+		|| !stackNode.empty()) {
 		//先一直遍历到最左叶节点
 		while (currentTree != nullptr) {
 			stackNode.push(currentTree);

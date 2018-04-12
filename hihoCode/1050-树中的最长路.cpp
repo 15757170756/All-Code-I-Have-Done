@@ -106,7 +106,10 @@ int main(){
 	scanf("%d", &n);
 	tol = 0; mem(head, -1);
 	int u, v;
-	for (int i = 1; i < n; ++i){ scanf("%d%d", &u, &v); addEdge(u, v); }
+	for (int i = 1; i < n; ++i){ 
+		scanf("%d%d", &u, &v); 
+		addEdge(u, v); 
+	}
 	int ans;
 	mem(vis, false);
 	u = bfs(2, ans);

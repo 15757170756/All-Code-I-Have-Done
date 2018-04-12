@@ -64,6 +64,15 @@
     <Filter Include="源文件\各大公司在线笔试题目\网易2018春招笔试编程题">
       <UniqueIdentifier>{c8d412bd-7dee-4110-b279-398e6f8ca8af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\微软2018年预科生计划在线编程笔试">
+      <UniqueIdentifier>{8d34b85a-d464-408a-91e3-c10c3c933644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\吉比特2018春招技术类笔试试卷编程题">
+      <UniqueIdentifier>{e1674889-8a13-453b-9315-63aa18e96c51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\京东2019春招C++工程师笔试题">
+      <UniqueIdentifier>{1d4def91-6902-439a-a990-c109c3fb7aec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -233,6 +242,30 @@
     </ClCompile>
     <ClCompile Include="按规则输出字符.cpp">
       <Filter>源文件\各大公司在线笔试题目\腾讯2017暑期实习生编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="树的路径中结点值乘积的最大值.cpp">
+      <Filter>源文件\各大公司在线笔试题目\微软2018年预科生计划在线编程笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4.cpp">
+      <Filter>源文件\各大公司在线笔试题目\今日头条2018春季校园招聘研发岗位笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="题目5.cpp">
+      <Filter>源文件\各大公司在线笔试题目\今日头条2018春季校园招聘研发岗位笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="第一题-二进制输出多少个位置不一样.cpp">
+      <Filter>源文件\各大公司在线笔试题目\吉比特2018春招技术类笔试试卷编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="第二题-判断最多多少个空间点在同一条直线上.cpp">
+      <Filter>源文件\各大公司在线笔试题目\吉比特2018春招技术类笔试试卷编程题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-最小整除整数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\京东2019春招C++工程师笔试题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-编程回文串方案数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\京东2019春招C++工程师笔试题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-马走日字形.cpp">
+      <Filter>源文件\各大公司在线笔试题目\京东2019春招C++工程师笔试题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

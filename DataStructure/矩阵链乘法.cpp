@@ -191,3 +191,90 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//使用C++ vector 自己根据算法导论写的
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <fstream>
+#include <cassert>
+#include <limits>
+#include <climits>
+
+using namespace::std;
+
+
+//和算法导论上的几乎一模一样
+int getMaxChainOrder(vector<int> &p, vector<vector<int>> &s)
+{
+	int n = p.size() - 1;
+	vector<vector<int>> m(n + 1, vector<int>(n + 1));
+	//vector<vector<int>> s(n + 1, vector<int>(n + 1));
+	s.assign(n + 1, vector<int>(n + 1));
+	for (int i = 1; i <= n; ++i)
+		m[i][i] = 0;
+	for (int l = 2; l <= n; ++l) {
+		for (int i = 1; i <= n - l + 1; ++i) {
+			int j = i + l - 1;
+			m[i][j] = INT_MAX;
+			for (int k = i; k < j; ++k) {
+				int q = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
+				if (q < m[i][j]) {
+					m[i][j] = q;
+					s[i][j] = k;
+				}
+			}
+		}
+	}
+	for (int i = 0; i < n + 1; ++i){
+		for (int j = 0; j < n + 1; ++j)
+			cout << m[i][j] << ' ';
+		cout << endl;
+	}
+	cout << endl;
+
+	for (int i = 0; i < n + 1; ++i){
+		for (int j = 0; j < n + 1; ++j)
+			cout << s[i][j] << ' ';
+		cout << endl;
+	}
+	cout << endl;
+
+	return m[1][n];
+}
+
+void printOptimalParens(vector<vector<int>> &s, int i, int j)
+{
+	if (i == j)
+		cout << "A" << i;
+	else {
+		cout << "(";
+		printOptimalParens(s, i, s[i][j]);
+		printOptimalParens(s, s[i][j] + 1, j);
+		cout << ")";
+	}
+}
+
+
+int main()
+{
+	vector<int> p = { 30, 35, 15, 5, 10, 20, 25 };
+	vector<vector<int>> plan;
+	cout << getMaxChainOrder(p, plan) << endl;
+	printOptimalParens(plan, 1, 6);
+
+	return 0;
+}

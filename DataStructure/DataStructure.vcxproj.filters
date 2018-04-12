@@ -270,6 +270,15 @@
     <ClCompile Include="B树.cpp">
       <Filter>源文件\Binary Tree</Filter>
     </ClCompile>
+    <ClCompile Include="..\牛客网各类笔试题目\题目3-马走日字形.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="..\牛客网各类笔试题目\题目2-编程回文串方案数.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="求所有回文子序列.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\RedBlackTree.h">

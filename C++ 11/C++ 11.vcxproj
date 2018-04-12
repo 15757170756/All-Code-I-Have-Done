@@ -318,6 +318,7 @@
     <ClCompile Include="vector增长研究.cpp" />
     <ClCompile Include="引用计数.cpp" />
     <ClCompile Include="智能指针的死穴 -- 循环引用.cpp" />
+    <ClCompile Include="构造函数和析构函数调用虚函数.cpp" />
     <ClCompile Include="重载operator new 与operator delete-1.cpp" />
     <ClCompile Include="重载operator new 与operator delete-2.cpp" />
   </ItemGroup>
