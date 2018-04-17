@@ -16,6 +16,9 @@
     <Filter Include="源文件\C++ 并发编程实战">
       <UniqueIdentifier>{e665da05-5396-4f92-9590-6186f40d43a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\基于C++11的线程池">
+      <UniqueIdentifier>{00f0cbad-7d36-49bd-bcef-2aa5bcba9d74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicThreads.cpp">
@@ -54,10 +57,16 @@
     <ClCompile Include="C++简单内存池.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="testThreadPool.cpp">
+      <Filter>源文件\基于C++11的线程池</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LiftOff.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="threadPool.h">
+      <Filter>源文件\基于C++11的线程池</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

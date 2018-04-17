@@ -263,6 +263,8 @@
     <ClInclude Include="GUN 4.8\profile\set.h" />
     <ClInclude Include="GUN 4.8\profile\unordered_base.h" />
     <ClInclude Include="GUN 4.8\tgmath.h" />
+    <ClInclude Include="MemoryPool.h" />
+    <ClInclude Include="StackAlloc.h" />
     <ClInclude Include="stl.algobase.h" />
     <ClInclude Include="stl_algo.h" />
     <ClInclude Include="stl_alloc.h" />
@@ -293,6 +295,7 @@
     <ClCompile Include="..\C Programming Book\C++11 计算程序时间.cpp" />
     <ClCompile Include="alias.cpp" />
     <ClCompile Include="Array new.cpp" />
+    <ClCompile Include="C++内存分布.cpp" />
     <ClCompile Include="C++虚函数.cpp" />
     <ClCompile Include="emplace与insert区别.cpp" />
     <ClCompile Include="function类使用.cpp" />
@@ -300,6 +303,7 @@
     <ClCompile Include="initializer_list.cpp" />
     <ClCompile Include="lambda.cpp" />
     <ClCompile Include="memory.cpp" />
+    <ClCompile Include="MemoryPool.cpp" />
     <ClCompile Include="move-aware.cpp" />
     <ClCompile Include="newdelete expression.cpp" />
     <ClCompile Include="Per-class allocator 1.cpp" />
@@ -314,6 +318,7 @@
     <ClCompile Include="template6-tuple.cpp" />
     <ClCompile Include="template7-tup.cpp" />
     <ClCompile Include="test1.cpp" />
+    <ClCompile Include="testMemoryPool.cpp" />
     <ClCompile Include="tuple.cpp" />
     <ClCompile Include="vector增长研究.cpp" />
     <ClCompile Include="引用计数.cpp" />

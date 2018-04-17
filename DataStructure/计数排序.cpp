@@ -71,7 +71,7 @@ int main()
 	vector<int> count(k + 1);
 	for (int i = 0; i < arrLength; ++i)
 		++count[arr[i]];
-	for (int i = 1; i <= k; ++i)
+	for (int i = 1; i < k + 1; ++i)
 		count[i] += count[i - 1];
 	for (int i = 0; i < arrLength; ++i) {
 		output[count[arr[i]] - 1] = arr[i];

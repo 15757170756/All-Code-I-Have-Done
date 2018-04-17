@@ -82,6 +82,7 @@
     <ClCompile Include="MoreBasicThread.cpp" />
     <ClCompile Include="NoThread.cpp" />
     <ClCompile Include="ResponsiveUI.cpp" />
+    <ClCompile Include="testThreadPool.cpp" />
     <ClCompile Include="ThreadedExecutor.cpp" />
     <ClCompile Include="UnresponsiveUI.cpp" />
     <ClCompile Include="单生产者-单消费者模型.cpp" />
@@ -91,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LiftOff.h" />
+    <ClInclude Include="threadPool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

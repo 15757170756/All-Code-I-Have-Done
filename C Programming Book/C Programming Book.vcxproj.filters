@@ -189,5 +189,11 @@
     <ClCompile Include="isPrime.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="sqrt函数实现.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="判断大端存储还是小端存储.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

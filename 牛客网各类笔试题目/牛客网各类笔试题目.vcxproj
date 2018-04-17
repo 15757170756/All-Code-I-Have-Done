@@ -77,7 +77,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1头条校招.cpp" />
-    <ClCompile Include="2019阿里巴巴实习生招聘算法工程师-图像图形编程测验.cpp" />
+    <ClCompile Include="一维中值滤波.cpp" />
+    <ClCompile Include="二维中值滤波.cpp" />
+    <ClCompile Include="题目1-找出外星人.cpp" />
+    <ClCompile Include="阿里巴巴2019实习生招聘算法工程师-图像图形编程测验.cpp" />
     <ClCompile Include="2异或.cpp" />
     <ClCompile Include="5不等式数列.cpp" />
     <ClCompile Include="1买帽子.cpp" />
@@ -93,6 +96,7 @@
     <ClCompile Include="书写666.cpp" />
     <ClCompile Include="判断整数是否是对称数.cpp" />
     <ClCompile Include="包含多少个0.cpp" />
+    <ClCompile Include="反转后半段链表.cpp" />
     <ClCompile Include="可能问到的智力题.cpp" />
     <ClCompile Include="合唱.cpp" />
     <ClCompile Include="回文素数.cpp" />
@@ -121,6 +125,7 @@
     <ClCompile Include="矩形重叠.cpp" />
     <ClCompile Include="第一题-二进制输出多少个位置不一样.cpp" />
     <ClCompile Include="第二题-判断最多多少个空间点在同一条直线上.cpp" />
+    <ClCompile Include="简单链表复制.cpp" />
     <ClCompile Include="算法基础-字符移位.cpp" />
     <ClCompile Include="编码求对应的index.cpp" />
     <ClCompile Include="质数和对数.cpp" />
@@ -133,8 +138,10 @@
     <ClCompile Include="问答题2.cpp" />
     <ClCompile Include="青草游戏.cpp" />
     <ClCompile Include="题目1-最小整除整数.cpp" />
+    <ClCompile Include="题目2-买书评分最高.cpp" />
     <ClCompile Include="题目2-编程回文串方案数.cpp" />
     <ClCompile Include="题目2.cpp" />
+    <ClCompile Include="题目3-绘制不同直线条数.cpp" />
     <ClCompile Include="题目3-马走日字形.cpp" />
     <ClCompile Include="题目4.cpp" />
     <ClCompile Include="题目5.cpp" />

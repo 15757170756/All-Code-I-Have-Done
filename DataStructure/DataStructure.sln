@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "剑指offer", "..\剑指off
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hihoCode", "..\hihoCode\hihoCode.vcxproj", "{525E2F2E-5E85-4DF2-9D86-91DFFE2534DE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "编程之美", "..\编程之美\编程之美.vcxproj", "{954EC103-DE83-4203-96EF-191781AD5FCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -107,6 +109,12 @@ Global
 		{525E2F2E-5E85-4DF2-9D86-91DFFE2534DE}.Release|Win32.ActiveCfg = Release|Win32
 		{525E2F2E-5E85-4DF2-9D86-91DFFE2534DE}.Release|Win32.Build.0 = Release|Win32
 		{525E2F2E-5E85-4DF2-9D86-91DFFE2534DE}.Release|x64.ActiveCfg = Release|Win32
+		{954EC103-DE83-4203-96EF-191781AD5FCC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{954EC103-DE83-4203-96EF-191781AD5FCC}.Debug|Win32.Build.0 = Debug|Win32
+		{954EC103-DE83-4203-96EF-191781AD5FCC}.Debug|x64.ActiveCfg = Debug|Win32
+		{954EC103-DE83-4203-96EF-191781AD5FCC}.Release|Win32.ActiveCfg = Release|Win32
+		{954EC103-DE83-4203-96EF-191781AD5FCC}.Release|Win32.Build.0 = Release|Win32
+		{954EC103-DE83-4203-96EF-191781AD5FCC}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,6 +25,9 @@
     <Filter Include="源文件\GUN 4.8">
       <UniqueIdentifier>{b86a0cfe-6604-4b96-9a5d-d86c135c998d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\C++ 内存管理\C++ 实现高性能内存池">
+      <UniqueIdentifier>{3c15ab32-6f9b-4f80-bdc1-a1aa1e6ba54e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="type_traits.h">
@@ -660,6 +663,12 @@
     <ClInclude Include="GUN 4.8\profile\unordered_base.h">
       <Filter>源文件\GUN 4.8</Filter>
     </ClInclude>
+    <ClInclude Include="MemoryPool.h">
+      <Filter>源文件\C++ 内存管理\C++ 实现高性能内存池</Filter>
+    </ClInclude>
+    <ClInclude Include="StackAlloc.h">
+      <Filter>源文件\C++ 内存管理\C++ 实现高性能内存池</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sample.cpp">
@@ -753,6 +762,15 @@
       <Filter>源文件\C++11</Filter>
     </ClCompile>
     <ClCompile Include="构造函数和析构函数调用虚函数.cpp">
+      <Filter>源文件\C++ 内存管理</Filter>
+    </ClCompile>
+    <ClCompile Include="testMemoryPool.cpp">
+      <Filter>源文件\C++ 内存管理\C++ 实现高性能内存池</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryPool.cpp">
+      <Filter>源文件\C++ 内存管理\C++ 实现高性能内存池</Filter>
+    </ClCompile>
+    <ClCompile Include="C++内存分布.cpp">
       <Filter>源文件\C++ 内存管理</Filter>
     </ClCompile>
   </ItemGroup>
