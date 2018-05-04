@@ -125,7 +125,6 @@ int dp[1001][1001]; //不能将此数组放在main函数内部
 
 int main()
 {
-
 	int n, k, d;
 	scanf("%d%d", &n, &k);
 	d = 0;

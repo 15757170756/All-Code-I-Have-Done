@@ -350,3 +350,63 @@ int main()
 	cout << len << endl;
 	return 0;
 }
+
+
+
+
+
+/*
+This solution can be viewed as d.p., but I find it easier not to think of it that way.
+
+Runtime: To get an O(n log n ) runtime, I'm going to create a second list S. (Stick with me for now -- I'll get rid of it in a minute to get O(1) space.) I'll do a single pass through nums, and as I look at each element:
+
+The length of S will be equal to the length of the longest subsequence I've found to that point.
+The last element of S will be the last element of that subsequence. (However, the earlier elements may no longer be part of that sequence -- S is not actually the subsequence itself.)
+At the end, the length of S will be our solution.
+
+S will be sorted at all times. Each new element is inserted into S, replacing the smallest element in S that is not smaller than it (which we can find with a binary search). If that element is larger than the last element of S, then we extend S by one -- maintaining both properties.
+
+For example, if
+
+nums = [5,6,7,1,2,8,3,4,0,5,9]
+then after we prcoess the 7:
+
+S = [5,6,7]
+after w process the 2:
+
+S = [1,2,7]
+after we process the 8:
+
+S = [1,2,7,8]
+Then we process the 3:
+
+S = [1,2,3,8]
+We process the 4:
+
+S = [1,2,3,4]
+and now the next three elements:
+
+S = [0,2,3,4,5,9]
+S is not the actual subsequence, but it is the right length (end ends in the right number).
+
+We are making 1 pass on n elements, and doing a binary search each time. So O(n log n) time.
+
+Space: Assuming we are allowed to destroy the list, we don't need S. Since S will never be larger then the number of elements we have looked at, and we only need to look at each element once, we can just use the beginning of nums for S (keeping track of the size of "S" in a separate variable).
+
+Making using of the STL lower_bound function (find the smallest element in a sorted list that is not smaller than the target):
+*/
+
+int lengthOfLIS(vector<int>& nums) {
+	if (nums.size() == 0)
+		return nums.size();
+
+	vector<int>::iterator m = nums.begin();  // m will mark the virtual "S.end()".
+	for (int& val : nums) {
+		auto it = lower_bound(nums.begin(), m, val);
+		*it = val;
+		if (it == m)
+			m++;
+	}
+
+	return m - nums.begin();
+}

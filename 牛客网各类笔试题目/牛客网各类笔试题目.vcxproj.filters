@@ -85,6 +85,9 @@
     <Filter Include="源文件\各大公司在线笔试题目\百度2018秋季校招Java在线笔试">
       <UniqueIdentifier>{d50e8014-1fad-42aa-b43c-80daed2ccba2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\大华软件挑战创新大赛模拟题">
+      <UniqueIdentifier>{954d458d-0985-4c82-96e0-7f57289a9c79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -299,6 +302,18 @@
     </ClCompile>
     <ClCompile Include="题目3-绘制不同直线条数.cpp">
       <Filter>源文件\各大公司在线笔试题目\百度2018秋季校招Java在线笔试</Filter>
+    </ClCompile>
+    <ClCompile Include="题目一-node_buff.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛模拟题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目二-handle_data_func.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛模拟题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目三-相加相等的数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛模拟题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目四-股票操盘.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛模拟题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

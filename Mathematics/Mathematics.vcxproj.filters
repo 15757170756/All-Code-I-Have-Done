@@ -78,6 +78,12 @@
     <ClCompile Include="levmar-2.6\misc_core.c">
       <Filter>源文件\levmar-2.6</Filter>
     </ClCompile>
+    <ClCompile Include="非线性方程求根的实现.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="线性方程求解.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="levmarq.h">

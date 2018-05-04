@@ -34,7 +34,7 @@ include_directories( ${CMAKE_SOURCE_DIR}/inc)
 # crack_merge.lib
 # )
 target_link_libraries( crack_merge 
-stitchImgs.lib
-getwidthDll.lib
+stitchImgs
+getwidthDll
 ${OpenCV_LIBS} 
 )

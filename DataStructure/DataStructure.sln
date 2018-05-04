@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hihoCode", "..\hihoCode\hih
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "编程之美", "..\编程之美\编程之美.vcxproj", "{954EC103-DE83-4203-96EF-191781AD5FCC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "左神程序员代码面试指南", "..\左神程序员代码面试指南\左神程序员代码面试指南.vcxproj", "{F3EA33C6-0619-434E-B294-7FF223BCEC6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -115,6 +117,12 @@ Global
 		{954EC103-DE83-4203-96EF-191781AD5FCC}.Release|Win32.ActiveCfg = Release|Win32
 		{954EC103-DE83-4203-96EF-191781AD5FCC}.Release|Win32.Build.0 = Release|Win32
 		{954EC103-DE83-4203-96EF-191781AD5FCC}.Release|x64.ActiveCfg = Release|Win32
+		{F3EA33C6-0619-434E-B294-7FF223BCEC6A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F3EA33C6-0619-434E-B294-7FF223BCEC6A}.Debug|Win32.Build.0 = Debug|Win32
+		{F3EA33C6-0619-434E-B294-7FF223BCEC6A}.Debug|x64.ActiveCfg = Debug|Win32
+		{F3EA33C6-0619-434E-B294-7FF223BCEC6A}.Release|Win32.ActiveCfg = Release|Win32
+		{F3EA33C6-0619-434E-B294-7FF223BCEC6A}.Release|Win32.Build.0 = Release|Win32
+		{F3EA33C6-0619-434E-B294-7FF223BCEC6A}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

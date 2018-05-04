@@ -43,6 +43,9 @@
     <Filter Include="微软2017年预科生计划在线编程笔试第二场">
       <UniqueIdentifier>{a08b8eba-ec8f-489c-b3d0-4a874c6cb31a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="[Offer收割]编程练习赛56">
+      <UniqueIdentifier>{9e6e01ce-2a42-4a57-8d05-aae3a4fc52c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1601- 最大得分.cpp">
@@ -167,6 +170,12 @@
     </ClCompile>
     <ClCompile Include="题目1-Queen Attack.cpp">
       <Filter>微软2017年预科生计划在线编程笔试第二场</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-卡片游戏.cpp">
+      <Filter>[Offer收割]编程练习赛56</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-宝藏坐标.cpp">
+      <Filter>[Offer收割]编程练习赛56</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

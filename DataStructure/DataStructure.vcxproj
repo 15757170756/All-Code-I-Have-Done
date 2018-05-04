@@ -112,7 +112,11 @@
     <ClCompile Include="DataStructure\sort Algorithm Compare.c" />
     <ClCompile Include="DataStructure\三角形求和最大.cpp" />
     <ClCompile Include="Going from u to v or from v to u.cpp" />
+    <ClCompile Include="help_Jimmy.cpp" />
     <ClCompile Include="IDAstar解决15数码问题.cpp" />
+    <ClCompile Include="kdtree.cpp" />
+    <ClCompile Include="kdtree_test1.cpp" />
+    <ClCompile Include="kdtree_test2.cpp" />
     <ClCompile Include="KD树.cpp" />
     <ClCompile Include="Wireless Network.cpp" />
     <ClCompile Include="三大排序算法集锦.cpp" />
@@ -128,10 +132,12 @@
     <ClCompile Include="双向链表.cpp" />
     <ClCompile Include="后序遍历中序遍历已知求先序遍历.cpp" />
     <ClCompile Include="回文子序列个数.cpp" />
+    <ClCompile Include="城堡问题.cpp" />
     <ClCompile Include="基数排序.cpp" />
     <ClCompile Include="字典树.cpp" />
     <ClCompile Include="字典树例题.cpp" />
     <ClCompile Include="字典树简单实现.cpp" />
+    <ClCompile Include="寻路问题.cpp" />
     <ClCompile Include="希尔排序.cpp" />
     <ClCompile Include="并查集.cpp" />
     <ClCompile Include="广度优先搜索%28BFS%29-OpenCV.cpp" />
@@ -145,6 +151,7 @@
     <ClCompile Include="最长递增子序列的长度.cpp" />
     <ClCompile Include="桶排序.cpp" />
     <ClCompile Include="求所有回文子序列.cpp" />
+    <ClCompile Include="海康威视 2017 软件精英挑战赛.cpp" />
     <ClCompile Include="深度优先搜索DFS-迭代%28有向图%29.cpp" />
     <ClCompile Include="深度优先搜索DFS-递归%28有向图%29.cpp" />
     <ClCompile Include="最小生成树kruskal算法实现.cpp" />
@@ -160,6 +167,7 @@
   <ItemGroup>
     <ClInclude Include="DataStructure\BSTree.h" />
     <ClInclude Include="DataStructure\RedBlackTree.h" />
+    <ClInclude Include="kdtree.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="scipy中KDTree例子.py" />

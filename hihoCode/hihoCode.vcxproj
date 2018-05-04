@@ -88,6 +88,7 @@
     <ClCompile Include="题目1-H星人社交网络.cpp" />
     <ClCompile Include="题目1-Numbers.cpp" />
     <ClCompile Include="题目1-Queen Attack.cpp" />
+    <ClCompile Include="题目1-卡片游戏.cpp" />
     <ClCompile Include="题目1-字符串排序.cpp" />
     <ClCompile Include="题目1-比赛日程安排.cpp" />
     <ClCompile Include="题目1-灯光控制.cpp" />
@@ -97,6 +98,7 @@
     <ClCompile Include="题目2-hiho字符串3.cpp" />
     <ClCompile Include="题目2-Jerry的奶酪.cpp" />
     <ClCompile Include="题目2-反转子串.cpp" />
+    <ClCompile Include="题目2-宝藏坐标.cpp" />
     <ClCompile Include="题目2-料理次元.cpp" />
     <ClCompile Include="题目2-相似的字符串.cpp" />
     <ClCompile Include="题目3-Good 01-Sequence.cpp" />

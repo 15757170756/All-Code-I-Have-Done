@@ -145,6 +145,10 @@
     <ClCompile Include="题目3-马走日字形.cpp" />
     <ClCompile Include="题目4.cpp" />
     <ClCompile Include="题目5.cpp" />
+    <ClCompile Include="题目一-node_buff.cpp" />
+    <ClCompile Include="题目三-相加相等的数.cpp" />
+    <ClCompile Include="题目二-handle_data_func.cpp" />
+    <ClCompile Include="题目四-股票操盘.cpp" />
     <ClCompile Include="餐馆.cpp" />
     <ClCompile Include="魔法币.cpp" />
   </ItemGroup>

@@ -48,26 +48,27 @@ int minKey(vector<int> &key, vector<bool> &mstSet)
 
 int getMST(vector<vector<int>> &Matrix)
 {
-	int len = Matrix.size();
-	vector<int> parent(len);
-	vector<int> key(len);
-	vector<bool> mstSet(len);
+	int verticesNum = Matrix.size();
+	vector<int> parent(verticesNum);
+	vector<int> key(verticesNum);
+	vector<bool> mstSet(verticesNum);
 
-	for (int i = 0; i < len; ++i)
+	for (int i = 0; i < verticesNum; ++i)
 		key[i] = INT_MAX, mstSet[i] = false;
 
 	key[0] = 0;
 	parent[0] = -1;
-	for (int count = 0; count < len - 1; ++count) {
+	for (int count = 0; count < verticesNum - 1; ++count) {
 		int u = minKey(key, mstSet);
 		mstSet[u] = true;
-		for (int v = 0; v < len; ++v) {
+		for (int v = 0; v < verticesNum; ++v) {
 			if (Matrix[u][v] && mstSet[v] == false && Matrix[u][v] < key[v])
 				parent[v] = u, key[v] = Matrix[u][v];
 		}
 	}
+
 	int result = 0;
-	for (int i = 1; i < len; ++i)
+	for (int i = 1; i < verticesNum; ++i)
 		result += Matrix[i][parent[i]];
 	return result;
 }

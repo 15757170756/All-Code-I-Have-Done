@@ -43,6 +43,12 @@
     <ClCompile Include="Specific Letter Graphic.c" />
     <ClCompile Include="Spiral Matrix.c" />
     <ClCompile Include="判断大端存储还是小端存储.cpp" />
+    <ClCompile Include="大数相乘.cpp" />
+    <ClCompile Include="大数相减.cpp" />
+    <ClCompile Include="大数相加.cpp" />
+    <ClCompile Include="大数相除.cpp" />
+    <ClCompile Include="打印蛇形矩阵.cpp" />
+    <ClCompile Include="第一个间断数.cpp" />
     <ClCompile Include="面试中可能要写的小程序.c" />
     <ClCompile Include="studentsInfo.c" />
     <ClCompile Include="studentsRegisterTable.c" />

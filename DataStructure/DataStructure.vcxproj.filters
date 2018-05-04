@@ -49,6 +49,15 @@
     <Filter Include="源文件\Hash思想">
       <UniqueIdentifier>{420181bc-ff60-4f63-b4bd-2a3cc5398ae7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Binary Tree\GitHub上KD树实现">
+      <UniqueIdentifier>{52d20633-5237-4f52-8a2d-87247155ea70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\深搜">
+      <UniqueIdentifier>{883c6a92-fd10-48b3-ae4a-f0bccc0c32fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\广搜">
+      <UniqueIdentifier>{b1b02eb8-52fc-4f4d-aa8a-002c58c22128}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataStructure\bubbleSort.c">
@@ -285,6 +294,27 @@
     <ClCompile Include="组合硬币问题.cpp">
       <Filter>源文件\动态规划</Filter>
     </ClCompile>
+    <ClCompile Include="kdtree.cpp">
+      <Filter>源文件\Binary Tree\GitHub上KD树实现</Filter>
+    </ClCompile>
+    <ClCompile Include="kdtree_test1.cpp">
+      <Filter>源文件\Binary Tree\GitHub上KD树实现</Filter>
+    </ClCompile>
+    <ClCompile Include="kdtree_test2.cpp">
+      <Filter>源文件\Binary Tree\GitHub上KD树实现</Filter>
+    </ClCompile>
+    <ClCompile Include="城堡问题.cpp">
+      <Filter>源文件\深搜</Filter>
+    </ClCompile>
+    <ClCompile Include="海康威视 2017 软件精英挑战赛.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="寻路问题.cpp">
+      <Filter>源文件\深搜</Filter>
+    </ClCompile>
+    <ClCompile Include="help_Jimmy.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\RedBlackTree.h">
@@ -292,6 +322,9 @@
     </ClInclude>
     <ClInclude Include="DataStructure\BSTree.h">
       <Filter>源文件\Binary Tree\二叉排序树</Filter>
+    </ClInclude>
+    <ClInclude Include="kdtree.h">
+      <Filter>源文件\Binary Tree\GitHub上KD树实现</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

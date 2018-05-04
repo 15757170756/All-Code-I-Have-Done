@@ -17,7 +17,7 @@ static int ConnectNearLine(Edges &edges, const vector<vector<int> > &lines, doub
 //TODO: getWidth dll test
 enum{ WIDTH_INVALID = 0, WIDTH_VALID = 1};
 #define IMG_1_4 1
-#define FAKE_WIDTH 0
+#define FAKE_WIDTH 1
 //Fake getWidth
 int getWidth(vector<double> &width, vector<int> &valid, const cv::Mat &img, const vector<int> &xy_arr)
 {

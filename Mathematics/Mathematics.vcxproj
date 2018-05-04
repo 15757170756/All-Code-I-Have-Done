@@ -95,6 +95,8 @@
     <ClCompile Include="levmar-2.6\misc.c" />
     <ClCompile Include="levmar-2.6\misc_core.c" />
     <ClCompile Include="levmarq.cpp" />
+    <ClCompile Include="线性方程求解.cpp" />
+    <ClCompile Include="非线性方程求根的实现.cpp" />
     <ClCompile Include="高斯牛顿算法.cpp" />
   </ItemGroup>
   <ItemGroup>

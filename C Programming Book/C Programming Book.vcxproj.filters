@@ -195,5 +195,23 @@
     <ClCompile Include="判断大端存储还是小端存储.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="打印蛇形矩阵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="大数相加.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="大数相减.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="大数相乘.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="大数相除.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="第一个间断数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
