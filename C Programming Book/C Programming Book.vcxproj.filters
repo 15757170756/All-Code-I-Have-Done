@@ -214,4 +214,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="python生成-520.py">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
 </Project>

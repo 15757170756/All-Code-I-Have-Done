@@ -106,7 +106,7 @@ int minKey(int key[], bool mstSet[])
 }
 
 // A utility function to print the constructed MST stored in parent[]
-int printMST(int parent[], int n, int graph[V][V])
+void printMST(int parent[], int n, int graph[V][V])
 {
 	printf("Edge   Weight\n");
 	for (int i = 1; i < V; i++)

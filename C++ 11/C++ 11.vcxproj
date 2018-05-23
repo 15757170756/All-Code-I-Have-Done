@@ -320,6 +320,7 @@
     <ClCompile Include="test1.cpp" />
     <ClCompile Include="testMemoryPool.cpp" />
     <ClCompile Include="tuple.cpp" />
+    <ClCompile Include="vector中的push_back与emplace_back对比.cpp" />
     <ClCompile Include="vector增长研究.cpp" />
     <ClCompile Include="引用计数.cpp" />
     <ClCompile Include="智能指针的死穴 -- 循环引用.cpp" />

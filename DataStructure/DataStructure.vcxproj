@@ -91,6 +91,7 @@
     <ClCompile Include="..\牛客网各类笔试题目\合唱.cpp" />
     <ClCompile Include="..\牛客网各类笔试题目\题目2-编程回文串方案数.cpp" />
     <ClCompile Include="..\牛客网各类笔试题目\题目3-马走日字形.cpp" />
+    <ClCompile Include="..\牛客网各类笔试题目\题目七-最长不重复子串.cpp" />
     <ClCompile Include="0-1背包问题.cpp" />
     <ClCompile Include="Astar算法.cpp" />
     <ClCompile Include="Astar解决八数码问题.cpp" />
@@ -111,13 +112,16 @@
     <ClCompile Include="DataStructure\shellSort.c" />
     <ClCompile Include="DataStructure\sort Algorithm Compare.c" />
     <ClCompile Include="DataStructure\三角形求和最大.cpp" />
+    <ClCompile Include="GAME OF DRONES AI BATTLE-GOD’S STRATEGY (2ND PLACE).cpp" />
     <ClCompile Include="Going from u to v or from v to u.cpp" />
-    <ClCompile Include="help_Jimmy.cpp" />
+    <ClCompile Include="POJ1661_help_Jimmy.cpp" />
     <ClCompile Include="IDAstar解决15数码问题.cpp" />
     <ClCompile Include="kdtree.cpp" />
     <ClCompile Include="kdtree_test1.cpp" />
     <ClCompile Include="kdtree_test2.cpp" />
     <ClCompile Include="KD树.cpp" />
+    <ClCompile Include="OpenCV源码-最大生成树.cpp" />
+    <ClCompile Include="POJ1088滑雪问题.cpp" />
     <ClCompile Include="Wireless Network.cpp" />
     <ClCompile Include="三大排序算法集锦.cpp" />
     <ClCompile Include="二叉树的各种遍历-递归非递归(以KD树为例).cpp" />
@@ -131,6 +135,7 @@
     <ClCompile Include="双向循环链表.cpp" />
     <ClCompile Include="双向链表.cpp" />
     <ClCompile Include="后序遍历中序遍历已知求先序遍历.cpp" />
+    <ClCompile Include="哈弗曼编码.cpp" />
     <ClCompile Include="回文子序列个数.cpp" />
     <ClCompile Include="城堡问题.cpp" />
     <ClCompile Include="基数排序.cpp" />
@@ -142,16 +147,21 @@
     <ClCompile Include="并查集.cpp" />
     <ClCompile Include="广度优先搜索%28BFS%29-OpenCV.cpp" />
     <ClCompile Include="广度优先搜索BFS%28有向图%29.cpp" />
+    <ClCompile Include="循环队列-数组实现.cpp" />
+    <ClCompile Include="循环队列-链表实现.cpp" />
     <ClCompile Include="排序算法集锦.cpp" />
+    <ClCompile Include="数组中的最大差.cpp" />
     <ClCompile Include="整数Hash的应用1.cpp" />
     <ClCompile Include="整数Hash的应用2.cpp" />
+    <ClCompile Include="最佳加法表达式.cpp" />
+    <ClCompile Include="最大生成树prim算法一般实现(使用邻接矩阵).cpp" />
     <ClCompile Include="最小生成树prim算法一般实现(使用邻接矩阵).cpp" />
     <ClCompile Include="最小生成树prim算法一般实现(使用邻接链表).cpp" />
     <ClCompile Include="最近公共祖先.cpp" />
     <ClCompile Include="最长递增子序列的长度.cpp" />
     <ClCompile Include="桶排序.cpp" />
     <ClCompile Include="求所有回文子序列.cpp" />
-    <ClCompile Include="海康威视 2017 软件精英挑战赛.cpp" />
+    <ClCompile Include="海康威视2017软件精英挑战赛.cpp" />
     <ClCompile Include="深度优先搜索DFS-迭代%28有向图%29.cpp" />
     <ClCompile Include="深度优先搜索DFS-递归%28有向图%29.cpp" />
     <ClCompile Include="最小生成树kruskal算法实现.cpp" />
@@ -170,6 +180,7 @@
     <ClInclude Include="kdtree.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="drones.py" />
     <None Include="scipy中KDTree例子.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

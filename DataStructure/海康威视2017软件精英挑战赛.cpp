@@ -31,7 +31,7 @@ struct parkingCarMess
 
 struct parkLocation
 {
-	pair<int, int>index;
+	pair<int, int> index;
 	int sumLength;
 	int length2Entrance;//距离入口距离
 	int canServiceTime;
@@ -55,17 +55,20 @@ public:
 	int m_nMaxWaitTIme;
 	int m_nWeight;
 
-	parkLocation*m_nParkLocation;// 该辆车的停车位
+	parkLocation *m_nParkLocation;// 该辆车的停车位
 };
+
 struct Robot
 {
 	int id;
-	pair<int, int>curLocate;
+	pair<int, int> curLocate;
 	int curTime;
 	CCar* serviceCar;
 
-	Robot(int a, int b, int x, int y) :id(a), curTime(b), serviceCar(NULL), curLocate(x, y)
+	Robot(int a, int b, int x, int y)
+		:id(a), curTime(b), serviceCar(NULL), curLocate(x, y)
 	{
+
 	}
 
 };
@@ -99,7 +102,7 @@ public:
 	int minLength2Exit = 0;  //停车位距离出口的最小距离
 
 	//vector<parkLocation*>m_srcParkLocationList;//原始停车位信息
-	vector<parkLocation*>m_SortBySumLengthParkList;//根据到出入口距离和进行排序
+	vector<parkLocation*> m_SortBySumLengthParkList;//根据到出入口距离和进行排序
 
 	char m_cGarageMap[100][100];
 
@@ -118,16 +121,16 @@ public:
 public:
 	parkLocationDistruteTool(){};
 	~parkLocationDistruteTool(){};
-	void Add(parkLocation*aParkLocaiton);
-	void Delete(parkLocation*aParkLocaiton);
+	void Add(parkLocation *aParkLocaiton);
+	void Delete(parkLocation *aParkLocaiton);
 private:
 
 };
 
-void parkLocationDistruteTool::Add(parkLocation*aParkLocaiton)
+void parkLocationDistruteTool::Add(parkLocation *aParkLocaiton)
 {
 	int curSumLength = aParkLocaiton->sumLength;
-	parkLocation*tmp = aParkLocaiton;
+	parkLocation *tmp = aParkLocaiton;
 	curParkLocationList.push_back(tmp);
 	if (curParkLocationList.size() == 1)
 		return;
@@ -242,10 +245,11 @@ bool CGrargeMap::BFS(int x, int y)
 		{
 			int xx = curCoord.first.first + nextStep[i][0];
 			int yy = curCoord.first.second + nextStep[i][1];
-			pair<int, int>nextIndex(xx, yy);
-			vector<pair<int, int>>tmpPath = curCoord.second;
+			pair<int, int> nextIndex(xx, yy);
+			vector<pair<int, int>> tmpPath = curCoord.second;
 
-			if (xx >= 0 && xx < m_nRow&&yy >= 0 && yy < m_nColumn&&m_cGarageMap[xx][yy] != 'B'&&!check[xx][yy])
+			if (xx >= 0 && xx < m_nRow && yy >= 0 && yy < m_nColumn 
+				&& m_cGarageMap[xx][yy] != 'B' && !check[xx][yy])
 			{
 				check[xx][yy] = true;
 				if (m_cGarageMap[xx][yy] == 'X')  //如果是过道
@@ -255,11 +259,11 @@ bool CGrargeMap::BFS(int x, int y)
 					que.push(nextCoord);
 
 					//判断是不是出口或入口，保存路径长度
-					if (xx == m_EntranceX&&yy == m_EntranceY)
+					if (xx == m_EntranceX && yy == m_EntranceY)
 					{
 						m_nExist2EntranceLength = tmpPath.size();
 					}
-					else if (xx == m_ExistX&&yy == m_ExistY)
+					else if (xx == m_ExistX && yy == m_ExistY)
 					{
 						m_nExist2EntranceLength = tmpPath.size();
 					}
@@ -273,15 +277,15 @@ bool CGrargeMap::BFS(int x, int y)
 						//该车位不只有一个出口，返回false
 						for (int j = 0; j < m_nRow; j++)
 						{
-							delete[]check[j];
+							delete[] check[j];
 							check[j] = NULL;
 						}
-						delete[]check;
+						delete[] check;
 						check = NULL;
 
 						return false;
 					}
-					if (x == m_EntranceX&&y == m_EntranceY)
+					if (x == m_EntranceX && y == m_EntranceY)
 					{
 						//保存入口到该车位的全路径
 						tmpPath.push_back(nextIndex);
@@ -401,38 +405,41 @@ void CGrargeMap::BFS_Common(int x, int y)
 bool CGrargeMap::isValidParkLocation(int x, int y)
 {
 	int num = 0;
-	for (int i = 0; i < 4; i++)
-	{
+	for (int i = 0; i < 4; i++) {
 		int xx = x + nextStep[i][0];
 		int yy = y + nextStep[i][1];
 		if (xx >= 0 && xx < m_nRow&&yy >= 0 && yy < m_nColumn &&
-			(m_cGarageMap[xx][yy] == 'I' || m_cGarageMap[xx][yy] == 'E' || m_cGarageMap[xx][yy] == 'X'))
-		{
+			(m_cGarageMap[xx][yy] == 'I' 
+			|| m_cGarageMap[xx][yy] == 'E' 
+			|| m_cGarageMap[xx][yy] == 'X'))
 			num++;
-		}
 	}
 	return num == 1;
 }
-bool CompareByInLength(parkLocation*a, parkLocation*b)
+
+bool CompareByInLength(parkLocation *a, parkLocation *b)
 {
 	if (a->length2Entrance == b->length2Entrance)
 		return a->index < b->index;
 	return a->length2Entrance < b->length2Entrance;
 }
-bool CompareBySumLength(parkLocation*a, parkLocation*b)
+
+bool CompareBySumLength(parkLocation *a, parkLocation *b)
 {
 	if (a->sumLength == b->sumLength)
 		return a->index < b->index;
 	return a->sumLength < b->sumLength;
 }
+
 void CGrargeMap::CreateParkLocation()
 {
 	map<pair<int, int>, vector<pair<int, int>>>::iterator it = m_Entrance2ParkLocationPath.begin();
 	while (it != m_Entrance2ParkLocationPath.end())
 	{
-		parkLocation*cur = new parkLocation(it->first.first, it->first.second);
+		parkLocation *cur = new parkLocation(it->first.first, it->first.second);
 		cur->length2Entrance = it->second.size();
-		cur->sumLength = m_Exit2ParkLocationPath[cur->index].size() + m_Entrance2ParkLocationPath[cur->index].size();
+		cur->sumLength = m_Exit2ParkLocationPath[cur->index].size() +
+			m_Entrance2ParkLocationPath[cur->index].size();
 
 		maxLenth2Entrance = max(maxLenth2Entrance, cur->length2Entrance);
 		minSumLength = min(minSumLength, cur->sumLength);
@@ -550,21 +557,23 @@ bool SortCarByWeight(CCar*a, CCar*b)
 		return a->m_nIndex < b->m_nIndex;
 	return a->m_nWeight>b->m_nWeight;
 }
-void WriteLeaveHis(CCar*curCar, int RobotID, int waitTime)
+void WriteLeaveHis(CCar *curCar, int RobotID, int waitTime)
 {
 	m_nParkingResult[curCar->m_nIndex]->exitPath = m_cGarageMap.m_Exit2ParkLocationPath[curCar->m_nParkLocation->index];
 	m_nParkingResult[curCar->m_nIndex]->exitRobotID = RobotID;
 	m_nParkingResult[curCar->m_nIndex]->exitTime = curCar->m_nApplyOutTime + waitTime;
 }
-void WriteEntrantHis(CCar*curCar, int RobotID, int waitTime)
+
+void WriteEntrantHis(CCar *curCar, int RobotID, int waitTime)
 {
 	parkingCarMess *newHis = new parkingCarMess(curCar->m_nIndex, RobotID);
 	newHis->entrantPath = m_cGarageMap.m_Entrance2ParkLocationPath[curCar->m_nParkLocation->index];
 	newHis->entrantTime = waitTime + curCar->m_nApplyInTime;
 	m_nParkingResult[curCar->m_nIndex] = newHis;
 }
-//选择要把车运进车库的机器人,返回的是被选中的机器人到入口接车时，车辆的等待时间，小于0的话，表示车还未到，机器人已经在入口等待时间
-int ChooseEntrantRobot(CCar*curCar, vector<Robot*>&RobotList, int&chooseIndex)
+//选择要把车运进车库的机器人,返回的是被选中的机器人到入口接车时，
+//车辆的等待时间，小于0的话，表示车还未到，机器人已经在入口等待时间
+int ChooseEntrantRobot(CCar*curCar, vector<Robot*>&RobotList, int &chooseIndex)
 {
 	//Robot* chooseRobot = NULL;
 	int minV = 100000000;
@@ -630,7 +639,8 @@ int ChooseEntrantRobot(CCar*curCar, vector<Robot*>&RobotList, int&chooseIndex)
 	return minV;
 }
 
-//选择要把车运出车库的机器人,返回的是被选中的机器人到停车位接车时，车辆的等待时间，小于0的话，表示车还未到，机器人已经在入口等待时间
+//选择要把车运出车库的机器人,返回的是被选中的机器人到停车位接车时，车辆的等待时间，
+//小于0的话，表示车还未到，机器人已经在入口等待时间
 int ChooseLeaveRobot(CCar *curCar, vector<Robot*> &RobotList, int &chooseIndex)
 {
 	//Robot* chooseRobot = NULL;
@@ -718,13 +728,15 @@ parkLocation* ChooseMinSumLengthParkLocation(CCar *curCar, Robot *curRobot, int 
 		if (m_cGarageMap.m_SortBySumLengthParkList[i]->isParking)
 			continue;
 		parkLocation*curParkLocation = m_cGarageMap.m_SortBySumLengthParkList[i];
-		int arriveTime = curCar->m_nApplyInTime + waitTime + m_cGarageMap.m_Entrance2ParkLocationPath[curParkLocation->index].size() - 1;
+		int arriveTime = curCar->m_nApplyInTime + waitTime + 
+			m_cGarageMap.m_Entrance2ParkLocationPath[curParkLocation->index].size() - 1;
 		if (arriveTime >= curParkLocation->canServiceTime)
 			return curParkLocation;
 	}
 	return NULL;
 }
-void HandleIn(CCar *curCar, vector<Robot*> &m_nRobots, priority_queue<CCar*, vector<CCar*>, Cmp> &m_nWaitLeaveCar)
+void HandleIn(CCar *curCar, vector<Robot*> &m_nRobots,
+	priority_queue<CCar*, vector<CCar*>, Cmp> &m_nWaitLeaveCar)
 {
 	//处理入库
 	int chooseIndex;
@@ -735,12 +747,7 @@ void HandleIn(CCar *curCar, vector<Robot*> &m_nRobots, priority_queue<CCar*, vec
 		m_nQ++;
 		return;
 	}
-
-
-
 	parkLocation*chooseParkLocation = ChooseMinSumLengthParkLocation(curCar, m_nRobots[chooseIndex], waitTime);
-
-
 	if (chooseParkLocation == NULL)  //因为停车位不够导致不可达
 	{
 		m_AbandanByFull++;
@@ -763,8 +770,6 @@ void HandleIn(CCar *curCar, vector<Robot*> &m_nRobots, priority_queue<CCar*, vec
 		}
 
 		newCarList.push_back(curCar);
-
-
 		m_EntranceWaitTime += waitTime;  //记录车辆进库的等待时间
 
 		m_nRobots[chooseIndex]->curLocate = chooseParkLocation->index;
@@ -828,7 +833,7 @@ void HandleOut(CCar *curCar, vector<Robot*> &m_nRobots, priority_queue<CCar*, ve
 
 }
 
-void HandleOutTest(CCar *curCar, vector<Robot*> &m_nRobots, 
+void HandleOutTest(CCar *curCar, vector<Robot*> &m_nRobots,
 	priority_queue<CCar*, vector<CCar*>, Cmp> &m_nWaitLeaveCar)
 {
 	//处理出库
@@ -861,7 +866,7 @@ void Show()
 			cout << i << " yes" << "\n";
 			continue;
 		}
-		parkingCarMess*cur = m_nParkingResult[i];
+		parkingCarMess *cur = m_nParkingResult[i];
 		cout << i << " no " << cur->entrantRobotID << " " << cur->entrantTime;
 		for (int j = 0; j < cur->entrantPath.size(); j++)
 		{
@@ -881,6 +886,7 @@ bool compareCarsByInTime(CCar *a, CCar *b)
 		return a->m_nIndex < b->m_nIndex;
 	return a->m_nApplyInTime < b->m_nApplyInTime;
 }
+
 int ReadCaseInfo(char *szPath)
 {
 	if (szPath == NULL)
@@ -950,7 +956,7 @@ int ReadCaseInfo(char *szPath)
 }
 
 //选择最合适的停车位
-parkLocation* ChooseBestParkLocation(CCar*curCar, int waitTime, int range)
+parkLocation* ChooseBestParkLocation(CCar *curCar, int waitTime, int range)
 {
 	/*
 	for (int i = range; i < parkLocationTool.curParkLocationList.size(); i++)
@@ -976,7 +982,8 @@ parkLocation* ChooseBestParkLocation(CCar*curCar, int waitTime, int range)
 	}
 	*/
 	parkLocation* curParkLocation = parkLocationTool.curParkLocationList[range];
-	int arriveTime = curCar->m_nApplyInTime + waitTime + m_cGarageMap.m_Entrance2ParkLocationPath[curParkLocation->index].size() - 1;
+	int arriveTime = curCar->m_nApplyInTime + waitTime + 
+		m_cGarageMap.m_Entrance2ParkLocationPath[curParkLocation->index].size() - 1;
 	if (arriveTime >= curParkLocation->canServiceTime)
 	{
 		parkLocationTool.Delete(curParkLocation);
@@ -989,22 +996,18 @@ parkLocation* ChooseBestParkLocation(CCar*curCar, int waitTime, int range)
 			continue;
 
 		parkLocation *aParkLocation = parkLocationTool.curParkLocationList[i];
-		int time = curCar->m_nApplyInTime + waitTime + m_cGarageMap.m_Entrance2ParkLocationPath[aParkLocation->index].size() - 1;
+		int time = curCar->m_nApplyInTime + waitTime +
+			m_cGarageMap.m_Entrance2ParkLocationPath[aParkLocation->index].size() - 1;
 		if (time >= aParkLocation->canServiceTime)
 		{
 			parkLocationTool.Delete(aParkLocation);
 			return aParkLocation;
 		}
 	}
-
-
 	return NULL;
-
-
-
 }
 
-void HandleInTest(CCar *curCar, vector<Robot*> &m_nRobots, 
+void HandleInTest(CCar *curCar, vector<Robot*> &m_nRobots,
 	priority_queue<CCar*, vector<CCar*>, Cmp> &m_nWaitLeaveCar, int range)
 {
 	int chooseIndex;
@@ -1046,7 +1049,7 @@ void HandleInTest(CCar *curCar, vector<Robot*> &m_nRobots,
 }
 
 //批量处理入库的车辆
-void HandleInGroup(vector<CCar*> curCarList, vector<Robot*> &m_nRobots, 
+void HandleInGroup(vector<CCar*> curCarList, vector<Robot*> &m_nRobots,
 	priority_queue<CCar*, vector<CCar*>, Cmp> &m_nWaitLeaveCar)
 {
 	vector<CCar*> tempCarList = curCarList;
@@ -1163,14 +1166,12 @@ void HandleInGroup(vector<CCar*> curCarList, vector<Robot*> &m_nRobots,
 
 }
 
-void MergeHandleIn(vector<CCar*> curCarList, vector<Robot*> &m_nRobots, 
+void MergeHandleIn(vector<CCar*> curCarList, vector<Robot*> &m_nRobots,
 	priority_queue<CCar*, vector<CCar*>, Cmp> &m_nWaitLeaveCar)
 {
 
 	vector<CCar*> tempCarList = curCarList;
 	sort(tempCarList.begin(), tempCarList.end(), SortCarByWeight); //对车辆根据质量降序排列
-
-
 
 	vector<int> rangeList(curCarList.size(), 0);
 
@@ -1200,13 +1201,6 @@ void MergeHandleIn(vector<CCar*> curCarList, vector<Robot*> &m_nRobots,
 		{
 			continue;
 		}
-
-
-
-
-
-
-
 	}
 
 
@@ -1282,15 +1276,6 @@ void MergeHandleIn(vector<CCar*> curCarList, vector<Robot*> &m_nRobots,
 	}
 	}
 	*/
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -1299,8 +1284,6 @@ void Calculation()
 {
 	priority_queue<CCar*, vector<CCar*>, Cmp> m_nWaitLeaveCar;//等待出库的车辆，根据出库时间排序
 	vector<Robot*> m_nRobots;
-
-
 
 	int curCarIndex = 0;
 	curParkingCarNum = 0;
@@ -1414,14 +1397,12 @@ void CalculationTest()
 		parkLocationTool.Add(m_cGarageMap.m_SortBySumLengthParkList[i]);   //将所有的停车位都加入到分配工具中
 	}
 
-
-
 	int curCarIndex = 0;
 	curParkingCarNum = 0;
 
 	for (int i = 0; i <m_nRobotNum; i++)  //创建机器人
 	{
-		Robot*aRobot = new Robot(i, 0, m_cGarageMap.m_EntranceX, m_cGarageMap.m_EntranceY);
+		Robot *aRobot = new Robot(i, 0, m_cGarageMap.m_EntranceX, m_cGarageMap.m_EntranceY);
 		m_nRobots.push_back(aRobot);
 	}
 
@@ -1493,6 +1474,7 @@ void CalculationTest()
 
 void InputData()
 {
+	freopen("input.txt", "r", stdin);
 	cin >> m_nK >> m_nP >> m_nA >> m_nB;
 	cin >> m_cGarageMap.m_nRow >> m_cGarageMap.m_nColumn;
 	char szTmp;
@@ -1565,6 +1547,7 @@ void Initialize()
 	m_nParkingResult.clear();
 	m_cGarageMap.Initialize();
 }
+
 void SaveResult(string fileName)
 {
 	ofstream out;
@@ -1618,7 +1601,7 @@ void Test()
 	}
 }
 
-void HandleInWithNewCars(vector<CCar*> curCarList, vector<Robot*> &m_nRobots, 
+void HandleInWithNewCars(vector<CCar*> curCarList, vector<Robot*> &m_nRobots,
 	priority_queue<CCar*, vector<CCar*>, Cmp> &m_nWaitLeaveCar)
 {
 	vector<CCar*> tempCarList = curCarList;
@@ -1790,8 +1773,6 @@ void CalculationWithNewCars()
 		parkLocationTool.Add(m_cGarageMap.m_SortBySumLengthParkList[i]);   //将所有的停车位都加入到分配工具中
 	}
 
-
-
 	int curCarIndex = 0;
 	curParkingCarNum = 0;
 
@@ -1818,7 +1799,8 @@ void CalculationWithNewCars()
 		if (curEnterCar != NULL&&curExitCar != NULL)
 		{
 			//如果申请出库的时间早于申请入库时间，或者库已满，处理出库
-			if (curExitCar->m_nApplyOutTime <curEnterCar->m_nApplyInTime || curParkingCarNum == m_cGarageMap.m_parkLocationNum)
+			if (curExitCar->m_nApplyOutTime <curEnterCar->m_nApplyInTime 
+				|| curParkingCarNum == m_cGarageMap.m_parkLocationNum)
 			{
 				//处理出库
 				//HandleOut(curExitCar, m_nRobots, m_nWaitLeaveCar);
@@ -1865,7 +1847,7 @@ void CalculationWithNewCars()
 	m_nRobots.clear();
 }
 
-int calcBestRobotNum(void (*fun)(), int &minZ)
+int calcBestRobotNum(void(*fun)(), int &minZ)
 {
 	minZ = m_nCarNum*m_nP;
 	int bestNum = 0;
@@ -1908,7 +1890,7 @@ int calcBestRobotNum(void (*fun)(), int &minZ)
 	return bestNum;
 }
 
-int CalcNewCarsBestNum(vector<CCar*> carList,int curRotbotNum,int curAbandonNum,int &minZ)
+int CalcNewCarsBestNum(vector<CCar*> carList, int curRotbotNum, int curAbandonNum, int &minZ)
 {
 	Initialize();
 	m_nQ = curAbandonNum;
@@ -1919,7 +1901,7 @@ int CalcNewCarsBestNum(vector<CCar*> carList,int curRotbotNum,int curAbandonNum,
 	minZ = m_nRobotNum*m_nA + m_nB*m_nT1 + m_nP*m_nQ + m_nW;
 
 	curRotbotNum--;
-	while (curRotbotNum>=0)
+	while (curRotbotNum >= 0)
 	{
 		Initialize();
 		m_nQ = curAbandonNum;
@@ -1938,9 +1920,6 @@ int CalcNewCarsBestNum(vector<CCar*> carList,int curRotbotNum,int curAbandonNum,
 		}
 	}
 	return curRotbotNum + 1;
-
-
-
 }
 
 void showMessage()
@@ -2001,9 +1980,6 @@ unordered_map<CCar*, bool> GetInCars(int abandNum)  //获取所有进库的车�
 	}
 
 	return result;
-
-
-
 }
 
 
@@ -2043,8 +2019,6 @@ void CalculationFinal(unordered_map<CCar*, bool> inputCars)
 			}
 		}
 
-
-
 		if (!m_nWaitLeaveCar.empty())
 		{
 			curExitCar = m_nWaitLeaveCar.top();
@@ -2064,8 +2038,6 @@ void CalculationFinal(unordered_map<CCar*, bool> inputCars)
 				//处理入库
 				curCarIndex++;
 				HandleIn(curEnterCar, m_nRobots, m_nWaitLeaveCar);
-
-
 			}
 		}
 		else if (curEnterCar != NULL)
@@ -2111,13 +2083,9 @@ int main()
 	//Test();
 	//return 0;
 
-
-
 	int minZ0, minZ1, minZ2;
 	int bestRobotNum0 = calcBestRobotNum(CalculationTest, minZ0);
 	int bestRobotNum1 = calcBestRobotNum(Calculation, minZ1);
-
-
 
 	Initialize();
 	m_nRobotNum = bestRobotNum1;
@@ -2134,12 +2102,9 @@ int main()
 
 	int curAbandant = m_nQ;
 	vector<CCar*> tmp = newCarList;
-	Initialize(); 
+	Initialize();
 
 	int bestRobotNum2 = CalcNewCarsBestNum(tmp, bestRobotNum1, curAbandant, minZ2);
-
-	
-
 
 	if (minZ0 < minZ1&&minZ0 < minZ2)
 	{
@@ -2164,7 +2129,7 @@ int main()
 	Show();
 	//showMessage();
 
-	
+
 
 	ReleseMemory();
 	return 0;

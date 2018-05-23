@@ -264,6 +264,9 @@
     <ClCompile Include="面试题67-机器人的运动范围.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="面试题10-二进制中0的个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="面试题02-实现Singletom模式.cs">

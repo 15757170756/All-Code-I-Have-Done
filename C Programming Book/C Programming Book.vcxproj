@@ -78,6 +78,9 @@
     <ClCompile Include="钢条切割问题.cpp" />
     <ClCompile Include="验证函数重载.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="python生成-520.py" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BE3F05F2-BABA-48AA-8036-F61FFA86AD9E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

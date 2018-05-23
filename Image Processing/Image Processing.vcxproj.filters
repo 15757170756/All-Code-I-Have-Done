@@ -195,6 +195,9 @@
     <ClCompile Include="stitching\另一个版本SIFTsift.cpp">
       <Filter>源文件\另一个版本SIFT</Filter>
     </ClCompile>
+    <ClCompile Include="线性插值.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraCalibrator.h">

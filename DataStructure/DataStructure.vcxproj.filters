@@ -306,14 +306,44 @@
     <ClCompile Include="城堡问题.cpp">
       <Filter>源文件\深搜</Filter>
     </ClCompile>
-    <ClCompile Include="海康威视 2017 软件精英挑战赛.cpp">
-      <Filter>源文件\Graph</Filter>
-    </ClCompile>
     <ClCompile Include="寻路问题.cpp">
       <Filter>源文件\深搜</Filter>
     </ClCompile>
-    <ClCompile Include="help_Jimmy.cpp">
+    <ClCompile Include="OpenCV源码-最大生成树.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="哈弗曼编码.cpp">
+      <Filter>源文件\Binary Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="数组中的最大差.cpp">
       <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="GAME OF DRONES AI BATTLE-GOD’S STRATEGY (2ND PLACE).cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\牛客网各类笔试题目\题目七-最长不重复子串.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="POJ1088滑雪问题.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="最佳加法表达式.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="POJ1661_help_Jimmy.cpp">
+      <Filter>源文件\动态规划</Filter>
+    </ClCompile>
+    <ClCompile Include="最大生成树prim算法一般实现(使用邻接矩阵).cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="海康威视2017软件精英挑战赛.cpp">
+      <Filter>源文件\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="循环队列-数组实现.cpp">
+      <Filter>源文件\queue</Filter>
+    </ClCompile>
+    <ClCompile Include="循环队列-链表实现.cpp">
+      <Filter>源文件\queue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -330,6 +360,9 @@
   <ItemGroup>
     <None Include="scipy中KDTree例子.py">
       <Filter>源文件\Binary Tree</Filter>
+    </None>
+    <None Include="drones.py">
+      <Filter>源文件\Graph</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -127,6 +127,7 @@
     <ClCompile Include="图像平移.cpp" />
     <ClCompile Include="图像旋转一定角度.cpp" />
     <ClCompile Include="彩色图像直方图均衡化.cpp" />
+    <ClCompile Include="线性插值.cpp" />
     <ClCompile Include="角点检测.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -88,6 +88,12 @@
     <Filter Include="源文件\各大公司在线笔试题目\大华软件挑战创新大赛模拟题">
       <UniqueIdentifier>{954d458d-0985-4c82-96e0-7f57289a9c79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目">
+      <UniqueIdentifier>{b773f15b-59da-436c-bc7f-e9dd73cbe8a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\各大公司在线笔试题目\阿里巴巴2018实习生招聘算法工程师在线笔试题">
+      <UniqueIdentifier>{0eba9357-38f8-4ce7-bf3a-874302549c37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="递归函数调用理解题目.cpp">
@@ -314,6 +320,45 @@
     </ClCompile>
     <ClCompile Include="题目四-股票操盘.cpp">
       <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛模拟题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目一-不相邻元素的子序列的和的最大值.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目二-依次K反转链表.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目三-字符串编码.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目四-字符串出现次数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目七-最长不重复子串.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目八-神奇数字.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目五-吃金币游戏.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目十-打印二叉树右边节点值.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目九-大富翁游戏.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目六-视频编码.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="2018大华软件创新挑战赛全国复赛.cpp">
+      <Filter>源文件\各大公司在线笔试题目\大华软件挑战创新大赛初赛题目</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-八卦阵最大值与最小值.cpp">
+      <Filter>源文件\各大公司在线笔试题目\阿里巴巴2018实习生招聘算法工程师在线笔试题</Filter>
+    </ClCompile>
+    <ClCompile Include="题目二-路径最多数.cpp">
+      <Filter>源文件\各大公司在线笔试题目\阿里巴巴2018实习生招聘算法工程师在线笔试题</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

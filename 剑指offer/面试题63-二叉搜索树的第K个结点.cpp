@@ -84,7 +84,7 @@ void test1()
 	connectNode(p3, p2, nullptr);
 	connectNode(p2, p1, nullptr);
 
-	int k = 8;
+	int k = 3;
 	printf("%d\n", kthNode(p10, k)->data);
 }
 
@@ -96,3 +96,47 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+struct TreeNode {
+	int val;
+	struct TreeNode *left;
+	struct TreeNode *right;
+	TreeNode(int x) :
+		val(x), left(NULL), right(NULL) {
+	}
+};
+
+class Solution {
+public:
+	//使用中序遍历存储结点
+	void inorder(TreeNode *pRoot, vector<TreeNode*> &vec)
+	{
+		if (pRoot == nullptr)
+			return;
+		inorder(pRoot->left, vec);
+		vec.emplace_back(pRoot);
+		inorder(pRoot->right, vec);
+	}
+	TreeNode* KthNode(TreeNode* pRoot, int k)
+	{
+		if (pRoot == nullptr || k < 1)
+			return nullptr;
+
+		vector<TreeNode*> vec;
+		inorder(pRoot, vec);
+
+
+		if (vec.size() < k)
+			return nullptr;
+		return vec[k - 1];
+	}
+};
