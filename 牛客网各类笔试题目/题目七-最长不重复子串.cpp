@@ -58,6 +58,23 @@ int lengthOfLongestSubstring(string s) {
 	return ans;
 }
 
+int longest_unique_substr_len(const std::string& s)
+{
+	int kInitPos = -1;
+	std::vector<int> hashmap(26, kInitPos);
+	int low = 0;
+	int maxlen = 0;
+	for (int i = 0; i != s.size(); ++i) {
+		int key = s[i] - 'a';
+		if (hashmap[key] != kInitPos && hashmap[key] >= low) {
+			maxlen = std::max(maxlen, i - low);
+			low = hashmap[key] + 1;
+		}
+		hashmap[key] = i;
+	}
+	return std::max(maxlen, (int)(s.size() - low));
+}
+
 void test1()
 {
 	//freopen("input.txt", "r", stdin);

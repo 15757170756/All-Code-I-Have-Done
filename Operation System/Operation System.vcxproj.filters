@@ -60,6 +60,12 @@
     <ClCompile Include="testThreadPool.cpp">
       <Filter>源文件\基于C++11的线程池</Filter>
     </ClCompile>
+    <ClCompile Include="线程安全的队列.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="线程安全的栈.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LiftOff.h">

@@ -89,6 +89,8 @@
     <ClCompile Include="单生产者-多消费者模型.cpp" />
     <ClCompile Include="多生产者-单消费者模型.cpp" />
     <ClCompile Include="多生产者-多消费者模型.cpp" />
+    <ClCompile Include="线程安全的栈.cpp" />
+    <ClCompile Include="线程安全的队列.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LiftOff.h" />

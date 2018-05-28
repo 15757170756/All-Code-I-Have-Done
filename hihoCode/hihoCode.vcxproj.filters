@@ -46,6 +46,9 @@
     <Filter Include="[Offer收割]编程练习赛56">
       <UniqueIdentifier>{9e6e01ce-2a42-4a57-8d05-aae3a4fc52c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="[Offer收割]编程练习赛61">
+      <UniqueIdentifier>{3a3a030b-1b70-4030-a436-dc475f1ee099}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1601- 最大得分.cpp">
@@ -176,6 +179,18 @@
     </ClCompile>
     <ClCompile Include="题目2-宝藏坐标.cpp">
       <Filter>[Offer收割]编程练习赛56</Filter>
+    </ClCompile>
+    <ClCompile Include="题目1-最小排列.cpp">
+      <Filter>[Offer收割]编程练习赛61</Filter>
+    </ClCompile>
+    <ClCompile Include="题目2-最大前缀和.cpp">
+      <Filter>[Offer收割]编程练习赛61</Filter>
+    </ClCompile>
+    <ClCompile Include="题目3-质数.cpp">
+      <Filter>[Offer收割]编程练习赛61</Filter>
+    </ClCompile>
+    <ClCompile Include="题目4-随机排列2.cpp">
+      <Filter>[Offer收割]编程练习赛61</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

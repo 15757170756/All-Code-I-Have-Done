@@ -90,6 +90,7 @@
     <ClCompile Include="题目1-Queen Attack.cpp" />
     <ClCompile Include="题目1-卡片游戏.cpp" />
     <ClCompile Include="题目1-字符串排序.cpp" />
+    <ClCompile Include="题目1-最小排列.cpp" />
     <ClCompile Include="题目1-比赛日程安排.cpp" />
     <ClCompile Include="题目1-灯光控制.cpp" />
     <ClCompile Include="题目1-继承顺位.cpp" />
@@ -100,6 +101,7 @@
     <ClCompile Include="题目2-反转子串.cpp" />
     <ClCompile Include="题目2-宝藏坐标.cpp" />
     <ClCompile Include="题目2-料理次元.cpp" />
+    <ClCompile Include="题目2-最大前缀和.cpp" />
     <ClCompile Include="题目2-相似的字符串.cpp" />
     <ClCompile Include="题目3-Good 01-Sequence.cpp" />
     <ClCompile Include="题目3-区间问题.cpp" />
@@ -107,6 +109,7 @@
     <ClCompile Include="题目3-最大得分.cpp" />
     <ClCompile Include="题目3-最长一次上升子序列.cpp" />
     <ClCompile Include="题目3-等差子数列.cpp" />
+    <ClCompile Include="题目3-质数.cpp" />
     <ClCompile Include="题目4-01间隔矩阵.cpp" />
     <ClCompile Include="题目4-具选择.cpp" />
     <ClCompile Include="题目4-本质不同的回文子串的数量.cpp" />
@@ -118,6 +121,7 @@
     <ClCompile Include="题目3-末尾有最多0的乘积.cpp" />
     <ClCompile Include="题目3-矩阵迷宫.cpp" />
     <ClCompile Include="题目4-评论框排版.cpp" />
+    <ClCompile Include="题目4-随机排列2.cpp" />
     <ClCompile Include="题目4-麻烦的第K大问题.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

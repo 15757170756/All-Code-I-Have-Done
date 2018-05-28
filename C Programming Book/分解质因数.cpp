@@ -19,7 +19,7 @@ void prim1(int m, int n)
 void prim3(int m, int n, vector<int>& resultVec)
 {
 	if (m > n) {
-		while (m %n != 0)
+		while (m % n != 0)
 			++n;
 		m /= n;
 		prim3(m, n, resultVec);
