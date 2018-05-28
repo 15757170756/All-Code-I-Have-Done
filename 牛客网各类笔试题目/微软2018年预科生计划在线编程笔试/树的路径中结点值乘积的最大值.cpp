@@ -78,7 +78,7 @@ int main()
 	int numNodes = 5;
 	int rootNode = 1;
 	vector<int> values = { 2, 4, 10, 20, 1 };
-	vector < vector<int>> edges = { { 1, 2 }, { 1, 3 }, { 2, 4 }, { 2, 5 } };
+	vector<vector<int>> edges = { { 1, 2 }, { 1, 3 }, { 2, 4 }, { 2, 5 } };
 	cout << getMaxProducts(numNodes, rootNode, values, edges) << endl;
 	return 0;
 }
