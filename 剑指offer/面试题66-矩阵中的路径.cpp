@@ -56,8 +56,7 @@ bool hasPath(char *matrix, int rows, int cols, char *str)
 	int pathLength = 0;
 	for (int i = 0; i < rows; ++i) {
 		for (int j = 0; j < cols; ++j) {
-			if (hasPathCore(matrix, rows, cols, i, j, 
-				str, pathLength, visited))
+			if (hasPathCore(matrix, rows, cols, i, j, str, pathLength, visited))
 				return true;
 		}
 	}
@@ -82,47 +81,3 @@ int main(int argc, char* argv[])
 	test1();
 	return 0;
 }
-
-
-class Solution {
-public:
-	bool dfs(char *matrix, int rows, int cols, int row, int col, bool *visited, char *str)
-	{
-		if (*str == '\0')
-			return true;
-		bool flag = false;
-		if (row >= 0 && row < rows && col >= 0 && col < cols
-			&& *str == matrix[row*cols + col] && !visited[row*cols + col]) {
-			++str;
-			visited[row*cols + col] = true;
-
-			flag = dfs(matrix, rows, cols, row, col - 1, visited, str)
-				|| dfs(matrix, rows, cols, row - 1, col, visited, str)
-				|| dfs(matrix, rows, cols, row, col + 1, visited, str)
-				|| dfs(matrix, rows, cols, row + 1, col, visited, str);
-
-			if (!flag) {
-				visited[row*cols + col] = false;
-				//--str;//这个可以去掉
-			}
-		}
-		return flag;
-	}
-	bool hasPath(char* matrix, int rows, int cols, char* str)
-	{
-		if (matrix == nullptr || str == nullptr || rows < 1 || cols < 1)
-			return false;
-		bool *visited = new bool[rows*cols];
-		memset(visited, false, rows*cols*sizeof(bool));
-		for (int i = 0; i < rows; ++i) {
-			for (int j = 0; j < cols; ++j) {
-				if (dfs(matrix, rows, cols, i, j, visited, str)) {
-					delete[] visited;
-					return true;
-				}
-			}
-		}
-		delete[] visited;
-		return false;
-	}
-};

@@ -30,7 +30,6 @@ int NumberOf12(int n)
 
 /*
 这个方法比较巧妙
-将最后一个1变为0
 */
 int NumberOf13(int n)
 {
@@ -79,4 +78,13 @@ int main()
 	cout << cnt << endl;
 
 	return 0;
+}
+
+struct LinkNode 
+{ int val; 
+	struct LinkNode * next;
+}; 
+struct LinkNode *insert(LinkNode * head, LinkNode * node)
+{
+
 }

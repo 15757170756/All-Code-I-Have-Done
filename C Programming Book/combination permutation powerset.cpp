@@ -137,22 +137,12 @@ void powersets(const vector<T> &v, vector<vector<T>> &resultVec)
 
 //Algorithm中next_permutation的实现
 
-
-template<typename BidirIt>
-void my_reverse(BidirIt first, BidirIt last)
-{
-	for (; first != last && first != --last; ++first)
-		swap(*first, *last);
-}
-
 template<typename BidirIt>
 bool my_next_permutation(BidirIt first, BidirIt last)
 {
-	if (first == last) 
-		return false;
+	if (first == last) return false;
 	BidirIt i = last;
-	if (first == --i) 
-		return false;
+	if (first == --i) return false;
 
 	while (true) {
 		BidirIt i1, i2;
@@ -161,7 +151,7 @@ bool my_next_permutation(BidirIt first, BidirIt last)
 		if (*--i < *i1) {
 			i2 = last;
 			while (!(*i < *--i2));
-			swap(*i, *i2);
+			std::iter_swap(i, i2);
 			std::reverse(i1, last);
 			return true;
 		}

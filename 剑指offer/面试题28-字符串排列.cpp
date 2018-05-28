@@ -2,7 +2,7 @@
 方法一：使用STL的next_permutation
 */
 
-#if 1
+#if 0
 #include <vector>
 #include <algorithm>
 #include <iostream>
