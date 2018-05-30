@@ -95,7 +95,7 @@ class Graph
 
 	// In a weighted graph, we need to store vertex
 	// and weight pair for every edge
-	list< pair<int, int> > *adj;
+	list<pair<int, int>> *adj;
 
 public:
 	Graph(int V);  // Constructor
@@ -152,7 +152,7 @@ void Graph::shortestPath(int src)
 		pq.pop();
 
 		// 'i' is used to get all adjacent vertices of a vertex
-		list< pair<int, int> >::iterator i;
+		list<pair<int, int>>::iterator i;
 		for (i = adj[u].begin(); i != adj[u].end(); ++i)
 		{
 			// Get vertex label and weight of current adjacent

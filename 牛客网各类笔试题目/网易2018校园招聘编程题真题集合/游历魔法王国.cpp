@@ -17,7 +17,6 @@ n个城市之间的道路连接起来恰好构成一棵树。
 第二行包括n-1个整数parent[i](0 ≤ parent[i] ≤ i), 
 对于每个合法的i(0 ≤ i ≤ n - 2),在(i+1)号城市和parent[i]间有一条道路连接。
 
-
 输出描述:
 输出一个整数,表示小易最多能游历的城市数量。
 
@@ -27,4 +26,39 @@ n个城市之间的道路连接起来恰好构成一棵树。
 
 输出例子1:
 3
+
+https://blog.csdn.net/gcola007/article/details/77923536
 */
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+void traversal(int n,int L,vector<int> &parent){
+    int maxlen=0;
+    vector<int> dp(n);
+    for(int i=0;i<n-1;i++){
+        dp[i+1]=dp[parent[i]]+1;
+        maxlen=max(maxlen,dp[i+1]);   //使用贪心算法计算最长链的长度
+    } 
+    int validpath=min(maxlen,L);
+    cout<<min(n,1+validpath+(L-validpath)/2);  
+    /*
+	这个式子表示先走非最长路径，后走最长路径。
+	L-validpath的值即为来回非最长路径的总步数，除以二即为访问过的城市数量。
+	validpath为最长路径的步数。
+    */  
+}
+int main(){
+    int n,L;
+    cin>>n>>L;
+    vector<int> parent;
+    for(int i=0;i<n-1;i++){
+        int temp;
+        cin>>temp;
+        parent.push_back(temp);
+    }
+    traversal(n,L,parent);
+    return 0;
+}

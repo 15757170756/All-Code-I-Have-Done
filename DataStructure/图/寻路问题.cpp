@@ -20,7 +20,8 @@ the total number of cities.
 The third line contains the integer R, 1 <= R <= 10000,
 the total number of roads.
 
-Each of the following R lines describes one road by specifying integers S, D, L and T separated by single blank characters :
+Each of the following R lines describes one road by specifying integers 
+S, D, L and T separated by single blank characters :
 S is the source city, 1 <= S <= N
 D is the destination city, 1 <= D <= N
 L is the road length, 1 <= L <= 100

@@ -140,7 +140,7 @@ void Graph::primMST()
 	// are being preinMST. This is weird syntax in C++.
 	// Refer below link for details of this syntax
 	// http://geeksquiz.com/implement-min-heap-using-stl/
-	priority_queue< iPair, vector <iPair>, greater<iPair> > pq;
+	priority_queue< iPair, vector <iPair>, greater<iPair>> pq;
 
 	int src = 0; // Taking vertex 0 as source
 

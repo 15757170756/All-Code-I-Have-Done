@@ -118,6 +118,7 @@ int main()
 	for (int i = 0; i < n; i++) {
 		scanf("%s", map[i], m + 1);
 	}
+	
 	for (int i = 0; i < n; i++)//初始化人，箱子，终点的位置  
 	{
 		for (int j = 0; j < m; j++)
@@ -138,6 +139,7 @@ int main()
 			}
 		}
 	}
+
 	cout << bfs() << endl;
 	return 0;
 }

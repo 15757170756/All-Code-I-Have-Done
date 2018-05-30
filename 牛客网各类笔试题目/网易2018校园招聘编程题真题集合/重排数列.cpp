@@ -133,3 +133,75 @@ int main()
 	}
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//自己写的，有进步
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <fstream>
+#include <cassert>
+#include <list>
+#include <queue>
+#include <limits>
+#include <unordered_set>
+#include <sstream>
+#include <map>
+#include <iterator>
+#include <set>
+#include <stack>
+#include <deque>
+#include <functional>
+#include <cstdlib>
+#include <ctime>
+#include <numeric>
+#include <unordered_map>
+
+using namespace std;
+
+int t, n;
+const int maxn = 1e5 + 5;
+int arr[maxn];
+
+int main()
+{
+	//freopen("input.txt", "r", stdin);
+	cin >> t;
+	while (t--) {
+		int timesOf4Cnt = 0;
+		int timeOf2Cnt = 0;
+		cin >> n;
+		for (int i = 0; i < n; ++i)
+			cin >> arr[i];
+		for (int i = 0; i < n; ++i) {
+			if (arr[i] % 4 == 0)
+				++timesOf4Cnt;
+			else if (arr[i] % 2 == 0)
+				++timeOf2Cnt;
+		}
+
+		if (2 * timesOf4Cnt + 1 + timeOf2Cnt > n)
+			cout << "Yes" << endl;
+		else
+			cout << "No" << endl;
+	}
+	return 0;
+}
+/*
+您的代码已保存
+答案正确:恭喜！您提交的程序通过了所有的测试用例
+*/
