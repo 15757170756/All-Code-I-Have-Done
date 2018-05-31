@@ -54,7 +54,7 @@ void PRINT_OPTIMAL_PARRNS(int **s, int i, int j, int row)
 
 int main()
 {
-	const int n = 6;
+	const int n = 6;//n为矩阵个数
 	int m[n + 1][n + 1];
 	int s[n + 1][n + 1];
 	//int n = 6;
@@ -66,7 +66,7 @@ int main()
 	//for (int i = 0; i < n + 1; ++i)
 	//	m[i] = new int[n + 1];
 
-	int p[7];
+	int p[7];//n+1，因为矩阵中行列的数组为矩阵个数+1
 	p[0] = 30;
 	p[1] = 35;
 	p[2] = 15;

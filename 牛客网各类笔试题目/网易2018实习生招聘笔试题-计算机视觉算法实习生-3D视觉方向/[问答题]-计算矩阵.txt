@@ -1,0 +1,3 @@
+[问答题]
+题目描述
+下图中l表示3D landmark，x表示6D pose，Pose-pose为里程计，pose-landmark的观察为相机投影。请写出Jacobian矩阵和Hessian矩阵的稀疏性结构(矩阵块结构即可)。其次请总结下你知道的landmark的参数化方式(3种即可)。
