@@ -134,3 +134,307 @@ case通过率为40.00%
 你的输出为:
 27
 */
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+注意判断重叠矩形数量最多的地方：遍历所有可能包含的点,
+看一下有多少矩形包含它
+注：重叠数量最多的地方肯定是一块矩形区域
+
+误区：A和B交，B和C交，但是A不和C交 --- B同时和A,C交, 但是重叠区域只为1
+*/
+//python
+
+import sys
+lines = sys.stdin.readlines()
+n = int(lines[0])
+x1 = list(map(int,lines[1].split()))
+y1 = list(map(int,lines[2].split()))
+x2 = list(map(int,lines[3].split()))
+y2 = list(map(int,lines[4].split()))
+# 遍历所有点的组合（包含了矩形所有角以及交点），看一下有多少矩形包含它
+res = 1
+for x in x1+x2:
+    for y in y1+y2:
+        cnt = 0
+        for i in range(n):
+            if x > x1[i] and y > y1[i] and x <= x2[i] and y <= y2[i]:
+                cnt += 1
+        res = max(res,cnt)
+print(res)
+
+
+
+
+
+
+
+
+
+
+
+
+//对n个点用相交关系建图，求最大团。。。
+
+#include<bitset>
+#include<stdio.h>
+using namespace std;
+const int maxn = 50+5;
+bitset<maxn> E[maxn];
+int x1[maxn],y1[maxn],x2[maxn],y2[maxn];
+inline void addEdge(int x,int y){
+    E[x].set(y);
+    E[y].set(x);
+}
+bool in(int xx,int yy,int w){
+    if (xx>x1[w]&&xx<x2[w]&&yy>y1[w]&&yy<y2[w])return true;
+    else return false;
+}
+ 
+bool check(int x,int y){
+    if (x1[x]>=x1[y]&&y1[x]>=y1[y]&&x1[x]<x2[y]&&y1[x]<y2[y]||x2[x]<=x2[y]&&y2[x]<=y2[y]&&x2[x]>x1[y]&&y2[x]>y1[y]||x1[x]>=x1[y]&&y2[x]<=y2[y]&&x1[x]<x2[y]&&y2[x]>y1[y]||x2[x]<=x2[y]&&y1[x]>=y1[y]&&x2[x]>x1[y]&&y1[x]<y2[y]||x1[x]>=x1[y]&&x2[x]<=x2[y]&&y1[x]<=y2[y]&&y2[x]>=y1[y])return true;
+    else return false;
+}
+int n;
+int ans ;
+void dfs(int dep,bitset<maxn> status){
+    ans = max(ans,(int)status.count());
+    if (dep==n+1)return;
+    if (ans>=status.count()+n-dep+1)return;
+    bitset<maxn> now1=status;
+    bitset<maxn> now2 = status;
+    dfs(dep+1,now2);
+    if (status==(status&E[dep])){
+        now1.set(dep);
+        dfs(dep+1,now1);
+    }
+}
+int main(){
+  //  freopen("input.in","r",stdin);
+    while (scanf("%d",&n)!=EOF&&n){
+        for (int i=1;i<=n;i++){
+            E[i].reset();
+        }
+        for (int i=1;i<=n;i++){
+            scanf("%d",x1+i);
+        }
+        for (int i=1;i<=n;i++){
+            scanf("%d",y1+i);
+        }
+        for (int i=1;i<=n;i++){
+            scanf("%d",x2+i);
+        }
+        for (int i=1;i<=n;i++){
+            scanf("%d",y2+i);
+        }
+        for (int i=1;i<=n;i++){
+            for (int j=1;j<=n;j++){
+                if (i==j)continue;
+                if (check(i,j))addEdge(i,j);
+            }
+        }
+        ans=0;
+        bitset<maxn> status;
+        status.reset();
+        dfs(1,status);
+        printf("%d\n",ans);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+O(n^2logn)算法。
+思路是首先对所有矩形排序，按照底边坐标值升序。
+
+考虑到若将平面按照所有矩形的的底边坐标值横向划分，
+每个划分中的最大重合情况总是出现在该划分底部，且等价一维的区间重合问题。如图所示:
+
+因此，我们每次迭代将下一个或多个底边坐标值最低的矩阵加入队列，
+并将整个在当前最低坐标值之下的矩形从队列中移除，
+然后用区间重合的算法计算队列中矩形在目前划分的重合数量。
+
+*/
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <map>
+#include <limits.h>
+using namespace std;
+// square overlap
+class Square{
+public:
+    int left, right, up, down;
+    bool operator <(const Square &x){
+        return down < x.down;
+    }
+};
+ 
+bool leftto(Square a, Square b){
+    return a.left < b.left;
+}
+ 
+void eraselower(vector<Square> &a, int ybound){
+    int deln = 0, i = 0, n = a.size();
+    while(i + deln < n){
+        if(a[i].up<=ybound)
+            swap(a[i], a[n-(++deln)]);
+        else
+            ++i;
+    }
+    a.erase(a.end()-deln, a.end());
+}
+ 
+int main(){
+    int n;
+    cin>>n;
+    vector<Square> sqs(n), row;
+    for(int i=0; i<n; ++i)
+        cin>>sqs[i].left;
+    for(int i=0; i<n; ++i)
+        cin>>sqs[i].down;
+    for(int i=0; i<n; ++i)
+        cin>>sqs[i].right;
+    for(int i=0; i<n; ++i)
+        cin>>sqs[i].up;
+    sort(sqs.begin(), sqs.end());
+    int sn = 0, curdown = 0, res = 0;
+    while(sn<n){
+        curdown = sqs[sn].down;
+        while(sn<n && sqs[sn].down == curdown)
+            row.push_back(sqs[sn++]);
+        eraselower(row, curdown);
+        sort(row.begin(), row.end(), leftto);
+        vector<int> rights;
+        for(Square x:row){
+            rights.erase(rights.begin(), upper_bound(rights.begin(), rights.end(), x.left));
+            rights.insert(upper_bound(rights.begin(), rights.end(), x.right), x.right);
+            if(res < rights.size()) res = rights.size();
+        }
+    }
+    cout<<res<<endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+注意判断重叠矩形数量最多的地方：遍历所有可能包含的点,
+看一下有多少矩形包含它
+注：重叠数量最多的地方肯定是一块矩形区域
+
+误区：A和B交，B和C交，但是A不和C交 --- B同时和A,C交, 但是重叠区域只为1
+*/
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <fstream>
+#include <cassert>
+#include <list>
+#include <queue>
+#include <limits>
+#include <unordered_set>
+#include <sstream>
+#include <map>
+#include <iterator>
+#include <set>
+#include <stack>
+#include <deque>
+#include <functional>
+#include <cstdlib>
+#include <ctime>
+#include <numeric>
+#include <unordered_map>
+#include <climits>
+
+using namespace std;
+
+const int maxn = 55;
+
+struct Rec {
+	int x1;
+	int y1;
+	int x2;
+	int y2;
+};
+
+Rec recs[maxn];
+int n;
+int xs[2 * maxn], ys[2 * maxn];
+
+int main()
+{
+	//freopen("input.txt", "r", stdin);
+	scanf("%d", &n);
+
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &recs[i].x1);
+		xs[i] = recs[i].x1;
+	}
+	for (int i = 0; i < n; ++i) {
+		scanf("%d", &recs[i].y1);
+		ys[i] = recs[i].y1;
+	}
+	for (int i = 0, j = n; i < n; ++i, ++j) {
+		scanf("%d", &recs[i].x2);
+		xs[j] = recs[i].x2;
+	}
+	for (int i = 0, j = n; i < n; ++i, ++j) {
+		scanf("%d", &recs[i].y2);
+		ys[j] = recs[i].y2;
+	}
+	int res = 1;
+	for (int i = 0; i < 2 * n; ++i) {
+		for (int j = 0; j < 2 * n; ++j) {
+			int cnt = 0;
+			for (int k = 0; k < n; ++k) {
+				if (xs[i] > recs[k].x1
+					&& ys[j] > recs[k].y1
+					&& xs[i] <= recs[k].x2
+					&& ys[j] <= recs[k].y2)
+					++cnt;
+				res = max(res, cnt);
+			}
+		}
+	}
+	
+	printf("%d\n", res);
+
+	return 0;
+}
+/*
+您的代码已保存
+答案正确:恭喜！您提交的程序通过了所有的测试用例
+*/

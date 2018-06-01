@@ -27,3 +27,60 @@
 输出例子1:
 3
 */
+
+
+/*
+解题思路： DP。dp[i][j][0]表示在前i个人里选满足条件的j个人且最后一个人是i的最大值，
+dp[i][j][1]为对应的最小值。
+
+dp[i][j][0] = max(dp[i-k][j-1][l] * a[i]) 其中k = 1,2，..., D, 
+和 l = 0,1。dp[i][j][1]有类似的转移方程。
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+const int imax_n = 55;
+
+int a[imax_n];
+long long dp[imax_n][15][2];
+int n;
+int K;
+int D;
+
+int main()
+{
+    while (scanf("%d", &n)!=-1)
+    {
+        memset(dp, 0, sizeof(dp));
+        for (int i = 1; i <= n; ++i)
+        {
+            scanf("%d", &a[i]);
+        }
+        scanf("%d%d", &K, &D);
+        dp[0][0][0] = dp[0][0][1] = 1LL;
+        for (int i = 1; i <= n; ++i)
+        {
+            dp[i][0][0] = 1LL;
+            dp[i][0][1] = 1LL;
+            for (int j = 1; j <= K && j <= i; ++j)
+            {
+                for (int k = 1; k <= D && i >= k; ++k)
+                {
+                    for (int l = 0; l <= 1; ++l)
+                    {
+                        dp[i][j][0] = max(dp[i][j][0], dp[i-k][j-1][l] * a[i]);
+                        dp[i][j][1] = min(dp[i][j][1], dp[i-k][j-1][l] * a[i]);
+                    }
+                }
+            }
+        }
+        long long ans = 0;
+        for (int i = 1; i <= n; ++i)
+        {
+            ans = max(ans, dp[i][K][0]);
+        }
+        printf("%lld\n", ans);
+    }
+    return 0;
+}
