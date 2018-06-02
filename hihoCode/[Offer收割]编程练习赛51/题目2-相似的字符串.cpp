@@ -41,3 +41,23 @@ NONU
 样例输出
 2
 */
+
+#include <bits/stdc++.h>
+using namespace std;
+string s;
+set<string> S;
+
+int main(void)
+{
+    int N;
+    scanf("%d", &N);
+    for(int i = 1; i <= N; i++)
+    {
+        cin >> s;
+        for(int j = 1; j < s.length(); j++) s[j] = ((s[j] - 'A') - (s[0] - 'A') + 26) % 26 + 'A';
+        s[0] = 'A';
+        S.insert(s);
+    }
+    printf("%d\n", (int) S.size());
+    return 0;
+}
