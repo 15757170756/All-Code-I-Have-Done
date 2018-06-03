@@ -82,3 +82,57 @@ H组第一对阵G组第二=胜者8
 说明
 注意：输入输出样例在小屏幕页面上可能被自动换行显示了，实际上是严格单行16个数字的。
 */
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <fstream>
+#include <cassert>
+#include <list>
+#include <queue>
+#include <limits>
+#include <unordered_set>
+#include <sstream>
+#include <map>
+#include <iterator>
+#include <set>
+#include <stack>
+#include <deque>
+#include <functional>
+#include <cstdlib>
+#include <ctime>
+#include <numeric>
+#include <unordered_map>
+#include <climits>
+
+const int knockout = 16;
+double match[knockout][knockout];
+double match81[8][2];
+double match41[4][4];
+double match21[2][8];
+double match11[1][16];
+
+int main()
+{
+	freopen("input.txt", "r", stdin);
+	for (int i = 0; i < knockout; ++i) {
+		for (int j = 0; j < knockout; ++j) {
+			scanf("%lf", &match[i][j]);
+		}
+	}
+	for (int i = 0, idx1 = 0,idx2 = 1;
+		i < 8; ++i, idx1 += 2, idx2 += 2) {
+		match81[i][0] = match[idx1][idx2];
+		match81[i][1] = match[idx2][idx1];
+	}
+	for (int i = 0, idx1 = 0, idx2 = 1;
+		i < 4; ++i, idx1 += 2, idx2 += 2){
+		match41[i][0] = match81[i][0] *
+			(match81[i + 2][0] * match[idx1][idx1 + 2]
+			+ match81[i + 2][1] * match[idx1][idx1 + 3]);
+	}
+
+	return 0;
+}

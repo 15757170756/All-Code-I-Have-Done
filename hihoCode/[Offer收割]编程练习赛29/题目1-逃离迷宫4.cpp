@@ -5,7 +5,9 @@
 描述
 小Hi被坏女巫抓进一座由无限多个格子组成的矩阵迷宫。
 
-小Hi一开始处于迷宫(x, y)的位置，迷宫的出口在(a, b)。小Hi发现迷宫被女巫施加了魔法，假设当前他处在(x, y)的位置，那么他只能移动到(x+y, y)或者(x, x+y)的位置上。
+小Hi一开始处于迷宫(x, y)的位置，迷宫的出口在(a, b)。
+小Hi发现迷宫被女巫施加了魔法，假设当前他处在(x, y)的位置，
+那么他只能移动到(x+y, y)或者(x, x+y)的位置上。
 
 小Hi想知道自己能不能逃离迷宫。
 
@@ -56,7 +58,8 @@ int main()
 		scanf("%d%d%d%d", &x, &y, &a, &b);
 		while (x <= a && y <= b && a != b)
 		{
-			if (x == a && y == b) break;
+			if (x == a && y == b) 
+				break;
 			if (a < b)
 			{
 				if (b % a != 0) b %= a;
@@ -75,6 +78,70 @@ int main()
 
 
 
+
+
+
+
+//自己写的
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <fstream>
+#include <cassert>
+#include <list>
+#include <queue>
+#include <limits>
+#include <unordered_set>
+#include <sstream>
+#include <map>
+#include <iterator>
+#include <set>
+#include <stack>
+#include <deque>
+#include <functional>
+#include <cstdlib>
+#include <ctime>
+#include <numeric>
+#include <unordered_map>
+#include <climits>
+
+using namespace std;
+
+int t, x, y, a, b;
+
+bool dfs(int x, int y)
+{
+	if (x == a && y == b)
+		return true;
+	if (x > a || y > b)
+		return false;
+	return (dfs(x + y, y) || dfs(x, x + y));
+}
+
+void work()
+{
+	if (dfs(x, y))
+		printf("YES\n");
+	else
+		printf("NO\n");
+}
+
+int main(int argc, char* argv[])
+{
+	freopen("input.txt", "r", stdin);
+	scanf("%d", &t);
+	while (t--) {
+		scanf("%d%d%d%d", &x, &y, &a, &b);
+		work();
+	}
+
+	return 0;
+}
+
+/*
+结果:Memory Limit Exceeded
+*/
 
 
 

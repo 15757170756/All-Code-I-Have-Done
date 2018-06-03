@@ -35,6 +35,41 @@ bool isPopOrder(const int* pPush, const int* pPop, int nLength)
 	return isOK;
 }
 
+
+class Solution {
+public:
+    bool IsPopOrder(vector<int> pushV,vector<int> popV) {
+        bool isOK = false;
+		
+		if (pushV.size() > 0 && popV.size() > 0) {
+			stack<int> auxStack;
+			vector<int>::const_iterator pushIter = pushV.begin();
+			vector<int>::const_iterator pushEnd = pushV.end();
+			vector<int>::const_iterator popIter = popV.begin();
+			vector<int>::const_iterator popEnd = popV.end();
+
+			while (popIter != popEnd) {
+				while (auxStack.empty() || auxStack.top() != *popIter) {
+					if (pushIter == pushEnd)
+						break;
+					auxStack.push(*pushIter);
+					++pushIter;
+				}
+				if (auxStack.top() != *popIter)
+					break;
+
+				auxStack.pop();
+				++popIter;
+			}
+			if (auxStack.empty() && popIter == popEnd)
+				isOK = true;
+		}
+		return isOK;
+    }
+};
+
+
+
 int main()
 {
 	int pPush[] = { 1, 2, 3, 4, 5 };
