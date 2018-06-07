@@ -61,132 +61,114 @@ O 1
 */
 
 
-#include<cstdio>
-#include<cstdlib>
-#include<cstring>
-#include<cmath>
-#include<iostream>
-#include<algorithm>
-#include<set>
+
+
+
+
+
+/*
+作者：toraoh
+链接：https://www.nowcoder.com/discuss/28562
+来源：牛客网
+
+Prob C：把问号放到平衡树/set里，
+记录并维护一下?（问号）出现的下标。
+开几个数组，记录手上有几张第x种优惠券，
+上次买入变成1张是什么时候，上次卖出变成0张是什么时候。
+买入的时候，如果之前手里有1张了，
+那么找出买入上1张后，到现在，中间的最早的？，
+把这个？改成卖出操作，这样这个买入就合理了。
+卖出的时候，之前已经没了的情况处理类似。
+（现在看看代码，感觉实现有bug：如果真实记录里，
+就只有1~10w这10万种优惠券、只有I和O两种操作，不允许空操作的话，那：
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+I 1
+I 2
+I 3
+...
+I 100000
+?
+O 1
+O 2
+O 3
+...
+O 100000
+我的程序会觉得没问题，但实际上有：买入10万张以后，
+这个？不可以再买入，只能随便卖出1张。
+但是随便卖出谁，都会导致后面10万条不同的卖出操作中，
+有谁实际上卖不出去了。
+那个问号，要不可以代表任何操作，
+要不可以是I 100001，不然我的程序是错的……
+UPD：根据红q（quailty，http://codeforces.com/profile/quailty ，
+ http://osu.ppy.sh/u/6423914 ）的意思，是允许有I 100001，那就没问题了
+*/
+
+
+#include <stdio.h>
+#include <algorithm>
+#include <set>
 using namespace std;
-typedef unsigned long long ull;
-const int dir[4][2]={{0,1},{1,0},{0,-1},{-1,0}};
-char cur[25][25],nxt[25][25];
-set<pair<ull,ull> > st;
-inline void init()
-{
-    st.clear();
-    for(int i=1;i<=19;i++)
-        for(int j=1;j<=19;j++)
-            cur[i][j]='.';
-    for(int i=1;i<=19;i++)
-        for(int j=1;j<=19;j++)
-            nxt[i][j]='.';
-}
-inline void cop()
-{
-    for(int i=1;i<=19;i++)
-        for(int j=1;j<=19;j++)
-            nxt[i][j]=cur[i][j];
-}
-inline void pas()
-{
-    for(int i=1;i<=19;i++)
-        for(int j=1;j<=19;j++)
-            cur[i][j]=nxt[i][j];
-}
-inline bool check()
-{
-    ull has[2]={0,0};
-    for(int i=1;i<=19;i++)
-        for(int j=1;j<=19;j++)
-        {
-            has[0]=has[0]*131+nxt[i][j];
-            has[1]=has[1]*137+nxt[i][j];
-        }
-    if(st.find(make_pair(has[0],has[1]))==st.end())
-    {
-        st.insert(make_pair(has[0],has[1]));
-        return 1;
-    }
-    else return 0;
-}
-inline void show()
-{
-    for(int i=1;i<=19;i++)
-        printf("%s\n",cur[i]+1);
-}
-int vis[25][25];
-inline void fre()
-{
-    for(int i=1;i<=19;i++)
-        for(int j=1;j<=19;j++)
-            vis[i][j]=0;
-}
-bool dfs(int x,int y,char g)
-{
-    if(nxt[x][y]=='.')return 1;
-    if(nxt[x][y]!=g)return 0;
-    vis[x][y]=1;
-    bool isok=0;
-    for(int i=0;i<4;i++)
-    {
-        int tx=x+dir[i][0],ty=y+dir[i][1];
-        if(!vis[tx][ty])
-            isok|=dfs(tx,ty,g);
-    }
-    return isok;
-}
-void pick(int x,int y,char g)
-{
-    nxt[x][y]='.';
-    for(int i=0;i<4;i++)
-    {
-        int tx=x+dir[i][0],ty=y+dir[i][1];
-        if(nxt[tx][ty]==g)pick(tx,ty,g);
-    }
-}
-int main()
-{
-    int T;
-    scanf("%d",&T);
-    while(T--)
-    {
-        int n;
-        scanf("%d",&n);
-        init();
-        check();
-        for(int i=1;i<=n;i++)
-        {
-            char go[5];
-            int x,y;
-            scanf("%s%d%d",go,&x,&y);
-            char a=go[0],b="BW"[a=='B'];
-            if(cur[x][y]!='.')printf("miss 1\n");
-            else
-            {
-                cop();
-                nxt[x][y]=a;
-                fre();
-                bool isok=dfs(x,y,a);
-                for(int i=0;i<4;i++)
-                {
-                    int tx=x+dir[i][0],ty=y+dir[i][1];
-                    if(!vis[tx][ty] && nxt[tx][ty]==b && !dfs(tx,ty,b))
-                    {
-                        pick(tx,ty,b);
-                        isok=1;
-                    }
-                }
-                if(isok)
-                {
-                    if(check())pas();
-                    else printf("miss 3\n");
-                }
-                else printf("miss 2\n");
-            }
-        }
-        show();
-    }
-    return 0;
+int cnt[100005];
+int lasto[100005];
+int lasti[100005];
+int maxid,err;
+set<int> left;
+char str[2];
+int id,m;
+int main(){
+    while(~scanf("%d",&m)){
+        fill(cnt,cnt+maxid+1,0);
+        fill(lasto,lasto+maxid+1,0);
+        fill(lasti,lasti+maxid+1,0);
+        maxid=0;
+        err=-1;
+        left.clear();
+        for(int i=1;i<=m;i++){
+            scanf("%s",str);
+            if(str[0]=='?'){
+                left.insert(i);
+            }else{
+                scanf("%d",&id);
+                maxid=max(maxid,id);
+                if(str[0]=='I'){
+                    cnt[id]++;
+                    if(cnt[id]>=2){
+                        auto it=left.lower_bound(lasti[id]);
+                        if(it!=left.end()){
+                            left.erase(it);
+                            --cnt[id];
+                        }else{
+                            if(err==-1)err=i;
+                        }
+                    }
+                    lasti[id]=i;
+                }else{
+                    cnt[id]--;
+                    if(cnt[id]<0){
+                        auto it=left.lower_bound(lasto[id]);
+                        if(it!=left.end()){
+                            left.erase(it);
+                            ++cnt[id];
+                        }else{
+                            if(err==-1)err=i;
+                        }
+                    }
+                    lasto[id]=i;
+                }
+            }
+        }
+        printf("%d\n",err);
+         
+    }
+    return 0;
 }

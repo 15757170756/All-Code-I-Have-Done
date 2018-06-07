@@ -93,3 +93,61 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+struct TreeNode {
+	int val;
+	struct TreeNode *left;
+	struct TreeNode *right;
+	TreeNode(int x) :
+			val(x), left(NULL), right(NULL) {
+	}
+};*/
+class Solution {
+public:
+    void auxFindPath(TreeNode *root, int expectNumber, 
+                     vector<int> &path, int &currentSum, 
+                     vector<vector<int>> &result)
+    {
+        currentSum += root->val;
+        path.push_back(root->val);
+        bool isLeaf = ((root->left == nullptr) && (root->right == nullptr));
+        if(currentSum == expectNumber && isLeaf) 
+            result.push_back(path);
+        
+        if(root->left != nullptr)
+            auxFindPath(root->left, expectNumber, path,
+                       currentSum, result);
+        
+        if(root->right != nullptr)
+            auxFindPath(root->right, expectNumber, path,
+                       currentSum, result);
+        
+        currentSum -= root->val;
+        path.pop_back();   
+    }
+
+    vector<vector<int>> FindPath(TreeNode* root,int expectNumber) {
+        vector<vector<int>> result;
+        if(root == nullptr)
+            return result;
+        vector<int> path;
+        int currentSum = 0;
+        auxFindPath(root, expectNumber, path, currentSum, result);
+        return result;
+    }
+};

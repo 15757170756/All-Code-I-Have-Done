@@ -37,23 +37,41 @@ difference = SUM(a[i] - b[i])2 (1 ≤ i ≤ n),其中SUM()表示求和
 */
 
 
-#include<cstdio>
-#include<cstdlib>
-#include<cstring>
-#include<cmath>
-#include<iostream>
-#include<algorithm>
+
+
+/*
+Prob A：根据题意实现即可。
+注意读题，要求连续的子序列。
+所以只要把A串在B串上，一个个位置比较过去，取最小值作为答案即可。
+*/
+
+#include <stdio.h>
+#include <limits.h>
+#include <algorithm>
 using namespace std;
-int a[1<<20];
-int main()
-{
-    int n,cnt=0;
-    scanf("%d",&n);
-    for(int i=0;i<n;i++)
-        scanf("%d",&a[i]),cnt+=(a[i]<=a[0]);
-    int r=-1;
-    while(cnt)
-    	cnt>>=1,r++;
-    printf("%d\n",r);
-    return 0;
+int a[1005],b[1005];
+int n,m;
+int f[1005];
+ 
+void get(int* arr,int& x){
+    scanf("%d",&x);
+    for(int i=1;i<=x;i++){
+        scanf("%d",&arr[i]);
+    }
+}
+ 
+int getans(int* a,int* b,int n){
+    int ret=0;
+    for(int i=0;i<n;i++)ret+=(a[i]-b[i])*(a[i]-b[i]);
+    return ret;
+}
+ 
+int main(){
+    get(a,n);get(b,m);
+    int ans=INT_MAX;
+    for(int i=1;i+n-1<=m;i++){
+        ans=min(ans,getans(a+1,b+i,n));
+    }
+    printf("%d\n",ans);
+    return 0;
 }
