@@ -351,13 +351,15 @@ struct edge{
 int N, M;
 int par[Max_n];
 
-int Find(int x){
+int Find(int x)
+{
 	if (par[x] == x)
 		return x;
 	return par[x] = Find(par[x]);
 }
 
-int Kruskal(){
+int Kruskal()
+{
 	for (int i = 0; i < N; i++)
 		par[i] = i;
 	int ans = 0, sum = 0;
@@ -369,9 +371,11 @@ int Kruskal(){
 			ans++; sum += e[i].cost;
 			par[x] = y;
 		}
-		if (ans == N - 1)break;
+		if (ans == N - 1)
+			break;
 	}
-	if (ans < N - 1)return -1;
+	if (ans < N - 1)
+		return -1;
 	return sum;
 }
 

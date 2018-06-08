@@ -1,5 +1,6 @@
 /*
-实现find_sub_string(str1,str2)函数，判断字符串str2在str1中出现的次数。返回str2在str1中出现的次数。
+实现find_sub_string(str1,str2)函数，判断字符串str2在str1中出现的次数。
+返回str2在str1中出现的次数。
 int find_sub_string(const std::string& str1, const string& str2);
 */
 #include <iostream>
