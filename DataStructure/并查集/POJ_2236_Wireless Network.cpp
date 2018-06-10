@@ -93,7 +93,8 @@ void Union(int x, int y)
 {
 	x = Find(x);
 	y = Find(y);
-	if (x == y) return;
+	if (x == y) 
+		return;
 	if (rank[x] >= rank[y])
 	{
 		pre[y] = x;

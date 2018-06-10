@@ -44,3 +44,73 @@ n行每行输出一个1到3之间的整数。1表示一定出线，2表示一定
 3
 2
 */
+
+
+
+
+/*
+Score：
+Idea：
+这是一道考验参赛者是否细心的题。 我们只要枚举丢失的那个成绩的值， 然后计算出
+每个人的成绩， 按照题意看一下是否有可能入选即可。 需要注意的是这道题对于精度的
+要求较高。
+时间复杂度为 O(nmC + nClogn)
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i,a,n) for (int i=a;i<n;i++)
+#define per(i,a,n) for (int i=n-1;i>=a;i--)
+#define pb push_back
+#define mp make_pair
+#define all(x) (x).begin(),(x).end()
+#define fi first
+#define se second
+#define SZ(x) ((int)(x).size())
+typedef vector<int> VI;
+typedef long long ll;
+typedef pair<int,int> PII;
+const ll mod=1000000007;
+ll powmod(ll a,ll b) {ll res=1;a%=mod; assert(b>=0); for(;b;b>>=1){if(b&1)res=res*a%mod;a=a*a%mod;}return res;}
+ll gcd(ll a,ll b) { return b?gcd(b,a%b):a;}
+// head
+
+typedef unsigned long long score;
+
+const int N=510;
+int n,m,k,c,w[N],sco[N][10],sx,sy,ms[10],c1[N],c2[N];
+score wt[N],s[N],t[N];
+
+int main() {
+	scanf("%d%d%d%d",&n,&m,&k,&c);
+	rep(i,0,m) scanf("%d",w+i);
+	rep(i,0,n) rep(j,0,m) {
+		scanf("%d",&sco[i][j]);
+		if (sco[i][j]==-1) { sx=i; sy=j; }
+	}
+	rep(x,0,c+1) {
+		sco[sx][sy]=x;
+		rep(j,0,m) {
+			ms[j]=0;
+			rep(i,0,n) ms[j]=max(ms[j],sco[i][j]);
+		}
+		rep(j,0,m) {
+			wt[j]=w[j];
+			if (ms[j]==0) { wt[j]=0; continue; }
+			rep(k,0,m) if (j!=k&&ms[k]!=0) wt[j]*=ms[k];
+		}
+		rep(i,0,n) {
+			s[i]=0;
+			rep(j,0,m) s[i]+=wt[j]*sco[i][j];
+			t[i]=s[i];
+		}
+//		puts("ff");
+		nth_element(s,s+n-k,s+n);
+//		puts("gg");
+		rep(i,0,n) {
+			if (t[i]>=s[n-k]) c1[i]++;
+			if (t[i]<=s[n-k]) c2[i]++;
+		}
+	}
+	rep(i,0,n) if (c2[i]==0) puts("1"); else if (c1[i]==0) puts("2"); else puts("3");
+}

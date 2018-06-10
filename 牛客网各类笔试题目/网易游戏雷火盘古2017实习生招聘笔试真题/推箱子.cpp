@@ -55,7 +55,8 @@ struct q
 };
 int moves[4][2] = { { 0, 1 }, { 0, -1 }, { -1, 0 }, { 1, 0 } };//四个方向  
 char map[10][10];//地图数组  
-int chx, chy, cbx, cby, ex, ey, n, m;//分别表示当前人的位置，盒子的位置，终点位置，以及地图尺寸。  
+int chx, chy, cbx, cby, ex, ey, n, m;
+//分别表示当前人的位置，盒子的位置，终点位置，以及地图尺寸。  
 
 bool bound(int x, int y)//边界检查，遇到不合理的位置返回真  
 {
@@ -76,7 +77,8 @@ int bfs()
 		temp = que.front();//获取首元素  
 		que.pop();//首元素弹出  
 		if (temp.bx == ex&&temp.by == ey)
-			return state[temp.px][temp.py][temp.bx][temp.by] - 1;//如果箱子在终点，结束，返回步数  
+			return state[temp.px][temp.py][temp.bx][temp.by] - 1;
+			//如果箱子在终点，结束，返回步数  
 		for (int i = 0; i < 4; i++)//四个方向开始搜索了  
 		{
 			//先更新人的位置  

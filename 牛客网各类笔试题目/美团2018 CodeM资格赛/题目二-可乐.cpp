@@ -33,3 +33,50 @@ TA们一共要买n瓶可乐，每种可乐可以买无限多瓶，
 另有二分之一的概率喝到第二类可乐，期望得到的快乐程度和为1*0.5+3*0.5+2*0.5+1*0.5=3.5；
 3. 买2瓶第二类可乐，小美和小团各喝一瓶，期望得到的快乐程度和为3+1=4。
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+考虑每种可乐带来的期望收益，
+每种可乐会有m/n的概率被小美喝， (m-n)/n的概率被小团喝，
+所以期望收益为m/n*a+(m-n)/n*b. 因为期望的线性可加性，我们只要全买期望收益
+最大的可乐就可以了。
+时间复杂度为 O(k)。
+*/
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <cmath>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int n, m, k;
+
+int main() {
+    scanf("%d%d%d", &n, &m, &k);
+    long long maxE = -1e16; 
+    int pos = 0;
+    for (int i = 1; i <= k; i++) {
+        int a, b;
+        scanf("%d%d", &a, &b);
+        long long E = 1ll * m * a + 1ll * (n - m) * b;
+        if (E >= maxE) 
+            maxE = E, pos = i;
+    }    
+    for (int i = 1; i <= k; i++)
+        printf("%d%c", i == pos ? n : 0, i == k ? '\n' : ' ');
+}

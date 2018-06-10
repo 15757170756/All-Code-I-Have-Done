@@ -136,3 +136,51 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+/*
+Worldcup：
+Idea：
+假设16进8为第一轮比赛， 8进4为第二轮比赛，4进2为第三轮比赛，决赛为第四
+轮比赛，那么我们可以用 f[i][j]表示在第 i 轮比赛后， j 还没有被淘汰的概率，对于某场特
+定的比赛，我们枚举一下参赛双方，就知道了每个人晋级下一轮的概率。活到最后的就
+是赢家。
+时间复杂度为 O(1)。
+*/
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <cmath>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+double v[6][16][16], p[16][16];
+
+int main() {
+    for (int i = 0; i < 16; i++)
+        for (int j = 0; j < 16; j++)
+            scanf("%lf", &p[i][j]);
+    memset(v, 0, sizeof(v));
+    for (int i = 0; i < 16; i++)
+        v[0][i][0] = 1.0;
+    for (int i = 1; i <= 4; i++)
+        for (int j = 0; j < 16 >> i; j++) {
+            for (int x = 0; x < 1 << (i - 1); x++)
+                for (int y = 0; y < 1 << (i - 1); y++)
+                    v[i][j][x] += v[i - 1][j << 1][x] * v[i - 1][(j << 1) + 1][y] * p[(j << i) + x][(j << i) + (1 << (i - 1)) + y],
+                    v[i][j][(1 << (i - 1)) + y] += v[i - 1][j << 1][x] * v[i - 1][(j << 1) + 1][y] * (1.0 - p[(j << i) + x][(j << i) + (1 << (i - 1)) + y]);
+            }
+    for (int i = 0; i < 16; i++)
+        printf("%.10f%c", v[4][0][i], i == 15 ? '\n' : ' ');
+}

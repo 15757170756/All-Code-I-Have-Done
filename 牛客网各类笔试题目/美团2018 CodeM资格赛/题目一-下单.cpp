@@ -126,3 +126,83 @@ int main(int argc, char* argv[])
 您的代码已保存
 答案正确:恭喜！您提交的程序通过了所有的测试用例
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Order：
+Idea：
+这是一个在点外卖的时候经常会遇到的问题， 究竟要不要因为特价商品而放弃满减
+呢？这题的思路是要选择特价商品的话， 就选所有的特价商品， 否则就走满减。 所以只
+要计算一下选择八折后的最便宜的价格， 以及不选择八折的最便宜的价格， 比较一下即
+可。
+时间复杂度为 O(n + m)。
+Solution：
+https://paste.ubuntu.com/p/NrTk4pM4qx/
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <algorithm>
+using namespace std;
+
+void Assert(bool t){if(!t){printf("data error\n");exit(0);}}
+
+int n,m,i,j,k,ans;
+int a[15],t[15],b[15],c[15];
+
+int calc1()
+{
+	int i,sum=0;
+	for(i=1;i<=n;++i)
+		if(t[i])
+			sum+=a[i]*80;
+		else 
+			sum+=a[i]*100;
+	return sum;
+}
+
+int calc2()
+{
+	int i,sum=0,ans;
+	for(i=1;i<=n;++i)
+		sum+=a[i];
+	ans=sum;
+	for(i=1;i<=m;++i)
+		if(sum>=b[i])
+			ans=min(ans,sum-c[i]);
+	return ans*100;
+}
+
+int main()
+{
+	scanf("%d%d",&n,&m);
+	Assert(1<=n&&n<=5);
+	Assert(1<=m&&m<=5);
+	for(i=1;i<=n;++i)
+		scanf("%d%d",&a[i],&t[i]),Assert(1<=a[i]&&a[i]<=100&&0<=t[i]&&t[i]<=1);
+
+	for(i=1;i<=m;++i)
+		scanf("%d%d",&b[i],&c[i]),Assert(1<=c[i]&&c[i]<b[i]&&b[i]<=1000);;
+	ans=min(calc1(),calc2());
+	printf("%d.",ans/100);
+	if(ans%100<10)
+		printf("0");
+	printf("%d\n",ans%100);
+}

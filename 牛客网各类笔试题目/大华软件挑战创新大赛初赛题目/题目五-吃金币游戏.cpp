@@ -1,7 +1,8 @@
 /*
 "有一个吃金币游戏：
 1.地图中有N个城堡（编号分别为0~N-1），每个城堡中挂着一面旗子；
-2.某些城堡之间是连通的，在其连通的路上，分散着若干个金币（个数可能相同，也可能不同）；
+2.某些城堡之间是连通的，在其连通的路上，分散着若干个金币
+（个数可能相同，也可能不同）；
 3.玩家走过存在金币的路之后，可以获得这条路上的所有金币，同一条路走多次，
 只有第一次可获得金币；
 
@@ -233,7 +234,7 @@ int main(int argc, char* argv[])
 
 using namespace std;
 
-typedef pair<int, int>P;
+typedef pair<int, int> P;
 const int maxn = 100;
 const int INF = 0x3f3f3f3f;
 struct Edge{
@@ -294,6 +295,7 @@ int prime(int s)
 	return -1;*/
 	return -ans;
 }
+
 int main()
 {
 	//freopen("input.txt", "r", stdin);

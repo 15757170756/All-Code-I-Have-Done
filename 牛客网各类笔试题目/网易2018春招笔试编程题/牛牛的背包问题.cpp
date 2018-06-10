@@ -65,17 +65,20 @@ void calc(LL *item, int mx, vector<LL> &val){
 		for (int j = 0; j < 20; j++){
 			if (i & (1 << j)){
 				sum += item[j];
-				if (sum > w) break;
+				if (sum > w) 
+					break;
 			}
 		}
-		if (sum <= w) val.push_back(sum);
+		if (sum <= w) 
+			val.push_back(sum);
 	}
 }
 int main() {
 	val1.clear();
 	val2.clear();
 	scanf("%d%d", &n, &w);
-	for (int i = 0; i < n; i++) scanf("%lld", &v[i]);
+	for (int i = 0; i < n; i++) 
+		scanf("%lld", &v[i]);
 	calc(v, 1 << (n / 2), val1);
 	calc(&v[n - (n + 1) / 2], 1 << (n - n / 2), val2);
 	sort(val2.begin(), val2.end());

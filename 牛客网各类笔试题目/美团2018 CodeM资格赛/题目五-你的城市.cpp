@@ -98,3 +98,104 @@
 和样例四类似，但假如错过了第一个车次，
 改乘车次二在16:30到达城市2是不足以赶上16:30出发的车次四的。
 */
+
+
+
+
+
+
+
+/*
+
+*/
+#include<cstdio>
+#include<cstdlib>
+#include<string>
+#include<algorithm>
+
+#define For(i,l,r) for(int i=l;i<=r;i++)
+#define Dor(i,r,l) for(int i=r;i>=l;i--)
+#define timeMagicNumber 49
+#define inf 100000000
+
+using namespace std;
+
+char convert_buffer[10];
+int convert(char* buffer) {
+	int a,b;
+	sscanf(buffer,"%d:%d",&a,&b);
+	return a*2 + b / 30;
+}
+char* convert(int num){
+	sprintf(convert_buffer, "%d:%02d", num/2, (num&1)*30);
+	return convert_buffer;
+}
+
+struct Edge{
+	int x,y,co,s,t;
+	void read(){
+		scanf("%d%d%d",&x,&y,&co);
+		scanf("%s",convert_buffer); s = convert(convert_buffer);
+		scanf("%s",convert_buffer); t = convert(convert_buffer);
+	}
+}E[200005];
+
+int n,m;
+int cnt;
+int son[200005],Next[500005],ed[500005],edge_cost[500005],edge_s[500005],edge_t[500005];
+
+void graph_link(int x,int y,int c,int s,int t){
+	Next[++cnt] = son[x]; son[x]=cnt; ed[cnt]=y;
+	edge_cost[cnt] = c; edge_s[cnt] = s; edge_t[cnt] = t;
+}
+
+int f[2005][55],ff[200005];
+int dist[2005][55];
+
+int dfs(int u,int ut){
+	if (f[u][ut] == 1) return 1;
+	if (f[u][ut] == 0) return 0;
+	if (ut == timeMagicNumber) return 0;
+
+	f[u][ut] = 0;
+	for(int i=son[u];i;i=Next[i])
+	if(edge_s[i] == ut){
+		f[u][ut] |= dfs(ed[i],edge_t[i]+1);
+	}
+	f[u][ut] |= dfs(u,ut+1);
+
+	return f[u][ut];
+}
+
+void dfs(int u,int ut,int di){
+	if (di >= dist[u][ut]) return;
+	dist[u][ut] = di;
+	if (u == n) return;
+	if (ut == timeMagicNumber) return;
+	if (ut >= ff[u]) return;
+
+	dfs(u,ut+1,di);
+	for(int i=son[u];i;i=Next[i])
+	if(edge_s[i] == ut){
+		dfs(ed[i],edge_t[i]+1,edge_cost[i]+di);
+	}
+}
+
+int main(){
+	scanf("%d%d",&n,&m);
+	For(i,1,m) E[i].read();
+	For(i,1,m) graph_link(E[i].x,E[i].y,E[i].co,E[i].s,E[i].t);
+
+	For(i,1,n-1) For(t,0,timeMagicNumber) f[i][t] = -1,f[n][t] = 1;
+	For(i,1,n-1) For(t,0,timeMagicNumber-1) dfs(i,t);
+
+	For(i,1,n) For(t,0,timeMagicNumber) if(f[i][t] == 1) ff[i] = t;
+
+	For(i,1,n) For(t,0,timeMagicNumber) dist[i][t] = inf;
+	dfs(1,0,0);
+
+	int ans = inf;
+	For(nt,0,timeMagicNumber) ans = min(ans,dist[n][nt]);
+	if (ans == inf) ans = -1;
+	printf("%d\n",ans);
+}

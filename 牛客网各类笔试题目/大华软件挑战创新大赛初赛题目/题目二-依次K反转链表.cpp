@@ -245,3 +245,100 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+struct ListNode
+{
+	int val;
+	ListNode *next;
+	ListNode(int data)
+		:val(data), next(NULL){}
+};
+
+void push_back(ListNode **pHead, int val)
+{
+	ListNode *newNode = new ListNode(val);
+	if (*pHead == nullptr) {
+		*pHead = newNode;
+		return;
+	}
+	ListNode *curNode = *pHead;
+	while (curNode->next != nullptr)
+		curNode = curNode->next;
+	curNode->next = newNode;
+}
+
+void printList(ListNode *pHead)
+{
+	while (pHead != nullptr) {
+		printf("%d ", pHead->val);
+		pHead = pHead->next;
+	}
+	printf("\n");
+}
+
+ListNode* reverseK(ListNode *head, int k)
+{
+	if (head == nullptr || k <= 1)
+		return head;
+	int num = 0;
+	ListNode *preHead = new ListNode(-1);
+	preHead->next = head;
+	ListNode *preNode = preHead, *curNode = preHead, *nextNode;
+	while (curNode = curNode->next)
+		++num;
+	while (num >= k) {
+		curNode = preNode->next;
+		nextNode = curNode->next;
+		for (int i = 1; i < k; ++i) {
+			curNode->next = nextNode->next;
+			nextNode->next = preNode->next;
+			preNode->next = nextNode;
+			nextNode = curNode->next;
+		}
+		preNode = curNode;
+		num -= k;
+	}
+
+	curNode = preNode->next;
+	nextNode = curNode->next;
+	for (int i = 1; i < num; ++i) {
+		curNode->next = nextNode->next;
+		nextNode->next = preNode->next;
+		preNode->next = nextNode;
+		nextNode = curNode->next;
+	}
+
+	return preHead->next;
+}
+
+int main(int argc, char* argv[])
+{
+	freopen("input.txt", "r", stdin);
+	int t;
+	scanf("%d", &t);
+	while (t--) {
+		int n;
+		scanf("%d", &n);
+		ListNode *pHead = nullptr;
+		while (n--) {
+			int temp;
+			scanf("%d", &temp);
+			push_back(&pHead, temp);
+		}
+		printList(pHead);
+		int k;
+		scanf("%d", &k);
+		printList(reverseK(pHead, k));
+	}
+	return 0;
+}
