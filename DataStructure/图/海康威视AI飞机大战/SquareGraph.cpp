@@ -49,7 +49,8 @@ bool SquareGraph::compareNodes::operator()(Node n1, Node n2){
 }
 
 bool SquareGraph::isInsideMap(pair<int, int> coord){
-	return (coord.first >= 0) && (coord.second >= 0) && (coord.first < map.size()) && (coord.second < map[0].size()) ;
+	return (coord.first >= 0) && (coord.second >= 0) 
+	&& (coord.first < map.size()) && (coord.second < map[0].size()) ;
 }
 
 set<Node> SquareGraph::getNeighbours(Node n){

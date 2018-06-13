@@ -5,9 +5,10 @@ User Tried: 272
 Total Accepted: 127
 Total Submissions: 676
 Difficulty: Hard
+
+
 An undirected, connected graph of N nodes
  (labeled 0, 1, 2, ..., N-1) is given as graph.
-
 graph.length = N, and j != i is in the list graph[i] exactly once, 
 if and only if nodes i and j are connected.
 

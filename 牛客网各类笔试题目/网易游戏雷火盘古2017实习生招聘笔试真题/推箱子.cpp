@@ -45,7 +45,9 @@
 #include<iostream>  
 #include<queue>  
 #include<string>  
+
 using namespace std;
+
 int state[10][10][10][10];//四维数组表示人和箱子的位置状态,开始全为0  
 
 struct q
@@ -56,6 +58,7 @@ struct q
 int moves[4][2] = { { 0, 1 }, { 0, -1 }, { -1, 0 }, { 1, 0 } };//四个方向  
 char map[10][10];//地图数组  
 int chx, chy, cbx, cby, ex, ey, n, m;
+
 //分别表示当前人的位置，盒子的位置，终点位置，以及地图尺寸。  
 
 bool bound(int x, int y)//边界检查，遇到不合理的位置返回真  
@@ -65,6 +68,7 @@ bool bound(int x, int y)//边界检查，遇到不合理的位置返回真
 	else
 		return false;
 }
+
 //广度优先算法
 int bfs()
 {

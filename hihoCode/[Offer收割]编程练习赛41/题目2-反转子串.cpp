@@ -164,7 +164,7 @@ int main(){
 	for (int i = 0; i < s.size(); ++i){
 		if (s[i] == '(')
 			v.push(i);
-		else if (s[i] == ')'){
+		else if (s[i] == ')') {
 			int x = v.top();
 			v.pop();
 			match[i] = x;
@@ -172,7 +172,7 @@ int main(){
 		}
 	}
 	int cur = 0, d = 1;
-	do{
+	do {
 		if (!isalpha(s[cur]) && !vis[cur]){
 			vis[cur] = true;
 			cur = match[cur];

@@ -4,9 +4,11 @@
 单点时限:1000ms
 内存限制:256MB
 描述
-一般我们在对字符串排序时，都会按照字典序排序。当字符串只包含小写字母时，相当于按字母表"abcdefghijklmnopqrstuvwxyz"的顺序排序。
+一般我们在对字符串排序时，都会按照字典序排序。当字符串只包含小写字母时，
+相当于按字母表"abcdefghijklmnopqrstuvwxyz"的顺序排序。
 
-现在我们打乱字母表的顺序，得到一个26个字母的新顺序。例如"bdceafghijklmnopqrstuvwxyz"代表'b'排在'd'前，'d'在'c'前，'c'在'e'前……
+现在我们打乱字母表的顺序，得到一个26个字母的新顺序。
+例如"bdceafghijklmnopqrstuvwxyz"代表'b'排在'd'前，'d'在'c'前，'c'在'e'前……
 
 给定N个字符串，请你按照新的字母顺序对它们排序。
 

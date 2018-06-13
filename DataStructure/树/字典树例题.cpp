@@ -24,13 +24,16 @@ hatword
 #include <cstdio>  
 #include <algorithm>  
 using namespace std;
+
 typedef struct Trie {
 	int flag;
 	Trie* next[26];
 } Trie;
+
 Trie* root;
 int flag;
 char a[50000][50];
+
 void Inti()//初始化  
 {
 	root = (Trie*)malloc(sizeof(Trie));
@@ -38,6 +41,7 @@ void Inti()//初始化
 	for (int i = 0; i < 26; i++)
 		root->next[i] = NULL;
 }
+
 void ChaRu(char *a)//建立字典树    插入单词  
 {
 	Trie* p = root, *q;
@@ -58,6 +62,7 @@ void ChaRu(char *a)//建立字典树    插入单词
 	}
 	p->flag = 1;
 }
+
 int CZ(char *a)//查找单词  
 {
 	Trie *p = root;
@@ -71,10 +76,12 @@ int CZ(char *a)//查找单词
 	}
 	return p->flag;
 }
+
 int SF(Trie *p)//释放空间    这个题不用也可以过  
 {
 	//    Trie *p=root;  
-	if (p == NULL)return 0;
+	if (p == NULL)
+		return 0;
 	for (int i = 0; i<26; i++)
 	{
 		if (p->next[i] != NULL)
@@ -83,6 +90,7 @@ int SF(Trie *p)//释放空间    这个题不用也可以过
 	free(p);
 	return 0;
 }
+
 int main()
 {
 

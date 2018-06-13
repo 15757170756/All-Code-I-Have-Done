@@ -43,8 +43,10 @@ using namespace std;
 int flag;
 void dfs(int a, int b, int x, int y)
 {
-	if (a == x&&b == y)flag = 1;
-	if (a > x || b > y)return;
+	if (a == x&&b == y)
+		flag = 1;
+	if (a > x || b > y)
+		return;
 	dfs(a + b, b, x, y);
 	dfs(a, a + b, x, y);
 }

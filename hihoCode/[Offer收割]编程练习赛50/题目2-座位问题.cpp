@@ -45,26 +45,32 @@ HIHO银行等待区有一排N个座位，从左到右依次编号1~N。现在有
 #include<cstdlib>
 #include<iostream>
 #include<algorithm>
+
 using namespace std;
+
 const int maxn = 100010;
 struct in
 {
 	int id; int l; int r;
 	in(){}
-	in(int x, int y, int z) :id(x), l(y), r(z){}
-	friend bool operator < (in a, in b){
-		if (a.r - a.l == b.r - b.l) return a.id>b.id;
+	in(int x, int y, int z) :id(x), l(y), r(z) {}
+	friend bool operator < (in a, in b) {
+		if (a.r - a.l == b.r - b.l) 
+			return a.id>b.id;
 		return a.r - a.l < b.r - b.l;
 	}
 };
+
 int a[maxn], used[maxn], L[maxn], R[maxn];
 priority_queue<in>q;
+
 int main()
 {
 	int N, M, K, i, j;
 	scanf("%d%d%d", &N, &M, &K);
 	used[0] = 1; used[N + 1] = 1;
-	for (i = 1; i <= M; i++) scanf("%d", &a[i]);
+	for (i = 1; i <= M; i++) 
+		scanf("%d", &a[i]);
 	sort(a + 1, a + M + 1);
 	a[0] = 0; a[M + 1] = N + 1;
 	for (i = 1; i <= M + 1; i++) {

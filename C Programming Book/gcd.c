@@ -29,7 +29,8 @@ int fun(int a, int b)	/* 2个数的公约数 */
 long long gcd(long long x, long long y){
 	if (y == 0)
 		return x;
-	else return gcd(y, x%y);
+	else 
+		return gcd(y, x%y);
 }
 
 

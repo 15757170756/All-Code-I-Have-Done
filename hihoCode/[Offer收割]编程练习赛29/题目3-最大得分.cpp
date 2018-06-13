@@ -50,7 +50,7 @@ dp[i][j]是代表从前i个背包里取j个所能拿到的最大值
 using namespace std;
 int T;
 int x, y, a, b;
-int N, M;
+int N, M; 
 int A[1009];
 int V[100009];
 int dp[1009][1009];//前i个包里拿走j个
@@ -85,10 +85,12 @@ int main(){
 	for (int i = 2; i <= numOfBags; i++){
 		for (int j = 1; j <= M; j++){
 			if (nums[i].V - nums[i - 1].V>1){
-				dp[i][j] = max(dp[i - 1][j - 1] + nums[i].V*nums[i].C, dp[i - 1][j]);
+				dp[i][j] = max(dp[i - 1][j - 1] 
+					+ nums[i].V*nums[i].C, dp[i - 1][j]);
 			}
-			else{
-				dp[i][j] = max(dp[i - 2][j - 1] + nums[i].V*nums[i].C, dp[i - 1][j]);
+			else {
+				dp[i][j] = max(dp[i - 2][j - 1] 
+					+ nums[i].V*nums[i].C, dp[i - 1][j]);
 			}
 		}
 	}
@@ -155,16 +157,16 @@ int num[1009], t;
 int dp[1009][1009];
 int main(){
 	scanf("%d%d", &n, &m);
-	for (int i = 0; i < n; ++i){
+	for (int i = 0; i < n; ++i) {
 		scanf("%d", &a[i]);
 	}
 	sort(a, a + n);
 	t = 0;
-	for (int i = 0; i < n; ++i){
-		if (a[i] == a[t]){
+	for (int i = 0; i < n; ++i) {
+		if (a[i] == a[t]) {
 			++num[t];
 		}
-		else{
+		else {
 			a[++t] = a[i];
 			num[t] = 1;
 		}

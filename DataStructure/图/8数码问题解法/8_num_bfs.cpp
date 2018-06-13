@@ -222,7 +222,8 @@ int icansolve(int num[9],int target[9])
 		}
 	count_num=count_num-2*(count_num/2);
 	count_target=count_target-2*(count_target/2);
-	if ((count_num==1&&count_target==1)||(count_num==0&&count_target==0))
+	if ((count_num==1&&count_target==1)
+		||(count_num==0&&count_target==0))
 		return 1;
 	else
 		return 0;

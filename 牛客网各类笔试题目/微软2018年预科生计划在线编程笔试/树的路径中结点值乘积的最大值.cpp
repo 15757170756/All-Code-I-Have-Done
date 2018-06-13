@@ -45,11 +45,14 @@ Node* buildTree(int numOfNodes, int firstIndex,
 {
 	vector<Node*> nodes(numOfNodes);
 	for (int i = 0; i < numOfNodes; ++i)
-		nodes[i] = new Node(i + 1, values[i]);
-	for (int i = 0; i < edges.size(); ++i)
-		nodes[edges[i][0] - 1]->addSon(nodes[edges[i][1] - 1]);
+		nodes[i] = new Node(i + firstIndex, values[i]);
+	for (int i = 0; i < edges.size(); ++i) {
+		int rootIdx = edges[i][0] - firstIndex;
+		int childIdx = edges[i][1] - firstIndex;
+		nodes[rootIdx]->addSon(nodes[childIdx]);
+	}
 
-	return nodes[firstIndex - 1];
+	return nodes[0];
 }
 
 int dfs(Node *root, int parentValue, int maximum)

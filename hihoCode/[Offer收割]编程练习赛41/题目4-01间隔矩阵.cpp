@@ -23,9 +23,7 @@
 第一行包含两个整数N和M。
 
 以下N行M列包含一个N × M的01矩阵。
-
 对于30%的数据，1 ≤ N, M ≤ 250
-
 对于100%的数据，1 ≤ N, M ≤ 2000
 
 输出
@@ -47,7 +45,9 @@ Thank you for your hacking.
 Hope you high rating.
 */
 #include <bits/stdc++.h>
+
 using namespace std;
+
 #define pr(x) cerr << #x << " = " << x << endl;
 #define bug cerr << "bugbug" << endl;
 #define ppr(x, y) printf("(%d, %d)\n", x, y);
@@ -74,22 +74,26 @@ inline long long rule(long long x){ return (x %= MOD) += x < 0 ? MOD : 0; }
 
 char s[maxn][maxn];
 int cnt[maxn][maxn];
-int main(){
+int main()
+{
 	int ik, i, j, k, kase;
 	int n, m;
 	scanf("%d%d", &n, &m);
 	for (int i = 1; i <= n; ++i)
 		scanf("%s", s[i] + 1);
 	for (int i = n; i > 0; --i)
-		for (int j = m; j > 0; --j){
-			if (j == m) cnt[i][j] = 1;
-			else if (s[i][j] != s[i][j + 1]) cnt[i][j] = cnt[i][j + 1] + 1;
-			else cnt[i][j] = 1;
+		for (int j = m; j > 0; --j) {
+			if (j == m) 
+				cnt[i][j] = 1;
+			else if (s[i][j] != s[i][j + 1]) 
+				cnt[i][j] = cnt[i][j + 1] + 1;
+			else 
+				cnt[i][j] = 1;
 		}
 	int ans = 0;
-	for (int i = 1; i <= m; ++i){
+	for (int i = 1; i <= m; ++i) {
 		vector<P> v;
-		for (int j = 1; j <= n; ++j){
+		for (int j = 1; j <= n; ++j) {
 			if (j == 1 || s[j][i] == s[j - 1][i]) v.clear();
 			int beg = j;
 			while (v.size() != 0 && v.back().second >= cnt[j][i]){
