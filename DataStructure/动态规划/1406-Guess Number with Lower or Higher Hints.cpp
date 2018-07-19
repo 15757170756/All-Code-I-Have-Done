@@ -10,7 +10,7 @@ When A guesses a number(e.g. 5),
 he needs to pay that amount of dollars($5). 
 Then B will give a hint whether A's guess is lower, 
 higher or correct. B will choose the hint that forces to 
-gain maximal amount of earning as long as it's not conlict with previous hints.
+gain maximal amount of earning as long as it's not conflict with previous hints.
 
 Assume they are both smart enough. 
 What is the minimal amount that A needs to pay to finish this game?
@@ -41,15 +41,19 @@ hiho一下206周《Guess Number with Lower or Higher Hints》分析
 
 我们用f[l][r]表示A从[l, r]的范围中猜中B想的数，需要支付的最小的代价。
 
-面对范围[l, r]，A显然可以猜[l, r]的任意一个数，因为A足够聪明，所以他会选择其中代价最小的方案。
+面对范围[l, r]，A显然可以猜[l, r]的任意一个数，因为A足够聪明，
+所以他会选择其中代价最小的方案。
 
-假设A猜的是k，那么他首先要支付$k。这时对于B，他显然不会说k就是答案(除非l=r=k)。B为了让自己的收益最大，会考虑f[l][k-1]和f[k+1][r]哪个比较大。
+假设A猜的是k，那么他首先要支付$k。这时对于B，他显然不会说k就是答案(除非l=r=k)。
+B为了让自己的收益最大，会考虑f[l][k-1]和f[k+1][r]哪个比较大。
 
-如果前者比较大，B就会说A猜大了，从而让A从[l, k-1]的范围再猜，代价是f[l][k-1]；反之B就会说A猜小了，让A从[k+1, r]的范围再猜，代价是f[k+1][r]。
+如果前者比较大，B就会说A猜大了，从而让A从[l, k-1]的范围再猜，代价是f[l][k-1]；
+反之B就会说A猜小了，让A从[k+1, r]的范围再猜，代价是f[k+1][r]。
 
 总之，如果A猜k，那么他需要支付的代价是k + max{f[l][k-1], f[k+1][r]}。
 
-因为A足够聪明，所以他会选择其中代价最小的方案。也就是f[l][r] = min{k + max{f[l][k-1], f[k+1][r]} | k = l, l+1, ... r}。
+因为A足够聪明，所以他会选择其中代价最小的方案。
+也就是f[l][r] = min{k + max{f[l][k-1], f[k+1][r]} | k = l, l+1, ... r}。
 
 于是我们按照以上转移方程进行动态规划即可。最后f[1][n]就是答案。
 
