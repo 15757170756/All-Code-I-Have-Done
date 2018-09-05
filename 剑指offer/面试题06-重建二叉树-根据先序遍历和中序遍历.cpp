@@ -30,7 +30,7 @@ int main()
 }
 
 /*
-¸ù¾İÇ°Ğò±éÀúºÍÖĞĞò±éÀúÖØ½¨¶ş²æÊ÷
+æ ¹æ®å‰åºéå†å’Œä¸­åºéå†é‡å»ºäºŒå‰æ ‘
 */
 BinaryTree ConstructPreAndIn(int* preorder, int* inorder, int length)
 {
@@ -80,9 +80,9 @@ BinaryTree ConstructCorePreAndIn(int* startPreorder, int* endPreorder,
 void InTraverse(BinaryTreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	InTraverse(pRoot->m_pLeft); // ±éÀú×ó×ÓÊ÷ 
-	printf("%d ", pRoot->m_nValue); // ·ÃÎÊ¸ù½Úµã 
-	InTraverse(pRoot->m_pRight); // ±éÀúÓÒ×ÓÊ÷    
+	InTraverse(pRoot->m_pLeft); // éå†å·¦å­æ ‘ 
+	printf("%d ", pRoot->m_nValue); // è®¿é—®æ ¹èŠ‚ç‚¹ 
+	InTraverse(pRoot->m_pRight); // éå†å³å­æ ‘    
 }
 
 
@@ -111,7 +111,7 @@ struct TreeNode {
 
 
 /*
-Õâ¸ö³ÌĞò¸üºÃÀí½âÒ»Ğ©
+è¿™ä¸ªç¨‹åºæ›´å¥½ç†è§£ä¸€äº›
 */
 class Solution {
 public:
@@ -138,21 +138,21 @@ public:
 	}
 };
 
-// ÒÔÏÂÎª²âÊÔ²¿·Ö  
+// ä»¥ä¸‹ä¸ºæµ‹è¯•éƒ¨åˆ†  
 
 void InTraverse(TreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	InTraverse(pRoot->left); // ±éÀú×ó×ÓÊ÷
-	cout << pRoot->val << " "; // ·ÃÎÊ¸ù½Úµã
-	InTraverse(pRoot->right); // ±éÀúÓÒ×ÓÊ÷
+	InTraverse(pRoot->left); // éå†å·¦å­æ ‘
+	cout << pRoot->val << " "; // è®¿é—®æ ¹èŠ‚ç‚¹
+	InTraverse(pRoot->right); // éå†å³å­æ ‘
 }
 void PostTraverse(TreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	PostTraverse(pRoot->left); // ºóĞò±éÀú×ó×ÓÊ÷
-	PostTraverse(pRoot->right); // ºóĞò±éÀúÓÒ×ÓÊ÷
-	cout << pRoot->val << " "; // ·ÃÎÊ¸ù½Úµã
+	PostTraverse(pRoot->left); // ååºéå†å·¦å­æ ‘
+	PostTraverse(pRoot->right); // ååºéå†å³å­æ ‘
+	cout << pRoot->val << " "; // è®¿é—®æ ¹èŠ‚ç‚¹
 }
 
 int main()
@@ -181,7 +181,7 @@ int main()
 
 
 /*
-¸Ä³ÉÄ£°åÀà£¬ÒÔºó¾ÍÄÜÖ±½ÓÓÃÁË¡£¡£¡£
+æ”¹æˆæ¨¡æ¿ç±»ï¼Œä»¥åå°±èƒ½ç›´æ¥ç”¨äº†ã€‚ã€‚ã€‚
 */
 #include <iostream>  
 #include <vector>  
@@ -197,7 +197,7 @@ struct TreeNode {
 
 
 /*
-Õâ¸ö³ÌĞò¸üºÃÀí½âÒ»Ğ©
+è¿™ä¸ªç¨‹åºæ›´å¥½ç†è§£ä¸€äº›
 */
 template<typename T>
 class Solution {
@@ -225,21 +225,21 @@ public:
 	}
 };
 
-// ÒÔÏÂÎª²âÊÔ²¿·Ö  
+// ä»¥ä¸‹ä¸ºæµ‹è¯•éƒ¨åˆ†  
 
 void InTraverse(TreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	InTraverse(pRoot->left); // ±éÀú×ó×ÓÊ÷
-	cout << pRoot->val << " "; // ·ÃÎÊ¸ù½Úµã
-	InTraverse(pRoot->right); // ±éÀúÓÒ×ÓÊ÷
+	InTraverse(pRoot->left); // éå†å·¦å­æ ‘
+	cout << pRoot->val << " "; // è®¿é—®æ ¹èŠ‚ç‚¹
+	InTraverse(pRoot->right); // éå†å³å­æ ‘
 }
 void PostTraverse(TreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	PostTraverse(pRoot->left); // ºóĞò±éÀú×ó×ÓÊ÷
-	PostTraverse(pRoot->right); // ºóĞò±éÀúÓÒ×ÓÊ÷
-	cout << char(pRoot->val) << " "; // ·ÃÎÊ¸ù½Úµã
+	PostTraverse(pRoot->left); // ååºéå†å·¦å­æ ‘
+	PostTraverse(pRoot->right); // ååºéå†å³å­æ ‘
+	cout << char(pRoot->val) << " "; // è®¿é—®æ ¹èŠ‚ç‚¹
 }
 
 int main()

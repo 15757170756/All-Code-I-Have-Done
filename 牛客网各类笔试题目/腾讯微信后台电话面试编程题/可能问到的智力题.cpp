@@ -1,4 +1,4 @@
 /*
-64Æ¥Âí,8¸öÈüµÀ,ÕÒ³öÇ°4Ãû×îÉÙ±ÈÈü¶àÉÙ³¡?¡ª¡ª×î¿ì10´Î£¬×îÂý11´Î£»
+64åŒ¹é©¬,8ä¸ªèµ›é“,æ‰¾å‡ºå‰4åæœ€å°‘æ¯”èµ›å¤šå°‘åœº?â€”â€”æœ€å¿«10æ¬¡ï¼Œæœ€æ…¢11æ¬¡ï¼›
 http://www.cnblogs.com/reanote/p/find_4th_in_64horse.html
 */

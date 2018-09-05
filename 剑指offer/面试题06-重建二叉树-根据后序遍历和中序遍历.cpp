@@ -12,7 +12,7 @@ struct TreeNode {
 
 
 /*
-Õâ¸ö³ÌĞò¸üºÃÀí½âÒ»Ğ©
+è¿™ä¸ªç¨‹åºæ›´å¥½ç†è§£ä¸€äº›
 */
 template<typename T>
 class Solution {
@@ -35,10 +35,10 @@ public:
 		auto leftSize = distance(in_first, inRootPos);
 
 		/*
-		×¢Òâendº¯ÊıÖ¸ÏòµÄµü´úÆ÷ÊÇ×îºóÒ»¸öÔªËØµÄºóÃæÒ»¸ö
-		¶øÈç¹ûÓÃÒ»°ãÊı×éµÄ»°£¬¾Í»áÖ¸Ïò×îºóÒ»¸öÔªËØµÄÖ¸Õë£¬
-		ËùÒÔµİ¹éµÄÊ±ºòin_lastºÍpost_lastµÄÊµ²Î¶¼ÒªÊÇµ±Ç°
-		×ÓÊ÷in_lastºÍpost_lastµÄºóÒ»¸öµü´úÆ÷¡£
+		æ³¨æ„endå‡½æ•°æŒ‡å‘çš„è¿­ä»£å™¨æ˜¯æœ€åä¸€ä¸ªå…ƒç´ çš„åé¢ä¸€ä¸ª
+		è€Œå¦‚æœç”¨ä¸€èˆ¬æ•°ç»„çš„è¯ï¼Œå°±ä¼šæŒ‡å‘æœ€åä¸€ä¸ªå…ƒç´ çš„æŒ‡é’ˆï¼Œ
+		æ‰€ä»¥é€’å½’çš„æ—¶å€™in_lastå’Œpost_lastçš„å®å‚éƒ½è¦æ˜¯å½“å‰
+		å­æ ‘in_lastå’Œpost_lastçš„åä¸€ä¸ªè¿­ä»£å™¨ã€‚
 		*/
 		root->left = buildTree(in_first, inRootPos,
 			post_first, next(post_first, leftSize));
@@ -48,28 +48,28 @@ public:
 	}
 };
 
-// ÒÔÏÂÎª²âÊÔ²¿·Ö  
+// ä»¥ä¸‹ä¸ºæµ‹è¯•éƒ¨åˆ†  
 
 void PreTraverse(TreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	cout << (char)pRoot->val << " "; // ·ÃÎÊ¸ù½Úµã
-	PreTraverse(pRoot->left); // ±éÀú×ó×ÓÊ÷
-	PreTraverse(pRoot->right); // ±éÀúÓÒ×ÓÊ÷
+	cout << (char)pRoot->val << " "; // è®¿é—®æ ¹èŠ‚ç‚¹
+	PreTraverse(pRoot->left); // éå†å·¦å­æ ‘
+	PreTraverse(pRoot->right); // éå†å³å­æ ‘
 }
 void InTraverse(TreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	InTraverse(pRoot->left); // ±éÀú×ó×ÓÊ÷
-	cout << pRoot->val << " "; // ·ÃÎÊ¸ù½Úµã
-	InTraverse(pRoot->right); // ±éÀúÓÒ×ÓÊ÷
+	InTraverse(pRoot->left); // éå†å·¦å­æ ‘
+	cout << pRoot->val << " "; // è®¿é—®æ ¹èŠ‚ç‚¹
+	InTraverse(pRoot->right); // éå†å³å­æ ‘
 }
 void PostTraverse(TreeNode *pRoot)
 {
 	if (pRoot == NULL) return;
-	PostTraverse(pRoot->left); // ºóĞò±éÀú×ó×ÓÊ÷
-	PostTraverse(pRoot->right); // ºóĞò±éÀúÓÒ×ÓÊ÷
-	cout << char(pRoot->val) << " "; // ·ÃÎÊ¸ù½Úµã
+	PostTraverse(pRoot->left); // ååºéå†å·¦å­æ ‘
+	PostTraverse(pRoot->right); // ååºéå†å³å­æ ‘
+	cout << char(pRoot->val) << " "; // è®¿é—®æ ¹èŠ‚ç‚¹
 }
 
 int main()

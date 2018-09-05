@@ -2,13 +2,13 @@
 http://blog.csdn.net/acdreamers/article/details/16902023
 
 
-1 2
-2 3
-3 4
-1 3
-4 1
-1 5
-4 5
+0 1 2
+1 2 3
+2 3 4
+3 1 3
+4 4 1
+5 1 5
+6 4 5
 
 
 struct Edge

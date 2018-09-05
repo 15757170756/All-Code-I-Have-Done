@@ -44,6 +44,17 @@ Output: 6
 
 
 
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cstring>
+#include <cstdint>
+#include <unordered_map>
+#include <algorithm>
+#include <stack>
+
+using namespace::std;
+
 class Solution {
 public:
 	int maximalRectangle(vector<vector<char>>& matrix) {
@@ -69,9 +80,9 @@ public:
 				}
 				else {
 					while (!st.empty() && h[st.top()] > h[j]) {
-						int l = st.top();
+						int topIdx = st.top();
 						st.pop();
-						maxNum = max(h[l] *
+						maxNum = max(h[topIdx] *
 							(st.empty() ? j - start : (j - 1 - st.top())), maxNum);
 					}
 					if (h[j] > 0)
@@ -79,12 +90,39 @@ public:
 				}
 			}
 			while (!st.empty()) {
-				int l = st.top();
+				int topIdx = st.top();
 				st.pop();
-				maxNum = max(h[l] *
+				maxNum = max(h[topIdx] *
 					(st.empty() ? col - start : (col - 1 - st.top())), maxNum);
 			}
 		}
 		return maxNum;
 	}
 };
+
+
+int main(int argc, char *argv[])
+{
+	freopen("input.txt", "r", stdin);
+	Solution so;
+	int row, col;
+	cin >> row >> col;
+	vector<vector<char>> matrix(row, vector<char>(col));
+	for (int i = 0; i < row; ++i) {
+		for (int j = 0; j < col; ++j)
+			cin >> matrix[i][j];
+	}
+	cout << so.maximalRectangle(matrix) << endl;
+	return 0;
+}
+
+
+/*
+input:
+4
+5
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+*/
