@@ -9,11 +9,13 @@
 #include <map>
 #include <algorithm>
 #include <vector>
+
 using std::pair;
 using std::set;
 using std::map;
 using std::vector;
 using std::make_pair;
+
 class ClosetPairFromTwoGroup {
 public:
     struct node {
@@ -24,9 +26,11 @@ public:
         node(int x_, int y_, int g_):x(x_), y(y_), group(g_){}
         bool operator<(const node &other) {return x < other.x;}
     };
-	vector<int> findClosetPairNaive(const int * const lineA, int lenA, const int * const lineB, int lenB);
+	vector<int> findClosetPairNaive(const int * const lineA, int lenA, 
+        const int * const lineB, int lenB);
 
-    vector<int> operator()(const int * const lineA, int lenA, const int * const lineB, int lenB); //return xyxy
+    vector<int> operator()(const int * const lineA, int lenA, 
+    const int * const lineB, int lenB); //return xyxy
 private:
     void init();
     vector<node> points;

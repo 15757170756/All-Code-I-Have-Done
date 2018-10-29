@@ -7,17 +7,19 @@
 
 //use opencv keypoint to represent point with width
 #include <opencv2/opencv.hpp>
+
 class SplitTree;
 using std::vector;
 using std::map;
 using std::pair;
 using std::make_pair;
+
 struct Edge
 {
 	int to;
 	int next;
 	float w;
-	Edge(int to_, int next_, float w_) :to(to_), next(next_),  w(w_){}
+	Edge(int to_, int next_, float w_) :to(to_), next(next_),  w(w_) { }
 };
 class Edges
 {
@@ -50,14 +52,14 @@ class SplitTree
 public:
 	void operator()(const Edges * const edge_struct, int min_points_thres = 20);
 	int getLines(vector<vector<cv::KeyPoint> > &lines_out) const;
-	int getSortedLines(vector<vector<cv::KeyPoint> > &lines_out, std::function<bool(const vector<cv::KeyPoint> &v1, const vector<cv::KeyPoint> &v2)> func);
+	int getSortedLines(vector<vector<cv::KeyPoint>> &lines_out, std::function<bool(const vector<cv::KeyPoint> &v1, const vector<cv::KeyPoint> &v2)> func);
 	vector<float> getLineDis() const;
 private:
 	void init(int n);
 	const Edges* edge_struct_;
 	int bfs(int s);
 	int getPath(vector<int> &path, int s);
-	vector<vector<int> > lines_;
+	vector<vector<int>> lines_;
 	vector<float> line_dis_;
 	vector<float> dis_;
 	vector<int> pre_;

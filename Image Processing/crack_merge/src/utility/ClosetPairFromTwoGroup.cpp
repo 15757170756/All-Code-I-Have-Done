@@ -7,9 +7,12 @@
 
 #include <cfloat>
 #include "ClosetPairFromTwoGroup.h"
-double ClosetPairFromTwoGroup::dist(const node &p1, const node &p2) {
+double ClosetPairFromTwoGroup::dist(const node &p1, 
+    const node &p2) 
+{
     //calc distance
-    if (p1.group == p2.group) return DBL_MAX;
+    if (p1.group == p2.group) 
+        return DBL_MAX;
     double dx = p1.x - p2.x;
     double dy = p1.y - p2.y;
     double dist = sqrt(dx * dx + dy * dy);
@@ -26,7 +29,8 @@ void ClosetPairFromTwoGroup::init() {
     points.clear();
     closetPair.clear();
 }
-vector<int> ClosetPairFromTwoGroup::operator()(const int * const lineA, int lenA, const int * const lineB, int lenB) {
+vector<int> ClosetPairFromTwoGroup::operator()(const int * const lineA, int lenA, 
+    const int * const lineB, int lenB) {
     init();
     for (int i = 0; i < lenA; i += 2) {
         points.emplace_back(lineA[i], lineA[i + 1], 1);

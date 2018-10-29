@@ -46,11 +46,11 @@ int nativeStringMatcher(char* mainStr, char* subStr)
 
 
 /*
-¹¹½¨nextÊı×é
-ababacaµÄnextÊı×éÎª£º
+æ„å»ºnextæ•°ç»„
+ababacaçš„nextæ•°ç»„ä¸ºï¼š
 0012302
-µ±Ç°×Ö·ûÓëÇ°Ãæ×Ö·û×éºÏ
-µÄ×î³¤Ç°×ºÓëºó×ºÆ¥Åä
+å½“å‰å­—ç¬¦ä¸å‰é¢å­—ç¬¦ç»„åˆ
+çš„æœ€é•¿å‰ç¼€ä¸åç¼€åŒ¹é…
 */
 int* compute_prefix_function(char* patten)
 {

@@ -1,5 +1,5 @@
-//ÇóÁ½¸öÊýµÄ×î´ó¹«Ô¼ÊýºÍ×îÐ¡¹«±¶Êý
-//Ò»°ã·½·¨
+//æ±‚ä¸¤ä¸ªæ•°çš„æœ€å¤§å…¬çº¦æ•°å’Œæœ€å°å…¬å€æ•°
+//ä¸€èˆ¬æ–¹æ³•
 #include<stdio.h>
 int main()
 {
@@ -7,12 +7,12 @@ int main()
 	scanf("%d%d", &n, &m);
 	for (gbs = m; gbs % m != 0 || gbs % n != 0; gbs += m); //O(n)
 	gys = n * m / gbs;
-	printf("×îÐ¡¹«±¶Êý%d\n×î´ó¹«Ô¼Êý%d\n", gbs, gys);
+	printf("æœ€å°å…¬å€æ•°%d\næœ€å¤§å…¬çº¦æ•°%d\n", gbs, gys);
 }
 
 
-//Õ·×ªÏà³ý·¨ O(lgn)
-int fun(int a, int b)	/* 2¸öÊýµÄ¹«Ô¼Êý */
+//è¾—è½¬ç›¸é™¤æ³• O(lgn)
+int fun(int a, int b)	/* 2ä¸ªæ•°çš„å…¬çº¦æ•° */
 {
 	int t;
 	while (b)
@@ -25,7 +25,7 @@ int fun(int a, int b)	/* 2¸öÊýµÄ¹«Ô¼Êý */
 }
 
 
-//µÝ¹éÕ·×ªÏà³ý·¨
+//é€’å½’è¾—è½¬ç›¸é™¤æ³•
 long long gcd(long long x, long long y){
 	if (y == 0)
 		return x;
@@ -34,7 +34,7 @@ long long gcd(long long x, long long y){
 }
 
 
-//ÉèÁ½ÊýÎªa¡¢b(a > b)£¬ÇóaºÍb×î´ó¹«Ô¼Êý(a£¬b)µÄ²½ÖèÈçÏÂ£ºÓÃa³ýÒÔb£¬
-//µÃa¡Âb = q......r1(0¡Ür1)¡£Èôr1 = 0£¬Ôò(a£¬b) = b£»Èôr1¡Ù0£¬ÔòÔÙÓÃb³ýÒÔr1£¬
-//µÃb¡Âr1 = q......r2(0¡Ür2£©.Èôr2 = 0£¬Ôò(a£¬b) = r1£¬Èôr2¡Ù0£¬Ôò¼ÌÐøÓÃr1³ýÒÔr2£¬
-//¡­¡­Èç´ËÏÂÈ¥£¬Ö±µ½ÄÜÕû³ýÎªÖ¹¡£Æä×îºóÒ»¸öÓàÊýÎª0µÄ±»³ýÊýµÄ³ýÊý¼´Îª(a, b)µÄ×î´ó¹«Ô¼Êý¡£
+//è®¾ä¸¤æ•°ä¸ºaã€b(a > b)ï¼Œæ±‚aå’Œbæœ€å¤§å…¬çº¦æ•°(aï¼Œb)çš„æ­¥éª¤å¦‚ä¸‹ï¼šç”¨aé™¤ä»¥bï¼Œ
+//å¾—aÃ·b = q......r1(0â‰¤r1)ã€‚è‹¥r1 = 0ï¼Œåˆ™(aï¼Œb) = bï¼›è‹¥r1â‰ 0ï¼Œåˆ™å†ç”¨bé™¤ä»¥r1ï¼Œ
+//å¾—bÃ·r1 = q......r2(0â‰¤r2ï¼‰.è‹¥r2 = 0ï¼Œåˆ™(aï¼Œb) = r1ï¼Œè‹¥r2â‰ 0ï¼Œåˆ™ç»§ç»­ç”¨r1é™¤ä»¥r2ï¼Œ
+//â€¦â€¦å¦‚æ­¤ä¸‹åŽ»ï¼Œç›´åˆ°èƒ½æ•´é™¤ä¸ºæ­¢ã€‚å…¶æœ€åŽä¸€ä¸ªä½™æ•°ä¸º0çš„è¢«é™¤æ•°çš„é™¤æ•°å³ä¸º(a, b)çš„æœ€å¤§å…¬çº¦æ•°ã€‚
