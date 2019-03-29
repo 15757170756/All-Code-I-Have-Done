@@ -41,7 +41,8 @@ class Solution {
 public:
     string shiftingLetters(string S, vector<int>& shifts) {
         int sum = 0;
-        for(auto riter = shifts.rbegin(); riter != shifts.rend(); ++riter){
+        for(auto riter = shifts.rbegin(); 
+            riter != shifts.rend(); ++riter){
             *riter = ((*riter % 26) + (sum % 26))%26;
             sum = *riter;
         }
