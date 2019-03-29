@@ -114,7 +114,7 @@ bool increae(vector<bool> &bs)
 template <typename T>
 void powersets(const vector<T> &v, vector<vector<T>> &resultVec)
 {
-	vector<bool> bitset(v.size()£¬false);
+	vector<bool> bitset(v.size(), false);
 
 	do {
 		vector<int> temp;

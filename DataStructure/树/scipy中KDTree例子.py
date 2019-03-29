@@ -27,7 +27,7 @@ def kdtree( data, leafsize=10 ):
     # find bounding hyper-rectangle
     hrect = numpy.zeros((2,data.shape[0]))
     """
-    [0,:]表示取第1行，[:,2]表示取第3行
+    [0,:]表示取第1行，[:,2]表示取第3列
     min函数中的axis=1表示按行取最小，即
     array([[0, 1],
        [2, 3]])
