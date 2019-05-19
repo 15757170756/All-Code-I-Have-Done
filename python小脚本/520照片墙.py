@@ -51,3 +51,50 @@ for y in range(1,8):
 
 toImage.show()
 toImage.save('ta.jpg')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from PIL import Image
+
+path = r'E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0001_0690_1130.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0002_1030_1130.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0003_1370_1130.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0004_1710_1130.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0005_1710_1360.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0006_1370_1360.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0007_1030_1360.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0008_0690_1360.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0009_0690_1590.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0010_1030_1590.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0011_1370_1590.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0012_1710_1590.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0013_1710_1820.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0014_1370_1820.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0015_1030_1820.jpg E:\XiDian_University\20180701-validate_stitching\outside-one\原图\0016_0690_1820.jpg'
+img_name = path.split()
+mx, my = 5760, 3840
+# print(img_name)
+toImage = Image.new('RGB', (mx, my))
+
+
+i = 0
+x, y = 0, 0
+for y in range(4):
+    for x in range(4):
+        if i // 4 == 0 or i // 4 == 2:
+            fromImage = Image.open(img_name[i])
+            fromImage = fromImage.resize((int(mx / 4), int(my / 4)), Image.ANTIALIAS)
+            toImage.paste(fromImage, (x * int(mx / 4), y * int(my / 4)))
+
+        elif i // 4 == 1:
+            fromImage = Image.open(img_name[11 - i])
+            fromImage = fromImage.resize((int(mx / 4), int(my / 4)), Image.ANTIALIAS)
+            toImage.paste(fromImage, (x * int(mx / 4), y * int(my / 4)))
+
+        elif i // 4 == 3:
+            fromImage = Image.open(img_name[27 - i])
+            fromImage = fromImage.resize((int(mx / 4), int(my / 4)), Image.ANTIALIAS)
+            toImage.paste(fromImage, (x * int(mx / 4), y * int(my / 4)))
+        i += 1
+
+toImage.show()
+toImage.save('ta.jpg')

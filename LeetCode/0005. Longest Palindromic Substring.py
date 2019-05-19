@@ -6,7 +6,7 @@ class Solution:
         start = 0
         longest = 1
         dp = [[0 for i in range(n)] for j in range(n)]
-        print(len(dp))
+        # print(len(dp))
 
         for i in range(n):
             dp[i][i] = 1
