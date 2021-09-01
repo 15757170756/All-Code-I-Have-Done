@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 1947. 最大兼容性评分和
 有一份由 n 个问题组成的调查问卷，每个问题的答案要么是 0（no，否），要么是 1（yes，是）。
@@ -40,6 +41,8 @@ mentors[j][k] 为 0 或 1
 """
 
 
+=======
+>>>>>>> 16857503fa9abd38a3b1b14ebddf4a9f4670f371
 class Helper:
     @staticmethod
     def next_permutation(nums):

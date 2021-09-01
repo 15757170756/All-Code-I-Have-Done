@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 """
 1961. 检查字符串是否为数组前缀
@@ -33,6 +34,8 @@ words[i] 和 s 仅由小写英文字母组成
 请问您在哪类招聘中遇到此题？
 贡献者
 """
+=======
+>>>>>>> 16857503fa9abd38a3b1b14ebddf4a9f4670f371
 class Solution:
     def isPrefixString(self, s, words):
         sum_str = ''

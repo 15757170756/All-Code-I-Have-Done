@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 1981. 最小化目标值与所选元素的差
 给你一个大小为 m x n 的整数矩阵 mat 和一个整数 target 。
@@ -53,6 +54,8 @@ n == mat[i].length
 请问您在哪类招聘中遇到此题？
 """
 
+=======
+>>>>>>> 16857503fa9abd38a3b1b14ebddf4a9f4670f371
 class Solution:
     def minimizeTheDifference(self, mat, target):
         v = {0}

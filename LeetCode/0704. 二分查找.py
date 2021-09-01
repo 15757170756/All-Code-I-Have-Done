@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 704. 二分查找
 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
@@ -23,6 +24,8 @@ nums 的每个元素都将在 [-9999, 9999]之间。
 通过次数209,575提交次数377,652
 """
 
+=======
+>>>>>>> 16857503fa9abd38a3b1b14ebddf4a9f4670f371
 class Solution:
     def search(self, nums, target):
         n = len(nums)

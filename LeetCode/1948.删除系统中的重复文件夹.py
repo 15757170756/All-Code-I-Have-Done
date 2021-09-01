@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 """
 1948. 删除系统中的重复文件夹
@@ -78,6 +79,8 @@ LeetCode
 
 """
 
+=======
+>>>>>>> 16857503fa9abd38a3b1b14ebddf4a9f4670f371
 class Trie:
     serial: str = ""
     children: dict
